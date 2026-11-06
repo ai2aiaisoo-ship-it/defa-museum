@@ -17,17 +17,48 @@ export interface BattleRiver { id: string; name: string; path: [number, number][
 
 export interface BattleZone { id: string; name: string; ring: [number, number][] }
 
-export interface BattleArrow { id: string; side: BSide; label: string; path: [number, number][] }
+/** نوع محور در زبان نمادین نقشه رزمی */
+export type ArrowKind = 'main' | 'support' | 'deception' | 'counter' | 'air'
+
+export interface BattleArrow { id: string; side: BSide; label: string; path: [number, number][]; kind?: ArrowKind }
 
 export interface BattleFront { id: string; path: [number, number][] }
 
-/** مواضع نیروها با پرچم روی نقشه */
+/** مواضع یگان‌ها با قاب نماد یگان روی نقشه */
 export interface BattleFlag {
   id: string
   side: BSide
   label: string
-  /** موقعیت پرچم */
+  /** موقعیت یگان */
   pos: [number, number]
+  /** نماد درون قاب: ضربدر = پیاده، بیضی = زرهی، پرچم = قرارگاه */
+  sym?: 'inf' | 'armor' | 'hq'
+}
+
+/** رویداد هوایی — فقط بر اساس منابع مستند پرونده عملیات */
+export interface BattleAirEvent {
+  id: string
+  kind: 'air-strike' | 'heli-assault' | 'chem' | 'recon'
+  label: string
+  pos: [number, number]
+  side?: BSide
+}
+
+/** عبور آبی — قایق یا پل شناور */
+export interface BattleCrossing {
+  id: string
+  kind: 'boat' | 'pontoon'
+  label: string
+  pos: [number, number]
+}
+
+/** تدابیر پدافندی: میدان مین، کمربند دفاعی، کانال مسدودکننده، پهنه آتش آماده */
+export interface BattleDefense {
+  id: string
+  kind: 'minefield' | 'belt' | 'canal' | 'firezone'
+  label: string
+  path?: [number, number][]
+  pos?: [number, number]
 }
 
 export interface BattlePhase {
@@ -42,6 +73,12 @@ export interface BattlePhase {
   fronts?: BattleFront[]
   arrows?: BattleArrow[]
   flags?: BattleFlag[]
+  /** رویدادهای هوایی همین مرحله */
+  airEvents?: BattleAirEvent[]
+  /** عبورهای آبی همین مرحله */
+  crossings?: BattleCrossing[]
+  /** تدابیر پدافندی همین مرحله */
+  defenses?: BattleDefense[]
 }
 
 export interface BattleLabel { text: string; pos: [number, number]; size?: number; color?: string }
@@ -57,6 +94,21 @@ export interface BattleMapData {
   phases: BattlePhase[]
   note: string
   sources: string[]
+  /** ── زبان نمادین نقشه رزمی (خوانش بدون متن) ── */
+  /** پهنه عملیات — کارنامه بصری */
+  terrain?: 'خاکی' | 'آبی‌خاکی' | 'هوایی/پدافندی'
+  /** طبیعت عملیات — کارنامه بصری */
+  nature?: 'حمله اصلی' | 'مقدماتی — لو رفتن طرح' | 'پدافندی — پاتک' | 'تهاجم دشمن'
+  /** خط مقدم پیش از آغاز عملیات */
+  preFLOT?: [number, number][]
+  /** خط مقدم پس از پایان عملیات */
+  postFLOT?: [number, number][]
+  /** پهنه آزادشده — شیدینگ هاشور + برچسب مساحت */
+  liberated?: { id: string; ring: [number, number][]; label: string }[]
+  /** کلک‌های جنگی مستند این عملیات */
+  tricks?: { title: string; text: string; conf?: 'A' | 'B' | 'C' }[]
+  /** عملیات‌های همزمان در جبهه‌های دیگر */
+  simultaneous?: { label: string; text: string }[]
 }
 
 const RIVER_SHATT: [number, number][] = [[31.01, 47.05], [30.62, 47.80], [30.44, 48.05], [30.35, 48.28], [29.97, 48.55]]
