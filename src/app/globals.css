@@ -218,3 +218,14 @@ body { font-family: Vazirmatn, sans-serif; }
 .bm-shell:fullscreen { background: var(--background); padding: 16px; overflow: auto; }
 
 .defa-frame img { background: oklch(0.25 0.02 155); }
+
+/* ─── تالار سه‌بعدی عملیات‌ها ─── */
+.hall-swing { animation: hall-swing 4.6s ease-in-out infinite alternate; }
+@keyframes hall-swing {
+  from { transform: rotate(2.6deg); }
+  to   { transform: rotate(-2.6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hall-swing { animation: none; }
+}
+.hall-persp, .hall-persp * { transform-style: preserve-3d; }

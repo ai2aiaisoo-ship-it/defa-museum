@@ -132,13 +132,13 @@ export function MersadView({ go }: { go: (v: string, p?: string) => void }) {
         <Badge variant="outline" className="mb-3">فصل ویژه موزه</Badge>
         <h1 className="museum-title text-3xl md:text-4xl">تابستان ۱۳۶۷؛ از فروغ جاویدان تا عملیات مرصاد</h1>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-          روایت مستقل و مستند: تاریخچه سازمان مجاهدین خلق، زمینه‌های تهاجم مرداد ۱۳۶۷، روند مرصاد و آمار با تفکیک اختلاف منابع.
+          روایت مستقل و مستند: تاریخچه سازمان منافقین، زمینه‌های تهاجم مرداد ۱۳۶۷، روند مرصاد و آمار با تفکیک اختلاف منابع.
         </p>
       </section>
 
       {/* تاریخچه سازمان */}
       <section>
-        <SectionHeader kicker="پیشینه" title="سازمان مجاهدین خلق؛ از تأسیس تا عراق" desc="این پرونده تاریخی است و بازسازی دستورالعملی عملیات ارائه نمی‌کند." />
+        <SectionHeader kicker="پیشینه" title="سازمان منافقین؛ از تأسیس تا عراق" desc="این پرونده تاریخی است و بازسازی دستورالعملی عملیات ارائه نمی‌کند." />
         <div className="relative space-y-4 border-r-2 border-primary/40 pr-5">
           {MEK_TIMELINE.map((t, i) => (
             <div key={i} className="relative">
@@ -171,7 +171,7 @@ export function MersadView({ go }: { go: (v: string, p?: string) => void }) {
       <section>
         <SectionHeader kicker="آمار مستند" title="تلفات و اسرا با بررسی اختلاف منابع" />
         <StatClaimsTable claims={[...forough.stats, ...mersad.stats]} />
-        <p className="mt-2 text-[11px] leading-5 text-muted-foreground">ارقام تلفات سازمان مجاهدین خلق میان روایت رسمی ایران و روایت خودِ سازمان تفاوت اساسی دارد؛ رقم مستقل و تأییدشده ثبت نشده است (درجه اطمینان C).</p>
+        <p className="mt-2 text-[11px] leading-5 text-muted-foreground">ارقام تلفات سازمان منافقین میان روایت رسمی ایران و روایت خودِ سازمان تفاوت اساسی دارد؛ رقم مستقل و تأییدشده ثبت نشده است (درجه اطمینان C).</p>
       </section>
 
       {imgs.length > 0 && (

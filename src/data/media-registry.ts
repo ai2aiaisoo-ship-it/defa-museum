@@ -331,7 +331,7 @@ export const VIDEO_ITEMS: MediaItem[] = [
   {
     id: 'v-mersad-news',
     type: 'video', title: 'گزارش‌های مرداد ۱۳۶۷ — فروغ جاویدان و مرصاد',
-    desc: 'گزارش‌های خبری دوران تهاجم سازمان مجاهدین خلق و عملیات مرصاد.',
+    desc: 'گزارش‌های خبری دوران تهاجم سازمان منافقین و عملیات مرصاد.',
     captureLabel: 'مرداد ۱۳۶۷', location: 'کرمانشاه و ایلام', tags: ['mersad', 'front'],
     opIds: ['forough-javidan', 'mersad'], sourceName: 'آرشیوهای خبری ایران',
     sourceUrl: 'https://irna.ir', license: 'rights-reserved', quality: 'medium',

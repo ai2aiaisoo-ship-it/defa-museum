@@ -745,5 +745,5 @@ export const BATTLE_MAPS: Record<string, BattleMapData> = {
 export const BATTLE_MAP_LABELS: Record<BSide, string> = {
   iran: 'نیروهای ایران',
   iraq: 'نیروهای عراق',
-  mek: 'سازمان مجاهدین خلق',
+  mek: 'سازمان منافقین',
 }

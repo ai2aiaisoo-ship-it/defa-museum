@@ -60,6 +60,7 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
             <BootsIcon className="h-4 w-4" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
+            <Button onClick={() => go('hall-3d')} className="font-bold">🏛 تالار سه‌بعدی عملیات‌ها (جدید)</Button>
             <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
             <Button variant="outline" onClick={() => go('battle-maps')} className="font-bold">📍 نقشه‌های تاکتیکی نبردها (جدید)</Button>
             <Button variant="outline" onClick={() => go('martyrs')} className="font-bold">🌙 خط زمانی شهدا (جدید)</Button>
@@ -184,7 +185,7 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
           <TabsList className="mb-3">
             <TabsTrigger value="iran">ایران</TabsTrigger>
             <TabsTrigger value="iraq">عراق</TabsTrigger>
-            <TabsTrigger value="mek">مجاهدین خلق</TabsTrigger>
+            <TabsTrigger value="mek">منافقین</TabsTrigger>
             <TabsTrigger value="other">سایر بازیگران</TabsTrigger>
           </TabsList>
           {['iran', 'iraq', 'mek', 'us', 'other'].map(side => (

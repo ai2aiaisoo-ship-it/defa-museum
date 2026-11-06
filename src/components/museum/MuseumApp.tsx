@@ -25,9 +25,10 @@ import { toFa } from '@/lib/jalali'
 import { BattleMapsView } from './BattleMapsView'
 import { MusicPlayer } from './MusicPlayer'
 import { HeadbandRibbon } from './DefaDecor'
+import { Hall3D } from './Hall3D'
 
 export type ViewKey =
-  | 'home' | 'atlas' | 'operations' | 'battle-maps' | 'timeline' | 'stats'
+  | 'home' | 'hall-3d' | 'atlas' | 'operations' | 'battle-maps' | 'timeline' | 'stats'
   | 'roots' | 'martyrs' | 'avini' | 'archive' | 'saddam-dossier'
   | 'khorramshahr' | 'mersad' | 'war-of-cities' | 'tanker-war' | 'air-war' | 'naval-war' | 'iraq-ops' | 'mek-ops'
   | 'commanders' | 'forces' | 'equipment' | 'foreign' | 'resolutions'
@@ -46,6 +47,7 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
     group: 'تالارهای اصلی',
     items: [
       { key: 'home', label: 'داشبورد موزه', icon: '🏛' },
+      { key: 'hall-3d', label: 'تالار سه‌بعدی عملیات‌ها (جدید)', icon: '🚶' },
       { key: 'atlas', label: 'اطلس نقشه تعاملی', icon: '🗺' },
       { key: 'timeline', label: 'خط زمانی هشت‌ساله', icon: '📅' },
       { key: 'operations', label: 'اطلس عملیات‌ها', icon: '⚔' },
@@ -71,7 +73,7 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
       { key: 'air-war', label: 'نبرد هوایی', icon: '✈' },
       { key: 'naval-war', label: 'نبردهای دریایی', icon: '⚓' },
       { key: 'iraq-ops', label: 'عملیات‌های عراق', icon: '🎯' },
-      { key: 'mek-ops', label: 'سازمان مجاهدین خلق', icon: '🔶' },
+      { key: 'mek-ops', label: 'سازمان منافقین', icon: '🔶' },
     ],
   },
   {
@@ -149,10 +151,12 @@ export function MuseumApp() {
   }, [])
 
   const title = NAV.flatMap(g => g.items).find(i => i.key === view)?.label ?? 'موزه دیجیتال'
+  const immersive = view === 'hall-3d'
 
   const render = () => {
     switch (view) {
       case 'home': return <Dashboard go={go} />
+      case 'hall-3d': return <Hall3D go={go} />
       case 'atlas': return (
         <div>
           <div className="mb-5">
@@ -230,6 +234,11 @@ export function MuseumApp() {
       </header>
 
       {/* بدنه */}
+      {immersive ? (
+        <div className="w-full flex-1">
+          {render()}
+        </div>
+      ) : (
       <div className="mx-auto flex w-full max-w-[1500px] flex-1 gap-6 px-4 py-6">
         <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] w-60 shrink-0 overflow-y-auto rounded-2xl border bg-card/50 p-3 scrollbar-thin lg:block">
           <NavLinks view={view} go={go} />
@@ -245,6 +254,7 @@ export function MuseumApp() {
           {render()}
         </main>
       </div>
+      )}
 
       {/* پخش‌کننده موسیقی متن خاک سرخ — قابل میوت */}
       <MusicPlayer />

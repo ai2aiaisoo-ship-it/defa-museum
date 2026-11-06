@@ -62,7 +62,7 @@ export function OperationsView({ focusId, go }: { focusId?: string; go: (v: stri
           <option value="all">همه طرف‌ها</option>
           <option value="iran">ایران</option>
           <option value="iraq">عراق</option>
-          <option value="mek">مجاهدین خلق</option>
+          <option value="mek">منافقین</option>
           <option value="us">آمریکا</option>
           <option value="israel">اسرائیل</option>
         </select>

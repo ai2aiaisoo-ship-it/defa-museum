@@ -57,7 +57,7 @@ export const FRONT_LABELS: Record<string, string> = {
 export const SIDE_LABELS: Record<string, string> = {
   iran: 'ایران',
   iraq: 'عراق',
-  mek: 'سازمان مجاهدین خلق',
+  mek: 'سازمان منافقین',
   us: 'ایالات متحده',
   israel: 'اسرائیل',
   un: 'سازمان ملل',

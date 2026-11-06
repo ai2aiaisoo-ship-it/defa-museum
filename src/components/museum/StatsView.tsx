@@ -186,5 +186,5 @@ function CONFIDENCE_LABELS_A(k: string): string {
   return map[k] ?? k
 }
 function sideName(s: string): string {
-  return ({ iran: 'ایران', iraq: 'عراق', mek: 'مجاهدین خلق', us: 'آمریکا', israel: 'اسرائیل' } as Record<string, string>)[s] ?? s
+  return ({ iran: 'ایران', iraq: 'عراق', mek: 'منافقین', us: 'آمریکا', israel: 'اسرائیل' } as Record<string, string>)[s] ?? s
 }

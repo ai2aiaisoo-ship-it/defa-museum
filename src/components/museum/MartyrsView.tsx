@@ -41,7 +41,7 @@ function MartyrPortrait({ m, className }: { m: Martyr; className?: string }) {
     // جایگزین محترمانه: قاب خوشنویسی با نام شهید — تا استخراج پرتره رسمی از آرشیو بنیاد شهید
     <div className={`relative flex flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed bg-gradient-to-b from-muted/60 to-background ${className ?? ''}`}>
       <span className="text-3xl opacity-70">✦</span>
-      <span className="mt-2 px-3 text-center text-sm font-extrabold leading-7">{m.name}</span>
+      <span className="mt-2 px-3 text-center text-sm font-extrabold leading-7">شهید {m.name}</span>
       <span className="mt-1 px-3 pb-3 text-center text-[9px] text-muted-foreground">پرتره در انتظار استخراج از آرشیو رسمی</span>
     </div>
   )
@@ -55,7 +55,7 @@ function MartyrCard({ m, onOpen }: { m: Martyr; onOpen: (m: Martyr) => void }) {
         <MartyrPortrait m={m} className="h-28 w-24 shrink-0" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-extrabold">{m.name}</span>
+            <span className="font-extrabold">شهید {m.name}</span>
             <Badge variant="outline" className={`text-[10px] font-extrabold ${ORG_TONE[m.org]}`}>{MARTYR_ORG_LABELS[m.org]}</Badge>
             <Badge variant="outline" className="text-[10px]">{MARTYR_ROLE_LABELS[m.roleType]}</Badge>
           </div>
@@ -87,7 +87,7 @@ function MartyrDialog({ m, onClose, go }: { m: Martyr | null; onClose: () => voi
     <Dialog open={!!m} onOpenChange={v => !v && onClose()}>
       <DialogContent className="max-h-[88vh] max-w-3xl overflow-y-auto scrollbar-thin">
         <DialogHeader>
-          <DialogTitle className="text-right text-2xl font-extrabold text-primary">{m.name}</DialogTitle>
+          <DialogTitle className="text-right text-2xl font-extrabold text-primary">شهید {m.name}</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 md:grid-cols-[160px_1fr]">
           <MartyrPortrait m={m} className="aspect-[3/4] w-full md:aspect-auto md:h-52" />

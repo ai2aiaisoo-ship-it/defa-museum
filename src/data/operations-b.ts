@@ -81,7 +81,7 @@ export const OPERATIONS_B: Operation[] = [
     regionEn: 'Haj Omran, Choman Mustafa',
     center: { lat: 36.19, lng: 45.06, label: 'حاج‌عمران' },
     commanders: [
-      { name: 'مصطفی ردانی‌پور', role: 'فرمانده قرارگاه فتح سپاه (کشته شد)', side: 'iran' },
+      { name: 'مصطفی ردانی‌پور', role: 'فرمانده قرارگاه فتح سپاه (به شهادت رسید)', side: 'iran' },
     ],
     objectives: 'تصرف پادگان حاج‌عمران، تسلط بر جاده پیرانشهر—رواندوز و فشار بر کرکوک.',
     background: 'با همکاری پیشمرگه‌های کردستانی اجرا شد؛ بر اساس منابع ایرانی، طرح توسط حزب دموکرات کردستان ایران لو رفت.',
@@ -181,7 +181,7 @@ export const OPERATIONS_B: Operation[] = [
     regionEn: 'Hoor al-Hoveyzeh, Majnoon Islands',
     center: { lat: 31.06, lng: 47.35, label: 'جزایر مجنون' },
     commanders: [
-      { name: 'محمدابراهیم همت', role: 'فرمانده لشکر ۲۷ محمد رسول‌الله (کشته شد)', side: 'iran' },
+      { name: 'محمدابراهیم همت', role: 'فرمانده لشکر ۲۷ محمد رسول‌الله (به شهادت رسید)', side: 'iran' },
       { name: 'محمدحسن شریفی‌رودمعانی (محمد حسن‌زاده)', role: 'فرمانده تکاور', side: 'iran' },
     ],
     objectives: 'عبور از هورالهویزه، تصرف جزایر مجنون و دستیابی به دجله.',

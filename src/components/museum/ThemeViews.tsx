@@ -173,7 +173,7 @@ export function MekOpsView({ go }: { go: (v: string, p?: string) => void }) {
     <div className="space-y-8">
       <section className="hero-vignette rounded-3xl border p-6 md:p-10">
         <Badge variant="outline" className="mb-3">فصل مستقل</Badge>
-        <h1 className="museum-title text-3xl md:text-4xl">سازمان مجاهدین خلق در جنگ</h1>
+        <h1 className="museum-title text-3xl md:text-4xl">سازمان منافقین در جنگ</h1>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
           از مبارزه مسلحانه داخلی (۱۳۶۰) تا استقرار در عراق (۱۳۶۵) و تهاجم فروغ جاویدان (مرداد ۱۳۶۷). برای روایت کامل تاریخی، فصل ویژه «تابستان ۱۳۶۷» را ببینید.
         </p>
