@@ -16,16 +16,29 @@ import { GalleryView, DocumentaryView } from './MediaViews'
 import { AssistantView } from './AssistantView'
 import { LearnView, GlossaryView, MapQuizView } from './LearnView'
 import { SourcesView, SearchView, AdminView, DocsView } from './UtilityViews'
+import { RootsView } from './RootsView'
+import { MartyrsView } from './MartyrsView'
+import { AviniView } from './AviniView'
+import { ArchiveView } from './ArchiveView'
+import { SaddamView } from './SaddamView'
 import { toFa } from '@/lib/jalali'
 
 export type ViewKey =
   | 'home' | 'atlas' | 'operations' | 'timeline' | 'stats'
+  | 'roots' | 'martyrs' | 'avini' | 'archive' | 'saddam-dossier'
   | 'khorramshahr' | 'mersad' | 'war-of-cities' | 'tanker-war' | 'air-war' | 'naval-war' | 'iraq-ops' | 'mek-ops'
   | 'commanders' | 'forces' | 'equipment' | 'foreign' | 'resolutions'
   | 'gallery' | 'documentaries' | 'sources' | 'glossary'
   | 'assistant' | 'learn' | 'map-quiz' | 'search' | 'admin' | 'docs'
 
 const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }[] }[] = [
+  {
+    group: 'فصل ریشه‌ها (فاز ۲)',
+    items: [
+      { key: 'roots', label: 'ریشه‌های جنگ؛ از پهلوی تا ۳۱ شهریور', icon: '🌱' },
+      { key: 'saddam-dossier', label: 'پرونده تصمیم صدام برای حمله', icon: '📁' },
+    ],
+  },
   {
     group: 'تالارهای اصلی',
     items: [
@@ -34,6 +47,14 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
       { key: 'timeline', label: 'خط زمانی هشت‌ساله', icon: '📅' },
       { key: 'operations', label: 'اطلس عملیات‌ها', icon: '⚔' },
       { key: 'stats', label: 'مرکز آمار و تلفات', icon: '📊' },
+    ],
+  },
+  {
+    group: 'شهدا و روایت فتح (فاز ۲)',
+    items: [
+      { key: 'martyrs', label: 'ستارگان دفاع مقدس؛ خط زمانی شهدا', icon: '🌙' },
+      { key: 'avini', label: 'روایت فتح؛ دریچه دوربین آوینی', icon: '🎥' },
+      { key: 'archive', label: 'آرشیو جامع چندرسانه‌ای', icon: '📦' },
     ],
   },
   {
@@ -141,6 +162,11 @@ export function MuseumApp() {
       case 'operations': return <OperationsView focusId={param} go={go} />
       case 'timeline': return <TimelineView go={go} />
       case 'stats': return <StatsView />
+      case 'roots': return <RootsView go={go} />
+      case 'martyrs': return <MartyrsView go={go} />
+      case 'avini': return <AviniView go={go} />
+      case 'archive': return <ArchiveView go={go} />
+      case 'saddam-dossier': return <SaddamView go={go} />
       case 'khorramshahr': return <KhorramshahrView go={go} />
       case 'mersad': return <MersadView go={go} />
       case 'war-of-cities': return <WarOfCitiesView go={go} />
@@ -155,7 +181,7 @@ export function MuseumApp() {
       case 'foreign': return <ForeignView />
       case 'resolutions': return <ResolutionsView />
       case 'gallery': return <GalleryView />
-      case 'documentaries': return <DocumentaryView go={go} />
+      case 'documentaries': return <DocumentaryView go={go} focusId={param} />
       case 'sources': return <SourcesView />
       case 'glossary': return <GlossaryView />
       case 'assistant': return <AssistantView />
@@ -177,7 +203,7 @@ export function MuseumApp() {
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-xl">🏛</span>
             <span className="text-right">
               <span className="block text-sm font-extrabold leading-5">موزه دیجیتال جنگ ایران و عراق</span>
-              <span className="block text-[10px] text-muted-foreground">اطلس تعاملی ۱۳۵۹–۱۳۶۷ • نسخه پژوهشی {toFa('1.0')}</span>
+              <span className="block text-[10px] text-muted-foreground">روایت ایرانی، اسناد واقعی، آرشیو چندملیتی — نسخه پژوهشی {toFa('2.0')}</span>
             </span>
           </button>
           <div className="mr-auto flex items-center gap-2">
@@ -216,7 +242,7 @@ export function MuseumApp() {
       {/* پابرگ چسبان */}
       <footer className="mt-auto border-t bg-card/60">
         <div className="mx-auto flex max-w-[1500px] flex-col items-center justify-between gap-2 px-4 py-4 text-center text-[11px] leading-5 text-muted-foreground md:flex-row md:text-right">
-          <p>موزه دیجیتال و اطلس تعاملی جنگ ایران و عراق (۱۳۵۹–۱۳۶۷) — پروژه پژوهشی-آموزشی. روایت‌ها چندمنبعی و بی‌طرف؛ آمار با درجه اطمینان A/B/C ارائه می‌شود.</p>
+          <p>موزه دیجیتال و اطلس تعاملی جنگ ایران و عراق (۱۳۵۹–۱۳۶۷) — پروژه پژوهشی-آموزشی با روایت تاریخی ایرانی. روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف ثبت است و آمار با درجه اطمینان A/B/C ارائه می‌شود.</p>
           <p>مسئولیت آغاز تجاوز بر اساس بند ۶ قطعنامه ۵۹۸ و گزارش هیئت حقیقت‌یاب دبیرکل (دسامبر ۱۹۹۱) به عراق مستند شده است.</p>
         </div>
       </footer>

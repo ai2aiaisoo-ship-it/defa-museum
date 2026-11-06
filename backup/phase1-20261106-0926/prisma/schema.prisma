@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// اصلاحیه‌های محتوایی پنل مدیریت موزه
+// گردش کار: pending_review → approved → applied (نقش تاریخ‌نگار در محیط عملیاتی)
+model ContentEdit {
+  id        String   @id @default(cuid())
+  targetId  String // شناسه پرونده (عملیات/رویداد/…)
+  note      String // متن اصلاحیه یا ادعای منبع‌دار جدید
+  status    String   @default("pending_review")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// لاگ رویدادهای موزه (امنیت و ردیابی)
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  detail    String?
+  createdAt DateTime @default(now())
+}

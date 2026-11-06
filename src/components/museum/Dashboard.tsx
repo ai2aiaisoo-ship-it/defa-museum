@@ -7,6 +7,8 @@ import { OPERATIONS, RESULT_LABELS, SIDE_LABELS } from '@/data/operations'
 import { PERIODS } from '@/data/periods'
 import { EVENTS } from '@/data/events'
 import { WAR_STATS } from '@/data/statistics'
+import { MARTYRS, MARTYR_RESEARCH } from '@/data/martyrs'
+import { MEDIA_ITEMS, VIDEO_ITEMS } from '@/data/media-registry'
 import { MapAtlas } from './MapAtlas'
 import { formatJalali, toFa } from '@/lib/jalali'
 import { ResultBadge, SectionHeader, ConfidenceBadge } from './ui-bits'
@@ -40,19 +42,45 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
       <section className="hero-vignette relative overflow-hidden rounded-3xl border">
         <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, currentColor 0 1px, transparent 1px 14px)' }} />
         <div className="relative p-6 md:p-12">
-          <Badge className="mb-4" variant="outline">موزه دیجیتال • اطلس تعاملی • ۱۳۵۹ تا ۱۳۶۷</Badge>
+          <Badge className="mb-4" variant="outline">موزه دیجیتال • روایت ایرانی • اطلس تعاملی • نسخه ۲.۰ (فاز ۲)</Badge>
           <h1 className="museum-title text-3xl md:text-5xl font-extrabold leading-tight">
             جنگ هشت‌ساله عراق علیه ایران
           </h1>
           <p className="mt-4 max-w-2xl text-sm md:text-base leading-8 text-muted-foreground">
-            یک موزه دیجیتال پژوهش‌محور: همه عملیات‌های شناخته‌شده دو طرف با طبقه‌بندی بی‌طرف نتیجه، خط زمانی هشت‌ساله، نقشه تحولات جغرافیایی، آمار منبع‌دار با درجه اطمینان، و اسناد قابل پیگیری. آمارِ بدون منبع و دامنه اختلاف منابع، در این موزه صادقانه اعلام می‌شود.
+            موزه دیجیتال دفاع مقدس با روایت تاریخی ایرانی: روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف بررسی می‌شود،
+            فصل کامل «ریشه‌های جنگ از پهلوی تا ۳۱ شهریور»، خط زمانی شهدای شاخص، آرشیو چندرسانه‌ای با شناسنامه کامل،
+            پرونده روایت فتح شهید آوینی و آمار منبع‌دار با درجه اطمینان.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button onClick={() => go('atlas')} className="font-bold">🗺 ورود به اطلس تعاملی</Button>
+            <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
+            <Button variant="outline" onClick={() => go('martyrs')} className="font-bold">🌙 خط زمانی شهدا (جدید)</Button>
+            <Button variant="outline" onClick={() => go('atlas')} className="font-bold">🗺 اطلس تعاملی</Button>
             <Button variant="outline" onClick={() => go('operations')} className="font-bold">اطلس عملیات‌ها</Button>
+            <Button variant="outline" onClick={() => go('archive')} className="font-bold">آرشیو چندرسانه‌ای</Button>
             <Button variant="outline" onClick={() => go('stats')} className="font-bold">مرکز آمار</Button>
-            <Button variant="outline" onClick={() => go('assistant')} className="font-bold">🤖 راهنمای تاریخ جنگ</Button>
           </div>
+        </div>
+      </section>
+
+      {/* تالارهای جدید فاز ۲ */}
+      <section>
+        <SectionHeader kicker="فاز ۲ — تالارهای جدید" title="روایت ایرانی، شهدا و آرشیو چندملیتی" desc="چهار تالار جدید: فصل ریشه‌های جنگ (از معاهده‌های مرزی تا ۳۱ شهریور)، پرونده تصمیم صدام، خط زمانی شهدای شاخص و بخش ویژه روایت فتح با آرشیو جامع چندرسانه‌ای." />
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { key: 'roots', icon: '🌱', title: 'ریشه‌های جنگ', desc: 'از عهدنامه ارزروم و قرارداد ۱۹۳۷ تا الجزایر ۱۹۷۵، انقلاب و ماه‌به‌ماه ۱۳۵۹ — با تفکیک روایت/سند/بررسی.', badge: `${toFa(4)} معاهده + ماه‌به‌ماه ۱۳۵۹` },
+            { key: 'martyrs', icon: '🌙', title: 'ستارگان دفاع مقدس', desc: 'خط زمانی شهادت شهدای شاخص با تاریخ راستی‌آزمایی‌شده و جدول شفاف بررسی فهرست پیشنهادی.', badge: `${toFa(MARTYRS.length)} پرونده + ${toFa(MARTYR_RESEARCH.length)} بررسی` },
+            { key: 'avini', icon: '🎥', title: 'روایت فتح؛ آوینی', desc: 'آرشیو ویژه شهید آوینی با اتصال مستقیم مستند به عملیات و نقشه محل تصویربرداری.', badge: 'روایت فتح + حقیقت سینما' },
+            { key: 'archive', icon: '📦', title: 'آرشیو چندرسانه‌ای', desc: 'شناسنامه کامل هر رسانه: منبع، مجوز، اصالت و وضعیت بررسی کارشناسی؛ منابع ایرانی، عراقی و بین‌المللی.', badge: `${toFa(MEDIA_ITEMS.length + VIDEO_ITEMS.length)} رسانه ثبت‌شده` },
+          ].map(c => (
+            <Card key={c.key} className="museum-card cursor-pointer" onClick={() => go(c.key)}>
+              <CardContent className="p-4">
+                <div className="text-2xl">{c.icon}</div>
+                <div className="mt-2 text-sm font-extrabold">{c.title}</div>
+                <p className="mt-1 text-[11px] leading-5 text-muted-foreground">{c.desc}</p>
+                <Badge variant="outline" className="mt-2 text-[10px]">{c.badge}</Badge>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 

@@ -6,7 +6,11 @@ import { OPERATIONS } from '@/data/operations'
 import { EVENTS } from '@/data/events'
 import { COMMANDERS } from '@/data/commanders'
 import { GLOSSARY } from '@/data/glossary'
-import { toFa } from '@/lib/jalali'
+import { MARTYRS } from '@/data/martyrs'
+import { MEDIA_ITEMS, VIDEO_ITEMS } from '@/data/media-registry'
+import { TREATIES } from '@/data/roots'
+import { RAVAYAT_FATH } from '@/data/avini'
+import { toFa, formatJalali } from '@/lib/jalali'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { ConfidenceBadge, SectionHeader } from './ui-bits'
@@ -52,19 +56,23 @@ export function SearchView({ go }: { go: (v: string, p?: string) => void }) {
   const norm = (s: string) => s.replace(/[أإآ]/g, 'ا').replace(/ی/g, 'ي').replace(/\u200c/g, ' ')
   const nq = norm(q.trim())
   const results = useMemo(() => {
-    if (nq.length < 2) return { ops: [], evs: [], cmds: [], terms: [] }
+    if (nq.length < 2) return { ops: [], evs: [], cmds: [], terms: [], mrtrs: [], media: [], treatises: [], rf: [] }
     return {
       ops: OPERATIONS.filter(o => norm(o.faName + o.enName + o.region + o.tags.join() + o.objectives).includes(nq)).slice(0, 8),
       evs: EVENTS.filter(e => norm(e.faTitle + e.desc).includes(nq)).slice(0, 8),
       cmds: COMMANDERS.filter(c => norm(c.name + c.role + c.bio).includes(nq)).slice(0, 5),
       terms: GLOSSARY.filter(g => norm(g.term + g.definition).includes(nq)).slice(0, 5),
+      mrtrs: MARTYRS.filter(m => norm(m.name + m.role + m.bio + m.place).includes(nq)).slice(0, 6),
+      media: [...MEDIA_ITEMS, ...VIDEO_ITEMS].filter(m => norm(m.title + m.desc + m.sourceName + (m.people ?? []).join()).includes(nq)).slice(0, 6),
+      treatises: TREATIES.filter(t => norm(t.faName + t.enName + t.legacy).includes(nq)).slice(0, 4),
+      rf: RAVAYAT_FATH.filter(r => norm(r.topic + r.note).includes(nq)).slice(0, 4),
     }
   }, [nq])
-  const total = results.ops.length + results.evs.length + results.cmds.length + results.terms.length
+  const total = results.ops.length + results.evs.length + results.cmds.length + results.terms.length + results.mrtrs.length + results.media.length + results.treatises.length + results.rf.length
   return (
     <div>
-      <SectionHeader kicker="جست‌وجوی پیشرفته" title="جست‌وجو در کل موزه" desc="عملیات‌ها، رویدادها، فرماندهان و واژه‌نامه — همه در یک جست‌وجو." />
-      <input value={q} onChange={e => setQ(e.target.value)} autoFocus placeholder="مثلاً: خرمشهر، قطعنامه ۵۹۸، سلاح شیمیایی، صیاد شیرازی…" className="mb-6 w-full rounded-xl border bg-background px-4 py-3 text-sm" />
+      <SectionHeader kicker="جست‌وجوی پیشرفته" title="جست‌وجوی سراسری در کل موزه" desc="عملیات‌ها، رویدادها، شهدا، فرماندهان، رسانه‌ها، معاهده‌ها، روایت فتح و واژه‌نامه — همه در یک جست‌وجو. مثلاً با جست‌وجوی «محمد جهان‌آرا» زندگی‌نامه، تصاویر، تاریخ شهادت، عملیات‌ها و مستندهای مرتبط در دسترس است." />
+      <input value={q} onChange={e => setQ(e.target.value)} autoFocus placeholder="مثلاً: خرمشهر، قطعنامه ۵۹۸، الجزایر، روایت فتح، محمد جهان‌آرا…" className="mb-6 w-full rounded-xl border bg-background px-4 py-3 text-sm" />
       {nq.length >= 2 && <p className="mb-3 text-xs text-muted-foreground">{toFa(total)} نتیجه</p>}
       <div className="space-y-4">
         {results.ops.length > 0 && (
@@ -85,6 +93,26 @@ export function SearchView({ go }: { go: (v: string, p?: string) => void }) {
         {results.terms.length > 0 && (
           <div><h4 className="mb-2 text-sm font-extrabold text-primary">واژه‌نامه</h4>
             {results.terms.map(t => <div key={t.id} className="mb-1.5 rounded-lg border bg-card/70 p-2.5 text-sm">📖 <span className="font-bold">{t.term}</span> — <span className="text-xs text-muted-foreground">{t.definition}</span></div>)}
+          </div>
+        )}
+        {results.mrtrs.length > 0 && (
+          <div><h4 className="mb-2 text-sm font-extrabold text-primary">شهدای شاخص</h4>
+            {results.mrtrs.map(m => <button key={m.id} onClick={() => go('martyrs')} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">🌙 {m.name} <span className="text-xs text-muted-foreground">— شهادت {m.dateLabel ?? formatJalali(m.martyrdomDate)}، {m.place}</span></button>)}
+          </div>
+        )}
+        {results.media.length > 0 && (
+          <div><h4 className="mb-2 text-sm font-extrabold text-primary">آرشیو چندرسانه‌ای</h4>
+            {results.media.map(m => <button key={m.id} onClick={() => go('archive')} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">{m.type === 'video' ? '🎬' : '📷'} {m.title} <span className="text-xs text-muted-foreground">— {m.sourceName}</span></button>)}
+          </div>
+        )}
+        {results.treatises.length > 0 && (
+          <div><h4 className="mb-2 text-sm font-extrabold text-primary">معاهده‌ها (فصل ریشه‌ها)</h4>
+            {results.treatises.map(t => <button key={t.id} onClick={() => go('roots')} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">📜 {t.faName} <span className="text-xs text-muted-foreground">— {t.yearLabel}</span></button>)}
+          </div>
+        )}
+        {results.rf.length > 0 && (
+          <div><h4 className="mb-2 text-sm font-extrabold text-primary">روایت فتح (شهید آوینی)</h4>
+            {results.rf.map(r => <button key={r.id} onClick={() => go('avini')} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">🎥 {r.topic}</button>)}
           </div>
         )}
         {nq.length >= 2 && total === 0 && <p className="text-sm text-muted-foreground">نتیجه‌ای یافت نشد.</p>}
@@ -138,15 +166,15 @@ export function AdminView() {
 export function DocsView({ go }: { go: (v: string, p?: string) => void }) {
   return (
     <div>
-      <SectionHeader kicker="مستندات" title="نصب، اجرا، توسعه و پشتیبان‌گیری" />
+      <SectionHeader kicker="مستندات" title="نصب، اجرا، معماری فاز ۲ و راهنمای مدیریت محتوا" />
       <div className="space-y-4 text-sm leading-8">
         <Card><CardContent className="p-5">
           <h4 className="mb-2 font-extrabold text-primary">۱) اجرای محلی</h4>
           <pre className="overflow-x-auto rounded-lg bg-muted/60 p-3 text-xs" dir="ltr">{`bun install\nbun run dev   # http://localhost:3000`}</pre>
-          <p className="mt-2 text-xs text-muted-foreground">پشته فناوری: Next.js 16 (App Router) + TypeScript + Tailwind CSS 4 + shadcn/ui + Recharts + Prisma/SQLite + z-ai-web-dev-sdk (فقط سمت سرور).</p>
+          <p className="mt-2 text-xs text-muted-foreground">پشته فناوری: Next.js 16 (App Router) + TypeScript + Tailwind CSS 4 + shadcn/ui + Recharts + Prisma/SQLite + z-ai-web-dev-sdk (فقط سمت سرور). نسخه ۲.۰ = فاز ۱ (اطلس و عملیات‌ها) + فاز ۲ (روایت ایرانی، ریشه‌ها، شهدا، آرشیو چندرسانه‌ای).</p>
         </CardContent></Card>
         <Card><CardContent className="p-5">
-          <h4 className="mb-2 font-extrabold text-primary">۲) معماری داده</h4>
+          <h4 className="mb-2 font-extrabold text-primary">۲) معماری داده — فاز ۱</h4>
           <ul className="list-disc space-y-1 pr-5 text-xs leading-6">
             <li>محتوای منبع‌دار در <code dir="ltr">src/data/*.ts</code> — عملیات‌ها (operations-a/b/c)، رویدادها، فرماندهان، تجهیزات، آمار ادعایی، قطعنامه‌ها، واژه‌نامه، آزمون‌ها.</li>
             <li>هر عدد آماری از نوع <code dir="ltr">StatClaim</code> است: مقدار، واحد، طرف، دوره، منطقه، منبع، روش، درجه اطمینان و توضیح اختلاف.</li>
@@ -155,15 +183,31 @@ export function DocsView({ go }: { go: (v: string, p?: string) => void }) {
           </ul>
         </CardContent></Card>
         <Card><CardContent className="p-5">
-          <h4 className="mb-2 font-extrabold text-primary">۳) توسعه و افزودن پرونده جدید</h4>
-          <p className="text-xs leading-6">برای افزودن عملیات، رکورد جدیدی با ساختار <code dir="ltr">Operation</code> به فایل دوره مربوط اضافه کنید؛ تاریخ‌ها را با دو منبع مستقل تطبیق دهید و اگر آمار معتبر نیست، صریحاً «آمار قابل اتکا یافت نشد» بنویسید و وضعیت را <code dir="ltr">under_research</code> بگذارید. موزه هیچ فیلد خالی را با عدد ساختگی پر نمی‌کند.</p>
+          <h4 className="mb-2 font-extrabold text-primary">۳) معماری داده — فاز ۲ (روایت ایرانی و آرشیو)</h4>
+          <ul className="list-disc space-y-1 pr-5 text-xs leading-6">
+            <li><code dir="ltr">roots.ts</code>: فصل ریشه‌ها — چهار معاهده (ارزروم، قسطنطنیه، ۱۹۳۷، الجزایر)، چهار دوره تاریخی، ماه‌به‌ماه ۱۳۵۹ و خط زمانی ۳۱ شهریور. هر معاهده بخش مستقل «بررسی اسناد و روایت‌های تاریخی» دارد.</li>
+            <li><code dir="ltr">narratives.ts</code>: لایه «روایت تاریخی اصلی (چارچوب ایران)» برای عملیات‌های شاخص — سطح الف؛ متن چندمنبعی فاز ۱ = سطح ب؛ فیلد narrativeDiff = سطح ج.</li>
+            <li><code dir="ltr">martyrs.ts</code>: پرونده شهدای شاخص با تاریخ راستی‌آزمایی‌شده + جدول MARTYR_RESEARCH (شفاف‌سازی شهادت پس از جنگ، تفکیک چهره شاخص مقاومت از شهید، و دسته‌های نیازمند استخراج آرشیوی).</li>
+            <li><code dir="ltr">media-registry.ts</code>: شناسنامه رسانه (بخش ۸.۲) — منبع، مجوز، اصالت، وضعیت بررسی کارشناسی، برچسب واقعی/بازسازی؛ + فهرست آرشیوهای ایرانی/عراقی/بین‌المللی و شرایط استفاده.</li>
+            <li><code dir="ltr">avini.ts</code> و <code dir="ltr">saddam.ts</code>: بخش روایت فتح (اتصال مستند به عملیات) و پرونده تصمیم صدام (با سیاست راستی‌آزمایی فیلم).</li>
+            <li>جانمایی رسانه: هر عکس/فیلم فقط با ارتباط تاریخی ثبت‌شده (opIds) در صفحه عملیات نمایش داده می‌شود؛ جایی که رسانه نیست، صریحاً اعلام می‌شود و جایگزین نامرتبط قرار نمی‌گیرد.</li>
+          </ul>
         </CardContent></Card>
         <Card><CardContent className="p-5">
-          <h4 className="mb-2 font-extrabold text-primary">۴) پشتیبان‌گیری</h4>
-          <p className="text-xs leading-6">پشتیبان‌گیری محتوا = نگهداری نسخه‌پشتیبان از <code dir="ltr">src/data/</code> و <code dir="ltr">prisma/db</code> (فایل پایگاه داده). توصیه: کامیت منظم در گیت و خروجی JSON دوره‌ای از جدول اصلاحیه‌ها.</p>
+          <h4 className="mb-2 font-extrabold text-primary">۴) توسعه و افزودن پرونده جدید</h4>
+          <p className="text-xs leading-6">برای افزودن عملیات، رکورد جدیدی با ساختار <code dir="ltr">Operation</code> به فایل دوره مربوط اضافه کنید؛ تاریخ‌ها را با دو منبع مستقل تطبیق دهید و اگر آمار معتبر نیست، صریحاً «آمار قابل اتکا یافت نشد» بنویسید و وضعیت را <code dir="ltr">under_research</code> بگذارید. برای افزودن شهید، رکورد <code dir="ltr">Martyr</code> را با تاریخ قابل مرتب‌سازی ( martyrdomDate) ثبت کنید؛ برای رسانه، رکورد <code dir="ltr">MediaItem</code> با وضعیت بررسی کارشناسی. موزه هیچ فیلد خالی را با عدد یا تصویر ساختگی پر نمی‌کند.</p>
+        </CardContent></Card>
+        <Card><CardContent className="p-5">
+          <h4 className="mb-2 font-extrabold text-primary">۵) پشتیبان‌گیری و کنترل کیفیت فاز ۲</h4>
+          <ul className="list-disc space-y-1 pr-5 text-xs leading-6">
+            <li>پشتیبان نسخه پیش از فاز ۲ در پوشه <code dir="ltr">backup/</code> نگهداری می‌شود؛ پشتیبان‌گیری دوره‌ای از <code dir="ltr">src/data/</code> و <code dir="ltr">prisma/db</code> توصیه است.</li>
+            <li>تاریخ‌ها: همه تاریخ‌های کلیدی با الگوریتم استاندارد جلالی (scripts/jcheck.mjs) راستی‌آزمایی شده‌اند؛ خطاهای تاریخی یافت‌شده در بازبینی فاز ۲ اصلاح شده‌اند (از جمله ۲۶ شهریور برای لغو توافق الجزایر و ۱۴ خرداد برای اچ-۳).</li>
+            <li>گزارش موارد فاقد سند در تالار آرشیو (کارت «گزارش شفافیت») نگهداری می‌شود.</li>
+          </ul>
         </CardContent></Card>
         <div className="flex flex-wrap gap-2">
           <Button variant="outline" onClick={() => go('sources')} className="font-bold">مشاهده بانک منابع</Button>
+          <Button variant="outline" onClick={() => go('archive')} className="font-bold">آرشیو و شناسنامه رسانه‌ها</Button>
           <Button variant="outline" onClick={() => go('admin')} className="font-bold">پنل مدیریت</Button>
         </div>
       </div>

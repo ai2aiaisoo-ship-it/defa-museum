@@ -40,8 +40,8 @@ export function GalleryView() {
   )
 }
 
-export function DocumentaryView({ go }: { go: (v: string, p?: string) => void }) {
-  const [docId, setDocId] = useState(DOCUMENTARIES[0].id)
+export function DocumentaryView({ go, focusId }: { go: (v: string, p?: string) => void; focusId?: string }) {
+  const [docId, setDocId] = useState(DOCUMENTARIES.find(d => d.id === focusId)?.id ?? DOCUMENTARIES[0].id)
   const [ch, setCh] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [t, setT] = useState(0)

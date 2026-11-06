@@ -1,0 +1,72 @@
+import type { HistoryEvent } from './types'
+
+// ─── رویدادهای کلان جنگ (سیاسی، دیپلماتیک، انسانی، حقوقی) ───
+export const EVENTS: HistoryEvent[] = [
+  // ۱۳۵۹
+  { id: 'e-algiers-abrogate', faTitle: 'لغو یک‌طرفه توافق الجزایر توسط عراق', date: '1359-06-17', year: 1359, category: 'diplomatic', side: 'iraq', desc: 'صدام حسین در نشست سران عرب در عمان، قرارداد ۱۹۷۵ الجزایر را پاره کرد و آن را نامعتبر اعلام نمود.', sourceIds: ['iranica-war', 'unscr-598'], important: true },
+  { id: 'e-invasion-start', faTitle: 'حمله هوایی و تهاجم سراسری عراق به ایران', date: '1359-07-31', year: 1359, category: 'military', side: 'iraq', desc: 'حمله به پایگاه‌های هوایی ایران و آغاز تهاجم زمینی در پنج محور؛ آغاز رسمی جنگ هشت‌ساله.', sourceIds: ['iranica-war', 'unscr-598'], important: true },
+  { id: 'e-kaman99', faTitle: 'عملیات کمان ۹۹ نیروی هوایی ایران', date: '1359-07-31', year: 1359, category: 'military', side: 'iran', desc: 'واکنش هوایی گسترده ایران به پایگاه‌ها و شهرهای عراق در همان روز نخست.', sourceIds: ['razoux'] },
+  { id: 'e-unscr479', faTitle: 'قطعنامه ۴۷۹ شورای امنیت — نخستین واکنش سازمان ملل', date: '1359-07-08', year: 1359, category: 'legal', desc: 'قطعنامه درخواست آتش‌بس کرد اما بر لزوم عقب‌نشینی عراق از خاک اشغالی تأکید نکرد؛ ایران آن را نپذیرفت.', sourceIds: ['unscr-598', 'iranica-war'], important: true },
+  { id: 'e-khorramshahr-fall', faTitle: 'سقوط خرمشهر پس از ۳۴ روز مقاومت', date: '1359-08-04', year: 1359, category: 'military', side: 'iraq', desc: 'خرمشهر به تصرف عراق درآمد؛ نماد اشغال برای هشت سال بعد.', sourceIds: ['fa-wiki-war'], important: true },
+  { id: 'e-susangerd-lib', faTitle: 'آزادسازی سوسنگرد', date: '1359-08-26', year: 1359, category: 'military', side: 'iran', desc: 'نخستین آزادسازی شهری با فرماندهی مشترک ارتش و سپاه.', sourceIds: ['wiki-susangerd'] },
+  { id: 'e-morvarid', faTitle: 'عملیات مروارید — قطع صادرات دریایی عراق', date: '1359-09-07', year: 1359, category: 'military', side: 'iran', desc: 'انهدام سکوهای البکر و الامیه و فلج شدن نیروی دریایی عراق؛ ۷ آذر روز نیروی دریایی ارتش نام گرفت.', sourceIds: ['wiki-morvarid'], important: true },
+  { id: 'e-andimeshk', faTitle: 'بمباران بازار اندیمشک', date: '1359-08-07', year: 1359, category: 'humanitarian', side: 'iraq', desc: 'حمله هوایی عراق به بازار اندیمشک با ده‌ها کشته غیرنظامی؛ از نخستین حملات به مناطق غیرنظامی.', sourceIds: ['fa-wiki-war'] },
+  // ۱۳۶۰
+  { id: 'e-h3', faTitle: 'عملیات اچ-۳ نیروی هوایی ایران', date: '1360-01-14', year: 1360, category: 'military', side: 'iran', desc: 'حمله به پایگاه‌های عمقی اچ-۳ در غرب عراق و انهدام ده‌ها جنگنده روی زمین.', sourceIds: ['razoux'], important: true },
+  { id: 'e-osirak', faTitle: 'حمله اسرائیل به رآکتور اوسیراک', date: '1360-03-17', year: 1360, category: 'military', side: 'israel', desc: 'هشت فانتوم اسرائیلی رآکتور هسته‌ای عراق را نابود کردند؛ شورای امنیت حمله را محکوم کرد (قطعنامه ۴۸۷).', sourceIds: ['razoux'] },
+  { id: 'e-banisadr-dismiss', faTitle: 'عزل ابوالحسن بنی‌صدر از فرماندهی کل قوا', date: '1360-03-10', year: 1360, category: 'political', side: 'iran', desc: 'با حکم امام خمینی بنی‌صدر از فرماندهی نظامی عزل شد؛ مانع اصلی هماهنگی جبهه‌ها کنار رفت.', sourceIds: ['iranica-war'], important: true },
+  { id: 'e-hafte-tir', faTitle: 'انفجار دفتر مرکزی حزب جمهوری اسلامی — کشته شدن رجایی و باهنر', date: '1360-04-07', year: 1360, category: 'political', side: 'mek', desc: 'رئیس‌جمهور و نخست‌وزیر ایران کشته شدند؛ مسئولیت به سازمان مجاهدین خلق نسبت داده شد.', sourceIds: ['fa-wiki-war'], important: true },
+  { id: 'e-samen', faTitle: 'شکست حصر آبادان در ثامن‌الائمه', date: '1360-07-05', year: 1360, category: 'military', side: 'iran', desc: 'نخستین پیروزی کلاسیک مشترک ارتش–سپاه.', sourceIds: ['jang-atlas'], important: true },
+  { id: 'e-iran-iraq-rel', faTitle: 'برقراری روابط دیپلماتیک آمریکا و عراق', date: '1363-09-01', year: 1363, category: 'diplomatic', side: 'us', desc: 'واشنگتن و بغداد روابط دیپلماتیک را رسماً برقرار کردند؛ نشانه جهش پشتیبانی سیاسی آمریکا از بغداد.', sourceIds: ['bbc-chem-us'] },
+  { id: 'e-tariq', faTitle: 'آزادسازی بستان', date: '1360-09-09', year: 1360, category: 'military', side: 'iran', desc: 'طریق‌القدس بستان و دشت آزادگان را آزاد کرد.', sourceIds: ['jang-atlas'] },
+  // ۱۳۶۱
+  { id: 'e-fath', faTitle: 'فتح‌المبین — پاکسازی غرب کرخه', date: '1361-01-02', year: 1361, category: 'military', side: 'iran', desc: 'آزادسازی ۲٫۵۰۰ کیلومتر مربع و اسارت هزاران سرباز عراقی (ادعای منابع ایرانی).', sourceIds: ['jang-atlas'], important: true },
+  { id: 'e-khorramshahr-lib', faTitle: 'آزادسازی خرمشهر — ۳ خرداد ۱۳۶۱', date: '1361-03-03', year: 1361, category: 'military', side: 'iran', desc: 'پایان اشغال خوزستان؛ ۳ خرداد «روز مقاومت، ایثار و پیروزی» نام گرفت.', sourceIds: ['jang-atlas', 'iranica-war'], important: true },
+  { id: 'e-unscr514', faTitle: 'قطعنامه ۵۱۴ شورای امنیت', date: '1361-04-21', year: 1361, category: 'legal', desc: 'درخواست عقب‌نشینی به مرزهای شناخته‌شده؛ عراق پذیرفت، ایران پذیرفت اما عقب‌نشینی یک‌طرفه را بی‌فایده دانست.', sourceIds: ['unscr-598'] },
+  { id: 'e-ramadan-start', faTitle: 'آغاز عملیات رمضان — ورود ایران به خاک عراق', date: '1361-04-22', year: 1361, category: 'military', side: 'iran', desc: 'تغییر راهبرد جنگ به «فشار بر بغداد» با حمله به شرق بصره.', sourceIds: ['jang-atlas'], important: true },
+  // ۱۳۶۲
+  { id: 'e-unscr540', faTitle: 'قطعنامه ۵۴۰ شورای امنیت', date: '1362-08-10', year: 1362, category: 'legal', desc: 'نخستین قطعنامه با توجه جدی به امنیت خلیج فارس و هشدار درباره گسترش جنگ.', sourceIds: ['unscr-598'] },
+  { id: 'e-wc1', faTitle: 'دور نخست جنگ شهرها', date: '1362-11-07', year: 1362, category: 'humanitarian', side: 'iraq', desc: 'بمباران گسترده شهرهای ایران (۷–۲۲ فوریه ۱۹۸۴)؛ پاسخ ایران با اسکاد به بغداد.', sourceIds: ['war-of-cities-wiki'], important: true },
+  { id: 'e-kheibar-majnoon', faTitle: 'تصرف جزایر مجنون در خیبر', date: '1362-12-05', year: 1362, category: 'military', side: 'iran', desc: 'عبور از هورالهویزه و تصرف میدان نفتی مجنون؛ آغاز گزارش‌های گسترده سلاح شیمیایی.', sourceIds: ['jang-atlas', 'unsg-reports-chem'], important: true },
+  { id: 'e-chem-un-1984', faTitle: 'نخستین هیئت کارشناسی سازمان ملل درباره سلاح شیمیایی', date: '1363-01-01', year: 1363, category: 'legal', side: 'un', desc: 'تیم کارشناسان دبیرکل، کاربرد سلاح شیمیایی توسط عراق را تأیید کرد (گزارش S/16433، آوریل ۱۹۸۴).', sourceIds: ['unsg-reports-chem'], important: true },
+  // ۱۳۶۳
+  { id: 'e-nowruz', faTitle: 'آتش‌سوزی میدان نفتی نوروز', date: '1362-12-10', year: 1363, category: 'economic', side: 'iraq', desc: 'حمله هوایی عراق به سکوهای نوروز و آتش‌سوزی چندماهه در خلیج فارس.', sourceIds: ['razoux'] },
+  { id: 'e-ashura-op', faTitle: 'عملیات عاشورا در میمک', date: '1363-07-25', year: 1363, category: 'military', side: 'iran', desc: 'آزادسازی ارتفاعات میمک در جبهه میانی.', sourceIds: ['wiki-ashura'] },
+  { id: 'e-badr-op', faTitle: 'عملیات بدر — تلاش برای عبور از دجله', date: '1363-12-19', year: 1363, category: 'military', side: 'iran', desc: 'با پاتک هوایی و شیمیایی عراق متوقف شد؛ آغاز موج تازه جنگ شهرها.', sourceIds: ['jang-atlas'], important: true },
+  // ۱۳۶۴
+  { id: 'e-unscr552', faTitle: 'قطعنامه ۵۵۲ — محکومیت حمله به کشتی‌های کویت و عربستان', date: '1364-03-11', year: 1364, category: 'legal', side: 'un', desc: 'پاسخ شورای امنیت به حملات ایران به کشتی‌های تجاری کشورهای حامی عراق.', sourceIds: ['unscr-598'] },
+  { id: 'e-faw-capture', faTitle: 'تصرف فاو در والفجر ۸', date: '1364-12-01', year: 1364, category: 'military', side: 'iran', desc: 'قطع دسترسی عراق به خلیج فارس؛ بزرگ‌ترین شوک راهبردی جنگ.', sourceIds: ['jang-atlas'], important: true },
+  { id: 'e-unscr582', faTitle: 'قطعنامه ۵۸۲ شورای امنیت', date: '1364-11-04', year: 1364, category: 'legal', desc: 'پس از سقوط فاو؛ نخستین قطعنامه با ذکر صریح کاربرد سلاح شیمیایی و حمله به غیرنظامیان.', sourceIds: ['unscr-598'] },
+  { id: 'e-mcfarlane', faTitle: 'سفر مخفی رابرت مک‌فارلین به تهران', date: '1364-12-01', year: 1364, category: 'diplomatic', side: 'us', desc: 'رویداد محوری «ایران–کنترا»: فروش مخفیانه موشک‌های آمریکایی به ایران با میانجی‌گری میانی‌ها.', sourceIds: ['razoux', 'bbc-chem-us'], important: true },
+  { id: 'e-mehran-retake', faTitle: 'اشغال دوباره مهران توسط عراق', date: '1365-02-10', year: 1365, category: 'military', side: 'iraq', desc: 'عراق پیش از فصل تبلیغاتی، مهران را دوباره اشغال کرد؛ در تیر در کربلای ۱ بازپس‌گیری شد.', sourceIds: ['jang-atlas'] },
+  // ۱۳۶۵
+  { id: 'e-karbala1', faTitle: 'بازپس‌گیری مهران — کربلای ۱', date: '1365-04-09', year: 1365, category: 'military', side: 'iran', desc: 'پاسخ سریع ایران به اشغال تبلیغاتی مهران.', sourceIds: ['jang-atlas'] },
+  { id: 'e-karbala3-naval', faTitle: 'کربلای ۳ — انهدام دوباره سکوهای البکر و الامیه', date: '1365-06-11', year: 1365, category: 'military', side: 'iran', desc: 'توان دریایی عراق در خلیج فارس عملاً از مدار خارج شد.', sourceIds: ['wiki-karbala3'], important: true },
+  { id: 'e-karbala4-fail', faTitle: 'شکست کربلای ۴ در شط‌العرب', date: '1365-10-03', year: 1365, category: 'military', side: 'iran', desc: 'لو رفتن طرح و توقف عملیات با تلفات سنگین؛ تلخ‌ترین شکست اطلاعاتی ایران.', sourceIds: ['jang-atlas'], important: true },
+  { id: 'e-karbala5-start', faTitle: 'آغاز کربلای ۵ — بزرگ‌ترین حمله به بصره', date: '1365-10-19', year: 1365, category: 'military', side: 'iran', desc: 'پیشروی تا ۱۲ کیلومتری بصره؛ شهادت حسین خرازی.', sourceIds: ['jang-atlas'], important: true },
+  { id: 'e-unscr598', faTitle: 'تصویب قطعنامه ۵۹۸ شورای امنیت', date: '1365-10-29', year: 1365, category: 'legal', side: 'un', desc: 'قطعنامه الزام‌آور با هفت خواسته: آتش‌بس، عقب‌نشینی، مبادله اسرا، هیئت حقیقت‌یاب برای مسئولیت جنگ، غرامت و...؛ عراق فوراً پذیرفت، ایران نه.', sourceIds: ['unscr-598'], important: true },
+  // ۱۳۶۶
+  { id: 'e-earnest-will', faTitle: 'آغاز عملیات اراده جدی آمریکا', date: '1366-05-01', year: 1366, category: 'military', side: 'us', desc: 'پرچم‌گذاری مجدد نفتکش‌های کویتی و ورود رسمی ناوگان آمریکا به جنگ نفتکش‌ها.', sourceIds: ['razoux'], important: true },
+  { id: 'e-stark', faTitle: 'اصابت اگزوسه‌های عراقی به ناوچه آمریکایی استارک', date: '1366-02-27', year: 1366, category: 'military', side: 'iraq', desc: '۳۷ ملوان آمریکایی کشته شدند؛ عراق خطای شناسایی را پذیرفت.', sourceIds: ['uss-stark'] },
+  { id: 'e-sardasht', faTitle: 'بمباران شیمیایی سردشت', date: '1366-04-07', year: 1366, category: 'chemical', side: 'iraq', desc: '۱۱۰ شهید رسمی و حدود ۸ هزار مصدوم؛ نخستین حمله شیمیایی به شهر غیرنظامی ایران.', sourceIds: ['sardasht-wiki', 'unsg-reports-chem'], important: true },
+  { id: 'e-nimble', faTitle: 'حمله آمریکایی کمانگیر چابک به سکوهای رشادت', date: '1366-07-27', year: 1366, category: 'military', side: 'us', desc: 'پاسخ آمریکا به اصابت سیلوورم ایرانی به نفتکش سی‌آیل سیتی.', sourceIds: ['us-navy-mantis'] },
+  { id: 'e-chavar', faTitle: 'بمباران زمین فوتبال چوار (ایلام)', date: '1366-12-16', year: 1366, category: 'humanitarian', side: 'iraq', desc: 'حمله هوایی به مسابقه فوتبال جوانان در چوار با ده‌ها کشته؛ از نمادهای بمباران غیرنظامیان.', sourceIds: ['fa-wiki-war'] },
+  // ۱۳۶۷
+  { id: 'e-halabja', faTitle: 'بمباران شیمیایی حلبچه', date: '1366-12-25', year: 1366, category: 'chemical', side: 'iraq', desc: '۳٫۲۰۰ تا ۵٫۰۰۰ غیرنظامی کشته شدند؛ بزرگ‌ترین حمله شیمیایی به شهروندان در تاریخ معاصر.', sourceIds: ['halabja-estimates', 'unsg-reports-chem'], important: true },
+  { id: 'e-hussein-missiles', faTitle: 'موشک‌باران تهران با موشک‌های الحسین', date: '1366-12-10', year: 1366, category: 'military', side: 'iraq', desc: 'آغاز دور پنجم جنگ شهرها؛ نزدیک به ۱۸۹ موشک بالستیک به شهرهای ایران در ۵۰ روز.', sourceIds: ['war-of-cities-wiki'], important: true },
+  { id: 'e-faw-fall', faTitle: 'سقوط فاو — نبرد دوم فاو', date: '1367-01-28', year: 1367, category: 'military', side: 'iraq', desc: 'سقوط فاو ظرف ۳۵ ساعت؛ بزرگ‌ترین شکست میدانی ایران پس از ۱۳۵۹.', sourceIds: ['second-faw'], important: true },
+  { id: 'e-mantis', faTitle: 'عملیات آخوندک — نبرد مستقیم ایران و آمریکا', date: '1367-01-29', year: 1367, category: 'military', side: 'us', desc: 'غرق ناوچه سهند، آسیب صباح و انهدام دو سکو؛ ۵۶ کشته ایرانی (سند رسمی آمریکا).', sourceIds: ['us-navy-mantis'], important: true },
+  { id: 'e-ia655', faTitle: 'سقوط پرواز ۶۵۵ ایران‌ایر', date: '1367-04-12', year: 1367, category: 'humanitarian', side: 'us', desc: '۲۹۰ نفر شامل ۶۶ کودک کشته شدند؛ ناو وینسنس هواپیما را جنگنده تشخیص داد.', sourceIds: ['iran-air-655'], important: true },
+  { id: 'e-majnoon-fall', faTitle: 'بازپس‌گیری مجنون توسط عراق', date: '1367-04-05', year: 1367, category: 'military', side: 'iraq', desc: 'پایان ۴ سال حضور ایران در مجنون.', sourceIds: ['murray-woods'] },
+  { id: 'e-accept-598', faTitle: 'پذیرش قطعنامه ۵۹۸ توسط ایران — «نوشیدن جام زهر»', date: '1367-04-27', year: 1367, category: 'political', side: 'iran', desc: 'امام خمینی پذیرش قطعنامه را اعلام کرد و آن را به «جام زهر» تشبیه نمود؛ پایان راهبرد جنگ.', sourceIds: ['unscr-598', 'murray-woods'], important: true },
+  { id: 'e-forough', faTitle: 'آغاز عملیات فروغ جاویدان سازمان مجاهدین خلق', date: '1367-05-03', year: 1367, category: 'military', side: 'mek', desc: 'تهاجم سازمان با پشتیبانی عراق به کرمانشاه، چند روز پس از پذیرش ۵۹۸.', sourceIds: ['wiki-mersad'], important: true },
+  { id: 'e-mersad', faTitle: 'پیروزی عملیات مرصاد', date: '1367-05-08', year: 1367, category: 'military', side: 'iran', desc: 'شکست کامل فروغ جاویدان؛ آخرین نبرد رزمی جنگ.', sourceIds: ['wiki-mersad'], important: true },
+  { id: 'e-ceasefire', faTitle: 'برقراری آتش‌بس — ۲۹ مرداد ۱۳۶۷ (۲۰ اوت ۱۹۸۸)', date: '1367-05-29', year: 1367, category: 'political', side: 'un', desc: 'آتش‌بس سراسری بر اساس قطعنامه ۵۹۸؛ ناظران UNIIMOG مستقر شدند.', sourceIds: ['unscr-598'], important: true },
+  { id: 'e-majlis', faTitle: 'تشکیل کمیته بررسی مسئولیت جنگ و افشای محرمانگی‌ها', date: '1368-01-01', year: 1368, category: 'political', side: 'iran', desc: 'ایران هیئت حقیقت‌یاب ۵۹۸ را پیگیری کرد؛ گزارش نهایی مسئولیت آغاز جنگ را بر عهده عراق گذاشت.', sourceIds: ['unscr-598'] },
+  { id: 'e-pow-exchange-90', faTitle: 'آغاز تبادل گسترده اسرا پس از نزدیکی ۱۳۶۹', date: '1369-05-01', year: 1369, category: 'humanitarian', desc: 'تبادل گسترده اسرا پس از توافق روابط دو کشور؛ تا ۱۳۸۲ ادامه یافت.', sourceIds: ['pows-report'] },
+  { id: 'e-final-pow', faTitle: 'آخرین تبادل اسرا (۱۳۸۲)', date: '1382-02-15', year: 1382, category: 'humanitarian', desc: 'در مجموع ۵۸٫۳۳۲ اسیر عراقی طی ۱۱۸ مرحله بازگردانده شد؛ ۳۹٫۱۴۰ اسیر ایرانی ثبت شده است.', sourceIds: ['pows-report'], important: true },
+]
+
+export function getEvent(id: string): HistoryEvent | undefined {
+  return EVENTS.find(e => e.id === id)
+}
