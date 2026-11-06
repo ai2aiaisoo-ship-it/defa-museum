@@ -62,6 +62,11 @@ export function BattleMapsView({ focusId, go }: { focusId?: string; go: (v: stri
         <span className="text-[11px] text-muted-foreground">({toFa(filtered.length)} نقشه)</span>
       </div>
 
+      {/* پوشش نقشه‌ها — شفافیت موزه */}
+      <div className="rounded-2xl border bg-card/50 p-3 text-[11px] leading-6 text-muted-foreground">
+        🗺 <span className="font-extrabold text-foreground">پوشش تالار:</span> تمام عملیات‌های زمینی مهم جنگ (۸ سال، از تهاجم ۱۳۵۹ تا فروغ جاویدان و مرصاد ۱۳۶۷) در این تالار نقشه رزمی دارند — از «فکه» (والفجر مقدماتی و والفجر ۱)، «بدر» و «رمضان» تا «نبرد دوم فاو» و «بازپس‌گیری مجنون» از سوی عراق. عملیات‌های هوایی (کمان ۹۹، اچ-۳)، دریایی (مروارید) و بمباران‌های شهری، ماهیت زمینی ندارند و در تالارهای اختصاصی خود (نبرد هوایی، نبردهای دریایی، جنگ شهرها) روایت می‌شوند.
+      </div>
+
       {/* انتخاب نبرد */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {filtered.map(d => {

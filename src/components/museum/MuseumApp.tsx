@@ -23,12 +23,13 @@ import { ArchiveView } from './ArchiveView'
 import { SaddamView } from './SaddamView'
 import { toFa } from '@/lib/jalali'
 import { BattleMapsView } from './BattleMapsView'
+import { ExperiencesView } from './ExperiencesView'
 import { MusicPlayer } from './MusicPlayer'
 import { HeadbandRibbon } from './DefaDecor'
 import { Hall3D } from './Hall3D'
 
 export type ViewKey =
-  | 'home' | 'hall-3d' | 'atlas' | 'operations' | 'battle-maps' | 'timeline' | 'stats'
+  | 'home' | 'hall-3d' | 'atlas' | 'operations' | 'battle-maps' | 'experiences' | 'timeline' | 'stats'
   | 'roots' | 'martyrs' | 'avini' | 'archive' | 'saddam-dossier'
   | 'khorramshahr' | 'mersad' | 'war-of-cities' | 'tanker-war' | 'air-war' | 'naval-war' | 'iraq-ops' | 'mek-ops'
   | 'commanders' | 'forces' | 'equipment' | 'foreign' | 'resolutions'
@@ -52,6 +53,7 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
       { key: 'timeline', label: 'خط زمانی هشت‌ساله', icon: '📅' },
       { key: 'operations', label: 'اطلس عملیات‌ها', icon: '⚔' },
       { key: 'battle-maps', label: 'نقشه‌های تاکتیکی نبردها (جدید)', icon: '🛡' },
+      { key: 'experiences', label: 'تجربه‌نگاری؛ درس‌های عملیات (جدید)', icon: '🧭' },
       { key: 'stats', label: 'مرکز آمار و تلفات', icon: '📊' },
     ],
   },
@@ -169,6 +171,7 @@ export function MuseumApp() {
       )
       case 'operations': return <OperationsView focusId={param} go={go} />
       case 'battle-maps': return <BattleMapsView focusId={param} go={go} />
+      case 'experiences': return <ExperiencesView focusId={param} go={go} />
       case 'timeline': return <TimelineView go={go} />
       case 'stats': return <StatsView />
       case 'roots': return <RootsView go={go} />

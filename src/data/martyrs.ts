@@ -9,7 +9,7 @@ export type MartyrRole = 'commander' | 'pilot' | 'naval' | 'engineer' | 'intel' 
 
 export const MARTYR_ORG_LABELS: Record<MartyrOrg, string> = {
   sepah: 'سپاه پاسداران',
-  artesth: 'ارتش جمهوری اسلامی',
+  artesh: 'ارتش جمهوری اسلامی',
   iriaf: 'نیروی هوایی ارتش',
   political: 'مسئول سیاسی / وزارتی',
   people: 'نیروهای مردمی',

@@ -61,8 +61,9 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button onClick={() => go('hall-3d')} className="font-bold">🏛 تالار سه‌بعدی عملیات‌ها (جدید)</Button>
-            <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
             <Button variant="outline" onClick={() => go('battle-maps')} className="font-bold">📍 نقشه‌های تاکتیکی نبردها (جدید)</Button>
+            <Button variant="outline" onClick={() => go('experiences')} className="font-bold">🧭 تجربه‌نگاری؛ درس‌های عملیات (جدید)</Button>
+            <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
             <Button variant="outline" onClick={() => go('martyrs')} className="font-bold">🌙 خط زمانی شهدا (جدید)</Button>
             <Button variant="outline" onClick={() => go('atlas')} className="font-bold">🗺 اطلس تعاملی</Button>
             <Button variant="outline" onClick={() => go('operations')} className="font-bold">اطلس عملیات‌ها</Button>

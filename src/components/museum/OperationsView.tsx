@@ -17,6 +17,7 @@ import { MEDIA_ITEMS, VIDEO_ITEMS, MEDIA_VERIFICATION_LABELS } from '@/data/medi
 import { DOCUMENTARIES } from '@/data/documentaries'
 import { RAVAYAT_FATH } from '@/data/avini'
 import { BATTLE_MAPS_ALL } from '@/data/battle-maps-all'
+import { experiencesOfOp, EXPERIENCE_CATEGORIES } from '@/data/experiences'
 import { BattleMap } from './BattleMap'
 
 export function OperationsView({ focusId, go }: { focusId?: string; go: (v: string, p?: string) => void }) {
@@ -162,6 +163,24 @@ export function OperationDetail({ op, onBack, go }: { op: Operation; onBack: () 
           )}
         </CardContent>
       </Card>
+
+      {/* تجربه‌های ثبت‌شده از این عملیات — تجربه‌نگاری (فاز ۷) */}
+      {experiencesOfOp(op.id).length > 0 && (
+        <div className="rounded-2xl border bg-card/40 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="font-extrabold text-primary">🧭 تجربه‌های گران‌بهای ثبت‌شده از این عملیات</h3>
+            <Button variant="outline" size="sm" onClick={() => go('experiences', op.id)} className="text-xs font-bold">تالار تجربه‌نگاری ←</Button>
+          </div>
+          <div className="mt-2.5 grid gap-2 md:grid-cols-2">
+            {experiencesOfOp(op.id).map(e => (
+              <button key={e.id} onClick={() => go('experiences', op.id)} className="rounded-xl border bg-muted/30 p-2.5 text-right transition-colors hover:border-primary/50">
+                <div className="text-xs font-extrabold">{EXPERIENCE_CATEGORIES[e.category].icon} {e.title}</div>
+                <div className="mt-1 line-clamp-2 text-[11px] leading-5 text-muted-foreground">{e.significance}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* نقشه تاکتیکی اختصاصی نبرد (بخش جدید — فاز نقشه‌های عملیاتی) */}
       {BATTLE_MAPS_ALL[op.id] && (

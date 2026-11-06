@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { SOURCES } from '@/data/sources'
 import { OPERATIONS } from '@/data/operations'
+import { WAR_EXPERIENCES, EXPERIENCE_CATEGORIES } from '@/data/experiences'
 import { EVENTS } from '@/data/events'
 import { COMMANDERS } from '@/data/commanders'
 import { GLOSSARY } from '@/data/glossary'
@@ -56,7 +57,7 @@ export function SearchView({ go }: { go: (v: string, p?: string) => void }) {
   const norm = (s: string) => s.replace(/[أإآ]/g, 'ا').replace(/ی/g, 'ي').replace(/\u200c/g, ' ')
   const nq = norm(q.trim())
   const results = useMemo(() => {
-    if (nq.length < 2) return { ops: [], evs: [], cmds: [], terms: [], mrtrs: [], media: [], treatises: [], rf: [] }
+    if (nq.length < 2) return { ops: [], evs: [], cmds: [], terms: [], mrtrs: [], media: [], treatises: [], rf: [], exps: [] }
     return {
       ops: OPERATIONS.filter(o => norm(o.faName + o.enName + o.region + o.tags.join() + o.objectives).includes(nq)).slice(0, 8),
       evs: EVENTS.filter(e => norm(e.faTitle + e.desc).includes(nq)).slice(0, 8),
@@ -66,9 +67,10 @@ export function SearchView({ go }: { go: (v: string, p?: string) => void }) {
       media: [...MEDIA_ITEMS, ...VIDEO_ITEMS].filter(m => norm(m.title + m.desc + m.sourceName + (m.people ?? []).join()).includes(nq)).slice(0, 6),
       treatises: TREATIES.filter(t => norm(t.faName + t.enName + t.legacy).includes(nq)).slice(0, 4),
       rf: RAVAYAT_FATH.filter(r => norm(r.topic + r.note).includes(nq)).slice(0, 4),
+      exps: WAR_EXPERIENCES.filter(e => norm(e.title + e.text + e.significance + EXPERIENCE_CATEGORIES[e.category].label).includes(nq)).slice(0, 6),
     }
   }, [nq])
-  const total = results.ops.length + results.evs.length + results.cmds.length + results.terms.length + results.mrtrs.length + results.media.length + results.treatises.length + results.rf.length
+  const total = results.ops.length + results.evs.length + results.cmds.length + results.terms.length + results.mrtrs.length + results.media.length + results.treatises.length + results.rf.length + results.exps.length
   return (
     <div>
       <SectionHeader kicker="جست‌وجوی پیشرفته" title="جست‌وجوی سراسری در کل موزه" desc="عملیات‌ها، رویدادها، شهدا، فرماندهان، رسانه‌ها، معاهده‌ها، روایت فتح و واژه‌نامه — همه در یک جست‌وجو. مثلاً با جست‌وجوی «محمد جهان‌آرا» زندگی‌نامه، تصاویر، تاریخ شهادت، عملیات‌ها و مستندهای مرتبط در دسترس است." />
@@ -78,6 +80,11 @@ export function SearchView({ go }: { go: (v: string, p?: string) => void }) {
         {results.ops.length > 0 && (
           <div><h4 className="mb-2 text-sm font-extrabold text-primary">عملیات‌ها</h4>
             {results.ops.map(o => <button key={o.id} onClick={() => go('operations', o.id)} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">⚙ {o.faName} <span className="text-xs text-muted-foreground">— {o.region}</span></button>)}
+          </div>
+        )}
+        {results.exps.length > 0 && (
+          <div><h4 className="mb-2 text-sm font-extrabold text-primary">تجربه‌های گران‌بها (تجربه‌نگاری)</h4>
+            {results.exps.map(e => <button key={e.id} onClick={() => go('experiences', e.opIds[0])} className="mb-1.5 block w-full rounded-lg border bg-card/70 p-2.5 text-right text-sm hover:border-primary/50">🧭 {e.title} <span className="text-xs text-muted-foreground">— {EXPERIENCE_CATEGORIES[e.category].label}</span></button>)}
           </div>
         )}
         {results.evs.length > 0 && (

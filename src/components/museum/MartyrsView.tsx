@@ -14,7 +14,7 @@ import { ConfidenceBadge, SectionHeader, SourceChips, ResultBadge } from './ui-b
 
 const ORG_TONE: Record<MartyrOrg, string> = {
   sepah: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-  artesth: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+  artesh: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
   iriaf: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30',
   political: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
   people: 'bg-rose-500/15 text-rose-300 border-rose-500/30',
