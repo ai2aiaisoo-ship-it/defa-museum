@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید حسین خرازی",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6bb8257d2daf.jpg",
+      "caption": "Digital painting of a bearded man wearing a keffiyeh scarf, surrounded by nebula, stars, and roses; watermarked \"negarestock.ir\" repeatedly.",
+      "source": "",
+      "original_width": "1856px",
+      "original_height": "2464px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/23795cb4e01d.jpg",
+      "caption": "Detailed pencil portrait of a bearded man, with Cretacolor pencils beside it; pencil brand text visible; no watermark.",
+      "source": "",
+      "original_width": "1140px",
+      "original_height": "2028px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d3e3f688fe33.jpg",
+      "caption": "A smiling bearded man with dark combed-back hair wearing a camouflage jacket, no text, clear image, suitable for background image.",
+      "source": "",
+      "original_width": "976px",
+      "original_height": "1280px"
+    }
+  ]
+}

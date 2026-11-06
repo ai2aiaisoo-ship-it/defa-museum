@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "Ayatollah Ali Khamenei portrait photo",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/62b1bec7999a.jpeg",
+      "caption": "An elderly bearded cleric wearing glasses and a black turban sits thoughtfully against a dark background, high clarity, no text.",
+      "source": "OurQuadCities",
+      "original_width": "2200px",
+      "original_height": "1440px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f108d4e4f557.jpg",
+      "caption": "Portrait of a gray-haired, bearded middle-aged man in black clothing, smiling against a plain white background. Contains Alamy watermarks and text.",
+      "source": "Alamy",
+      "original_width": "1300px",
+      "original_height": "956px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4daa378b2264.png",
+      "caption": "Black-and-white portrait of an elderly bearded man wearing glasses and a black turban, raising his right hand against a plain white background. No visible text or watermarks; high clarity, strong visual impact, suitable for background image.",
+      "source": "Ratopati English",
+      "original_width": "1374px",
+      "original_height": "670px"
+    }
+  ]
+}

@@ -16,6 +16,8 @@ import { MARTYRS } from '@/data/martyrs'
 import { MEDIA_ITEMS, VIDEO_ITEMS, MEDIA_VERIFICATION_LABELS } from '@/data/media-registry'
 import { DOCUMENTARIES } from '@/data/documentaries'
 import { RAVAYAT_FATH } from '@/data/avini'
+import { BATTLE_MAPS } from '@/data/battle-maps'
+import { BattleMap } from './BattleMap'
 
 export function OperationsView({ focusId, go }: { focusId?: string; go: (v: string, p?: string) => void }) {
   const [q, setQ] = useState('')
@@ -160,6 +162,15 @@ export function OperationDetail({ op, onBack, go }: { op: Operation; onBack: () 
           )}
         </CardContent>
       </Card>
+
+      {/* نقشه تاکتیکی اختصاصی نبرد (بخش جدید — فاز نقشه‌های عملیاتی) */}
+      {BATTLE_MAPS[op.id] && (
+        <div>
+          <h3 className="mb-1 font-extrabold text-primary">⚔ نقشه تاکتیکی اختصاصی نبرد</h3>
+          <p className="mb-3 text-xs leading-6 text-muted-foreground">زوم روی کل محدوده نبرد، خط تماس جبهه‌ها، پرچم مواضع نیروهای ایران و عراق، محورهای پیشروی و پخش مرحله‌به‌مرحله نبرد — با چرخ ماوس زوم کنید و با درگ جابه‌جا شوید.</p>
+          <BattleMap data={BATTLE_MAPS[op.id]} />
+        </div>
+      )}
 
       {/* سطح الف — روایت تاریخی اصلی بر اساس چارچوب ایران (فاز ۲، بخش ۱.۱) */}
       {narrative && (

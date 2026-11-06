@@ -22,9 +22,12 @@ import { AviniView } from './AviniView'
 import { ArchiveView } from './ArchiveView'
 import { SaddamView } from './SaddamView'
 import { toFa } from '@/lib/jalali'
+import { BattleMapsView } from './BattleMapsView'
+import { MusicPlayer } from './MusicPlayer'
+import { HeadbandRibbon } from './DefaDecor'
 
 export type ViewKey =
-  | 'home' | 'atlas' | 'operations' | 'timeline' | 'stats'
+  | 'home' | 'atlas' | 'operations' | 'battle-maps' | 'timeline' | 'stats'
   | 'roots' | 'martyrs' | 'avini' | 'archive' | 'saddam-dossier'
   | 'khorramshahr' | 'mersad' | 'war-of-cities' | 'tanker-war' | 'air-war' | 'naval-war' | 'iraq-ops' | 'mek-ops'
   | 'commanders' | 'forces' | 'equipment' | 'foreign' | 'resolutions'
@@ -46,6 +49,7 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
       { key: 'atlas', label: 'اطلس نقشه تعاملی', icon: '🗺' },
       { key: 'timeline', label: 'خط زمانی هشت‌ساله', icon: '📅' },
       { key: 'operations', label: 'اطلس عملیات‌ها', icon: '⚔' },
+      { key: 'battle-maps', label: 'نقشه‌های تاکتیکی نبردها (جدید)', icon: '🛡' },
       { key: 'stats', label: 'مرکز آمار و تلفات', icon: '📊' },
     ],
   },
@@ -160,6 +164,7 @@ export function MuseumApp() {
         </div>
       )
       case 'operations': return <OperationsView focusId={param} go={go} />
+      case 'battle-maps': return <BattleMapsView focusId={param} go={go} />
       case 'timeline': return <TimelineView go={go} />
       case 'stats': return <StatsView />
       case 'roots': return <RootsView go={go} />
@@ -196,6 +201,8 @@ export function MuseumApp() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* سربند یا زهرا — تم دفاع مقدسی */}
+      <HeadbandRibbon />
       {/* سربرگ */}
       <header className="glass sticky top-0 z-40 border-b">
         <div className="mx-auto flex max-w-[1500px] items-center gap-3 px-4 py-3">
@@ -239,11 +246,14 @@ export function MuseumApp() {
         </main>
       </div>
 
+      {/* پخش‌کننده موسیقی متن خاک سرخ — قابل میوت */}
+      <MusicPlayer />
+
       {/* پابرگ چسبان */}
       <footer className="mt-auto border-t bg-card/60">
         <div className="mx-auto flex max-w-[1500px] flex-col items-center justify-between gap-2 px-4 py-4 text-center text-[11px] leading-5 text-muted-foreground md:flex-row md:text-right">
           <p>موزه دیجیتال و اطلس تعاملی جنگ ایران و عراق (۱۳۵۹–۱۳۶۷) — پروژه پژوهشی-آموزشی با روایت تاریخی ایرانی. روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف ثبت است و آمار با درجه اطمینان A/B/C ارائه می‌شود.</p>
-          <p>مسئولیت آغاز تجاوز بر اساس بند ۶ قطعنامه ۵۹۸ و گزارش هیئت حقیقت‌یاب دبیرکل (دسامبر ۱۹۹۱) به عراق مستند شده است.</p>
+          <p>مسئولیت آغاز تجاوز بر اساس بند ۶ قطعنامه ۵۹۸ و گزارش هیئت حقیقت‌یاب دبیرکل (دسامبر ۱۹۹۱) به عراق مستند شده است. موسیقی: قطعه محیطی الهام‌گرفته از «خاک سرخ» (لینک قطعه اصلی علیقلی در پخش‌کننده)؛ پرتره‌ها با برچسب وضعیت هویت‌سنجی از منابع عمومی.</p>
         </div>
       </footer>
     </div>

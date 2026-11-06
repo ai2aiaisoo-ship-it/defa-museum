@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "Imam Ruhollah Khomeini official portrait photo",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1e8c87a1fcde.jpg",
+      "caption": "Shutterstock promotional ad with watermarks; text: \"We have great content,\" \"Sign up and get started today!\", \"Contact us: 1-866-663-3954.\"",
+      "source": "Shutterstock",
+      "original_width": "1166px",
+      "original_height": "1600px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cfa0cd0a3c28.jpg",
+      "caption": "Iranian propaganda poster featuring Ayatollah Khomeini, Persian calligraphy, US/Soviet serpent imagery over oil refineries, with text.",
+      "source": "Encyclopædia Iranica",
+      "original_width": "845px",
+      "original_height": "1132px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3d35cc04ff4b.jpeg",
+      "caption": "A black-and-white historical photo of an elderly bearded cleric seated inside an airplane cabin, with two clergy men standing behind him; expand icon at bottom right.",
+      "source": "Reddit",
+      "original_width": "1108px",
+      "original_height": "767px"
+    }
+  ]
+}

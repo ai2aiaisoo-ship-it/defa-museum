@@ -1,0 +1,160 @@
+'use client'
+
+// ─── تزئینات تم «دفاع مقدس»: سربند یا زهرا، خاکریز، اسلحه، پوتین، پرتره شهدا و رهبران ───
+
+import Link from 'next/link'
+
+/** نوار سربند «یا زهرا (س)» — سربرگ بالای برنامه */
+export function HeadbandRibbon() {
+  return (
+    <div className="defa-headband overflow-hidden whitespace-nowrap py-1 text-center text-[11px] font-extrabold tracking-[0.35em] text-white" aria-hidden="true">
+      <span className="defa-headband-scroll inline-block">
+        یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦
+      </span>
+    </div>
+  )
+}
+
+/** ردیف خاکریز (گونی‌های شن) — تزئین پایین بخش‌ها */
+export function SandbagStrip({ flip = false }: { flip?: boolean }) {
+  return (
+    <div className={`pointer-events-none relative h-9 w-full overflow-hidden ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
+      <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 600 36">
+        <defs>
+          <pattern id="sbag" x="0" y="0" width="60" height="36" patternUnits="userSpaceOnUse">
+            <ellipse cx="15" cy="30" rx="17" ry="7" fill="oklch(0.52 0.05 80)" stroke="oklch(0.36 0.04 75)" strokeWidth="1" />
+            <ellipse cx="45" cy="30" rx="17" ry="7" fill="oklch(0.55 0.055 82)" stroke="oklch(0.38 0.04 75)" strokeWidth="1" />
+            <ellipse cx="30" cy="17" rx="17" ry="7" fill="oklch(0.58 0.06 84)" stroke="oklch(0.4 0.045 75)" strokeWidth="1" />
+            <path d="M0 36 L60 36" stroke="oklch(0.3 0.03 75)" strokeWidth="2" />
+            <path d="M11 30 h8 M41 30 h8" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2 1.4" />
+          </pattern>
+        </defs>
+        <rect width="600" height="36" fill="url(#sbag)" />
+      </svg>
+      <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-b from-background to-transparent" />
+    </div>
+  )
+}
+
+/** سیلوئت اسلحه (تزئینی و انتزاعی) */
+export function RifleIcon({ className = 'h-5 w-5' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 48 20" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M2 9 L10 7 L12 9 L15 9 L15 11 L12 11 L11 14 L8 14 L8 11 L4 12 Z" />
+      <rect x="15" y="7.5" width="22" height="4" rx="1" />
+      <rect x="37" y="8.5" width="10" height="2" rx="1" />
+      <path d="M22 11.5 L27 11.5 L25.5 18 L21 18 Z" />
+      <rect x="17" y="5" width="4" height="2.5" rx="0.5" />
+    </svg>
+  )
+}
+
+/** سیلوئت پوتین رزمی */
+export function BootsIcon({ className = 'h-5 w-5' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 44 22" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M4 2 L13 2 L13 10 L17 13 L17 18 L4 18 Z" />
+      <path d="M26 2 L35 2 L35 10 L39 13 L39 18 L26 18 Z" />
+      <path d="M4 18 L17 18 L17 20 L4 20 Z M26 18 L39 18 L39 20 L26 20 Z" fillOpacity="0.6" />
+    </svg>
+  )
+}
+
+export interface PortraitMeta {
+  src: string
+  name: string
+  caption: string
+  /** وضعیت هویت‌سنجی تصویر */
+  badge: string
+}
+
+/** قاب پرتره سبز با نور ملایم */
+export function PortraitFrame({ p, size = 'md' }: { p: PortraitMeta; size?: 'md' | 'lg' }) {
+  return (
+    <figure className="defa-frame flex flex-col items-center">
+      <div className={`relative overflow-hidden rounded-2xl border-2 border-emerald-400/40 shadow-[0_0_24px_oklch(0.6_0.12_160/0.25)] ${size === 'lg' ? 'h-40 w-40' : 'h-28 w-28'}`}>
+        {/* کراپ پایین تصویر برای حذف نشان‌آب کنج */}
+        <img src={p.src} alt={p.name} loading="lazy" className="h-full w-full scale-105 object-cover object-top" />
+        <span className="absolute bottom-1 left-1 rounded-md bg-emerald-950/80 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-400/30">{p.badge}</span>
+      </div>
+      <figcaption className="mt-1.5 text-center text-[11px] leading-4">
+        <span className="block font-extrabold">{p.name}</span>
+        <span className="block text-muted-foreground">{p.caption}</span>
+      </figcaption>
+    </figure>
+  )
+}
+
+/** پلاک نام شهید بدون تصویر تأییدشده — صادقانه و بی‌جعل */
+export function MartyrPlaque({ name, caption }: { name: string; caption: string }) {
+  return (
+    <figure className="defa-frame flex flex-col items-center">
+      <div className="grid h-28 w-28 place-items-center rounded-2xl border-2 border-dashed border-emerald-400/40 bg-emerald-950/30">
+        <div className="text-center">
+          <div className="text-2xl">🌙</div>
+          <div className="mt-0.5 text-[9px] font-bold leading-3 text-emerald-300">تصویر تأییدشده<br />در آرشیو ثبت نشد</div>
+        </div>
+      </div>
+      <figcaption className="mt-1.5 text-center text-[11px] leading-4">
+        <span className="block font-extrabold">{name}</span>
+        <span className="block text-muted-foreground">{caption}</span>
+      </figcaption>
+    </figure>
+  )
+}
+
+const LEADERS: PortraitMeta[] = [
+  { src: '/images/defa/khomeini.jpeg', name: 'امام خمینی (ره)', caption: 'بنیان‌گذار جمهوری اسلامی — تصویر تاریخی', badge: 'تصویر تاریخی' },
+  { src: '/images/defa/khamenei.jpeg', name: 'حضرت آیت‌الله خامنه‌ای', caption: 'مقام معظم رهبری — پرتره رسمی', badge: 'پرتره رسمی' },
+]
+
+const MARTYR_CARDS: { img?: string; name: string; caption: string; badge?: string }[] = [
+  { img: '/images/defa/jahanara2.jpg', name: 'شهید محمد جهان‌آرا', caption: 'فرمانده دفاع از خرمشهر — ۴ آبان ۱۳۵۹', badge: 'پوستر یادبود (ایکنا)' },
+  { img: '/images/defa/kharazi.jpg', name: 'شهید حسین خرازی', caption: 'فرمانده لشکر ۱۴ امام حسین (ع) — اسفند ۱۳۶۴', badge: 'پرتره دیجیتال' },
+  { img: '/images/defa/sayyad.jpg', name: 'شهید علی صیاد شیرازی', caption: 'فرمانده قرارگاه کربلا — شهید فروردین ۱۳۷۸', badge: 'پوستر یادبود' },
+  { name: 'شهید مصطفی چمران', caption: 'وزیر دفاع و فرمانده — ۳۱ خرداد ۱۳۶۰' },
+  { name: 'شهید ابراهیم همت', caption: 'فرمانده لشکر ۲۷ محمد رسول‌الله (ص) — دی ۱۳۶۲' },
+  { name: 'شهید مهدی باکری', caption: 'فرمانده لشکر ۳۱ عاشورا — اسفند ۱۳۶۲' },
+]
+
+/** نوار چهره‌های ماندگار دفاع مقدس (رهبران + شهدا) */
+export function DefaIconsStrip() {
+  return (
+    <div className="space-y-5">
+      <div className="flex flex-wrap items-start justify-center gap-6">
+        {LEADERS.map(p => <PortraitFrame key={p.name} p={p} />)}
+      </div>
+      <div>
+        <div className="mb-2 flex items-center justify-center gap-2 text-xs font-extrabold tracking-widest text-emerald-400">
+          <RifleIcon className="h-4 w-4 text-emerald-500/70" />
+          <span>ستارگان آسمان دفاع مقدس</span>
+          <BootsIcon className="h-4 w-4 text-emerald-500/70" />
+        </div>
+        <div className="grid grid-cols-3 justify-items-center gap-4 sm:grid-cols-6">
+          {MARTYR_CARDS.map(m =>
+            m.img ? (
+              <figure key={m.name} className="defa-frame flex flex-col items-center">
+                <div className="relative h-28 w-28 overflow-hidden rounded-2xl border-2 border-emerald-400/40 shadow-[0_0_20px_oklch(0.6_0.12_160/0.22)]">
+                  <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover" />
+                  {m.badge && <span className="absolute bottom-1 left-1 rounded-md bg-emerald-950/80 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-400/30">{m.badge}</span>}
+                </div>
+                <figcaption className="mt-1.5 text-center text-[11px] leading-4">
+                  <span className="block font-extrabold">{m.name}</span>
+                  <span className="block text-muted-foreground">{m.caption}</span>
+                </figcaption>
+              </figure>
+            ) : (
+              <MartyrPlaque key={m.name} name={m.name} caption={m.caption} />
+            ),
+          )}
+        </div>
+        <div className="mt-3 text-center">
+          <Link href="#martyrs" className="text-[11px] font-bold text-primary underline decoration-dotted">خط زمانی کامل شهدا در تالار «ستارگان دفاع مقدس» ↗</Link>
+        </div>
+      </div>
+      <p className="mx-auto max-w-2xl text-center text-[10px] leading-5 text-muted-foreground">
+        تصاویر این نوار از منابع عمومی وب بازیابی و برای هر پرتره وضعیت هویت‌سنجی روی خود تصویر درج شده است؛ پرتره‌ای که هویتش تأیید نشد عمداً به‌جای عکس، پلاک نام دارد. طبق میثاق موزه، هیچ تصویری بدون احراز هویت در کنار نام شهدا قرار نمی‌گیرد.
+      </p>
+    </div>
+  )
+}

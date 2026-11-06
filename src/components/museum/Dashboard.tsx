@@ -10,6 +10,7 @@ import { WAR_STATS } from '@/data/statistics'
 import { MARTYRS, MARTYR_RESEARCH } from '@/data/martyrs'
 import { MEDIA_ITEMS, VIDEO_ITEMS } from '@/data/media-registry'
 import { MapAtlas } from './MapAtlas'
+import { DefaIconsStrip, SandbagStrip, RifleIcon, BootsIcon } from './DefaDecor'
 import { formatJalali, toFa } from '@/lib/jalali'
 import { ResultBadge, SectionHeader, ConfidenceBadge } from './ui-bits'
 import { Badge } from '@/components/ui/badge'
@@ -51,8 +52,16 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
             فصل کامل «ریشه‌های جنگ از پهلوی تا ۳۱ شهریور»، خط زمانی شهدای شاخص، آرشیو چندرسانه‌ای با شناسنامه کامل،
             پرونده روایت فتح شهید آوینی و آمار منبع‌دار با درجه اطمینان.
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-emerald-400/90">
+            <RifleIcon className="h-4 w-4" />
+            <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-0.5 text-[10.5px] font-extrabold">سربند یا زهرا</span>
+            <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-0.5 text-[10.5px] font-extrabold">خاکریز</span>
+            <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2.5 py-0.5 text-[10.5px] font-extrabold">پوتین و اسلحه</span>
+            <BootsIcon className="h-4 w-4" />
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
+            <Button variant="outline" onClick={() => go('battle-maps')} className="font-bold">📍 نقشه‌های تاکتیکی نبردها (جدید)</Button>
             <Button variant="outline" onClick={() => go('martyrs')} className="font-bold">🌙 خط زمانی شهدا (جدید)</Button>
             <Button variant="outline" onClick={() => go('atlas')} className="font-bold">🗺 اطلس تعاملی</Button>
             <Button variant="outline" onClick={() => go('operations')} className="font-bold">اطلس عملیات‌ها</Button>
@@ -60,6 +69,14 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
             <Button variant="outline" onClick={() => go('stats')} className="font-bold">مرکز آمار</Button>
           </div>
         </div>
+      </section>
+
+      <SandbagStrip />
+
+      {/* چهره‌های ماندگار دفاع مقدس — امام، رهبری و شهدا */}
+      <section>
+        <SectionHeader kicker="تم دفاع مقدسی" title="از امام تا خاکریز؛ چهره‌های ماندگار" desc="نمادهای بصری دفاع مقدس: سربند یا زهرا، خاکریز، پوتین و سیلوئت اسلحه در سراسر موزه به‌کار رفته‌اند و در این نوار، پرتره‌های هویت‌سنجی‌شده رهبران و شهدا گرد آمده‌اند." />
+        <DefaIconsStrip />
       </section>
 
       {/* تالارهای جدید فاز ۲ */}

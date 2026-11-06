@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید علی صیاد شیرازی",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/05001556f95b.jpg",
+      "caption": "Digital portrait of bearded man in camouflage with shrine illustration; Persian text \"شهید علی صیاد شیرازی\" on red banner.",
+      "source": "",
+      "original_width": "904px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bc83e7df8cad.jpg",
+      "caption": "Digital painted portrait of a bearded man in white shirt against teal background. Contains repeated \"negarestock.ir\" watermarks throughout.",
+      "source": "",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e0afaac6ef3d.jpg",
+      "caption": "A digitally painted portrait of a bearded military officer in camouflage uniform, framed by ornate Islamic floral borders with Persian calligraphy text.",
+      "source": "",
+      "original_width": "5600px",
+      "original_height": "8000px"
+    }
+  ]
+}

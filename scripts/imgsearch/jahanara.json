@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید محمد جهان‌آرا فرمانده خرمشهر",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b5dc5970dad2.jpg",
+      "caption": "A collage of two portraits: an older woman in a black hijab and glasses beside a bearded man looking downward.",
+      "source": "اقتصاد24",
+      "original_width": "1200px",
+      "original_height": "705px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1b8aa48a69c7.jpg",
+      "caption": "Bearded soldiers in olive uniforms read a Persian newspaper beside a red car on a sunny palm-lined road.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "3474px",
+      "original_height": "2276px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b6e30e9a8b17.jpg",
+      "caption": "A historical black-and-white photo of crowds celebrating around a domed mosque; truck shows \"LEYLAND\" text.",
+      "source": "خبرگزاری مهر",
+      "original_width": "1181px",
+      "original_height": "776px"
+    }
+  ]
+}
