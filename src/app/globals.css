@@ -230,16 +230,8 @@ body { font-family: Vazirmatn, sans-serif; }
 }
 .hall-persp, .hall-persp * { transform-style: preserve-3d; }
 
-/* ─── پرچم متحرک ایران (گوشه تصویر) ─── */
-.flag-slice {
-  animation: flag-wave 1.7s ease-in-out infinite;
-  transform-origin: bottom center;
-  will-change: transform;
-}
-@keyframes flag-wave {
-  0%, 100% { transform: translateY(-1.6px) scaleY(1.045); }
-  50%      { transform: translateY(1.6px)  scaleY(0.955); }
-}
+/* ─── پرچم متحرک ایران (گوشه تصویر) — یک‌پارچه، موج با فیلتر SVG در کامپوننت ─── */
+.flag-cloth { will-change: transform; }
 /* بازتاب نور که از راست به چپ روی پارچه می‌دود */
 .flag-sheen {
   background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.28) 48%, transparent 62%);
@@ -252,7 +244,7 @@ body { font-family: Vazirmatn, sans-serif; }
   100% { background-position: -40% 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .flag-slice, .flag-sheen { animation: none; }
+  .flag-sheen { animation: none; }
 }
 
 /* ─── بافت طبیعی خاکریز در تالار سه‌بعدی ─── */

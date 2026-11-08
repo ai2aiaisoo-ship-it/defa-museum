@@ -2,22 +2,26 @@
 
 // ─── سامانه مشارکت بازدیدکنندگان و مرور کارشناسی تالار «خاطرات شهدا و آرامگاه‌ها» ───
 // ۱) مرور کارشناسی تصاویر مزار: کارشناس تصویر مزار را بازبینی می‌کند و نتیجه مرور
-//    برچسب تأیید تصویر را ارتقا می‌دهد (در انتظار مرور → تأیید کارشناسی / عدم تأیید / نیازمند بررسی تکمیلی).
+//    برچسب تأیید تصویر را ارتقا می‌دهد (در انتظار مرور → تأیید کارشناسی / تصویر زمینه / عدم تأیید).
+//    پیش‌فرض نمایش، «پیش‌مرور مستند آرشیو موزه» است (data/grave-reviews.ts)؛ مرور نام‌دار کارشناس
+//    در مرورگرِ خودش ثبت و بر پیش‌مرور اولویت داده می‌شود.
 // ۲) اشتراک خاطره: بازدیدکننده خاطره‌اش را ثبت می‌کند؛ خاطره با وضعیت
 //    «در انتظار تأیید کارشناس» ثبت و تا تأیید، فقط به‌عنوان پیش‌نویس محلی نمایش داده می‌شود.
 // ذخیره‌سازی: localStorage مرورگر (نسخه نمایشی) — کلیدهای نسخه‌دار برای مهاجرت آینده به پایگاه داده.
 
 import { useCallback, useState } from 'react'
+import { GRAVE_REVIEW_SEEDS, SEED_REVIEW_META, seedPhotoKey } from '@/data/grave-reviews'
 
 const REVIEWS_KEY = 'museum-grave-photo-reviews-v1'
 const MEMORIES_KEY = 'museum-visitor-memories-v1'
 
-export type ReviewVerdict = 'approved' | 'rejected' | 'needs-more'
+export type ReviewVerdict = 'approved' | 'rejected' | 'needs-more' | 'context'
 
 export const VERDICT_LABELS: Record<ReviewVerdict, string> = {
   approved: 'تأیید هویت‌سنجی تصویر (ارتقای برچسب به «تأیید کارشناسی»)',
-  rejected: 'عدم تطابق تصویر (تصویر از نمایش مزار خارج می‌شود)',
+  context: 'تصویر زمینه گلزار/یادمان (مزار اختصاصی در آرشیو باز ثبت نشد)',
   'needs-more': 'نیازمند بررسی تکمیلی (برچسب «در انتظار مرور» باقی می‌ماند)',
+  rejected: 'عدم تطابق تصویر (تصویر از نمایش مزار خارج می‌شود)',
 }
 
 export interface GravePhotoReview {
@@ -29,6 +33,28 @@ export interface GravePhotoReview {
   reviewer: string
   note?: string
   reviewedAt: string // ISO
+  /** پیش‌مرورِ بارگذاری‌شده از کارتابل موزه (در برابر مرور نام‌دار کارشناس) */
+  seed?: boolean
+}
+
+/** کارتابل پیش‌مرور مستند آرشیو موزه — پیش‌فرض نمایش برچسب‌ها پیش از مرور نام‌دار */
+export function seedReviewMap(): Record<string, GravePhotoReview> {
+  return Object.fromEntries(
+    GRAVE_REVIEW_SEEDS.map(s => {
+      const photoKey = seedPhotoKey(s)
+      const review: GravePhotoReview = {
+        id: `seed-${s.martyrId}-${s.photoHash}`,
+        photoKey,
+        martyrId: s.martyrId,
+        verdict: s.verdict,
+        reviewer: SEED_REVIEW_META.reviewer,
+        note: s.note,
+        reviewedAt: SEED_REVIEW_META.reviewedAt,
+        seed: true,
+      }
+      return [photoKey, review]
+    }),
+  )
 }
 
 export interface VisitorMemory {
@@ -57,11 +83,12 @@ function writeJson(key: string, value: unknown) {
   try { localStorage.setItem(key, JSON.stringify(value)) } catch { /* حافظه پر یا محدود — بی‌اثر */ }
 }
 
-/** هوک مرور کارشناسی تصاویر مزار */
+/** هوک مرور کارشناسی تصاویر مزار — پیش‌مرور موزه + مرورهای محلی کارشناس (اولویت‌دار) */
 export function useGravePhotoReviews() {
   const [reviews, setReviews] = useState<Record<string, GravePhotoReview>>(() => {
+    const seeds = seedReviewMap()
     const list = readJson<GravePhotoReview[]>(REVIEWS_KEY, [])
-    return Object.fromEntries(list.map(r => [r.photoKey, r]))
+    return { ...seeds, ...Object.fromEntries(list.map(r => [r.photoKey, r])) }
   })
 
   const submitReview = useCallback((r: Omit<GravePhotoReview, 'id' | 'reviewedAt'>): GravePhotoReview => {
@@ -138,6 +165,9 @@ export function gravePhotoBadge(
   }
   if (review?.verdict === 'rejected') {
     return { label: `✕ عدم تأیید کارشناس — ${review.reviewer}`, cls: 'bg-rose-950/85 text-rose-200 border-rose-400/40' }
+  }
+  if (review?.verdict === 'context') {
+    return { label: '⌂ تصویر زمینه — مزار اختصاصی ثبت نشد', cls: 'bg-slate-900/85 text-slate-300 border-slate-400/30' }
   }
   if (review?.verdict === 'needs-more') {
     return { label: '⏳ نیازمند بررسی تکمیلی کارشناس', cls: 'bg-amber-950/85 text-amber-200 border-amber-400/40' }

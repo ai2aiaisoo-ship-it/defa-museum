@@ -3,8 +3,9 @@
 // ۱) هر خاطره/روایت فقط از منابع اینترنتی بازِ مشخص و با URL اصلی ثبت می‌شود.
 // ۲) متن‌ها عین جملات منبع (verbatim) یا خلاصه توصیفی صریح‌اند؛ نوع هر مدخل مشخص است.
 // ۳) جایی که سند خاطره مستقل قابل‌ارجاع یافت نشد، به‌جای نقل نامعین، مدخل «شفاف‌سازی موزه» ثبت شده است.
-// ۴) عکس‌های مزار از جست‌وجوی وب باز جمع‌آوری شده و با برچسب «نیازمند تأیید کارشناسی» نمایش داده می‌شوند؛
-//    در مواردی که عکس مزار اختصاصی در دسترس نیست، صریحاً گفته می‌شود و تنها تصویر کلی گلزار می‌آید.
+// ۴) عکس‌های مزار از جست‌وجوی وب باز جمع‌آوری شده و همه از «مرور تصویری آرشیو موزه» گذشته‌اند
+//    (کارتابل پیش‌مرور: src/data/grave-reviews.ts)؛ مرور نام‌دار کارشناس می‌تواند نتیجه را بازبینی کند؛
+//    در مواردی که عکس مزار اختصاصی در دسترس نیست، صریحاً گفته می‌شود و تنها تصویر کلی گلزار با برچسب «تصویر زمینه» می‌آید.
 
 import type { Confidence } from './types'
 
@@ -52,7 +53,7 @@ export interface MartyrBurial {
   sourceUrl?: string
 }
 
-const IMG = 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt'
+export const IMG = 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt'
 
 export const MARTYR_BURIALS: MartyrBurial[] = [
   {
@@ -71,7 +72,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۷۲ (جنب یادمان شهدای هفتم تیر)',
-    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'یادمان گلزار شهدا؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
+    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه)؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
     note: 'بر پایه گزارش دفاع‌پرس، مزار شهیدان رجایی و باهنر در قطعه ۷۲ بهشت زهراست.',
     confidence: 'B',
     sourceName: 'خبرگزاری دفاع‌پرس — «مزار شهیدان رجایی و باهنر گلباران شد»',
@@ -82,7 +83,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۷۲ (هم‌آرامگاه شهید رجایی)',
-    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'یادمان گلزار شهدا؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
+    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه)؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
     confidence: 'B',
     sourceName: 'خبرگزاری دفاع‌پرس — «مزار شهیدان رجایی و باهنر گلباران شد»',
     sourceUrl: 'https://defapress.ir/fa/news/359883',
@@ -166,7 +167,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای مشهد (بهشت رضا)',
     city: 'مشهد',
     detail: 'قطعه شهدا؛ پیکر او به پیشنهاد خودش و با موافقت خانواده، در میان بسیجی‌ها و رزمنده‌ها دفن شد',
-    photo: { url: `${IMG}/0acd17ee7aab.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'یادمان شهید محمود کاوه (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/0acd17ee7aab.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'پوستر یادبود شهید محمود کاوه در بهشت رضا مشهد — تصویر زمینه یادمان، نه سنگ مزار', verified: 'pending-review' },
     note: 'روایت پیشنهاد محل دفن و شفاف‌سازی درباره عدم تدفین در حرم رضوی از منابع خبری منتشرشده است.',
     confidence: 'B',
     sourceName: 'پایگاه گلزار شهدا / خبرگزاری‌ها — پرونده محمود کاوه',
@@ -188,7 +189,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴، ردیف ۸۰، مزار ۲۴',
-    photo: { url: `${IMG}/8261128077b6.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مرمر مزار شهید در بهشت زهرا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/8261128077b6.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار یافت‌شده در جست‌وجو که در مرور کارشناسی، مغایر پرونده شهید تشخیص داده شد و از نمایش خارج شد', verified: 'pending-review' },
     confidence: 'B',
     sourceName: 'پایگاه خبری دانشگاه تهران — پرونده شهید غلامحسین افشردی (حسن باقری)',
     sourceUrl: 'https://news.ut.ac.ir/fa/page/8289',
