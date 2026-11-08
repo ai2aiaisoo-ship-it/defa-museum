@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useCallback } from 'react'
 import { MARTYRS, type Martyr } from '@/data/martyrs'
 import {
   MARTYR_BURIALS,
@@ -416,7 +416,9 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
   const [shareFor, setShareFor] = useState<Martyr | null>(null)
   const [reviewFor, setReviewFor] = useState<Martyr | null>(null)
   const { reviewOf, submitReview } = useGravePhotoReviews()
-  const { memoriesOf, addMemory, removeMemory } = useVisitorMemories()
+  // خاطرات بازدیدکنندگان جدا از خاطرات آرشیوی نگه داشته می‌شود تا نوع‌ها مخلوط نشوند
+  const { memories: visitorMems, addMemory, removeMemory } = useVisitorMemories()
+  const visitorMemoriesOf = useCallback((martyrId: string) => visitorMems.filter(vm => vm.martyrId === martyrId), [visitorMems])
   const { toast } = useToast()
 
   // باز شدن خودکار پرونده شهید از پیوند دیگر تالارها — حالت مشتق‌شده از focusId (بدون setState در effect)
@@ -426,14 +428,14 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
   const rows = useMemo(() => {
     return [...MARTYRS]
       .sort((a, b2) => a.martyrdomDate.localeCompare(b2.martyrdomDate))
-      .map(m => ({ m, b: burialOf(m.id), mems: memoriesOf(m.id) }))
+      .map(m => ({ m, b: burialOf(m.id), mems: memoriesOf(m.id), vmems: visitorMemoriesOf(m.id) }))
       .filter(r => {
         if (q && !`${r.m.name} ${r.m.knownAs ?? ''}`.includes(q.trim())) return false
-        if (onlyMemoirs && r.mems.filter(x => x.kind !== 'museum-note').length === 0) return false
+        if (onlyMemoirs && r.mems.filter(x => x.kind !== 'museum-note').length === 0 && r.vmems.length === 0) return false
         if (onlyGravePhoto && !r.b?.photo) return false
         return true
       })
-  }, [q, onlyMemoirs, onlyGravePhoto, memoriesOf])
+  }, [q, onlyMemoirs, onlyGravePhoto, visitorMemoriesOf])
 
   const totalMems = MARTYR_MEMORIES.filter(x => x.kind !== 'museum-note').length
   const totalPhotos = MARTYR_BURIALS.filter(b => b.photo).length
@@ -501,7 +503,7 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
 
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
         {rows.map(r => {
-          const vCount = memoriesOf(r.m.id).length
+          const vCount = r.vmems.length
           const review = r.b?.photo ? reviewOf(r.m.id, r.b.photo.url) : undefined
           return (
             <MemoryCard
@@ -530,7 +532,7 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
         m={open}
         b={open ? burialOf(open.id) : undefined}
         mems={open ? memoriesOf(open.id) : []}
-        vMems={open ? memoriesOf(open.id) : []}
+        vMems={open ? visitorMemoriesOf(open.id) : []}
         review={open && burialOf(open.id)?.photo ? reviewOf(open.id, burialOf(open.id)!.photo!.url) : undefined}
         onClose={() => { setOpenOverride(null); if (focusId) setDismissedFocus(focusId) }}
         onShare={() => { setShareFor(open); setOpenOverride(null); setDismissedFocus(focusId ?? null) }}

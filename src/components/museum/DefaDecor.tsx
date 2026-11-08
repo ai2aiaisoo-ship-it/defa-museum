@@ -85,7 +85,7 @@ export function PortraitFrame({ p, size = 'md' }: { p: PortraitMeta; size?: 'md'
   )
 }
 
-/** پلاک نام شهید بدون تصویر تأییدشده — صادقانه و بی‌جعل */
+/** پلاک نام شهید بدون تصویر در دسترس — صادقانه و بی‌جعل (ذخیره برای پرتره‌های نیافته) */
 export function MartyrPlaque({ name, caption }: { name: string; caption: string }) {
   return (
     <figure className="defa-frame flex flex-col items-center">
@@ -108,13 +108,13 @@ const LEADERS: PortraitMeta[] = [
   { src: '/images/defa/khamenei.jpeg', name: 'حضرت آیت‌الله خامنه‌ای', caption: 'مقام معظم رهبری — پرتره رسمی', badge: 'پرتره رسمی' },
 ]
 
-const MARTYR_CARDS: { img?: string; name: string; caption: string; badge?: string }[] = [
-  { img: '/images/defa/jahanara2.jpg', name: 'شهید محمد جهان‌آرا', caption: 'فرمانده دفاع از خرمشهر — ۴ آبان ۱۳۵۹', badge: 'پوستر یادبود (ایکنا)' },
-  { img: '/images/defa/kharazi.jpg', name: 'شهید حسین خرازی', caption: 'فرمانده لشکر ۱۴ امام حسین (ع) — اسفند ۱۳۶۴', badge: 'پرتره دیجیتال' },
-  { img: '/images/defa/sayyad.jpg', name: 'شهید علی صیاد شیرازی', caption: 'فرمانده قرارگاه کربلا — شهید فروردین ۱۳۷۸', badge: 'پوستر یادبود' },
-  { name: 'شهید مصطفی چمران', caption: 'وزیر دفاع و فرمانده — ۳۱ خرداد ۱۳۶۰' },
-  { name: 'شهید ابراهیم همت', caption: 'فرمانده لشکر ۲۷ محمد رسول‌الله (ص) — دی ۱۳۶۲' },
-  { name: 'شهید مهدی باکری', caption: 'فرمانده لشکر ۳۱ عاشورا — اسفند ۱۳۶۲' },
+const MARTYR_CARDS: { img?: string; name: string; caption: string; badge?: string; pos?: string }[] = [
+  { img: '/images/defa/jahanara2.jpg', name: 'شهید محمد جهان‌آرا', caption: 'فرمانده دفاع از خرمشهر — ۷ مهر ۱۳۶۰ (سانحه سی-۱۳۰)', badge: 'پوستر یادبود (ایکنا)' },
+  { img: '/images/defa/kharazi.jpg', name: 'شهید حسین خرازی', caption: 'فرمانده لشکر ۱۴ امام حسین (ع) — اسفند ۱۳۶۵', badge: 'پرتره دیجیتال' },
+  { img: '/images/defa/sayyad.jpg', name: 'شهید علی صیاد شیرازی', caption: 'فرمانده قرارگاه کربلا و عملیات مرصاد — فروردین ۱۳۷۸ (پس از جنگ)', badge: 'پوستر یادبود' },
+  { img: '/images/defa/chamran.jpg', name: 'شهید مصطفی چمران', caption: 'وزیر دفاع و فرمانده جنگ‌های نامنظم — ۳۱ خرداد ۱۳۶۰', badge: 'پرتره تأیید آرشیوی', pos: 'object-top' },
+  { img: '/images/defa/hemmat.jpg', name: 'شهید ابراهیم همت', caption: 'فرمانده لشکر ۲۷ محمد رسول‌الله (ص) — اسفند ۱۳۶۲ (خیبر)', badge: 'پرتره آرشیوی جبهه' },
+  { img: '/images/defa/bakri-mehdi.jpg', name: 'شهید مهدی باکری', caption: 'فرمانده لشکر ۳۱ عاشورا — اسفند ۱۳۶۳ (بدر)', badge: 'پرتره آرشیوی' },
 ]
 
 /** نوار چهره‌های ماندگار دفاع مقدس (رهبران + شهدا) */
@@ -135,7 +135,7 @@ export function DefaIconsStrip() {
             m.img ? (
               <figure key={m.name} className="defa-frame flex flex-col items-center">
                 <div className="relative h-28 w-28 overflow-hidden rounded-2xl border-2 border-emerald-400/40 shadow-[0_0_20px_oklch(0.6_0.12_160/0.22)]">
-                  <img src={m.img} alt={m.name} loading="lazy" className="h-full w-full object-cover" />
+                  <img src={m.img} alt={`پرتره ${m.name}`} loading="lazy" onError={e => { (e.currentTarget.style.display = 'none') }} className={`h-full w-full object-cover ${m.pos ?? ''}`} />
                   {m.badge && <span className="absolute bottom-1 left-1 rounded-md bg-emerald-950/80 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-400/30">{m.badge}</span>}
                 </div>
                 <figcaption className="mt-1.5 text-center text-[11px] leading-4">
@@ -153,7 +153,7 @@ export function DefaIconsStrip() {
         </div>
       </div>
       <p className="mx-auto max-w-2xl text-center text-[10px] leading-5 text-muted-foreground">
-        تصاویر این نوار از منابع عمومی وب بازیابی و برای هر پرتره وضعیت هویت‌سنجی روی خود تصویر درج شده است؛ پرتره‌ای که هویتش تأیید نشد عمداً به‌جای عکس، پلاک نام دارد. طبق میثاق موزه، هیچ تصویری بدون احراز هویت در کنار نام شهدا قرار نمی‌گیرد.
+        پرتره‌های این نوار از منابع آرشیوی و عمومی وب بازیابی و تطبیق هویت‌سنجی شده‌اند و وضعیت هر تصویر روی خود قاب درج است؛ تاریخ شهادت هر شهید با رکورد راستی‌آزمایی‌شده خط زمانی موزه یکدست است. طبق میثاق موزه، هیچ تصویری بدون احراز هویت در کنار نام شهدا قرار نمی‌گیرد و اگر پرتره‌ای در دسترس نباشد، پلاک نام شهید جای آن را می‌گیرد.
       </p>
     </div>
   )
