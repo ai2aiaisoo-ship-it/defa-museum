@@ -20,6 +20,10 @@ export function MusicPlayer() {
   const [volume, setVolume] = useState(0.45)
   const [open, setOpen] = useState(false)
   const [inited, setInited] = useState(false)
+  const duckRef = useRef(0) // شمار روایت‌های در حال پخش — هنگام روایت، موسیقی ساکت می‌شود
+  const resumeRef = useRef(false)
+  const mutedRef = useRef(muted)
+  const volumeRef = useRef(volume)
 
   // بازیابی تنظیم کاربر — الگوی رسمی React: تنظیم state حین رندر (بدون effect)
   if (!inited) {
@@ -44,9 +48,47 @@ export function MusicPlayer() {
   const play = useCallback(() => {
     const a = audioRef.current
     if (!a) return
+    if (duckRef.current > 0) return // روایت در جریان است — موسیقی پخش نشود
     a.volume = volume
     a.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
   }, [volume])
+
+  // هماهنگی با روایت‌های شنیداری: هنگام روایت سکوت، پس از روایت بازیابی (الگوی اشتراک رویداد)
+  useEffect(() => {
+    mutedRef.current = muted
+    volumeRef.current = volume
+  }, [muted, volume])
+
+  useEffect(() => {
+    const up = () => {
+      duckRef.current += 1
+      const a = audioRef.current
+      if (a && !a.paused) {
+        resumeRef.current = !mutedRef.current
+        a.pause()
+        setPlaying(false)
+      }
+    }
+    const down = () => {
+      duckRef.current = Math.max(0, duckRef.current - 1)
+      if (duckRef.current === 0 && resumeRef.current) {
+        resumeRef.current = false
+        const a = audioRef.current
+        if (a && !mutedRef.current) {
+          a.volume = volumeRef.current
+          a.play().then(() => setPlaying(true)).catch(() => { /* بی‌اهمیت */ })
+        }
+      }
+    }
+    window.addEventListener('narration-play', up)
+    window.addEventListener('narration-stop', down)
+    window.addEventListener('narration-ended', down)
+    return () => {
+      window.removeEventListener('narration-play', up)
+      window.removeEventListener('narration-stop', down)
+      window.removeEventListener('narration-ended', down)
+    }
+  }, [])
 
   // پخش پس از نخستین تعامل کاربر (سیاست مرورگرها) — اگر کاربر قبلاً میوت نکرده باشد
   useEffect(() => {

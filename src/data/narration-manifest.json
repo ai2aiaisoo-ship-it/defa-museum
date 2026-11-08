@@ -1,0 +1,114 @@
+{
+ "exp-opsec-valfajr8": {
+  "sec": 46.3,
+  "bytes": 277920
+ },
+ "exp-opsec-karbala4": {
+  "sec": 42.9,
+  "bytes": 257472
+ },
+ "exp-opsec-valfajr-moqaddamati": {
+  "sec": 42.4,
+  "bytes": 254592
+ },
+ "exp-opsec-kurdistan": {
+  "sec": 40.2,
+  "bytes": 241056
+ },
+ "exp-recon-hoor": {
+  "sec": 37.9,
+  "bytes": 227520
+ },
+ "exp-recon-arvand": {
+  "sec": 41.4,
+  "bytes": 248544
+ },
+ "exp-recon-fail-fathmobin": {
+  "sec": 38.3,
+  "bytes": 229824
+ },
+ "exp-eng-hoor-bridging": {
+  "sec": 34.9,
+  "bytes": 209520
+ },
+ "exp-eng-arvand-pontoon": {
+  "sec": 36.4,
+  "bytes": 218304
+ },
+ "exp-eng-karbala5-trench": {
+  "sec": 31.4,
+  "bytes": 188496
+ },
+ "exp-cmd-samen": {
+  "sec": 35.8,
+  "bytes": 214704
+ },
+ "exp-cmd-baytalmoghaddas": {
+  "sec": 38.0,
+  "bytes": 227952
+ },
+ "exp-cmd-limited-goal": {
+  "sec": 39.1,
+  "bytes": 234864
+ },
+ "exp-cmd-mersad-speed": {
+  "sec": 32.7,
+  "bytes": 196272
+ },
+ "exp-people-ships": {
+  "sec": 35.7,
+  "bytes": 214128
+ },
+ "exp-people-general": {
+  "sec": 40.8,
+  "bytes": 244656
+ },
+ "exp-init-valfajr8-deception": {
+  "sec": 39.2,
+  "bytes": 235296
+ },
+ "exp-init-crossfront": {
+  "sec": 37.1,
+  "bytes": 222768
+ },
+ "exp-init-faw-persist": {
+  "sec": 36.7,
+  "bytes": 220464
+ },
+ "exp-log-hoor-medevac": {
+  "sec": 35.9,
+  "bytes": 215568
+ },
+ "exp-log-badr-supply": {
+  "sec": 36.8,
+  "bytes": 221040
+ },
+ "exp-train-k4-to-k5": {
+  "sec": 38.9,
+  "bytes": 233568
+ },
+ "exp-train-armored-mixed": {
+  "sec": 36.9,
+  "bytes": 221472
+ },
+ "exp-train-basij-school": {
+  "sec": 39.0,
+  "bytes": 233712
+ },
+ "exp-fail-ramadan-frontal": {
+  "sec": 38.3,
+  "bytes": 229536
+ },
+ "exp-fail-badr-river": {
+  "sec": 36.5,
+  "bytes": 218880
+ },
+ "exp-fail-chem-learning": {
+  "sec": 43.8,
+  "bytes": 262656
+ },
+ "exp-fail-interval-cmd": {
+  "sec": 40.6,
+  "bytes": 243360
+ }
+}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { WAR_EXPERIENCES, EXPERIENCE_CATEGORIES, experiencesOfOp } from '@/data/experiences'
 import { OPERATIONS } from '@/data/operations'
 import { Badge } from '@/components/ui/badge'
@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { SectionHeader, ConfidenceBadge, SourceChips } from './ui-bits'
 import { toFa } from '@/lib/jalali'
+import { NarrationPlayer, NARR_BUS } from './NarrationPlayer'
+import { narrationOf, narrationTime, NARRATED_COUNT, NARRATION_META, NARRATION_TOTAL_SEC } from '@/data/narrations'
 
 type CatKey = keyof typeof EXPERIENCE_CATEGORIES
 
@@ -27,9 +29,11 @@ const CAT_STYLE: Record<string, { chip: string; bar: string; text: string; box: 
 export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: string, p?: string) => void }) {
   const [cat, setCat] = useState<'all' | CatKey>('all')
   const [query, setQuery] = useState('')
-  const [mode, setMode] = useState<'cards' | 'matrix'>('cards')
+  const [mode, setMode] = useState<'cards' | 'matrix' | 'listen'>('cards')
   const [openOpFilter, setOpenOpFilter] = useState<string | undefined>(focusId)
   const [lastFocus, setLastFocus] = useState<string | undefined>(focusId)
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const [playToken, setPlayToken] = useState(0)
   // همگام‌سازی focusId با فیلتر عملیات
   if (focusId && focusId !== lastFocus) {
     setLastFocus(focusId)
@@ -64,6 +68,25 @@ export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: str
 
   const resetFilters = () => { setCat('all'); setQuery(''); setOpenOpFilter(undefined) }
 
+  // تالار شنیداری: پیشروی خودکار در پایان هر قطعه (رویداد خارجی → اشتراک رویداد)
+  useEffect(() => {
+    if (mode !== 'listen') return
+    const onEnded = (ev: Event) => {
+      const id = (ev as CustomEvent<string>).detail
+      const idx = filtered.findIndex(f => f.id === id)
+      if (idx >= 0 && idx < filtered.length - 1) {
+        setActiveId(filtered[idx + 1].id)
+        setPlayToken(t => t + 1)
+      }
+    }
+    window.addEventListener(NARR_BUS.ended, onEnded)
+    return () => window.removeEventListener(NARR_BUS.ended, onEnded)
+  }, [mode, filtered])
+
+  const listenActive = mode === 'listen' ? (filtered.find(f => f.id === activeId) ?? filtered[0] ?? null) : null
+  const listenIdx = listenActive ? filtered.findIndex(f => f.id === listenActive.id) : -1
+  const selectTrack = (id: string) => { setActiveId(id); setPlayToken(t => t + 1) }
+
   return (
     <div className="space-y-5">
       <SectionHeader
@@ -77,6 +100,7 @@ export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: str
         <Badge variant="outline" className="border-primary/40 bg-primary/10 text-[10.5px] font-extrabold">🧭 {toFa(WAR_EXPERIENCES.length)} تجربه ثبت‌شده</Badge>
         <Badge variant="outline" className="text-[10.5px] font-extrabold">🗂 {toFa(Object.keys(EXPERIENCE_CATEGORIES).length)} دسته</Badge>
         <Badge variant="outline" className="text-[10.5px] font-extrabold">⚔ {toFa(opsCovered)} عملیات پوشش‌داده‌شده</Badge>
+        <Badge variant="outline" className="border-primary/40 bg-primary/10 text-[10.5px] font-extrabold">🎙 {toFa(NARRATED_COUNT)} روایت شنیداری · {narrationTime(NARRATION_TOTAL_SEC)}</Badge>
         <Badge variant="outline" className="text-[10.5px] font-extrabold text-muted-foreground">منبع: پرونده‌های مستند موزه — بدون جزئیات تاکتیکی</Badge>
         {openOpFilter && (
           <button onClick={() => setOpenOpFilter(undefined)} className="rounded-lg border border-primary/50 bg-primary/10 px-2 py-0.5 text-[10.5px] font-extrabold text-primary">
@@ -118,6 +142,7 @@ export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: str
         <div className="flex items-start gap-1.5">
           <Button size="sm" variant={mode === 'cards' ? 'default' : 'outline'} onClick={() => setMode('cards')} className="text-xs font-bold">🗂 نمای کارت</Button>
           <Button size="sm" variant={mode === 'matrix' ? 'default' : 'outline'} onClick={() => setMode('matrix')} className="text-xs font-bold">🧮 ماتریس تجربه × عملیات</Button>
+          <Button size="sm" variant={mode === 'listen' ? 'default' : 'outline'} onClick={() => setMode('listen')} className="text-xs font-bold">🎧 تالار شنیداری</Button>
         </div>
       </div>
 
@@ -129,7 +154,71 @@ export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: str
         )}
       </div>
 
-      {mode === 'cards' ? (
+      {mode === 'listen' ? (
+        /* ─── تالار شنیداری: پخش پیاپی روایت‌ها مثل مستند رادیویی ─── */
+        <div className="space-y-3">
+          <div className="rounded-2xl border border-primary/25 bg-primary/5 p-3">
+            <p className="text-[11px] leading-6 text-foreground/90">
+              <span className="font-extrabold text-primary">🎧 تالار شنیداری —</span> روایت‌های فیلترشده، پیاپی و مثل مستند رادیویی پخش می‌شوند؛ در پایان هر قطعه، روایت بعدی خودکار آغاز می‌شود. {NARRATION_META.disclosureShort}
+            </p>
+            <p className="mt-1 text-[10px] leading-5 text-muted-foreground">{NARRATION_META.disclosureLong}</p>
+          </div>
+          {listenActive ? (
+            <>
+              <NarrationPlayer
+                key={listenActive.id}
+                expId={listenActive.id}
+                variant="full"
+                playToken={playToken}
+                title={`${toFa(listenIdx + 1)}. ${listenActive.title}`}
+                subtitle={`${EXPERIENCE_CATEGORIES[listenActive.category].icon} ${EXPERIENCE_CATEGORIES[listenActive.category].label} · سال ${listenActive.year}`}
+              />
+              <div className="flex items-center justify-between">
+                <Button
+                  size="sm" variant="outline" disabled={listenIdx <= 0}
+                  onClick={() => selectTrack(filtered[listenIdx - 1].id)}
+                  className="text-xs font-bold"
+                >
+                  → روایت قبلی
+                </Button>
+                <span className="text-[11px] font-bold text-muted-foreground">روایت {toFa(listenIdx + 1)} از {toFa(filtered.length)}</span>
+                <Button
+                  size="sm" variant="outline" disabled={listenIdx >= filtered.length - 1}
+                  onClick={() => selectTrack(filtered[listenIdx + 1].id)}
+                  className="text-xs font-bold"
+                >
+                  روایت بعدی ←
+                </Button>
+              </div>
+              <div className="overflow-hidden rounded-2xl border bg-card/40">
+                {filtered.map((e, i) => {
+                  const c = EXPERIENCE_CATEGORIES[e.category]
+                  const st = CAT_STYLE[c.color] ?? CAT_STYLE.primary
+                  const info = narrationOf(e.id)
+                  const active = !!listenActive && e.id === listenActive.id
+                  return (
+                    <button
+                      key={e.id}
+                      onClick={() => selectTrack(e.id)}
+                      aria-label={`پخش روایت ${e.title}`}
+                      className={`flex w-full items-center gap-3 border-b px-3 py-2.5 text-right transition-colors last:border-b-0 min-h-[44px] ${active ? 'border-r-4 border-r-primary bg-primary/10' : 'border-r-4 border-r-transparent hover:bg-muted/40'}`}
+                    >
+                      <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg text-[11px] font-extrabold ${active ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>{toFa(i + 1)}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className={`block truncate text-[12.5px] font-bold ${active ? 'text-primary' : ''}`}>{e.title}</span>
+                        <span className={`mt-0.5 inline-block rounded-md border px-1.5 text-[9.5px] font-bold ${st.chip}`}>{c.icon} {c.label}</span>
+                      </span>
+                      <span className="shrink-0 text-[10.5px] font-bold tabular-nums text-muted-foreground">🎙 {info ? narrationTime(info.durationSec) : '—'}</span>
+                    </button>
+                  )
+                })}
+              </div>
+            </>
+          ) : (
+            <div className="rounded-2xl border border-dashed p-8 text-center text-sm text-muted-foreground">روایتی با این فیلترها یافت نشد.</div>
+          )}
+        </div>
+      ) : mode === 'cards' ? (
         <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map(e => {
             const c = EXPERIENCE_CATEGORIES[e.category]
@@ -143,6 +232,7 @@ export function ExperiencesView({ focusId, go }: { focusId?: string; go: (v: str
                     <Badge variant="outline" className="text-[10px] font-bold text-muted-foreground">🗓 {e.year}</Badge>
                   </div>
                   <h3 className="text-sm font-extrabold leading-6">{e.title}</h3>
+                  {narrationOf(e.id) && <NarrationPlayer expId={e.id} variant="compact" title={e.title} />}
                   <p className="flex-1 text-[12px] leading-6 text-muted-foreground">{e.text}</p>
                   <div className={`rounded-xl border p-2.5 text-[11px] font-bold leading-5 ${st.box}`}>
                     <span className={st.text}>★ چرا گران‌بها بود:</span> <span className="text-foreground/90">{e.significance}</span>
