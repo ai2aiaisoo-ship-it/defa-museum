@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "عکس شهید سرلشکر ولی الله فلاحی فرمانده نیروی زمینی ارتش",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/caf6278192f7.jpg",
+      "caption": "Iranian soldiers in camouflage uniforms carry a black coffin draped with women's photos during a funeral, one carrying large floral wreath. Watermark present.",
+      "source": "نوید شاهد",
+      "original_width": "1280px",
+      "original_height": "719px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bd183cc7b49e.jpg",
+      "caption": "Uniformed Iranian honor guards carry a coffin with portraits, clergy and officers beside, sashes read \"شهریاری\". Watermark: \"DEFA Press, Mohsen Baghestani\".",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "1500px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3c0026349b36.jpg",
+      "caption": "An indoor auditorium ceremony with two men at a table, Iranian flags, a banner, Persian text, and a watermark.",
+      "source": "نوید شاهد",
+      "original_width": "1280px",
+      "original_height": "959px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6fc06d1ad93a.jpg",
+      "caption": "A bearded man in black holds a microphone, standing before a large blurred portrait of a military officer.",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c2350479fbe8.jpg",
+      "caption": "Soldiers in desert camouflage and tan berets march in formation at an Iranian army parade; Persian text reads \"ارتش فدای ملت، حمن حسین امنت\".",
+      "source": "ایمنا",
+      "original_width": "1280px",
+      "original_height": "853px"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D9%86_%D8%A8%D8%A7%D9%82%D8%B1%DB%8C",
+    "name": "حسن باقری - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "حسن باقری در هنگام درگذشت ۲۶ سال داشت. محل دفن وی، قطعهٔ ۲۴ گلزار شهدای بهشت زهرا است. بزرگ‌راهی در تهران به یادبود وی، نام‌گذاری شده است. پس از ... Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://news.ut.ac.ir/fa/page/8289/%D8%B4%D9%87%DB%8C%D8%AF-%D8%BA%D9%84%D8%A7%D9%85%D8%AD%D8%B3%DB%8C%D9%86-%D8%A7%D9%81%D8%B4%D8%B1%D8%AF%DB%8C-%D8%AD%D8%B3%D9%86-%D8%A8%D8%A7%D9%82%D8%B1%DB%8C-",
+    "name": "شهید غلامحسین افشردی (حسن باقری)",
+    "snippet": "تاریخ و محل تولد: ۲۵ اسفند ۱۳۳۴؛ تهران تاریخ و محل شهادت :۹ بهمن ۱۳۶۱، فکه مزار: بهشت زهرا (س) قطعه ۲۴ ردیف ۸۰ شماره ۲۴ . زندگینامه حسن باقری را بسیاری ... Read more",
+    "host_name": "news.ut.ac.ir",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.golzar.info/33325/%D8%B4%D9%87%DB%8C%D8%AF-%D8%AD%D8%B3%D9%86-%D8%A8%D8%A7%D9%82%D8%B1%DB%8C-%D9%85%D9%88%D8%B1%DA%86%D9%87-%D8%AE%D9%88%D8%B1%D8%AA%DB%8C",
+    "name": "شهید حسن باقری مورچه خورتی",
+    "snippet": "تا پایان ابتدایی درس خواند. نگهبان بود. به عنوان بسیجی در جبهه حضور یافت. هجدهم فروردین ۱۳۶۶، در شلمچه به شهادت رسید. مزار او در بهشت زهرای زادگاهش واقع است. Read more",
+    "host_name": "www.golzar.info",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESpwIBxCJF17jPI42XjWvRMYv1021Hlias-vbZIfrYn1H-tkse8cW5_w7GX1SSX6oi-TcHKRu0BipW1AnxMEy1_kEBssMSt_xBhurXyZSsYW-yXEYCTjmdYGIQZakVj8zNL0bC1cKDReZmooa2-aiy6gN2DCE6eZFW1LwFlACEh7znBDMvxjkab1k1O23-1nOD4x-5PywgkwYEEZysAeoMWZGjcJTirUsUwkDzei4cjGGZ2zxjOSLB6YIWUgTktByH_fW1VRjABQ4cIcK7H2MBHSZGXTKbaameoiTFmJtnitWsEYH19aYSKq_CE_bYCii3eZHNsZG_QvoPSMPulz2MUqVu8FM8n5Q9-yBgSBCaWxaNUtNmXFB344SSTU_mRl-hG-QenwViED2i",
+    "name": "سنگ مزار شهید \"حسن باقری\" رونمایی شد +عکس",
+    "snippet": "Jan 18, 2018 — سردار شهید حسن باقری در 9 بهمن 1361 در منطقه عملیاتی فکه شمالی به درجه رفیع شهادت نائل آمد و پیکر مطهرش در قطعه 24 گلزار شهدای تهران آرام گرفته ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "Jan 18, 2018",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES0QEBxCJF1391dNUWnLJQm2XNQgs13guyhSpMI8ZGHyD1LhBhhssSi9e7bi-rNtD9yfhTFKZoRBBe9Lvyo2B7RVeblibfsyuXAqNwi8WLWSQm4N-PvBDGi8C6FhpfF7rUb7zmS2zBKkRaWotVj949iUjXGFwgVNvaffw-uOEJUG2xQIYMHXSu4rQoef-5fPMsD30DYYtcHjKTdnHICnbJ1DAPJWzRAa1rMj8-0O-SMs7Mxv_pGt14h1wtX-uYmVlVKxZkvKjUNBb9bAeAYZNZhzfZlg",
+    "name": "مزار شهید حسن باقری؛ آدرس، تلفن، ساعت کاری",
+    "snippet": "شهرستان ری،بلوار حضرت زهرا ،خ یاس هفتم،خ فدک یکم، بهشت‌ زهرا . ویرایش اطلاعات. ویرایش نام، دسته‌بندی، آدرس، موقعیت‌ مکانی و ... درخواست حذف مکان. Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESugIBxCJF1wkLM1bac64_fJrr5AXosgW9XGVcTnKwBvmt_-LS1AMk3kAX-L2Frp1L6gwAHZ4p6_uMe8rM0r8xLqmZzK5O6XGg_QrlGJGWn5KRsEtV_W6ZbqxyApn2fYFMQ9BZ1tv71MWWMFF9XSPZ2WtvsXATRmDfeXsq84Mw3j3v5HgBkWsNdDBQ8Zv7QXmzvvm4Zyf8szUM0_pc8eTz9dK2uO6paIt0s4JYfHxZEaX066XIhH6Hjo07FMIYevdw-lzO0AhEX41O0sPYQSQiMj5N6zP5lXGOrYwANm_VohrthIxU51-lJYGGrNtxlLEkAZQviqeanLLPNgl7EKVTISqMaZ3F4scLi9ujhLY1nQm7TNm7Ud0J5jq7OMj09ZQVu99xY26oVWosUSdsmx4ROgbVQd7uiRuITnITbw",
+    "name": "محل خاکسپاری سرداران شهید مشخص شد + جزئیات",
+    "snippet": "Jun 27, 2025 — ... محل خاکسپاری شهدای کشورمان در زیر آمده است: - سردار محمد باقری و سردار محرابی در کنار شهید حسن باقری در قطعه ۲۴ بهشت زهرا (س). - سردار سلامی ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "Jun 27, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESgwIBxCJF1_t5bmyhLobN4APXKfdx0TOmiBKgD4RQTuK-rOlrCP_XuWR8ljDKLRbvWuOImDGfatJosl-z58BbQ7V73WqtOhhjwPbeKEzkHaXdhpsqdqQghRTaBfSU82foIigus_sYGig4FsHnEJDb3FZH7R0BKfYz6YNbE30pTo5bJ7ktZPE0X7lyBMrxJqej8fzdZboW5_ZmG897zrqYmHl9d_Ir7KqRn3N9X5Z19fBzrkm4pcDMkV8_cce9UBkxtx2Qs8lwmsICSUwMi1QZRuRjqzWE0pLZJwUv-YQrYLn7DBbU-l9QdLEjXXkOL7rtaJkiwSggXKyckNFF8U1Pj5nf04Kj",
+    "name": "شهید غلامحسین افشردی(حسن باقری)",
+    "snippet": "تاریخ و محل تولد: ۲۵ اسفند ۱۳۳۴؛ تهران. تاریخ و محل شهادت :۹ بهمن ۱۳۶۱، فکه. مزار: بهشت زهرا (س) قطعه ۲۴ ردیف ۸۰ شماره ۲۴ . زندگینامه. حسن باقری را بسیاری ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESoQIBxCJF1xuPYeKRIWLcK4vMMd3TTEhh6IHJO2lhacjMdWY1wCb_vx19lDD-EZ2s9TfK4ZfZmpJ2KoRMmaH_X_BmTxNfv5AR-96mJ2-vMLsjEzm49bLo0PGY7bxH9ptNqtC7vBouuTu-WsjDZ-5Uzq1GvT8oWQDS3iZyskQvSrZgQ1CY6V2UIB8V6j91M8fNkTY_f1BiQX0vym0xyQqa7OLblh-EWJZJlTDE2ZEjmMUtmTjwN1VSb1ghgF2MsJ7q_exckIibg_7uW6y_HWfZSM7ocFp8kR3PBp-dX3jBPIeSVv7wUp3YM3HAdux4wMWCMUYN7vufL1zN0PQaWwGzTONkmg-sawM4k-1w0khuQWWUlKfsKiAbK8Pd-_GgKJe-Kpjv",
+    "name": "مزار سردار شهید «حسن باقری» غبارروبی شد",
+    "snippet": "Jan 18, 2018 — به گزارش خبرنگار حماسه و دفاع پرس، آیین غبارروبی مزار سردار شهید «حسن باقری» و قبور جمعی از فرماندهان شهید صبح امروز در قطعه 24 بهشت زهرا برگزار ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "Jan 18, 2018",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

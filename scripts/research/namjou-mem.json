@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%D9%85%D9%88%D8%B3%DB%8C_%D9%86%D8%A7%D9%85%D8%AC%D9%88",
+    "name": "سید موسی نامجو - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "سید موسی نامجوی (۲۶ آذر ۱۳۱۷ – ۷ مهر ۱۳۶۰) سرهنگ نیروی زمینی ارتش جمهوری اسلامی ایران بود، که در دولت محمدجواد باهنر به‌عنوان وزیر دفاع ملی فعالیت می‌کرد. Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://irdc.ir/fa/news/8081/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%A7%D8%AF%D9%87%E2%80%8C%D8%B2%DB%8C%D8%B3%D8%AA%DB%8C-%D8%B4%D9%87%DB%8C%D8%AF-%D9%86%D8%A7%D9%85%D8%AC%D9%88-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87%DB%8C-%DA%A9%D9%87-%D8%AF%D8%A7%D9%86%D8%B4%DA%A9%D8%AF%D9%87-%D8%A7%D9%81%D8%B3%D8%B1%DB%8C-%D8%B1%D8%A7-%D9%81%DB%8C%D8%B6%DB%8C%D9%87-%D8%A7%D8%B1%D8%AA%D8%B4-%DA%A9%D8%B1%D8%AF-%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%B4%D9%87%DB%8C%D8%AF-%D9%86%D8%A7%D9%85%D8%AC%D9%88-%D8%A8%D9%87-%D8%AA%D8%B1%D9%81%DB%8C%D8%B9-%D8%AF%D8%B1%D8%AC%D9%87%E2%80%8C%D8%A7%D8%B4-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AA%D8%B4",
+    "name": "روایتی از ساده‌زیستی شهید نامجو/ فرماندهی که دانشکده افسری",
+    "snippet": "Sep 29, 2022 — ایشان موقع استراحت می‌گفت: من اصلا روی تخت نمی‌خوابم ـ در دانشکده‌ی افسری تخت‌های سربازی بود ـ یک پتو پهن می‌کرد و روی زمین می‌خوابید. خصوصیات ... Read more",
+    "host_name": "irdc.ir",
+    "rank": 1,
+    "date": "Sep 29, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAEScQHEIkXXdgSiMSE-2OhbgNiUvXQu6DKCZDEqknfgnczTtFCsfAU7gNMyHqaFLBnUPbRbuaeC77rj9YztrQ_xA6zRBGe8ko5_a1WcApZaicxUHgIfkl3r-JL1MUrqTLH81wdJTgIy-TDrM3JFAo2JrEKe",
+    "name": "فرازی از زندگی شهید سرتیپ خلبان سید موسی نامجو",
+    "snippet": "برنامه \"تهران میدان شهدا\"، از رادیو تهران (۱۸ مرداد) به روایت و بیان خاطرات شهید سید موسی نامجو از زبان فرزند ایشان و اتفاق های پس از شهادت این بزرگوار اختصاص ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESfQHEIkXX3DB4FA2LTVZYV8cGywtV64xAc12ewDRyTruvs7Mx51Q63YsZJv6oyYcxwG0paRVzwguyug9LHMoNUuUEhKv2KF4nCZevaH5zL4tpJlHPedstzthST01_5tvHzwWVLXHzS5NcLnLi_07jsoQUoiXpnqSq2CfQjD1c",
+    "name": "خاطراتی ازشهید سرتیپ خلبان سید موسی نامجو - شهید آوینی",
+    "snippet": "از سال 50 كه فعالیت سیاسی خصوصا برای ارتش خطرناك بود، شهید نامجو نوارها و اعلامیه‌های امام را پخش و جابجا می‌كرد. او با همسر و فرزندانش، روابط عاطفی و ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESiwEBxCJF1wiuCjxflmQyucUfimJ2_hgeU9zl9J68lOdv38-rVMdvfd4zhZ-cyz3QrT21ImzaK2ZsWqviObJTddUXCa5h06j-4tkNMRiEvD8q8Tz2TZkp9U5x5XLYqrM4KufhmLdP6vWKu4LTGp8-XvCgVP1D0q8JB4Fhbb0DtQNGRHTiIeK1P1njKJRD",
+    "name": "سید موسی نامجو",
+    "snippet": "سید موسی نامجو (۱۳۱۷-۱۳۶۰ش)، با درجه سرهنگی، وزیر دفاع در دولت شهید محمدجواد باهنر و فرمانده دانشگاه افسری و عضو هیئت علمی آن بود. سید موسی پس از اخذ دیپلم وارد ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXQHEIkXXNLX5cFvN4UXwBzajef46b0u11wDmKW-c5FLSR3d5vsXoUwh_mHb9jopFXkzSZFzkwMCRU3bvuBHHby1zvdIetursaX99SrFyXo07BvDcSTmPTQym6CzoKw",
+    "name": "شهید موسی نامجو",
+    "snippet": "کاری از بنیاد حفظ آثار و نشر ارزش های دفاع مقدس موشن گرافیک: \" شهید موسی نامجو \"",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESYQHEIkXXxJ4IQsryhXcz_JfGpotlpi_G1E-wqkq9Jyv5AmDGv2x1Ya_KQoT2L8d6cQaVFjjsYI3LbXRh_s03Sq_7Lhy-hdRbXs683aUIrlllUOq4me4A8k4UVYx75Au4Djo",
+    "name": "شهیدسیدموسی نامجو",
+    "snippet": "شهید نامجو در کنار حضرت آیت الله خامنه ای – مدظله العالی – حدود دو سه ماه متوالی در ستاد عملیات نامنظم فعالیت داشت. در طول این مدت که ما زیر بمب و موشک دایم ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESigEBxCJF1yjjJl_v1muDtiUcM44EjjPw1naMCrO3LGvZDRfeZJfiplDg0JaTeYPDTTRUZD389TDWoT4ZhfnSIq9FWFwoF-Pm1JB8OYPBhoyrYalGJhXa2J8WbZwaJWHnA9AsOP3GbYOGNU29tzAwMBG0pyp_SWVOk3JFFw3sMuRFyU40iGyUPT6qHqc",
+    "name": "شهید نامجو - شرکت تبلیغات و خلاقیت فُطرُس",
+    "snippet": "این کتاب دربرگیرنده خاطرات ، زندگی‌نامه و وصیت‌نامه شهید نامجوی و فرماندهان شهید شهرستان انزلی به قلم و تدوین علی سمیعی است. « ما پاسداران زمین و آسمانیم» در قطع ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

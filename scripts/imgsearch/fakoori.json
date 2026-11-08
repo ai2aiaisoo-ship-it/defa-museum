@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید جواد فکوری",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/18acd88b2839.jpg",
+      "caption": "A painted portrait poster of a man with glasses, with Persian text naming \"Martyr Javad Fakouri\"; contains text and logos, commemorative design.",
+      "source": "negarestock.ir",
+      "original_width": "452px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7859aa11e5e1.jpg",
+      "caption": "Digital painted portrait of a man with curly hair and aviator glasses, green jacket, white turtleneck, Persian text \"شهید ایرج رضایی\" with watermark \"مرلنگر خاتمی\"; unsuitable for background.",
+      "source": "negarestock.ir",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2860ab8977cd.jpg",
+      "caption": "A memorial banner displaying a framed portrait of a man with Persian calligraphy reading \"جواد فکوری\", decorated with white blossoms. Contains watermarks (Islamic Republic brand), suitable for background image.",
+      "source": "irantarh.com",
+      "original_width": "683px",
+      "original_height": "789px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9ea0df846db0.jpg",
+      "caption": "A painted portrait of a man in glasses wearing a green military uniform with insignia, Persian calligraphy text, watermarked \"Aviny.com, Abbas Goodarzi, Telegram.me/sh_Aviny\".",
+      "source": "old.aviny.com",
+      "original_width": "750px",
+      "original_height": "1022px"
+    }
+  ]
+}

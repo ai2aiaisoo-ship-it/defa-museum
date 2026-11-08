@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید سید حسن باقری افشردی",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/551db3872e31.jpg",
+      "caption": "A young man in a khaki button-up shirt stands outdoors before a brick wall; image is blurry with a \"NODY.IN\" watermark.",
+      "source": "خبرآنلاین",
+      "original_width": "1061px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5b1c51c9c5c9.jpg",
+      "caption": "A watercolor portrait of a woman in a blue headscarf, with Persian text \"سیده ثریا موسوی\" and a memorial caption; no watermark.",
+      "source": "همشهری آنلاین",
+      "original_width": "904px",
+      "original_height": "1024px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5e8fe96734c7.jpg",
+      "caption": "A young man with curly dark hair in a light collared shirt, shown in profile; blurry vintage photo with Persian logo/text overlay.",
+      "source": "هیات رزمندگان اسلام",
+      "original_width": "1280px",
+      "original_height": "850px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2f4d5665ba0a.jpg",
+      "caption": "Vintage photo of a young man driving a vehicle with clerics beside him; contains yellow Persian text overlay \"فرماندهان سپاه\" (Commanders of the Corps).",
+      "source": "IranWire",
+      "original_width": "1399px",
+      "original_height": "682px"
+    }
+  ]
+}

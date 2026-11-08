@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://serajnet.org/post/detail/Fa/2-62-13-2-1-0/%D8%AF%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%D8%A7%D8%B2-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%AD%D9%85%D8%AF-%D8%AC%D9%87%D8%A7%D9%86-%D8%A2%D8%B1%D8%A7",
+    "name": "ده خاطره از شهید محمد جهان آرا - سراج اندیشه",
+    "snippet": "روز جهان آرا خرمشهر بود. از روزی که عراق به خرمشهر هجوم آورد، محمد همّ خود را وقف جنگ کرد. قتلگاه روز عاشورا است. قضايا بودم.",
+    "host_name": "serajnet.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://fa.wikifeqh.ir/%D9%85%D8%AD%D9%85%D8%AF_%D8%AC%D9%87%D8%A7%D9%86%E2%80%8C%D8%A2%D8%B1%D8%A7",
+    "name": "محمد جهان‌آرا",
+    "snippet": "من مایلم اینجا یادی بکنم از محمد جهان آرا ، شهید عزیز خرمشهر و شهدایی که در خرمشهر مظلوم آن‌طور مقاومت کردند. آن روزها بنده در اهواز از نزدیک شاهد قضایا بودم. Read more",
+    "host_name": "fa.wikifeqh.ir",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESbQHEIkXX5Q2DPid9axVyooOChVR2sAgrP4XNHHFiwyI1FKIXolRPvF1df9FyYPk2I2Z71laf-qQzpdKVQ90D8fOPcwsA1DtVacnKtczt00kcCx9gsGMVoIedVS-CBJ3jsBUcddqdPlS-K6m2rb0",
+    "name": "محمد جهان‌آرا، فرمانده جوان و شجاع خرمشهر، تنها ۲۷ سال داشت؛ اما نامش",
+    "snippet": "با آغاز جنگ ایران و عراق، او و همرزمانش با کمترین امکانات، ۳۴ روز از خرمشهر دفاع کردند و مقاومتی رقم زدند که هنوز هم از آن به احترام یاد می‌شود.",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESxAIBxCJF152mo5vyoR1mYGJxGnpGpKjI5q_1M1ekLNU1SaWC-ukDD7AJmL70ZD_C7Es5qntqdVbPj1bnUuJ6nWx1XUNbfPUUOjyAX6uLZHWZmMVKPbxdReXRF2WP_bAiz9yUBA-lKx0CACIMgJ3XeTKdo2d1L6EkpohlAOeBUYstemAjxKzCl35l_Gbm_pxxtZ21A9_1li0OXN1g7nUHkNw4O-sbupZgiw_Ls9aNdHtSMCxarhTRPiGNtTDEVOSvL6dJ_gmzXAleq_yJnqabpxJ8ci_RtEEtdrh_t7-100MuRIkSXLS1I3u2mUlOPK9gxnbaYH9hHQdNzHTucWeBGB2sEb4oZdknjB5aAU7A_xErtmHeust9N42pGHfCI9jJh1LntByWw6KkiJzYOkH0LtzfkI_7wf6QowRpSHqB1SNunGAXsJA",
+    "name": "شهید جهان آرا ؛ سردار مقاومت 34 روزه مردم خرمشهر",
+    "snippet": "Sep 29, 2008 — شهید جهان آرا در مورد یکی از صحنه های حماسه خرمشهر می گوید: \"امیدی به زنده ماندن نداشتیم، مرگ را می‌دیدیم، بچه ها توسط بی‌سیم شهادت نامه خود را ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "Sep 29, 2008",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESxQEBxCJF12QGtfwON7AE1xRvSLbTrothd6i5wbqfU7UrXlqSP0QmsCUJxQQAUV4vXSo0mIX8ZH5rQsxM0Uad7zDtNc6disGyyjYSUVNzhGY5kyb1vIPZSvvmw-6dhSW3ZR387WvX2ThfV4zF5yJV871TAzfnOpQ6DJQCeNfrSUDAhrHih6zPbPJRTjMXou6G6HJLqrqHBlY-tUllFkaTe7QwKUYpefxOWkl9T9A6CLaZL8ECTl0qMilfL3mpi4_MZ8L-Vqy-Ig",
+    "name": "چند_خاطره_از_شهید - سید محمد علی جهان آرا",
+    "snippet": "شهید جهان آرا در جریان کودتای نوژه به منظور جلوگیری از هرگونه حرکت و اقدام ضد انقلاب در پایگاه سوم دریایی خرمشهر ، از سوی شورای تامین استان خوزستان به سمت ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES0wEBxCJF19M2Iu8B-pV-5ZX-osqzA4ePKECAPEE3Q8_xGp1oK35l81ISHkTpMtylkdC6pWi7yk-zNvYM2_IamfL3pe3N2SiapqSAp-rxOJ1KgwAhcknrIXSgpN_qMTNdxdKh38gPDrGIBPy881keWWDJLogDMD2Oe7Cl29xo7bgFVezFbfMIwhDPjKHnSOsEtm3gIw0wFEjbnqMMvsR73xxTSM6_B-3XNuxKbMSbtF8PQouXIGykNr9eEtZtHRr55o2BI14owJYRJKAaPNyH9lgEe03U",
+    "name": "10 خاطره از شهید جهان آرا",
+    "snippet": "شب و روز جهان آرا خرمشهر بود . از روزی که عراق به خرمشهر هجوم آورد، محمد همّ خود را وقف جنگ کرد. (به نقل از همسر شهید)",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXwHEIkXXVvXAwMbKt6KsxZYIkdzK3JHDP4Wk2PaCwO6-WUqp7MR38oVY0sZaor5tNmor0cJ49v0nnXsy7RV60H-NWS4165oUfuE5qvW0bNEQjUeZh1gUM1aFBaNSnAuy",
+    "name": "نقش شهید جهان ارا در ازادسازی خرمشهر",
+    "snippet": "شهید جهان آرا ، بزرگ مردی که با مقاومت و درایت وی، خرمشهر نه تنها خونین شهر شد، بلکه چشمه جوشان و موج خروشانِ خون شدند که رژیم بعث را به شکست واداشت وسراسر ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESuQEBxCJF19OCBv2WI2V4WNDowC62mUDjbc90MH7rbgdDBTRhQcDItcdgCo5UmStj4NPBxhjehUSzVuOB54PaTSXzO0Cy_SL_p6oX_FGmLouK6ayAzYgiGlt6lloAulSUODMWvWMOPQQ3smVmRARhPun6sTTeGtlNUYD-2UiybdxVWh_jyoWyBHZIuD5DLd79Kjlsu42b6fMzeIVXZRgdI_bhAvA_ZtqHdgDlJhR5nYiml1ISgfgjIuNyvQ",
+    "name": "سید محمد جهان‌آرا - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "سید محمدعلی جهان‌آرا (۹ شهریور ۱۳۳۳ – ۷ مهر ۱۳۶۰) نظامی ایرانی بود که در خلال جنگ ایران و عراق از اعضای سپاه پاسداران انقلاب اسلامی به‌شمار می‌رفت و فرماندهی ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

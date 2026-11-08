@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://www.jamaran.news/%D8%A8%D8%AE%D8%B4-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-12/1523028-%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA%DB%8C-%D8%A7%D8%B2-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B1%D8%AC%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%A8%D8%A7%D8%B1-%D9%85%D9%86%D8%AA%D8%B4%D8%B1-%D9%85%DB%8C-%D8%B4%D9%88%D9%86%D8%AF-%D8%A7%D8%B2-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%AA%D8%A6%D8%A7%D8%AA%D8%B1-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%AF%D8%B3%D8%AA%D9%81%D8%B1%D9%88%D8%B4-%D9%87%D8%A7-%D8%AA%D8%A7-%D9%BE%D8%A7%D8%B3%D8%AE-%D8%AA%D9%86%D8%AF-%D8%A8%D9%87-%DB%8C%DA%A9%DB%8C-%D8%A7%D8%B2-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9%D8%A7%D9%86-%D8%A7%D8%B4%D8%B1%D9%81-%D9%BE%D9%87%D9%84%D9%88%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%AC%D9%84%D8%B3%D8%A7%D8%AA-%D9%86%D9%82-%D8%B2%D9%86%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%AF%DB%8C%D8%B1%D8%A7%D9%86-%D8%AD%D8%B3%DB%8C%D9%86-%D8%B1%D8%AB%D8%A7%DB%8C%DB%8C-%D9%85%D8%B7%D8%B1%D8%AD-%DA%A9%D8%B1%D8%AF",
+    "name": "خاطراتی از شهید رجایی که برای اولین بار منتشر می شوند",
+    "snippet": "Aug 30, 2021 — خاطراتی از شهید رجایی که برای اولین بار منتشر می شوند/ از بازی در تئاتر و خرید از دستفروش ها تا پاسخ تند به یکی از نزدیکان اشرف پهلوی و برگزاری ... Read more",
+    "host_name": "www.jamaran.news",
+    "rank": 0,
+    "date": "Aug 30, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.iichs.ir/vspit1kl3k6)na2.cbyct.html",
+    "name": "پرونده شهید محمدعلی رجایی - تاریخ معاصر",
+    "snippet": "شهید محمدعلی رجایی به اذعان همه دوستان و همراهان، هماره دل در گرو تعلیم و تربیت تأثیرگذار و انقلابی داشت و پس از پیروزی انقلاب اسلامی نیز، تمام توش و توان خویش ... Read more",
+    "host_name": "www.iichs.ir",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESWwHEIkXXns-NahQrg8vt2PejvCfjWgHIPsTT0ZH49l1Z9t2fDniTK7bDVwU0tCdppYc7_Uiglr2Q_AomGhvdFoFznyDGRt8_CIhZC09OgU8n3v5gc_4PLknq7p0",
+    "name": "خاطراتی از شهید رجائی",
+    "snippet": "Jul 31, 2021 — شهید رجایی در بازگشت از سفر فرانسه، به عراق رفت و خدمت امام رسید، وقتی برگشت دستگیرش کردند و زندان رفت، مدرسه کمال هم بعد از آن بسته شد که در ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "Jul 31, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://farsi.khamenei.ir/others-dialog?id=46367",
+    "name": "چهار روایت از شهید رجائی - ديگران",
+    "snippet": "Aug 29, 2023 — حضرت علی (ع) چه طور زندگی می‌کردند؟ از نظر ساده زیستی‌، رفتار با مردم؟ من شهید رجایی را این طور دیدم. مطلقاً بویی از نِخوت، خود بزرگ بینی و ... Read more",
+    "host_name": "farsi.khamenei.ir",
+    "rank": 3,
+    "date": "Aug 29, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXwHEIkXXEBnlMhkr3U9G10QV-fgrN7uddzamn6z27oMRKhjdAhgBj6MqYkX7-wrrmqOH4QI5uzqU145lfZ_sCa-z7kbl683AK9gfZdw5JKneTzdu_0W0zWf6hXeBy3x1",
+    "name": "خاطراتي از شهيد رجايي",
+    "snippet": "در ایام هفته دولت سعی کردم مجموعه ای از خاطرات زندگی شهید بزرگواری که همه داریم سعی میکنیم مثل اون بشیم،پیدا کنم و بنویسم تا شاید متوجه شویم که چرا رجایی ،",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESywEBxCJF1xdY43CdZeDhRegrO0fijnG777ppH9_19NIFU_x53biGEzpc2cjsuGdmXuH7RkTMy-yNWbWhI6VDu1VTRBXChyOkftH01H76TttcdJLACK5CxACWd936v61lHRYJdSZ8-l9lBqFN0E0EVfsUdTBv4kE-x7CVEcmZYyVI0VLuUv2ac_0LMXSpp_izD-BKCXHCJ2e9XNQ5oHWXgarsX0tM9UXaSix8IP4DxbFRdsV3Wid1rpqKK_ChbrBpK-z7yigRgkC0eOXc6w",
+    "name": "قناعت-و-ساده-زیستی - محمد علی رجایی",
+    "snippet": "Apr 9, 2020 — ... خاطره هایی از شهید رجایی، صص 55 و 60 و 70). سفره ساده، خوراك اندك . شهید رجایی غالبا صبحانه، نهار و حتی مواقعی شام را در محل كارش صرف می كرد ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "Apr 9, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES0wEBxCJF166nr_jyBH4rXcYliwuoUhc2rffYqMhFwyH14lZJmThzGqwmVrrXTjmpeC0QuGBfDTg6wt3F8w5SeYPTkV4QSEVi1adWVeUUdxCTqRQB4oLNMnHi9fQaw2Vd9yRP2PPAMoi9e6dhJrZKkaaYmEePYvwgZAHx1LHvrX58hSR5CsfICkNX_KR2_3vXBnNFEIpfdteg4RAQ8Ei2dInRsNEDFbuux8SjJMHA1eh9DMQ3fMPL_XKkXdTK0hzrgXAHuOgS-ZnOkAJPKOCvGU-shJs7",
+    "name": "رجایی؛ الگوی ساده زیستی",
+    "snippet": "Aug 29, 2023 — وی در بخشی از کتاب تاریخ شفاهی خود با عنوان «طبیب زندان دولتو» به بیان خاطره‌ای از شهید رجایی پرداخته که به مناسبت سالروز شهادت ایشان در حادثه ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Aug 29, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESjAEBxCJF19aFnSpm-exui-J0aLwcFnl8j7LkJCtt0L-B1pYRm97JqfsGc-tML-yDo7Iy823DtuwKXTThCrPaaEHbZ7-v3MHTdxjVGsej710t02P1qgzwu0LiI-RFfjE1s2MdA55IQgBhkgj5rimtEQW77b6kxNbQWzHR0RabDfA9CCiNL_uYhVjFF_Rb7w",
+    "name": "خاطراتی از شهید رجائی - شهید آوینی - Aviny.com",
+    "snippet": "با دو بزرگوار شهيد رجايي و باهنر از سال 1347 افتخار آشنايي و همكاري داشتيم. در مدرسه كمال نارمك و در مدرسه قدس با ايشان همكار بودم. آقاي رجايي از سال 47 در ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

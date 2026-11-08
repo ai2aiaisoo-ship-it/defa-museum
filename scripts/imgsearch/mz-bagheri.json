@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید حسن باقری بهشت زهرا قطعه ۲۴",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/746c9639a887.jpg",
+      "caption": "Two excavated rectangular tombs with stone slabs, surrounded by scaffolding and gravel; Tasnim watermark visible.",
+      "source": "پایگاه خبری خلیج فارس",
+      "original_width": "1170px",
+      "original_height": "767px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8261128077b6.jpg",
+      "caption": "The image shows a white marble gravestone with extensive Persian (Farsi) text, located in Behesht-e Masoumeh cemetery. The stone contains a large amount of text information, so I will not output the text completely. The gravestone commemorates \"Majid Mahmoodabadi\" (ماجيد محمودآبادي), with birth date 1347/5/1 and death date 1398/5/30 in the Persian calendar. Flower petals are scattered on the tombstone, and potted plants and other gravestones are visible nearby on the brick pavement.",
+      "source": "خبرگزاری تسنیم",
+      "original_width": "1122px",
+      "original_height": "1497px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d234f1a11cf0.jpg",
+      "caption": "A bearded man in dark shirt speaks passionately into a microphone, arm raised, at an outdoor crowd gathering.",
+      "source": "ایرنا",
+      "original_width": "1223px",
+      "original_height": "703px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/53a9e1ca980b.jpg",
+      "caption": "A sunny roadside scene at a city entrance in Iran, featuring Persian signage, a welcome arch, billboards, and parked cars.",
+      "source": "روزنامه دنیای اقتصاد",
+      "original_width": "1620px",
+      "original_height": "911px"
+    }
+  ]
+}

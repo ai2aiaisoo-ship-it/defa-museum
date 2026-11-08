@@ -1,0 +1,68 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://serajnet.org/sardaran/jahanara/lang/Fa",
+    "name": "خاطرات شهید محمد جهان آرا - سراج اندیشه",
+    "snippet": "شهید محمد جهان آرا ، فرمانده سپاه خرمشهر بود که خاطره مقاومت جانانه او نیروهای تحت امرش در این شهر ، بخشی از تاریخ ایران است. او به هنگام آزادی خرمشهر ، به ... Read more",
+    "host_name": "serajnet.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hawzah.net/fa/Mostabser/View/65192/11231/%DA%86%D9%86%D8%AF_%D8%AE%D8%A7%D8%B7%D8%B1%D9%87_%D8%A7%D8%B2_%D8%B4%D9%87%DB%8C%D8%AF",
+    "name": "چند_خاطره_از_شهید - سید محمد علی جهان آرا",
+    "snippet": "خاطره از همسر. پیوند جهان آرا و خرمشهر به نظر من به علت علاقه زیادی بود که محمد به خرمشهر داشت. جهان آرا می گفت: مردم خرمشهر مظلوم واقع شده اند. به آنها کمکی ... Read more",
+    "host_name": "hawzah.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.tebyan.net/news/184154/10-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%D8%A7%D8%B2-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AC%D9%87%D8%A7%D9%86-%D8%A2%D8%B1%D8%A7",
+    "name": "10 خاطره از شهید جهان آرا",
+    "snippet": "( به روایت پدر شهید ) 3) پیوند جهان‌آرا و خرمشهر به‌نظر من به علت علاقه زیادی بود که محمد به خرمشهر داشت. جهان‌آرا می‌گفت: مردم خرمشهر مظلوم واقع شده‌اند. Read more",
+    "host_name": "www.tebyan.net",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAEShgIBxCJF136vTIjcDFqgcQ8iZh5dJZH-34wDZn71Uj7Uh8X7t1aqBJZviVQh17MRf7n0bfZYZuhPVkoz43sstfecegWuTQI1ikxwFgsoHSVcOwWK4wIP5rJ1_Ir_lZuiHkI9RBUA2uSNqAyLid5M8HkdzB0CkxuBJeqvd7mibdlcboVJQdP6BsRiI13YGKVAffLd8eeuW_YFRAweptBef9bzadL3zzE6kPjxGpIctOjHYk8VPR73k5R4HihrgTB28n_SRyvZ-Xv4nNdOGQQIlJt2eKTCUtI_uVvM8kIAqjF03fUmCTc0ynm4fMZAjAVIpcLYSYXMpWZ08p6TsYJaHyk4agzSCVAH",
+    "name": "ده خاطره از شهید محمد جهان آرا - سراج اندیشه",
+    "snippet": "3) پیوند جهان‌آرا و خرمشهر به‌نظر من به علت علاقه زیادی بود که محمد به خرمشهر داشت. جهان‌آرا می‌گفت: مردم خرمشهر مظلوم واقع شده‌اند. به آنها کمکی نشد ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES5AIBxCJF1w1clK5psr5JTYtttbk5kDeaBx33GQJoLmVLGEaHIZjL3cFSC6xC1k3WWOQHI9mNDOxsbQ1gCMnoLXdU89Ro2YilA3YuISS8UOV9jsKww8oyWYsYaKQ9fuFvDOWhDcXy2i1Cnkfgui7ori_4Y0_mcyjE5IwRKA9GcgwD-7zCaGBGcHv6ziTW3uVFPXbzGi5R63s5VprOZMAxlYKZbVQaAQJJKozaphYRejVndTEmUj84Bc-h1rmz9wap2DadjZNYfTfPbvJt1sjUTTgKXgEjh2_-qFgmEQ0j1wL3b9qalHiymURNL7zZ1eck6pHNKiA7dty2JE9cYLEakDGdL7OW2MCXHP0z5k05-vIrYv_mBm2zManUBif4hQXgKlKvmYaUElsoeApPJajR0foPRDEOjeaDRD1iXJ_A1ffOJhLdilRBoEYunCShSSZ1X_NdBSzaTpqzunH9ZeCyy40nu8ZRUg",
+    "name": "«خرمشهر کو جهان‌آرا»؛ روایتی از زندگی محمد جهان‌آرا",
+    "snippet": "May 24, 2022 — « خرمشهر کو جهان‌آرا » پنجمین اثر از مجموعه کتاب‌های «بانوی ماه» است که روایت زندگی محمد جهان‌آرا از سوی همسر اوست. افراد زیادی درباره شهدا صحبت ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "May 24, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXgHEIkXXBDvb4RCDC4lzezQABPyYGdtEmoEOIzUfKuwhY0tzht5-cCPLhjnb6Admfe9GmKRJQ0UPTVib4X3PHxW_loZMydA0srZ6zPXWUmwKxx2fEguD3xIUOqXBJJ4",
+    "name": "خاطره ای از شهید محمد جهان آرا",
+    "snippet": "خاطره ای از شهید محمد جهان آرا عید 89 بود ، با بچه ها رفته بودیم خرمشهر؛ یه نماز ظهر مَشتی هم جای همتون خالی تو مسجد جامع خوندیم ... خاطره ای از شهید محمد جهان آرا ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrAIBxCJF14Xixq8OPyS2BOb06CWmYPuBSfJH9RiLoyJLZVcmq3iTlC4-r0bYqCzDhFRk5atpWoGh_0WKPMf_tr9j1m-EJw8mc8GmYfiPX6pq5IJO5iBJov2plorgNTp6M8LNLROzxZqs425chnwYGJUv9KqMdK-gzLRN4KyPNUu5636uyJX-a-bInjXSBgDvMQKAi-46GPRddwbqTxxHhI0OcB5ZPg2qLXXB-8b3biUepULh0XTY8yiGIR2EYyV0h79j_38GPAc66MNo1aAbYhzjavB8aKHgvzAa4w6eyCGiZ1jRRxSJugp7VowJsslDhoWVB99tQjkeBatKZp_4Ryc7jP6_orj9UolkLsf_0SEEWq2BHL0I-2AWxTROaVaR-KT-6B0AYuWEesNjOpc",
+    "name": "خاطرات خواهر شهيد سيد محمدعلي جهان آرا",
+    "snippet": "May 25, 2021 — از شهید محمدعلی جهان آرا بگویید. همه برادرهایم، خصوصاً محمد بسیار مذهبی بودند، از بچگی مسجد می‌رفتند، نماز و قرآن می خواندند به سن 12 ، 13 سالگی ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "May 25, 2021",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

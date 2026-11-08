@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "پرتره شهید مهدی باکری",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1e71b2b4a008.jpg",
+      "caption": "Portrait of a bearded man in a green military jacket and checkered scarf, gazing aside against a pale sky; suitable for background image.",
+      "source": "نگاره",
+      "original_width": "1500px",
+      "original_height": "1800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5c167a4812c3.jpg",
+      "caption": "Side-by-side photos of a bearded man with dark hair, low resolution, no text or watermarks.",
+      "source": "رادیو فردا",
+      "original_width": "1200px",
+      "original_height": "675px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/06fb0d5fddac.jpg",
+      "caption": "A bearded man in a gray uniform and dark cap smiles outdoors, with blurred green trees and bright sky behind him.",
+      "source": "میقات مدیا",
+      "original_width": "1920px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3c2067e70dcc.jpg",
+      "caption": "A bearded man in white shirt blended into a dreamy blue sky with clouds and cityscape.",
+      "source": "تبیان",
+      "original_width": "960px",
+      "original_height": "898px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2e21cb2d38cd.jpg",
+      "caption": "Two bearded men converse urgently amid smoke and sparks, one holding a radio antenna; cinematic war-film scene, no text, no watermarks.",
+      "source": "قدس آنلاین",
+      "original_width": "1200px",
+      "original_height": "701px"
+    }
+  ]
+}

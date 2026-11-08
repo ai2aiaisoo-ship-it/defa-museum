@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "آرامگاه شهید عباس بابایی گلزار شهدا قزوین",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8f349f7b6136.jpg",
+      "caption": "A young pilot kisses the hand of elderly cleric Ayatollah Khomeini seated on a bed. Contains watermarks and Persian text; not a background image.",
+      "source": "www.shahrekhabar.com",
+      "original_width": "1237px",
+      "original_height": "928px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1536506b9dc6.jpg",
+      "caption": "A memorial at a cemetery featuring a large Persian banner with a bearded man's portrait, flowers, and framed photographs.",
+      "source": "ایمنا",
+      "original_width": "1280px",
+      "original_height": "960px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d9779ba8e69e.jpg",
+      "caption": "Poster of a bearded man in a military cap, Iranian flag, doves, jets, clouds; Persian text and watermark present.",
+      "source": "نوید شاهد",
+      "original_width": "914px",
+      "original_height": "1280px"
+    }
+  ]
+}

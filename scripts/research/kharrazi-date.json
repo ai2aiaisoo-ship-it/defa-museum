@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%DB%8C%D9%86_%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C",
+    "name": "حسین خرازی - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "حسین خرازی دهکردی · ۱ شهریور ۱۳۳۶ اصفهان، ایران · ۸ اسفند ۱۳۶۵ (۲۹ سال) شلمچه ، خوزستان، ایران · گلستان شهدا، اصفهان، ایران. Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://defapress.ir/fa/news/654760/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D8%B3%D8%B1%D9%84%D8%B4%DA%A9%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AD%D8%B3%DB%8C%D9%86-%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C",
+    "name": "سردار سرلشکر شهید «حسین خرازی»",
+    "snippet": "Mar 9, 2024 — تاریخ شهادت: ۸ اسفند ۱۳۶۵ . سن: ۲۹ سال. محل شهادت: شلمچه - عملیات کربلای پنج. مزار شهید: گلزار شهدای اصفهان. گروه حماسه و جهاد دفاع‌پرس: شهید « ... Read more",
+    "host_name": "defapress.ir",
+    "rank": 1,
+    "date": "Mar 9, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESvgEBxCJF16QrD5nxJRwOnOAUZl6y2Ddbv3hcR23PSFsPGQS304cZkqYDf3yhIwzc_PnD57aqCmzeD6T63jzkZtt046VOjsJEyGuEb5lz-0Ug7a98-0TsJ_2eh9Bzl_amwFDMo74_8vWr1ZXtNrVkrKmcZ0dnuZBzu77wnUVODRTIDaD5ResU_LWu2-KZEI4KYCNfrXR9fqZDNrF9dFv-KYBKJsSpliO7ie8B266xdL5Pb7qQkOY3J3g5YfAA5nuL",
+    "name": "شهید حاج حسین خرازی",
+    "snippet": "Feb 27, 2018 — حسین خرازی سرانجام در روز ۸ اسفند ۱۳۶۵ در عملیات کربلای ۵ بر اثر گلوله خمپاره در نزدیکی اش شهید شد و در قطعه شهدای کربلای ۵ در منتهی‌الیه شمال ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "Feb 27, 2018",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESmQEBxCJF16eiKNt5rTjQUH-lvLZ5pJ5bjZGEFFTLVLm_3Lp-s8i8xlMH8cXo2aK2brIjaEmBgB-R33ZtisI4Cg1_Y55jKnSqyhe2iVfDlI0DFPEvQNh-B9S4a869xxFsEoIJgtHfssTY0lMF50D2_6ecGacxpUX7w3MUzam_k5P6SqVT0yS4h_msDMbv594JXwMF2tNuqRZWUMo",
+    "name": "در مورد شهید خرازی در ویکی تابناک بیشتر بخوانید",
+    "snippet": "حسین خرازی در ۸ اسفند ۱۳۶۵ در منطقه عملیاتی کربلای ۵ به شهادت رسید. فعالیت‌ها فعالیت‌های وی پس از پیروزی انقلاب اسلامی عبارتند از: عضویت در کمیته دفاع شهری ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXXfBICHQvoYNiEh5EXF4jZ7kvlczt2s2G9Y-h59MYLxEwoW_gjwRVb2Sx9I-VdKNIZVGZZHSP8Yad5whB39wCViH7--YLh-z_-j4saX78nZc1ONsa0Jfq5QieBQMhrdfklbeJU",
+    "name": "۸ اسفند ۱۳۶۵) نظامی ایرانی بود، که در خلال جن،گ ایران و عراق از",
+    "snippet": "ش/هید حاج حسین خرازی در ۱ شهریور ۱۳۳۶ در اصفهان متولد شد و فرماندهی لشکر ۱۴ امام حسین (ع) را در دوران دفاع مقدس برعهده داشت. او در ۸ اسفند ۱۳۶۵ ، ...",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://sahebnews.ir/1125476/%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C-%D8%B4%D9%87%DB%8C%D8%AF%DB%8C-%DA%A9%D9%87-%D8%A7%D8%AE%D9%84%D8%A7%D8%B5-%D9%88-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%85%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D8%B2%D9%86.htm",
+    "name": "خرازی شهیدی که اخلاص و ولایت مداری در زندگی‌اش موج می زد",
+    "snippet": "Feb 27, 2023 — ... خدای متعال سراسر وجود او را فراگرفته بود در هشتم اسفند ۱۳۶۵ خورشیدی در منطقه عملیاتی شلمچه و نهرجاسم در منطقه عمومی عملیات کربلای ۵ به شهادت",
+    "host_name": "sahebnews.ir",
+    "rank": 5,
+    "date": "Feb 27, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAEScAHEIkXXAdmDP6VfFR9TQ8kQMvcxhLMdKNb0yISSeLrWeUG3ghS43RB6LHFoD0qtVNi_T9WHZYa5IRsYUrQtBjOhKU1mgVZ2RFnJ4sMCJA0cG9kj2jia77YAygjYTmYSyMZSE38IW1SQtXCyW_bR9Rc",
+    "name": "شهید حسین خرازی",
+    "snippet": "تاریخ شهادت : 8 اسفند 1365 . شهادت : عملیات کربلای 5. به سال ۱۳۳۶ ه.ش. در یكی از ... شلمچه و مسلخ عشق، جان به جان آفرین تسلیم نمود. وصیت نامۀ شهید حسین ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESbgHEIkXXy-ZXzRoo3zExD0TkHnGBEYEQ-ADZxnO36M5DSdU9f-DGb9gJ0mxDsMwN_ZmPOg7oLGyrpujojAWAMl48BfUTIIQ_LO_bgjQVxqI0tpkOlILQJHVKSSZnziG5SNYu_YJeS4gx1-DDNXP5",
+    "name": "شلمچه شهید حسین خرازی در تاریخ 1336/6/1 در اصفهان دیده به جهان",
+    "snippet": "... تاریخ شهادت : 1365/12/8 محل شهادت : شلمچه شهید حسین خرازی در تاریخ 1336/6/1 در اصفهان دیده به جهان گشود. او در تاریخ 1355 موفق به اخذ دیپلم ...",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

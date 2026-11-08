@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید خلبان عباس دوران فانتوم",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8c9eb05c6699.jpg",
+      "caption": "A gray-haired man in a flight uniform is interviewed; behind him, a military jet is in a lit hangar. Persian text \"ارتش جمهوری اسلامی ایران\" appears with press TV logo.",
+      "source": "YouTube",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e376903714bd.jpg",
+      "caption": "A mustached man in a military uniform stands before the Iranian flag; a Persian logo watermark appears top right.",
+      "source": "اقتصاد24",
+      "original_width": "1200px",
+      "original_height": "798px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9fdf3a977b0f.jpg",
+      "caption": "A pilot in flight suit stands before USAF jets, holding a helmet. Persian text \"شهید عباس دوران\" and a watermark logo present.",
+      "source": "نوید شاهد",
+      "original_width": "800px",
+      "original_height": "1301px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/83f9b7261454.jpg",
+      "caption": "A bearded man in a green military flight suit and dark cap, with name badge \"علی یاسس / A. SABALI\" (Arabic script text).",
+      "source": "پیشینه ی ارتش ایران و سرزمینهای دیگر",
+      "original_width": "895px",
+      "original_height": "1076px"
+    }
+  ]
+}

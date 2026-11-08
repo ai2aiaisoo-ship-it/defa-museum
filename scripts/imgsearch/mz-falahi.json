@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "آرامگاه شهید فلاحی و شهدای سانحه هواپیما بهشت زهرا",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c9aa6b96b2c2.jpg",
+      "caption": "Iran's Supreme Leader in black turban and face mask visits gravestones with Persian inscriptions, accompanied by masked officials outdoors.",
+      "source": "شهرآرانیوز",
+      "original_width": "1467px",
+      "original_height": "2200px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/20ba87e823b5.jpg",
+      "caption": "Mourners wearing masks place white flowers on a gravestone at a funeral; YJC watermark, Persian tombstone text.",
+      "source": "تابناک",
+      "original_width": "1210px",
+      "original_height": "806px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c78f2dadf4ee.jpg",
+      "caption": "Infographic in Persian about the C-130 plane crash and martyrdom of commanders; contains a large amount of text, unsuitable for background.",
+      "source": "پیشینه ی ارتش ایران و سرزمینهای دیگر",
+      "original_width": "827px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9b6d5487622e.jpg",
+      "caption": "Massive funeral crowd with red flags fills street near green-domed mosque; Iranian flag flies; watermark \"KHAMENEI.IR\"; Persian text present.",
+      "source": "رویداد۲۴",
+      "original_width": "1280px",
+      "original_height": "1920px"
+    }
+  ]
+}

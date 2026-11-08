@@ -1,0 +1,68 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://shohada.org/fa/shahid/content/350707",
+    "name": "خاطراتی از شهید ولی فلاحی",
+    "snippet": "Jul 22, 2024 — خاطراتی از شهید ولی فلاحی . تیمسار فلاحی در ابتدای حمله صدام به ایران نزد امام راحل بود و ایشان نظر امیر فلاحی را در مورد جنگ پرسید که وی پاسخ ... Read more",
+    "host_name": "shohada.org",
+    "rank": 0,
+    "date": "Jul 22, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://hawzah.net/fa/Mostabser/View/65194/11247/%D8%AE%D8%A7%D8%B7%D8%B1%D9%87_%DB%8C%DA%A9%DB%8C_%D8%A7%D8%B2_%D9%85%D8%AD%D8%A7%D9%81%D8%B8%DB%8C%D9%86",
+    "name": "خاطره یکی از محافظین",
+    "snippet": "شهید فلاحی با لبخندی گفت: «تو از من خاطر جمع باش، چون انسان شهید نمی شود مگر آنکه قبل از شهادت، کامل شده باشد. ضمن آنکه من هنوز به آرزویم نرسیده ام.» من که در ... Read more",
+    "host_name": "hawzah.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXQHEIkXX-FUmFbK_NbtsRCb8j9rgHy0KYzZp8ZqnshOq2PlBBi8NifTSl7RSZetREkkQelZuoDHbAQH8Fl0128xGbx9ZLNHHEnXcCgXwnT2aCg2IE9kkd-8cRJUoYQ",
+    "name": "اسطوره ای به نام شهید فلاحی :من توی کشور خودم خم نمی‌شم",
+    "snippet": "Oct 15, 2024 — اسطوره ای به نام شهید فلاحی :من توی کشور خودم خم نمی‌شم، دشمن باید خم بشه.. 615. مجله نظامی ایران 2.2 هزار دنبال‌ کننده. 615 بازدید. Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "Oct 15, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://sqsh.ir/content/101093",
+    "name": "گزیده ای از زندگینامه و وصیت نامه سر لشکرشهید ولی الله فلاحی",
+    "snippet": "شهید سرلشکر ولی الله فلاحی در سال 1310 در طالقان متولد شد و تحصیلات ابتدایی و متوسطه خود را در طالقان و تهران گذراند و پس از اخذ دیپلم از دبیرستان نظام وارد ... Read more",
+    "host_name": "sqsh.ir",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESawHEIkXXdZsQKPObTq6q7tgaAl-Bb_tsT0RnBijdLAn_Q3q3oR7DLU_pS2r-m3AjxWdFCt50WJCOcRlwDyi9crVmeewFc7pn6AZkORIzT-MxT1nf6J5gINUzhYzmdSFfZ4XNk2VGRqaKs28C",
+    "name": "شهید سرلشکر فلاحی در روزهای سرنوشت ساز - کتاب گویا",
+    "snippet": "May 23, 2021 — امیر سرلشکر فلاحی ، افسری بسیار عالِم در امور نظامی، فعّال و کوشا بود و علاقه‌ی فراوانی به حفظ نظام جمهوری اسلامی داشت و تا آنجا که در توان داشت، ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "May 23, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.aparat.com/v/b832e05",
+    "name": "شهید تیمسار ولی الله فلاحی می گرید قسمت بیست و چهارم",
+    "snippet": "زندگی و خاطرات شهید تیمسار ولی الله فلاحی قسمت بیست و چهارم سخنران فرشاد فروزش تیمسار فلاحی گریست.",
+    "host_name": "www.aparat.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXXoIS0g_CeqWlGHDBwVLs-peqPqgoYkZqDJUOfInJ0kFW2BBZTejOY3NBQ8bN_uWcY3ODM2XFEtaAyKa3DrQN4TgXLk5ZbzxCeUso9SQPwDqiYRUMBaMZoLJ-Wytv4v9QwYe0_",
+    "name": "خاطرات تیمسار ولی الله فلاحی جنگ آغاز میشود قیمت سیزدهم",
+    "snippet": "... خاطرات زندگی و خاطرات تیمسار سرلشکر شهید ولی الله فلاحی قسمت سیزدهم جنگ آغاز می‌شود یگان‌های ارتش آماده ی دفاع میشوند مروری بر دوران سلطنت پهلوی ...",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "گلزار شهدا بهشت زهرا تهران قطعه ۲۴",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a99cc5656592.jpg",
+      "caption": "A grieving young woman sits beside a flower-covered grave with red oil lamps; watermark \"Photo: Mohammad Safari, JAMARAN.IR\" present; not suitable for background.",
+      "source": "جماران",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bceb0d266f84.jpg",
+      "caption": "Decorated Persian memorial archway with grenade sculpture, red ribbons, Arabic tile calligraphy, and traffic passing beneath.",
+      "source": "خبرگزاری مهر",
+      "original_width": "1280px",
+      "original_height": "932px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d17898c4bec3.jpg",
+      "caption": "Mourners gather around graves covered with flowers at a cemetery; man grieving over a grave. Watermark \"ANA PHOTO Hamed Jafarnejad\" present.",
+      "source": "آنا",
+      "original_width": "2000px",
+      "original_height": "1333px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d0df7b1b6213.jpeg",
+      "caption": "An outdoor memorial cemetery: rows of graves each topped with a rusted soldier helmet mounted on metal stems, under a red pergola, visitors in background. Timestamp \"21/05/2026 15:04\" appears.",
+      "source": "نشان",
+      "original_width": "1920px",
+      "original_height": "3413px"
+    }
+  ]
+}

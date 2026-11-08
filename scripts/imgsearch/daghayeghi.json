@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید اسماعیل دقایقی مهندس جنگی",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/135289c1f9f1.jpg",
+      "caption": "A black marble Iranian martyr's gravestone with Persian inscriptions, a portrait, and an Iranian flag, located in a shrine-like setting.",
+      "source": "sellah.ir",
+      "original_width": "1037px",
+      "original_height": "1555px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9125606163dd.jpg",
+      "caption": "Two bearded Middle Eastern men in grey uniforms stand before tall dry reeds; watermark top-left, Persian text bottom. Not suitable for background image.",
+      "source": "seratnews.com",
+      "original_width": "800px",
+      "original_height": "557px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/17eb4f7c563f.jpg",
+      "caption": "A group of bearded armed men, likely Iranian soldiers, posing outdoors among tall reeds. Contains watermark \"koochehshohada.ir\".",
+      "source": "sellah.ir",
+      "original_width": "709px",
+      "original_height": "531px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d6f8ffe27c6e.jpg",
+      "caption": "A bearded man in a green shirt against a bright sky with clouds and grass, low resolution.",
+      "source": "isna.ir",
+      "original_width": "400px",
+      "original_height": "267px"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84_%D8%AF%D9%82%D8%A7%DB%8C%D9%82%DB%8C",
+    "name": "اسماعیل دقایقی - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "اسماعیل دقایقی (۹ بهمن ۱۳۳۳ – ۲۸ دی ۱۳۶۵) نظامی ایرانی بود که در طول جنگ ایران و عراق از فرماندهان ارشد سپاه پاسداران به‌شمار می‌آمد و در عملیات‌های ... Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES0gIBxCJF1ykul8xcEokLKMjJVnLE4xyX-tCAn00FQanLePAXqfbofvjv-cOXTu68TssDMyiTc1ozWmcBQS4mRIBICkh8FXmJVbj0OW58B5fDCenkTTuM0I9xzYh17oKN1yCzj-fo-EB-ZIwq5Zo3erS16apKFssO4NHa3Z26kV1mMhPlZv0miwWh8XYUKFfkz6w2rWStdllgYXH9xLEo6rx1paoDsHhboycCOze0YvHinohTBJjMGTfy52iJx3BxiWP0USfDZSDGSMNnyZ_5r02up--o9bILBTFMuXm04PsdZubtjNbEbcK28I53TkbiKSBK-kFoDPN3xQ13zLTD-CA5lZmxZV49FhOXWxEGH6ljArpHiiaGcBGVQFbrKrSrute2SILkaV2FZd_-RhGpE9JLRYqwBnr1rGFSqcJJNxraqQMaK8QIXTfHXXvOoAOYTtmqtA&gsessionid=-e0Un_yiklRv--stWihkjzPf9WU7PXn5yVbQBzFxYs6pap2uNA9doA",
+    "name": "2 خاطره زيبا از شهيد اسماعيل دقايقي/تصاوير شهيد",
+    "snippet": "او وقتي خبر حمله عراق به ايران را مي شنود بي درنگ راهي جبهه نبرد مي شود و به عنوان فرمانده تيپ 9 بدر در جبهه اسلام خدمت مي كند. در ادامه دو خاطره زيبا از شهيد ... Read more",
+    "host_name": "www.google.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.isna.ir/news/1401102819079/%D8%AF%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%AA%DB%8C%D9%BE-%D8%A8%D8%AF%D8%B1-%D9%88-%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84-%D8%AF%D9%82%D8%A7%DB%8C%D9%82%DB%8C",
+    "name": "داستان تیپ بدر و سردار شهید اسماعیل دقایقی",
+    "snippet": "Jan 18, 2023 — داستان تیپ بدر و سردار شهید اسماعیل دقایقی . به دنبال شروع تهاجم سراسری عراق،اسماعیل دقایقی به عنوان نماینده سپاه در اتاق جنگ لشکر۹۲ زرهی اهواز ... Read more",
+    "host_name": "www.isna.ir",
+    "rank": 2,
+    "date": "Jan 18, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.tabnak.ir/fa/news/1043782/%D8%AF%D9%82%D8%A7%DB%8C%D9%82%DB%8C-%D8%B1%D8%B2%D9%85%D9%86%D8%AF%D9%87-%D8%A7%DB%8C-%DA%A9%D9%87-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%D8%B3%D9%BE%D8%A7%D9%87-%D8%B9%D8%B1%D8%A7%D9%82%DB%8C-%D9%87%D8%A7-%D8%B4%D8%AF",
+    "name": "دقایقی؛ رزمنده ای که فرمانده سپاه عراقی ها شد",
+    "snippet": "Apr 3, 2021 — شهید دقایقی در طول دوران دفاع مقدس در قرارگاه لشکر فجر، لشکر ۱۷ علی بن ابیطالب (ع) و اکثر عملیات‌ها حضور داشت و رشادت‌های زیادی از خود نشان داد. Read more",
+    "host_name": "www.tabnak.ir",
+    "rank": 3,
+    "date": "Apr 3, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESagHEIkXXOQV14W4QYWM1k-u4Xwtx2uvY2CDjw_IaGz3Iv3iNgptaJ-1MnQzl3CfJchNcvuSm521EMGEA5FpNdYcU081CsqqPCfPwYnKXJmjw30I8DT6CQp9twFold6OxNEqLDKmlGM4Iia8&gsessionid=-e0Un_yiklRv--stWihkjzPf9WU7PXn5yVbQBzFxYs6pap2uNA9doA",
+    "name": "کتابی کامل از زندگی شهید دقایقی",
+    "snippet": "Dec 5, 2023 — کتاب «روشنای بدر» که شرح زندگی شهید اسماعیل دقایقی ، فرمانده تیپ۹بدر بوده، ماحصل ۱۸۰ساعت مصاحبه نویسنده با همرزمان، دوستان و خانواده شهید است ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "Dec 5, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESygEBxCJF1182gdEjFibjroN6IPFyQa0mVLKbmVA9xDPH0pXSnzGRXddW0PGt2RYKVcmm6s-F2MUpro7sfeDPy3wY9ZmpoA-Z6hORGR3g_W-BIiAuSqJchlcW1Ht7nTbeRj3mQzY4Ts8fDvMUlfQy8bBNPloxQzL-sGQ7JTh9IeMTbhC11VyfxUiQ_2N78izB_NpONPB9FrDA6tpRuw9sR-9NTYYlUMUKt32je5h7SbJNb2zZqq24wpOzomh1gXCWG3F-IhpnwHEXdQiJ&gsessionid=-e0Un_yiklRv--stWihkjzPf9WU7PXn5yVbQBzFxYs6pap2uNA9doA",
+    "name": "شهید اسماعیل دقایقی",
+    "snippet": "خاطره ای از شهید اسماعیل دقایقی به روایتی از همسرش..... خاطره در ادامه مطلب..... ادامه نوشته. برچسب‌ها: شهید اسماعیل دقایقی. Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrgIBxCJF10_J2bsCjs9AdxlizC-9krPWzLZWkgPGPJL2g_BKtPW2aHxaL36E6hURKPcfsKFcPIUuvm1AA7doDaQT96XHxnT2dC3i9-pp9xnDFJcqjNaZdXeXsbg-lKYRSTNJK8rERE6N3keYZx4XdJBJG8Lczau23dZPUtdA_Kin8M6fRZU_vXWdtX83ululNNvYFE3qHg1XZthu40whq3kV-ofDmFjK-dFOpqWXI03WrqiR8jMCTo1fwBqoTcb0BHtX3bJdImWCMyzk4v22du8cKwaWC0JRcX5aJ5oKTt4-fM28WgpK1fVE2APtMkguIPxDw-WelkOY0d6G29b4j3wfAf-XJDLBtQg0zZBKKCe11_J_Ykf9Agq936efN0DVTFBKOHNThKZbFdtzhoYhxA&gsessionid=-e0Un_yiklRv--stWihkjzPf9WU7PXn5yVbQBzFxYs6pap2uNA9doA",
+    "name": "نگاهی کوتاه به زندگی شهید «اسماعیل دقایقی»",
+    "snippet": "Jan 19, 2015 — شهید دقایقی در جریان محاصره‌ای شهر سوسنگرد توسط عراقی ها، با مشکلات زیادی از محاصره خارج شد و سپس همراه شهید علم الهدی از دانشجویان پیرو خط امام ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Jan 19, 2015",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES7gIBxCJF15hS7RTiOneaOFisEz5AzA7rP2SvZdTSiGJudG7waAIX564MdJuae3KuXSyn93uYguXBsFT5ISzPI17YVgmP4lB2DjyBD8HkAoteu9fEme0mMpdaQy9PKs7sRPSGKpLgzPM4buxWaPJrQJtInCdjB7ru33BVEfuba-oHSBlM02PPU5Jryn9J_JUv7vEporI7ha9VakB0EFuh2JkK6Az1GHo0qotRMRVNNWbix6Q4Re_gUmxh9ngTI1BcKEa1HFT-dYfxkZfLaNhzGt8k8qOPd0e9VE34oPHJCsE5kfhG_Sog7NrTh3VzZbGndz4iRY7TZ_20GJ6_Gs2eQ6sztEmwr9kvwwwFkgjciBMrTuDNMY5pokId6TWxy-KHU0wqOT4In5M11UsDkP1vAbfLt-YPSOKKJM0Hx3nBDqOUoB8LOQJBSSPuSKFFDH6KUB9Pwwf16ux1TtFXobR8dlg2Wt-D10nzoKYQhGNEMg8&gsessionid=-e0Un_yiklRv--stWihkjzPf9WU7PXn5yVbQBzFxYs6pap2uNA9doA",
+    "name": "همسر شهید اسماعیل دقایقی : گفت در بهشت منتظرت می‌مانم",
+    "snippet": "Jan 24, 2023 — لحظه به لحظه زندگی با او برایم رویای شیرینی بود که طعم گوارای آن ۳۵ سال است با جانم عجین شده است». مهمان منزل شهید دقایقی در شهرک شهید محلاتی ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "Jan 24, 2023",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

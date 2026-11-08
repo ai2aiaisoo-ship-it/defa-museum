@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید محمود کاوه سپاه",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/427c4e822db7.png",
+      "caption": "Portrait of a bearded man in a gray shirt posing before the Iranian flag, vintage photographic style.",
+      "source": "ستاره",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6d94596672f7.jpg",
+      "caption": "A commemorative poster of a bearded man with Persian text reading \"ز انقلاب رهبر حاج محمود کاوه\" and watermark \"gholesadid.blogf\" plus blog logos.",
+      "source": "نوید شاهد",
+      "original_width": "2400px",
+      "original_height": "3000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/de071e4f7663.jpg",
+      "caption": "Blurry, grayscale footage of a military vehicle surrounded by heavy smoke, likely an explosion or combat scene.",
+      "source": "نماشا",
+      "original_width": "1280px",
+      "original_height": "720px"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید حمید باکری",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/11dbc016dbed.jpg",
+      "caption": "Digital poster portrait of a bearded young man in green military uniform, blue watercolor sky background, Persian calligraphy text \"حمید باگری\" and \"سردار شهید\", logos at bottom.",
+      "source": "نگاره",
+      "original_width": "914px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/642452b1d3b7.jpg",
+      "caption": "Digital painted portrait of a bearded man wearing a green plaid scarf against a teal textured background, with Arabic calligraphy text.",
+      "source": "نقاشی شهید",
+      "original_width": "2136px",
+      "original_height": "2560px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1c21cbfec91f.jpg",
+      "caption": "A painted portrait of a bearded man wearing a checkered keffiyeh scarf and military-style jacket, gazing thoughtfully upward.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8aeb596364bf.jpg",
+      "caption": "A portrait of a bearded man with a checkered scarf against a misty sky, with Persian text below.",
+      "source": "نگاره",
+      "original_width": "720px",
+      "original_height": "1280px"
+    }
+  ]
+}

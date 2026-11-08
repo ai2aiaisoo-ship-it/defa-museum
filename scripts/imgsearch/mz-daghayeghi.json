@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید اسماعیل دقایقی گلزار شهدا امیدیه",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6bbd83e5fd82.jpeg",
+      "caption": "Persian memorial poster for martyr Esmail Baghbani, bearded man's portrait, flowers, flags, extensive Persian text.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "842px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f5f691d0cdfa.jpg",
+      "caption": "Masked men sitting on mosque carpets; a man holds a Persian sign reading \"با عدل، سعف خانهمان را بسازید\" (protest gathering).",
+      "source": "خبرگزاری دانشجو",
+      "original_width": "1280px",
+      "original_height": "960px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/790b5f737aeb.jpg",
+      "caption": "A dark granite gravestone inscribed with Persian calligraphy commemorating a martyr, with decorative engravings and dried flowers beside it.",
+      "source": "پلاک عاشقی",
+      "original_width": "2248px",
+      "original_height": "3680px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2f26c8194f30.jpg",
+      "caption": "A grieving woman in black chador sits beside memorial portraits and candles draped with a keffiyeh; contains a red watermark logo.",
+      "source": "نوید شاهد",
+      "original_width": "1484px",
+      "original_height": "1280px"
+    }
+  ]
+}

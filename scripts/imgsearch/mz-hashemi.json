@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "یادمان شهدای قرارگاه نصرت بهشت آباد اهواز",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/903bde676a95.jpeg",
+      "caption": "A shrine tomb with green Persian calligraphy, flower petals, framed portrait, and religious banner on ornate carpet.",
+      "source": "نشان",
+      "original_width": "1080px",
+      "original_height": "1070px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4fc473d636eb.jpg",
+      "caption": "A blurry, dark tombstone plaque with extensive Urdu calligraphy text embedded in marble flooring.",
+      "source": "پلاک عاشقی",
+      "original_width": "800px",
+      "original_height": "1055px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/531181db1471.png",
+      "caption": "This image contains a large amount of Persian text information, so I will not output the text completely. It is a green-themed religious poster with a portrait of a young man, attributed to Imam Khomeini, with watermarks (boresha) and the website www.boresha.ir at the bottom.",
+      "source": "برش ها",
+      "original_width": "1000px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4740857a6b7c.jpg",
+      "caption": "A bearded young man in a desert camouflage shirt stands outdoors, gazing at the camera with blurred trees behind.",
+      "source": "پلاک عاشقی - BLOGFA",
+      "original_width": "2091px",
+      "original_height": "1400px"
+    }
+  ]
+}

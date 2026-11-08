@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید رجایی و باهنر بهشت زهرا",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e2cabf5e87ba.jpg",
+      "caption": "Detailed illustrated map of Behesht-e Zahra cemetery in Tehran, containing a large amount of Persian text, with logos and contact information.",
+      "source": "فروشگاه سنگ زمرد",
+      "original_width": "2000px",
+      "original_height": "1389px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d8eaed41d02c.jpg",
+      "caption": "Iran's Supreme Leader praying at a shrine, standing near a green-draped tomb and a portrait of Khomeini. Watermark \"Leader.ir\" present.",
+      "source": "عصر آزادی",
+      "original_width": "1280px",
+      "original_height": "786px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/78843df9009c.jpg",
+      "caption": "Workers in protective gear burying graves in a dusty cemetery; one wears full white hazmat suit inside a grave.",
+      "source": "پایگاه خبری تحلیلی شهر تهران",
+      "original_width": "1200px",
+      "original_height": "817px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8f92206766c7.jpg",
+      "caption": "Two clergymen in black robes pray at a shrine draped in green cloth, featuring a portrait; watermark \"Leader.ir\" visible.",
+      "source": "Leader.ir",
+      "original_width": "2200px",
+      "original_height": "1615px"
+    }
+  ]
+}

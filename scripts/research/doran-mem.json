@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://navideshahed.com/fa/news/395238/14-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%DA%A9%D9%88%D8%AA%D8%A7%D9%87-%D9%88-%D8%AE%D9%88%D8%A7%D9%86%D8%AF%D9%86%DB%8C-%D8%A7%D8%B2-%D8%AE%D9%84%D8%A8%D8%A7%D9%86%DB%8C-%DA%A9%D9%87-%D8%AF%D8%A7%D9%88%D8%B7%D9%84%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A8%D9%88%D8%AF",
+    "name": "14 خاطره کوتاه و خواندنی از خلبانی که «داوطلب شهادت» بود",
+    "snippet": "Dec 27, 2016 — 14 خاطره کوتاه و خواندنی از خلبانی که «داوطلب شهادت» بود « عباس دوران » در 20 مهر 1329 به دنیا آمد. در سال 1349 به آمریکا اعزام شد به ایران بازگش ...",
+    "host_name": "navideshahed.com",
+    "rank": 0,
+    "date": "Dec 27, 2016",
+    "favicon": ""
+  },
+  {
+    "url": "https://hawzah.net/fa/Goharenab/view/86469/%D8%AF%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%D8%A7%D8%B2-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B9%D8%A8%D8%A7%D8%B3-%D8%AF%D9%88%D8%B1%D8%A7%D9%86",
+    "name": "ده خاطره از شهید عباس دوران",
+    "snippet": "2) در طول پرواز صحبت نمی کرد. همواره می گفت: اگر از مسیر منحرف شده و یا حالت نامتعادلی داشتم، با من صحبت کنید، خودتان هم مواظب اطراف باشید. همچنین بسیاری از ... Read more",
+    "host_name": "hawzah.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESkgEBxCJF19Jc9dJMwXjEBLWWxZjAbhId6REiFo5bQTjy0O6vFTjOl4aD94AB-r5z5t-gZY2sujUVFBLgxDgp2UD6VlmItGGu4MLYtX-fNbhYTxYPJ3Z9t7nHwrkKy7VVt8ru1UAmrMZsFqMTSXXi709NXnfu7BBfb5jQA4ohH3sEakCN6sXjrOjlZK_LodI1qVtYNQ",
+    "name": "عباس دوران - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "عباس دوران (۲۰ مهر ۱۳۲۹ – ۳۰ تیر ۱۳۶۱) سرهنگ جنگندهٔ مک‌دانل داگلاس اف-۴ فانتوم ۲ نیروی هوایی ارتش ایران بود که در خلال جنگ ایران و عراق به‌عنوان معاون عملیات ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://farsi.khamenei.ir/book-content?id=60726",
+    "name": "«بمبی در کابین»؛ حماسه سرلشکر خلبان شهید عباس دوران",
+    "snippet": "Jul 21, 2025 — سی‌ام تیرماه، سالروز شهادت شهید عباس دوران است. این خلبان نیروی هوایی، با عملیات جسورانه در قلب بغداد در ۳۱ تیرماه ۱۳۶۱ با وارد آوردن ضربه‌ای ... Read more",
+    "host_name": "farsi.khamenei.ir",
+    "rank": 3,
+    "date": "Jul 21, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESWwHEIkXXhC-DER_8maMpJfO9iSRyZ-BnKELnL1doRr6GXQrvbArFm5DxSE8CsNwHX2D2XDvdOy9o0ue-elMp-5k5YrNjQdHgGAQ-4nZEeuVi9QLCA4SB172qK5Y",
+    "name": "سرلشگر خلبان شهید عباس دوران | یک بلند پرواز عاشق",
+    "snippet": "May 30, 2020 — در این فیلم خاطرات هم سر شهید و همرزمان ایشان در طول اجرای عملیات های هوایی را می بینیم. شرح برخی رشادت ها و ماموریت های انجام شده.",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "May 30, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrAMBxCJF1yRfXfqIDxQ70zMZQE9y5iQzrNUGIFDfvU1wifpK5XcE5-EqkfzqJ5cJ7j-x934sg82riblAWRXyUIXUjBy3aVBVddM9Z0010IvD7HgVMi_DPZFPWZzueDzBifuDesNRBqXsM0PoQuOlw2Ns60thOI_yQdMqVgH8jNgjLgmhT53xydsGsO17oSNFjKrdOK9H2b_fEvZISuZt7qez7nZ0xrEsde4TBYhl7TG6GgXpgZy4q4APRIR1CyLSIkPVPlmG91Ttr4mVbn5IWnsmVzp_29aHZOZQf26CCvf2g8yXjBpb0oN2lakbYpP8L5qDPMgn4u5AH95ozWgu-5oNyGH9uYHq2fe1FSA_sPIXa2NkrpLC31cVNOR6vJmeYwjoD6Y8NfThFjM1uIr5xQu7Y3lIPOFFnyp8FZq_sgtXdSBTlizezh2MnRsldBLHAhZN3kD0itefVzaxP-dxTS3DVBj9jsH0NZoPvxwR0qot0D3gBfmt25vLd5lHOPPY-tSoyC1n_0XxwJxOnklDq3HK1xYluPx1YpSYtm93XU0hJpkNb2DpQZZNgq6_kg",
+    "name": "شهید عباس دوران قهرمان ایرانی، نماد صلابت ، شجاعت، بی باک",
+    "snippet": "شهید عباس دوران در 20 مهر سال 1329 در شیراز به دنیا آمد و در سال 1348 مدرک دیپلم خود را گرفت و سپس وارد دانشکده خلبانی نیروی هوایی ارتش شد و پس از گذراندن دوره ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXX6GrFf6WXK2A8WiowAB0QegYO26Du-3mA0Gug9thZIS2Rt2RNhSe9qYs5ae1fCSM9fRRUJq3dNxSwKFQRlWyUCDTXfs3SbGWXthl3ZvQWYGOjYHs8xC1nkp0xQo5UrzcwfzSL",
+    "name": "سرلشکر خلبان شهید عباس دوران",
+    "snippet": "\" عباس دوران \" در بیستم مهر ماه سال 1329 در شهر شیراز دیده به جهان گشود. دوران کودکی، نوجوانی و جوانی را در شیراز گذراند. وى پس از اخذ دیپلم در سال 1349 به دلیل ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXXhSaVqPP8k19uUeh3KB-wNeNYdFjv0QZZnZRqlboTLh0UAVdOX5ly2F_cI_iDrNZGcVC_1xKGrERjvX1vIIjchbPax-FLjbkobnoHur1GBN2jy_l-cOSZX0mmJv3MfXhBoO4V",
+    "name": "شهید عباس دوران.. جمله ای از شهید دوران به یاد دارید؟ برامون",
+    "snippet": "در نوجوانی به‌تنهایی راهی اصفهان شد و با کار و تلاش زندگی خود را ساخت و بعدها تشکیل خانواده داد. زرین پیش از انقلاب در فعالیت‌های مذهبی و مبارزه ...",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

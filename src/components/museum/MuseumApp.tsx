@@ -18,6 +18,7 @@ import { LearnView, GlossaryView, MapQuizView } from './LearnView'
 import { SourcesView, SearchView, AdminView, DocsView } from './UtilityViews'
 import { RootsView } from './RootsView'
 import { MartyrsView } from './MartyrsView'
+import { MartyrsMemoriesView } from './MartyrsMemoriesView'
 import { AviniView } from './AviniView'
 import { ArchiveView } from './ArchiveView'
 import { SaddamView } from './SaddamView'
@@ -30,7 +31,7 @@ import { Hall3D } from './Hall3D'
 
 export type ViewKey =
   | 'home' | 'hall-3d' | 'atlas' | 'operations' | 'battle-maps' | 'experiences' | 'timeline' | 'stats'
-  | 'roots' | 'martyrs' | 'avini' | 'archive' | 'saddam-dossier'
+  | 'roots' | 'martyrs' | 'memories' | 'avini' | 'archive' | 'saddam-dossier'
   | 'khorramshahr' | 'mersad' | 'war-of-cities' | 'tanker-war' | 'air-war' | 'naval-war' | 'iraq-ops' | 'mek-ops'
   | 'commanders' | 'forces' | 'equipment' | 'foreign' | 'resolutions'
   | 'gallery' | 'documentaries' | 'sources' | 'glossary'
@@ -61,6 +62,7 @@ const NAV: { group: string; items: { key: ViewKey; label: string; icon: string }
     group: 'شهدا و روایت فتح (فاز ۲)',
     items: [
       { key: 'martyrs', label: 'ستارگان دفاع مقدس؛ خط زمانی شهدا', icon: '🌙' },
+      { key: 'memories', label: 'خاطرات شهدا و آرامگاه‌ها (جدید)', icon: '🕯' },
       { key: 'avini', label: 'روایت فتح؛ دریچه دوربین آوینی', icon: '🎥' },
       { key: 'archive', label: 'آرشیو جامع چندرسانه‌ای', icon: '📦' },
     ],
@@ -176,6 +178,7 @@ export function MuseumApp() {
       case 'stats': return <StatsView />
       case 'roots': return <RootsView go={go} />
       case 'martyrs': return <MartyrsView go={go} />
+      case 'memories': return <MartyrsMemoriesView go={go} />
       case 'avini': return <AviniView go={go} />
       case 'archive': return <ArchiveView go={go} />
       case 'saddam-dossier': return <SaddamView go={go} />

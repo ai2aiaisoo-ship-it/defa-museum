@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید علی هاشمی فرمانده سپاه ششم",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a748af10e207.jpg",
+      "caption": "An older bearded military officer in green uniform speaking into a microphone. Watermark: \"MEHR NEWS AGENCY / Majid Dehganizadeh\". Contains watermark, not suitable for background.",
+      "source": "mehrnews.com",
+      "original_width": "720px",
+      "original_height": "480px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6f6bf04d88ed.jpg",
+      "caption": "A vintage sepia-toned photograph of a bearded man in a uniform shirt with badges, standing in a barren desert landscape.",
+      "source": "defapress.ir",
+      "original_width": "2000px",
+      "original_height": "1389px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b2561a5707cf.jpg",
+      "caption": "A bearded man in khaki uniform stands before a wooden wall with a portrait above; aged photo, handwritten Persian text at bottom.",
+      "source": "defapress.ir",
+      "original_width": "682px",
+      "original_height": "979px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/56dc939955f5.jpg",
+      "caption": "Three bearded men in military-style uniforms sit cross-legged indoors; vintage photograph, slightly faded and grainy.",
+      "source": "defapress.ir",
+      "original_width": "1578px",
+      "original_height": "1052px"
+    }
+  ]
+}

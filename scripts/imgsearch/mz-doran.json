@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "گورستان ملایه آبادان گلزار شهدا",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/122927eca7da.jpg",
+      "caption": "Blurry historical cemetery photo with Arabic text \"السسلام عليكم أنتمة البقيع\" and \"mashreghnews.ir\" watermark.",
+      "source": "جنت المهدی",
+      "original_width": "1492px",
+      "original_height": "1148px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/05e569701aa7.jpg",
+      "caption": "Aged Dari-language Afghan military certificate with green ribbon banner, emblem, portrait photo, and handwritten signatures.",
+      "source": "Mashal.org",
+      "original_width": "885px",
+      "original_height": "1094px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b23286528b2f.png",
+      "caption": "A dark monochrome white rose with dewdrops overlaid with white Persian text \"یارم\" (Yaram); no watermark; suitable for background image",
+      "source": "ستاره",
+      "original_width": "1000px",
+      "original_height": "974px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/14451113d180.jpg",
+      "caption": "A vintage illustration of a family sharing a traditional floor meal, flat colors, children's book style, \"F.O\" mark.",
+      "source": "جنت المهدی",
+      "original_width": "1080px",
+      "original_height": "739px"
+    }
+  ]
+}

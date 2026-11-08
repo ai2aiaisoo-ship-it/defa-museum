@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://newspaper.hamshahrionline.ir/id/191135/%D8%B1%D9%88%D8%A7%DB%8C%D8%AA-%C2%AB%D8%B4%D8%A7%D9%87%D8%AF-%DB%8C%D8%A7%D8%B1%D8%A7%D9%86%C2%BB-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%B1%D8%AA%D8%B6%DB%8C-%DB%8C%D8%A7%D8%BA%DA%86%DB%8C%D8%A7%D9%86.html",
+    "name": "روایت «شاهد یاران» از شهید مرتضی یاغچیان",
+    "snippet": "May 6, 2023 — ویژه‌نامه یادمان سردار شهید مرتضی یاغچیان با عنوان حمزه لشکر عاشورا در ماهنامه «شاهد یاران» منتشر شده است. در آغازین صفحات یادمان شهید مرتضی ... Read more",
+    "host_name": "newspaper.hamshahrionline.ir",
+    "rank": 0,
+    "date": "May 6, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://ganjebipayan.ir/Martyrs/a630074a-062e-47aa-9dcb-e44c79c30481",
+    "name": "شهید مرتضی یاغچیان",
+    "snippet": "شهید مرتضی یاغچیان درتیرماه سال 1335 به دنیا آمد. در کودکی علاوه بر تحصیل به مجالس‌عزاداری و قرآن نیز می‌رفت. دوران ابتدایی را در مدرسه \"ناصرخسرو\" تبریز گذراند ... Read more",
+    "host_name": "ganjebipayan.ir",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESqwIBxCJF13yR0JAMeW_CgF26kWUVxHiAFSl8Az3fMocMy3cpyg-ju5JbtxhnETy99TebMyidmd0Wak0qaQz2YJrtb55zMwcBzWyBM4cWGFJ3TUkoGg1q5-b9hX4kPnEYOQiaq7xygPseQo2OieVmq2c07vFVjDL7vCfypTXdQeICZADInI0nddMzXa4ZGsjr_JkWBKVBXo6wCuj1d3kGykEsStYSknqrfakQm4QJMdXchShipqV1w_rOl8i6REfekDi1-Onw3TVt5gI7NqM2NJ5tzFYbDVY7KqF0JsssIEZUHOTBjaLSrNREWLIOiLhiOrL_8tUnlzc3AVA1wm8y-m41Z2GtY6l61FQ-C6Mp5m4Kcbdexm_XVdpTQzaXt60vIvZtNvSlhfvalJBqjw",
+    "name": "«شاهد یاران» از شهید «مرتضی یاغچیان» می‌گوید",
+    "snippet": "Apr 18, 2023 — بعد از آن مرتضی در عملیات‌های مختلف و سمت‌ها و مسئولیت‌های مختلفی در جبهه شرکت کرد. مرتضی خیلی متواضع بود. جز من کسی در خانواده از موقعیت، ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "Apr 18, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESYwHEIkXXxg474hSrn2EawvfAbu6qSZ0UjCsyiHM3iN6tr81jiDiPYjheY6_Z4-M4IvRe-UTtjZ8SjmRPzhQyLFELOKQwrcMB9RE7RYHfa1CBWvcRFQfHHxzjjrKsGXuvE5Nfqg",
+    "name": "زندگی نامه شهید مرتضی یاغچیان",
+    "snippet": "شهيد مرتضي ياغچيان درتيرماه سال ۱۳۳۵ به دنيا آمد‌. در كودكي علاوه بر تحصيل به مجالس‌عزاداري و قرآن نيز مي‌رفت‌. دوران ابتدايي را در مدرسه \"ناصرخسرو\" تبريز ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESwgIBxCJF14xoKS1ic96PdA00Ia_1xaolf3dOeiEvU2jA7McMTgyGVapH1kJ16Pi-scKCs67HGCh4lXpywzkTeW-7GtdOKEsRw95DvWuPPkc7m-iYv_CrcqkTVy1OwBN3ENdABpdy_pCdSV4aUQDzIQZa5dQC-ZjW6ssVnbEw7aPioHDz1oKKo5SfOeU-zthtvyi3OxAgc9ZzP-6ozumzEKN17TGpg5R2CcneBf9FZ5PYkLgJWdjBE6buavFviyVwtvi_xBH6MjEhbDzKPy0uJSvS4PHzGD-9nlw5Zj_97w5S_bbvlc27de16f9k8KuVzvSrKhtS7ZBKx7oGP0b58YZpDgqM7LmC9FmN-t3DXsEZR4yhBBMpdFF2b7hC1_sA9oPlm_ht5aephx-gx0l-sbZdsr0Q_QmvWtGnaZcjkKpzXjsQW",
+    "name": "حیات «مرتضی یاغچیان» بسته به حضورش در جبهه بود",
+    "snippet": "Mar 25, 2022 — وی در عملیات «بیت‌المقدس» مسئولیت محور را برعهده داشت و در عملیات‌های «رمضان»، «مسلم بن عقیل»، «محرم»، «والفجر مقدماتی» و «والفجر یک» معاون تیپ ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "Mar 25, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%AA%D8%B6%DB%8C_%DB%8C%D8%A7%D8%BA%DA%86%DB%8C%D8%A7%D9%86",
+    "name": "مرتضی یاغچیان - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "مرتضی یاغچیان (۱۳۳۵ – ۷ اسفند ۱۳۶۲)، از فرماندهان سپاه پاسداران انقلاب اسلامی در جنگ ایران و عراق بود که جانشینی لشکر ۳۱ عاشورا را برعهده داشت. Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXXm-7gHCwTvg1hYHm5pAYnrGkVWXhMKlFZiIVJb1PsKOlaq08cNbjMw2mWOENu3ZcDEpcbuzyPSJ4X_XWv3zGllcOzvZ0Igrp4lsw4Cb6tq5MGWOINGvt1R8moVt8gK1xcVMnq",
+    "name": "شهید مرتضی یاغچیان او از پشت میز فرماندهی نمی‌کرد؛ در خط مقدم،",
+    "snippet": "شهید مرتضی یاغچیان او از پشت میز فرماندهی نمی‌کرد؛ در خط مقدم، کنار رزمنده‌ها می‌ایستاد. با وجود زخم‌ها بازمی‌گشت و تا آخرین لحظه خط را ترک ...",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESpwIBxCJF1y_tFtDoOJG_jMOxcLWBDHOs_88HFkqsvMmHCl-n-hXKbNp0QHYDAD0ZkGj8MM8NBE0k2Ua9TlXPvcEiAFiLgCvCGRoFGv_drcQl0FPE-DT5UfRIV27fyqlpXylS0AXbojdqXSRSGrZXRVAgtgC9Wc27YMABFbcOVmZL8g2R1Cbrsdxo1NU95qCsldAeFqtmkFgYuok5PiqvxEcmtEFItkEpTJlXHrWRvFMmXCcNLS-A-59ZYLnuUwdUrKTTV-Ta-98dq1mKiuWNVaAyew8euykgMMHs2jLiqmjKTeEW8d-l9AOKXEiLKw8rkaB_EevugSHrS33iVrbM8SKbAMtLjhkuC4Okj6FqsWB7L8zkpgksmdLFuOd3q-BDFNv7zbPxAN-y",
+    "name": "روایت «شاهد یاران» از شهید «مرتضی یاغچیان»",
+    "snippet": "Apr 18, 2023 — مرتضی خیلی متواضع بود . جز من کسی در خانواده از موقعیت، سمت‌ها و مسئولیت‌های او اطلاعی نداشت. بعد از شهادت، خانواده متوجه شدند که معاون لشکر 31 ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "Apr 18, 2023",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره واقعی عکس شهید حسین خرازی",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6ccd7a1e6db7.jpg",
+      "caption": "A memorial poster featuring a smiling bearded man in a knit cap against a cloudy sky, with red Persian text reading \"شهید حاج حسین خرازی\", \"فرمانده رشید لشکر ۱۴ امام حسین، سردار شهید مکاکر زگراف\", and watermark \"khakrizgraf.blogfa.com\".",
+      "source": "لبيك يا خامنه اي",
+      "original_width": "1772px",
+      "original_height": "1350px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2e3aad4b454b.jpg",
+      "caption": "The image contains a large amount of Persian/Farsi text (a religious passage about Imam Hassan with the title \"حسین خزازی\") alongside a painted portrait of a smiling bearded man, so the full text will not be output. It contains a calligraphic logo in the top-left corner and a red paint-splash design element; it is a designed poster, not suitable as a background image.",
+      "source": "موسسه تحقیقات و نشر معارف اهل‌البیت علیهم‌السلام",
+      "original_width": "3071px",
+      "original_height": "2126px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6c14a163e1ab.jpg",
+      "caption": "A painted portrait of a bearded smiling man with green eyes, Arabic calligraphy text \"خو_SENSORش壮观\" style red-black inscription, ornate background; suitable for background image.",
+      "source": "همسران خوب",
+      "original_width": "1024px",
+      "original_height": "923px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1d1e7b70cc80.jpg",
+      "caption": "Vintage photo of a bearded man speaking into several microphones outdoors in a mountainous area; contains \"MEHR NEWS AGENCY RECEIVED\" watermark and logo.",
+      "source": "صاحب‌خبر",
+      "original_width": "1280px",
+      "original_height": "935px"
+    }
+  ]
+}

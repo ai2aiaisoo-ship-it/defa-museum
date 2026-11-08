@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید عباس بابایی خلبان",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b4c389ec81c4.jpg",
+      "caption": "A high-resolution black-and-white portrait of a young man with short dark hair and thick eyebrows, wearing a striped shirt and blazer, looking at the camera with a neutral expression. No text, watermarks, or logos present. suitable for background image",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "1806px",
+      "original_height": "2400px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6f1f7d83fa3c.jpg",
+      "caption": "A portrait of a bearded man in military uniform with Persian text including \"عباس بابایی\" and watermark \"NasrinFo\".",
+      "source": "YouTube",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1a31082ff6a5.jpg",
+      "caption": "Vintage photo of Iranian military pilots in green flight suits exchanging a gift before a chalkboard with Persian text; contains a \"خزانة\" logo watermark.",
+      "source": "اقتصاد24",
+      "original_width": "1200px",
+      "original_height": "776px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a09cf85a07c0.jpg",
+      "caption": "A vintage photograph of three bearded men indoors; one wears a white clerical turban and holds glasses. No text or watermarks visible; slightly aged quality.",
+      "source": "جام جم",
+      "original_width": "1200px",
+      "original_height": "920px"
+    }
+  ]
+}

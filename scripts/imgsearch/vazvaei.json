@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید محسن وزوایی فرمانده",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8f2ec7a561bb.jpg",
+      "caption": "Elegant black Arabic calligraphy on a white background reading \"شکر گزار نعمتی\", high contrast, no watermarks. Suitable for background image",
+      "source": "معلی",
+      "original_width": "7429px",
+      "original_height": "3396px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d0eb6f34d831.jpg",
+      "caption": "Digital portrait of a bearded man in a gray shirt against blue watercolor background, with Persian calligraphy text and watermark logo.",
+      "source": "خبرگزاری دانشجو",
+      "original_width": "897px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1722bca7277b.png",
+      "caption": "A bearded man in a dark suit stands beside a green Iranian provincial government flag with gold emblem and Persian text.",
+      "source": "قرارگاه بین المللی سازندگی اباصالح المهدی (عج)",
+      "original_width": "1380px",
+      "original_height": "992px"
+    }
+  ]
+}

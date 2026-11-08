@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید حسین خرازی اصفهان گلستان شهدا",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f1ccdbae747a.jpg",
+      "caption": "A marble tombstone with engraved Persian text and a red flower, atop a Persian carpet; watermark \"NODY.IR\" bottom right.",
+      "source": "fa.nody.ir",
+      "original_width": "900px",
+      "original_height": "1140px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/37eb7d5b7f44.jpeg",
+      "caption": "A vibrant flower garden with purple hyacinths and red tulips, traditional domed buildings and mural in background, clear sky.",
+      "source": "vilayar.com",
+      "original_width": "1080px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f1c796a6a9f5.jpg",
+      "caption": "A cemetery with portrait-framed gravestones, flowers, Persian epitaphs, and a \"NODY.IR\" watermark.",
+      "source": "fa.nody.ir",
+      "original_width": "800px",
+      "original_height": "420px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/81a05ebb8d2e.jpg",
+      "caption": "Mourners including clergy and military officials place flowers and candles at memorial graves; contains \"DEFA PRESS.IR\" watermark.",
+      "source": "defapress.ir",
+      "original_width": "600px",
+      "original_height": "400px"
+    }
+  ]
+}

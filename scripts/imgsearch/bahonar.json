@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید محمدجواد باهنر نخست وزیر",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/744ea06897d8.jpg",
+      "caption": "Watercolor portrait of a bearded cleric in a white turban, with Persian calligraphy \"همایر همدلی\" and a Persian quote below; contains \"@Golzarteh\" watermark.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3665c8dc21d0.jpg",
+      "caption": "Portrait of a bearded cleric wearing a white turban, outdoors under a cloudy sky; contains \"TABNAK.IR\" watermark.",
+      "source": "تابناک",
+      "original_width": "1700px",
+      "original_height": "2550px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/064c2216200a.jpg",
+      "caption": "Painted portrait of Shahid Mehdi Tahmasebi, young man in green military uniform, with Persian text and logo.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/63c68bf21164.jpg",
+      "caption": "Digital painting portrait of a smiling bearded man in white shirt, yellow background; contains Arabic text \"مشواري معي شهد عبدالله باقري\" and a logo watermark.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    }
+  ]
+}

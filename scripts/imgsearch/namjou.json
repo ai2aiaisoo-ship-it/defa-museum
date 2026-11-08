@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید موسی نامجو وزیر دفاع",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2b5708322aca.jpg",
+      "caption": "Black-and-white portrait of a young man in military uniform; contains watermark text \"navideshahed.com\"; grainy, not suitable for background.",
+      "source": "نوید شاهد",
+      "original_width": "791px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f5363587aeb0.jpg",
+      "caption": "A vintage, sepia-toned archival photo showing an elderly cleric gesturing beside uniformed military officers saluting; contains \"MEHR NEWS AGENCY RECEIVED\" watermark.",
+      "source": "خبرآنلاین",
+      "original_width": "1280px",
+      "original_height": "867px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/615b73d9830f.jpg",
+      "caption": "Split portrait collage: older man in military uniform clasping hands, younger bearded man with glasses; Persian watermark \"پژواک رازشو\" present.",
+      "source": "خبرگزاری دانشجو",
+      "original_width": "1280px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5808c8a78e57.jpg",
+      "caption": "Officials seated at a long table in a green meeting room with Iranian flags, portraits, and emblem; watermark \"TASNIM images, Masoud Shahrestani\".",
+      "source": "خانه مشاور",
+      "original_width": "1200px",
+      "original_height": "800px"
+    }
+  ]
+}

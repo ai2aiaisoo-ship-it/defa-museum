@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://www.irna.ir/news/84672989/%D8%AA%D9%84%D8%AE-%D8%AA%D8%B1%DB%8C%D9%86-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D8%B4%D9%87%DB%8C%D8%AF-%D9%87%D9%85%D8%AA-%DA%86%D9%87-%D8%A8%D9%88%D8%AF",
+    "name": "تلخ‎‌‎ترین خاطره زندگی شهید همت چه بود؟",
+    "snippet": "Mar 8, 2022 — تهران- ایرنا- شهید همت تلخ‌ترین دوران زندگی خود از خدمت سربازی‌اش چنین روایت می‌کند: ماه رمضان بود، به سربازان گفتم که به هنگام سحری ...",
+    "host_name": "www.irna.ir",
+    "rank": 0,
+    "date": "Mar 8, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESZAHEIkXX8oXzMksBiJmpY17K7kPj2A2OcMhk799LhTruhpNWbG3MM1Licjl2oEuLEvJTznzKXGb2cBo0WQpZ9YFz_uzrgS9GZDdnuPXwi924aHT9UmUZLHVuowPop5o5dUIsNsE",
+    "name": "خاطره از همرزم شهید همت",
+    "snippet": "سال 1334 شهرضا ميزبان نوزادى شد كه او را محمدابراهيم ناميدند. ولادت او با معجزه همراه بود. سنين جوانى و نوجوانى را فعال و پرشور به مبارزه با رژيم ستم شاهى ... Read more",
+    "host_name": "www.google.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://fashnews.ir/news/89036",
+    "name": "\"حاج ابراهیم همت\" به روایت همرزمان",
+    "snippet": "Mar 8, 2022 — شهید همت همیشه سعی می‌کرد که دیگران در بهره‌مندی از مواهب بر او مقدم باشند. تا آنجا که می‌توانست، از مال و نعمت‌های دنیا گریزان بود. یادم هست ... Read more",
+    "host_name": "fashnews.ir",
+    "rank": 2,
+    "date": "Mar 8, 2022",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.aparat.com/v/JjXWY",
+    "name": "شهید همت و هم رزمانش",
+    "snippet": "Nov 25, 2021 — فیلمی از فرمانده شهید حاج ابراهیم همت در حال صحبت کردن با نیروهای تحت فرمانش و در کمال تواضع و فروتنی ابراز شرمندگی در برابر صبر و ایثار ...",
+    "host_name": "www.aparat.com",
+    "rank": 3,
+    "date": "Nov 25, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESxgMBxCJF19VYf_r-ssKkLYzemK9ljngDi1roxguI2a-KVw-t7d3MXO-xQTsBgAvUx0r_yughtZcx6Rl0RdBNz3pZV9o27pd0xxjwNznaDFn2fm8WeAsbJGPfd_z82R9kvAl4uPYI5oec4AGT8X6-kdoF4ngjPq1n71W_NRdD7fcV3MEVN09VKVYKKqozv5mCNvdTcFvVD7QhK0nl5xEYcvioCaLGy8wBs9DSqVF7GzlQeZoSdd0RazoSRqZDAtSYgVOS3aF7-GFNyrQkAQ89Niovtuv8tNtTIZ0n6hQOIqScvdHIWXJWQhFGGHQMnpH_EhY5tPMeRDwF6dWm7tPoSdyMgf6ulYR40n-45H0NimQp3y4NdvxJbyzmikhe4kmH28DN29sg7biL_zb3KsSZI_zK1BF4PaDxVsHxcRKw5InhERVlx6QmnPTdT0cto3p1cWBqz_lTLvZHkYdlzpy11h3NFDuBWk6SdsIM4NWIN-XKmE1zf8EQ8w705DFNlc15Cwm3svNcgaUlUy6bXCnFqvOJ387KNqVynOw0IQc1O93dgOhS7ZB_PgEtHosK1ADqk1fkfqjXb8nWLff2Skb6_5zJiZn4KTSO",
+    "name": "نحوه شهادت شهید همت از زبان همرزم او/ دستی که قطع شد",
+    "snippet": "Apr 30, 2023 — نحوه شهادت شهید همت از زبان همرزم او / دستی که قطع شد، مانند دست سقای کربلا. سردار جهروتی‌زاده یکی از فرماندهان هشت سال دفاع مقدس در کتاب خاطرات ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "Apr 30, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES0gMBxCJF1zkDtU7qXiXDmrF4w_yxYy3W0wcOv2tV7o1wAV82RpgBO7cDfB58WS3K6d3plLDoCgyv85rxTFPnmK-FPScMMdTywXLX-Aa4hy1Ah2djmQtIJYRqaR7LxfOaPZ-BmoMSXd3-1ijBEh8WP9RCglHUV8d_Wvh1mWWnPwZuQ2lg-weuz1r2kFCHtMp12mO-rbOpgGLON-OHvvBYBC8YtdquVtWrIzOp9xodxAfwBfws8fQZSWdHf5j3OT8XQRD9Mk8OWVEy4yvcvzNT3nPvHNwmx823Y-Ey5ATz26chr0fLvCsKKLz2w95RUO2PJNqy-28o1uZDQOAR9n-F9K7SY2Xj3Ho5gvy_Bq1cQG5YSqrQ0oEUOoORUs0Hg5zA54eEL4G01WbmiD7s0X3ZDgLybg2tchCL-xNIkE6C2hUDzfAQBn_iZsuyXa_H-y6iiWNdnp-NjcCwQen9EffITJ8XO230TdSlB_re_w0jLi3nGG8-9aOkA0yhiIqqIUSXcvYPXkQ32ZxzwFICsZ9IGHWcYDZey39ctQ9-89zHQ3kDH0pCdYoWPgQf0z-fUQzCvcwvqgs48yrbpDke6cNNj6HPCtesiAeYywNpe4Jav-yNh1OM",
+    "name": "خاطراتی-از-شهید-محمد-ابراهیم-همت",
+    "snippet": "هر وقت با او از ازدواج صحبت می کردیم لبخند می زد و می گفت: \"من همسری می خواهم که تا پشت کوههای لبنان با من باشد چون بعد از جنگ تازه نوبت آزادسازی قدس است. Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESZgHEIkXX5G_W01L_OE113vPKX0XiHAVe58S8VkkBNZIoU10w0ZGlxAVf86he_OqQTGCaUqXdf9_Ok9XEsIxsy1r0K0dlFPolbP8d7UrEiwoOuERwik0S5WF7gvXCXvvR1gK7wCvNvA",
+    "name": "خاطرات ژیلا بدیهیان از همسرش شهید حاج ابراهیم همت",
+    "snippet": "Sep 8, 2020 — او در بازگویی خاطراتش در باب رابطه بسیار صمیمی حاج همت با رزمندگان، به بیان خاطره‌ای بسیار زیبا می‌پردازد. «ایشان لباس پوشید و رفت و دفترچه ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Sep 8, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrwEBxCJF14qzpjPQoOoV4IaK8sb4a2lMgb0xVROuao1cR0Fm0Qj821DJNZKO8TDBf3fbNnLnApVeOqNoR29HjNoWxKIZ9K5svmiTSqiwtV61PbxNrycooYxbfsX_2bfDinmpoxhED5Z2bi4E4L0NAQgXCJYyqBINiq5YRubCxq8k0Qoon9yl8azsZ_WlSp5BoCtjZw7eFP28AXoPhgSG4gB1ekd95dan-66fhFuwbeLd",
+    "name": "محمدابراهیم همت - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "محمّدابراهیم همّت (۱۲ فروردین ۱۳۳۴ – ۱۷ اسفند ۱۳۶۲) آموزگار، نظامی ایرانی و از فرماندهان ارشد سپاه پاسداران انقلاب اسلامی بود که در خلال جنگ ایران و عراق از ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

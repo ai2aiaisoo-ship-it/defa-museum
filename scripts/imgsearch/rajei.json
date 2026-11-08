@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "query": "پرتره شهید محمدعلی رجایی رئیس جمهور",
+  "count": 3,
+  "ranked": true,
+  "captioned_count": 3,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dee176b27991.jpg",
+      "caption": "A stylized vector portrait of a mustached man in white shirt on red floral background, with Persian text below, no watermark.",
+      "source": "نگاره",
+      "original_width": "1280px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9d67decc025d.jpg",
+      "caption": "A watercolor-style digital portrait of a smiling mustached man in a white coat and tie, with Arabic calligraphy text, colorful artistic border.",
+      "source": "عکس نودی",
+      "original_width": "4000px",
+      "original_height": "5940px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9fa5f36af0a3.jpg",
+      "caption": "A close-up of Muammar Gaddafi wearing a black cap and gold-rimmed glasses, seated on an ornate golden chair.",
+      "source": "IranWire",
+      "original_width": "1488px",
+      "original_height": "782px"
+    }
+  ]
+}

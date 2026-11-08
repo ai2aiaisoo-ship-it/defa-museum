@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://balad.ir/p/%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B3%D8%B1%D9%84%D8%B4%DA%A9%D8%B1-%D8%AE%D9%84%D8%A8%D8%A7%D9%86-%D8%B9%D8%A8%D8%A7%D8%B3-%D8%A8%D8%A7%D8%A8%D8%A7%D8%A6%DB%8C-qazvin_tourist-attractions-3S4AQyIqtmMzp0",
+    "name": "آرامگاه شهید سرلشکر خلبان عباس بابائی قزوین؛ آدرس، تلفن",
+    "snippet": "آرامگاه شهید سرلشکر خلبان عباس بابائی در محله گلزار شهدا قزوین و در کنارگذر سی و دو واقع شده است. از لحاظ موقعیت جغرافیایی این مکان در نزدیکی مراکزی مانند ... Read more",
+    "host_name": "balad.ir",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://neshan.org/maps/places/c79b66d6dfe5d250931d0637630d07de",
+    "name": "آرامگاه شهید سرلشکر خلبان عباس بابایی خند قبار",
+    "snippet": "آرامگاه شهید سرلشکر خلبان عباس بابایی · قزوین ، بزرگراه جمهوری اسلامی، سلامگاه، شهید نجف تیموری، مزار شهدا (محله‌ی خند قبار) · ثبت ساعت کاری این مکان. Read more",
+    "host_name": "neshan.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://fadaevelayat.blogfa.com/post/267",
+    "name": "آدرس مزار سرلشکر شهید عباس بابایی",
+    "snippet": "آرامگاه شهید بابایی عزیز؛ در شهر قزوین درجوار امام زاده حسین؛ گلزار شهدای قزوین می باشد. قزوین - بلوار جمهوری اسلامی - حدفاصل خیابان سلامگاه و مولوی - امامزاده ... Read more",
+    "host_name": "fadaevelayat.blogfa.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESpgIBxCJF17LcHv96YucsjV6oBZagRs-jGVrEXqPMo2phfTvFnxUVi9xWpbtXKlPA7e1bDxGgnxrSHyZwDqNhiFo6u-jqMpq6kebJkhfX-zNDmNx7X4lOEVdcrC49bQKxYeffdDjwwC07Z7m7gMJTE_qBg4r_RY6qzfNFH81rTN4K1sOVj--LlqrunujguGlUZJtvgCu5dvfgLOZemya2UF1GCUoEllfkjri5gPkSSlneO4tQEQmhiZqeen-PGaq1s8PqlB-mSwDagefxecJZSjupkqnNJSLl3ufdNj4HmdBGkKD-_I-3hxhtt6_cJa64xPaFq84moxD8JTM3hK2dtlrntZUQcFCbLoD4pirK1ksFHHCtxqbrUk3NJwzgf8UST8XzxLjzJgE&gsessionid=OZrQZvcwsICIkkJwBQLMDOVsSWQwgJXyx61K850Xn_F-MZumyY97rQ",
+    "name": "آرامگاه شهید سرلشکر خلبان عباس بابائی + شماره تلفن، آدرس",
+    "snippet": "قزوین ، گلزار شهدا ، کنارگذر سی و دو. ساعات کاری. باز. تا 18:00. مشاهده ساعات کاری. دیدگاه‌ها درباره آرامگاه شهید سرلشکر خلبان عباس بابائی . دیدگاه‌ها. Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESZQHEIkXXfUYRt1B_waW_JxMwGILodf6ZuphKa7hKg33f59B-8pmsTt7oLrXk4eM3QfDytmpCY-wilHrKjIWYFwG4dUE_yKT4BOQIdCfUh12A4d5N5-vdbyw9DWs3SMXvjyfqU2Eh&gsessionid=OZrQZvcwsICIkkJwBQLMDOVsSWQwgJXyx61K850Xn_F-MZumyY97rQ",
+    "name": "آرامگاه شهيد عباس بابايي",
+    "snippet": "آرامگاه شهيد بابايي عزيز؛ در شهر قزوين درجوار امام زاده حسين؛ گلزار شهداي قزوين مي باشد. قزوين - بلوار جمهوري اسلامي - حدفاصل خيابان سلامگاه و مولوي -",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESfAHEIkXX0svrWUAgYLISaUQwV7e9ZNVZLy_90pQdDjbyHcM5eC-J0wld1wpUndx26ywj3EnOrcBHvJ7X23IOKViu1KUdocr37liWejyVd3koW2-EK59oJEzN9zy9pw09G2JcG9MA1Gatru8O-sVk7sOI8V0R6DN38_WDI68&gsessionid=OZrQZvcwsICIkkJwBQLMDOVsSWQwgJXyx61K850Xn_F-MZumyY97rQ",
+    "name": "گلزار شهدا خند قبار، قزوین + تصاویر، آدرس و نظرات مردم",
+    "snippet": "قزوین ، بزرگراه جمهوری اسلامی، سلامگاه، شهید نجف تیموری، مزار شهدا (محله‌ی خند قبار) ... گلزار شهید سرلشگر خلبان عباس بابایی که میتواند تکه ای از بهشت باشد. بیشتر Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESjwEBxCJF11aVv9M-IIH4-r0DRe2tbV3S-W6yg8vl4tSyXaS9nGKn2n-Xyt20tF0NfjAfa5AZyvgId46WqsCGJ12H6XRVc1ZySMqz6EXn9j-pCcfFqMsVSebLPWam4rY8YHPs1HKKOJfz2xujjVNGdXMTyCi60qv1gLuyug1wV6QLAUszzBJrnbaJHAZTvjj_Jw&gsessionid=OZrQZvcwsICIkkJwBQLMDOVsSWQwgJXyx61K850Xn_F-MZumyY97rQ",
+    "name": "هم محله‌ای من، عباس بابایی»در گلزار شهدای قزوین برگزار شد",
+    "snippet": "Dec 5, 2021 — ... شهید شد و مزار او در گلزار شهدای زادگاهش واقع است. پایان پیام. تصاویر مرتبط. شهرداری قزوین . آدرس : قزوين - خيابان شهرداري - شهرداري مرکز ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Dec 5, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESoAEBxCJF16f4AUO7HT9K_rhHMFoBAjPhHeq_zHEsYC8LEvpBHo94MdCC0zF0vJHe-XrXo6RrSa50KYjsfB8CEyjENWQ9Zq6NWlDGkBwBWAdFtmMty5i6LMDClMwobT2OvuZ7cHDAvq9QAX213i5kvEh0Nk_7yKCfr17-j1LaCOdOq1Ncm9hiMBki2jN-FsdCNObt8YFFRVlzxd5Jg8w-9uyd&gsessionid=OZrQZvcwsICIkkJwBQLMDOVsSWQwgJXyx61K850Xn_F-MZumyY97rQ",
+    "name": "مزار شهدا قزوین؛ آدرس، تلفن، ساعت کاری",
+    "snippet": "مزار شهدا در محله گلزار شهدا قزوین و در خیابان منتظری،خیابان مولوی،خیابان باب الجنت واقع شده است. از لحاظ موقعیت جغرافیایی این مکان در نزدیکی مراکزی مانند ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید جهان آرا بهشت زهرا",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/831aef135f72.jpeg",
+      "caption": "A gravestone painted like the Iranian flag with potted purple flowers, beneath a framed portrait of a bearded man wearing glasses and a cap, in a cemetery containing Persian text.",
+      "source": "نشان",
+      "original_width": "1920px",
+      "original_height": "4268px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ce66816243dd.jpg",
+      "caption": "Illustrated portrait of a bearded man gazing down in a sunset field, with Persian text and a red logo watermark.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3997b3c8460d.jpg",
+      "caption": "Cemetery with rows of tombstones; contains watermarks (@SERATNEWS_COM, NODY.IR) and substantial Persian text overlay, so not suitable for background image.",
+      "source": "عکس نودی",
+      "original_width": "1200px",
+      "original_height": "2075px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/265d057b76dd.jpg",
+      "caption": "A digital painting of a bearded man in profile against rubble, with Persian text at the bottom.",
+      "source": "نگاره",
+      "original_width": "905px",
+      "original_height": "1280px"
+    }
+  ]
+}

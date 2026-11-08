@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "شهید فلاحی عکس فرمانده ارتش جمهوری اسلامی جبهه",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f098953deea9.jpg",
+      "caption": "A vintage purple-tinted photograph of several uniformed soldiers walking near an armored vehicle; contains a \"24\" logo watermark.",
+      "source": "پیشینه ی ارتش ایران و سرزمینهای دیگر",
+      "original_width": "1200px",
+      "original_height": "950px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ba715e91d5c2.jpg",
+      "caption": "The image contains a large amount of text information and a watermark in the bottom right corner.",
+      "source": "عکس نودی",
+      "original_width": "1261px",
+      "original_height": "1740px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/84d0c57b6f07.jpg",
+      "caption": "A bearded middle-aged man in a blue military-style uniform with insignia, medals, and a name tag, white background, image cutout with no visible text besides a small Persian name tag.",
+      "source": "آگاه",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2e493454cb9d.jpg",
+      "caption": "Historical photo of Ayatollah Khomeini saluting among officials; contains watermark \"irdc.ir\" and Persian logo, so not suitable as background.",
+      "source": "مرکز اسناد انقلاب اسلامی",
+      "original_width": "1080px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1ed04afa0b10.jpg",
+      "caption": "A Persian memorial poster honoring martyr Mohammad Hovard Baher, navy soldier, featuring flags, doves, ship imagery, and clerics.",
+      "source": "معارف جنگ شهید سپهبد علی صیاد شیرازی",
+      "original_width": "1703px",
+      "original_height": "1280px"
+    }
+  ]
+}

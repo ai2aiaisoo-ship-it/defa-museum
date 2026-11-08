@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید مصطفی ردانی پور",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4dcee35577d0.jpg",
+      "caption": "A bearded young man in a green military-style shirt stands before palm fronds; vintage film photo with scratches.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "943px",
+      "original_height": "1400px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f7c21c778188.jpg",
+      "caption": "A memorial-style poster featuring a black-and-white portrait of a smiling mustached man, with Persian text \"پدکاوه\" and decorative purple floral motifs.",
+      "source": "طاقچه",
+      "original_width": "800px",
+      "original_height": "1184px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/19354f165b98.jpg",
+      "caption": "Persian commemorative poster honoring martyr Hojjatoleslam Seyed Mohammad Roshani, featuring his portrait, Iranian flag, keffiyeh, martyrdom logos, biographical text.",
+      "source": "خبرگزاری رسا",
+      "original_width": "1200px",
+      "original_height": "1801px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/73722625ffa1.jpeg",
+      "caption": "A memorial poster with a framed portrait of a bearded young man, red satin fabric, sparkles, and Persian text: \"محمود زمان انتقلب شاگرد ما بود؛ اما حالا استاد ما شد. حضرت امام خامنه‌ای\". Suitable for background image.",
+      "source": "خبرگزاری رسا",
+      "original_width": "1200px",
+      "original_height": "800px"
+    }
+  ]
+}

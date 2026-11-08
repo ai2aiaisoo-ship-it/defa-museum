@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید محسن وزوایی بهشت زهرا قطعه ۲۶",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f9fb9ccbbe47.jpeg",
+      "caption": "A black granite gravestone covered with extensive Persian calligraphy text, partially in sunlight; contains a QR code and much text information.",
+      "source": "نشان",
+      "original_width": "1920px",
+      "original_height": "2553px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4a38ba48d5e4.jpeg",
+      "caption": "A black granite gravestone with engraved portrait, mosque imagery, and extensive Urdu/Persian text; image contains a large amount of text information.",
+      "source": "نشان",
+      "original_width": "1920px",
+      "original_height": "2560px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f1c77d96c507.jpg",
+      "caption": "Grieving women in black chadors mourn at an Iranian funeral ceremony, surrounded by green flags and banners; contains logo watermark.",
+      "source": "نوید شاهد",
+      "original_width": "1280px",
+      "original_height": "690px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c8bba0c5aa8d.jpeg",
+      "caption": "A martyr's grave in an Iranian cemetery, with a portrait of a soldier, scattered flowers, Persian inscriptions, and an Iranian flag.",
+      "source": "نشان",
+      "original_width": "1920px",
+      "original_height": "2560px"
+    }
+  ]
+}

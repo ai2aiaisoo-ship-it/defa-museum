@@ -1,0 +1,59 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://old.aviny.com/rahiyan_noor/revaiat-eshgh/khatere/08.aspx",
+    "name": "ده خاطره از شهید حسن باقری (غلامحسین افشردی) - شهید آوینی",
+    "snippet": "1) كلاس هشتم بود. سال چهل و هشت، چهل و نه. فاميل دورشان با چند تا بچه ى قد و نيم قد از عراق آواره شده بود. هيچى نداشتند; نه جايى، نه پولى. Read more",
+    "host_name": "old.aviny.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.javanonline.ir/fa/news/1134300/%DB%B1%DB%B0%DB%B0-%D8%AE%D8%A7%D8%B7%D8%B1%D9%87-%D8%A7%D8%B2-%D8%AD%D8%B3%D9%86-%D8%A8%D8%A7%D9%82%D8%B1%DB%8C-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D8%B1-%D8%A7%D8%B2-%D8%B3%DB%8C%D8%A7%D9%87%DB%8C-%DA%86%D9%87-%D8%B1%D9%86%DA%AF%DB%8C-%D8%A7%D8%B3%D8%AA",
+    "name": "۱۰۰ خاطره از حسن باقری/ بالاتر از سیاهی چه رنگی است؟",
+    "snippet": "Jan 29, 2023 — به مناسبت سالروز شهادت سردار شهید حسن باقری در نهم بهمن ۱۰۰ خاطره کوتاه از این شهید والامقام را در ادامه می خوانید.",
+    "host_name": "www.javanonline.ir",
+    "rank": 1,
+    "date": "Jan 29, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESYQHEIkXXl8QPsZDzMRw5_RmRWbutyWVS__rzwLG5R5CCP9R2BZ_fGz31biY8nOIZqvmkZ5uwyAOexANjopGycchAV_0-IIIaWKR2kXfZkbhCXyTYFDNbZeZNKb1VedGHdsk",
+    "name": "یکصد خاطره از شهید حسن باقری (غلامحسین افشردی)",
+    "snippet": "اشاره: غلامحسین افشردی، حسن باقری نام مستعار این شهید بزرگوار بود. 1- بچه را لا پنبه گذاشتند . آن قدر ضعیف بود که تا بیست روز صداش در نمی آمد . شیر بمکد. Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESbQHEIkXX1H2fZpzGfjMEvDsYWRH5CIqx4b0q7D9LzTwvTXVqcISzUf9rtAemmuekWHMPepy_bdZp6BiXBseY3LSJiCC546IZLqstEC4mCNQnsEWLwqMBQTfnNgkyqsAxhv6eW7_WTHF1ZcxTSoc",
+    "name": "نابغه ۲۷ ساله - ديگران",
+    "snippet": "Mar 15, 2015 — از سال ۸۱ (بیستمین سالگرد شهادت شهید باقری ) تا امروز، خیلی جامع‌تر و کامل‌تر با زندگی ایشان آشنا شده‌ایم؛ یک زندگی پربرکت، پرماجرا، پرحادثه و ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "Mar 15, 2015",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES1QEBxCJF1yFlHiOQq9YhUHH3GQS0PeipQPxs7MfjTFjroqngd8UkkziXHpfP7NXzLyRpjiaWXJyc3c2Te4OCgxov1eyyt7CGti-Pcmh5prsyA423SGz2URh_po-fTNReKPOGTt8lFrJSYkFo3N_Tx-tE67_Iear8LI7IpmBnA2KTTPaXa-uNfnH0k4JXePoHtzILLDcu5ir6zdip-kuxI8KUyMnLpakRmbf-7YPvwpbuTFq2hIWI62DuNBy0B0TwsvlxciVxHfIeAwIBIytG7znRKOTTCIA",
+    "name": "خاطرات شهید حسن باقری",
+    "snippet": "خاطرات شهید حسن باقری . خاطراتدفاع مقدسشهدا · شهید حسن باقری به روایت بیسیم‌چی‌اش. آنچه می خوانید، خاطره ای از سردار حمید اصلانی درباره سرلشکر شهید حسن باقری است ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESgQMBxCJF17kVe1XOn1N_i8aAmTLPlyznjo9KLVDOoON6RvfYRBIhelAeJCT3ulve4Dxam0xfk8eOACUDEqkW2YXI3mxVJ5o7MRWDlAnes81JSKMqs7vS4hgEulKk3gOBYpyyQxqXfjqv_0RmWOtfHpE8bxmsRPuR2F6Km5QZMo9z71xzfzSBZWU6VXuHsJrHQoDTeO3ALVBtFSPgljbRAYRx9C3UzIqvp0nnLhZCklLmaF24NL6pmpBiF5yZFFsDeT-Z3f9pS-jKVyfKFoV2mV19ZFlvZ-yVbXfQ1ETKWxiuXFesE3mwXTEBClu3-H3A-P7msJoKepodR1E8tLivwA2Z1HooLsNva2uV4odI5TOhNcaPOU1fazkAX1dfsgAwW7eAMS3C7xZI-MUweooQf6GIvtfRGbkkDsQbfxWrDgVlF0BjlczBhMEITVQ-BCxjSPSafbaelLXTcWpn7qWNiJFj4SMugem3ntbFwdW2GtfAzA_tMzgXUyQ4DSznLuu7AAC7",
+    "name": "انسان، رزمنده، شهید: روایتی از حیات شهید حسن باقری",
+    "snippet": "Jan 29, 2023 — غلامحسین افشردی تبدیل شد به« حسن باقری ». اسمی که تا به امروز هم بیشتر از اسم و عنوان واقعی ام، منو بهش می شناسند. 31 شهریور بود که جنگ با تهاجم ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "Jan 29, 2023",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

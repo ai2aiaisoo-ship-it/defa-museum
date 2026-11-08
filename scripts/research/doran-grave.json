@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%A7%D8%B3_%D8%AF%D9%88%D8%B1%D8%A7%D9%86",
+    "name": "عباس دوران - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "در ماه‌های آغازین جنگ ایران و عراق نقش مهمی در بمباران اهداف دشمن عراقی ایفا کرد. دوران در دو سال اول جنگ بیش از ۱۲۰ عملیات و پرواز برون‌مرزی موفق داشت. Read more",
+    "host_name": "fa.wikipedia.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://wiki.ahlolbait.com/%D8%B4%D9%87%DB%8C%D8%AF_%D8%B9%D8%A8%D8%A7%D8%B3_%D8%AF%D9%88%D8%B1%D8%A7%D9%86",
+    "name": "شهید عباس دوران - دانشنامه اسلامی",
+    "snippet": "شهید عباس دوران (۱۳۲۹-۱۳۶۱ ش) از فرماندهان و خلبانان دوره جنگ تحمیلی عراق علیه ایران بود. وی تمام آموخته های خود را برای نجات کشور از توطئه دشمنان بکار گرفت ... Read more",
+    "host_name": "wiki.ahlolbait.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.linkedin.com/posts/michael-parsi-844732194_%D8%B3%D8%B1%D9%84%D8%B4%DA%A9%D8%B1-%D8%AE%D9%84%D8%A8%D8%A7%D9%86-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B9%D8%A8%D8%A7%D8%B3-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%DA%A9%D8%B3%DB%8C-%DA%A9%D9%87-%D8%B3%D8%A7%D9%84%D9%87%D8%A7-activity-7487842268608036864-Y5EB",
+    "name": "سرلشکر خلبان ، شهید عباس دوران کسی که سالها پس از مرگش",
+    "snippet": "سرلشکر خلبان ، شهید عباس دوران کسی که سالها پس از مرگش تنها چند استخوان از وی به ایران بازگشت در سحرگاه ۳۰ تیر ۱۳۶۱ بر فراز حریم هوایی بغداد ...",
+    "host_name": "www.linkedin.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESiQIBxCJF1-As-4QozxJEnO-WmsESRixdfU0kQqK7BVnA0u0GlFXe8aOpoUIrFWLrbwhqu2-VDBV3v8DqsGP4Lc2xUQUILcKbajLucGJUN2HZ1a3Za7F1kAtkv-6oUtw8yxwahHOaTuW6836Ign1Sf6wPMhTyC78MXfS8LGBr0HWJKM4GRrSMzVlPWyonS6q9MB5Yu6A-ywSvgQPEPaPsrh9vXgWZ9TzKHGVN655nHyE3u7I_ZWqdi3hfxq8Jc7dIm8vmFdC_9fJCgiSNZ946hcf0ZRLaE7cc7RbGcbn5z7QM3itEkXO9qQwrq6kV7fda3a9zys23N6J_TBTphVC5hVtKevLkQywsebdS",
+    "name": "زندگینامه: عباس دوران (۱۳۲۹ - ۱۳۶۱)",
+    "snippet": "Aug 27, 2012 — زندگینامه: عباس دوران (۱۳۲۹ - ۱۳۶۱) محمد ملاحسینی: عباس دوران۲۰ مهر ماه سال ۱۳۲۹ در شهرستان شیراز در یک خانواده مذهبی دیده به جهان گشود.",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "Aug 27, 2012",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXX_QbtDnm_XA4tjwIZc07Hl-nOE0ckSGmvkhDK1jdki3mpw8St0biAEjIkZx1kEghIRJRLXQS5M1Xydq8-PvAF5sZ-G00cD4eGGLT1ookl2zDq1jmlo4HsOoV_STtfxM-5zTjR",
+    "name": "اسطوره ایثار و شجاعت: عباس دوران",
+    "snippet": "... شهید عباس دوران ، اسطوره بی‌نظیر F-4 فانتوم و یکی از شجاع‌ترین قهرمانان نیروی هوایی ایران، برمی‌داریم. داستانی پر از شجاعت، ایثار بی‌حد و حصر ...",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES7gIBxCJF151vmyfu6kTX9WkJOeTzHU2s0V643Id_Z8qRuG3IkJHr_tUUoHzipDZlCBXl3ifwHQjyRHP4sC7ZeyAJC_yYOL6x7Mte_6LuVYMU1ovszo5lJvM_P29snkch0kVIsqnyBV-MOitcyaUky9ScyLBbk-4h0sJpgUj0k31KQiV81HiF_aYEc5HVrZQxrffB_Vs0fNG6v7a3xzESeEbqkuLzOPB8YHzH6mGo_AOar3YJUV4_YUQX6JhlY9HfNDQTDCJyTDi_MkEHi5fdhxM5kwmKOkuuLOdldPrxraOqjDNCIOSg0xudELK3JPrXxMLDvu6CP8j8RoTll9maVu9UokDwDCurXxi-sLcKk1iZLmQ5dSQE49E9laDgqIvXQjdQX8jR-D0CDmSVNSAQXWEF7yU1ZrPM043YzONrrcAZMSp1VZCjYWFoYiWFkankurB2cUW_XHp3EJmIG2LqajuqX1qSDhO5ENBuYKCWiN0",
+    "name": "سالگرد درگذرشت شهید عباس دوران + بیوگرافی و نحوه شهادت",
+    "snippet": "Jul 20, 2020 — سرلشکر خلبان عباس دوران از خلبانان نیروی هوایی ارتش بود که در ماه‌های آغازین جنگ نقش مهمی در بمباران اهداف دشمن عراقی ایفا کرد.",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "Jul 20, 2020",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESbgHEIkXXQymmRRCIQhAmPWVtY1tE4dqypyMyaNIYpMNEsmY9CFxZWyNjjjaGQz3yTtxixwogUMDZ0h0cKFjMLUebT_zMg-LPiAW91SfkQ-QxErSVPLECxgNEL_0sj2Bs4XHsTj2FYZEni9P00zAP",
+    "name": "امروز ۳۰ تیر روز خلبان می‌باشد .امیر شهید خلبان عباس دوران در",
+    "snippet": "بقایای پیکر پاک امیر الاستشهادیون، خلبان عباس دوران بعد از 20 سال در تاریخ 30 تیرماه 1381 به کشور بازگشت و در زادگاهش (شیراز) به خاک سپرده شد .",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrAMBxCJF12-qQ-75i-Fl7_06tigwgDXLKytiKWzO4fT4X97KbV9lGpa4grmLv7aEN-EOSaGISEfAdTtKTTDToNuggpMacejdMHAkKG3Ok7MdetpY4gbSQVSVWISaLDwAHg95ctoDI0kLytvxsZ8SUJufeYu44yjCYVLlwwp0y5yjplZwquM1bY2GyMeWPV_fL9M3Ft-efKuhGyFXqYSW45ilFcBXJhyUx7Y0BC5oqZeJAQ9qLSclDhwrrSUTzJCPHzHBZHEGVfKJKE2gJu7CCOnT7CZTtRCpyTav7IEwgrpUCV2GHu8jrFix3dyEVmF6QvXaJsvjPg21Y6ZIAVcgXX57Q0ABdIy9AozelfP0XZMi_MplpZQJrjJCKTGOQdM0wvNblZriw7QSQ4kEfiDDh5cxXu_Z5Jd6LguGJWRvZg4VjgWxSCEZ3YjKzwiO7mtzrGoE73nMdnq9W-KtHBCABoxkPnwEznkBpBP9Xw1Pr6Oo9GTjWSwm9bw19JwNmlcMh5DjMcmAYoVyQluelBu_EuBqf237hRw95M2bRxr4LlpAP-hbyQY-2mbU3aCnlw",
+    "name": "شهید عباس دوران قهرمان ایرانی، نماد صلابت ، شجاعت، بی باک",
+    "snippet": "شهید سرلشکر خلبان عباس دوران 120 مأموریت بمباران هوایی در دوران دفاع مقدس انجام داده که از این لحاظ یکی از رکوردداران این پرواز‌ها، در نیروی هوایی محسوب می‌شود. Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

@@ -1,0 +1,77 @@
+🚀 Initializing Z-AI SDK...
+🚀 Invoking function: web_search...
+[
+  {
+    "url": "https://navideshahed.com/fa/news/406911/%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA-%D8%B4%D9%86%DB%8C%D8%AF%D9%86%DB%8C-%D8%A7%D8%B2-%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D9%87%D9%88%D8%B1",
+    "name": "خاطرات شنیدنی از سردار هور",
+    "snippet": "Jul 30, 2017 — خاطره از عادل هاشمی برادر شهید خاطراتی کوتاه از شهید علی هاشمی (منتشرنشود) غبار روبی و همین طور مشقله کاری که داشتند کم کم به مسئولیت ایشان پی ...",
+    "host_name": "navideshahed.com",
+    "rank": 0,
+    "date": "Jul 30, 2017",
+    "favicon": ""
+  },
+  {
+    "url": "https://taaghche.com/book/21587/%D9%87%D9%88%D8%B1%DB%8C-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C%D9%86%D8%A7%D9%85%D9%87-%D9%88-%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA-%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B9%D9%84%DB%8C-%D9%87%D8%A7%D8%B4%D9%85%DB%8C",
+    "name": "کتاب هوری: زندگینامه و خاطرات سردار شهید علی هاشمی - طاقچه",
+    "snippet": "کتاب هوری (زندگینامه و خاطرات سردار شهید علی هاشمی ) این کتاب به شرح زندگانی و شجاعت های شهید علی هاشمی ، فرمانده ی قرارگاه نصرت، در جنگ هشت ساله می پردازد.",
+    "host_name": "taaghche.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESrQEBxCJF1-JLAbu6cEEjNVXLJIJyQeqZb2R5r8-jO-H-Qt45jNbKEul34jkoVX71CU3hjbxC62fvFzsP5ghcoSzUW3xwXhtZy2v6wVf8UGnUc2ei9226CWOxOFxCCnGqmMXj-eBGcJQiXWC4UNxTQu7RgUw2LEx4-q4n2EcwQTb2FV7Ch9WB1yKvvgZwwRG4hR_38LNDkfRBT1q2w2NIjquq6aZIKSSsBIqHOWptdg",
+    "name": "علی هاشمی (نظامی) - ویکی‌پدیا، دانشنامهٔ آزاد",
+    "snippet": "علی هاشمی (۱۰ دی ۱۳۴۰ – ۴ تیر ۱۳۶۷) نظامی ایرانی بود که از فرماندهان میانی سپاه پاسداران در جنگ ایران و عراق به‌شمار می‌آمد و فرماندهی قرارگاه نصرت را ... Read more",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES1QEBxCJF16dL2Ci576vh2pEKhuyp28JaOBE5Nw7TqWlA_1V6ztxCZa_Z-klwJMydfhd_Cw3gi-_CmnFhAlCdTjADKIrxmeF4RLdb9ETfip-_0xho1Ix9EouFO2cj14UON4NEysQXBmpEjOsUUrGkZS8Aa3XO6L_Adc6GDEQaLNiGAsyt0x_Zcl4rAqA7yJPnVqg8inBvWaAQhx0YbjWC8IQkDrqGkpKQNSq_cKjXhGqVyl9IuL33hLeZNpo2eVIle9V5TfT1H39uYuVCzlr34wp_Q-0TvzY",
+    "name": "خاطرات شهید علی هاشمی",
+    "snippet": "ماجرای رؤیای سرلشکر شهید هاشمی با امام(ره) که تعبیر شد. علی هاشمی در سال ۱۳۴۰، در شهر اهواز به دنیا آمد. با شروع جنگ تحمیلی در محور «کرخه کور» و «طراح» به ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESXQHEIkXXoMI4PCwoBCi-1XQvgHIK78abU43pTBQ5g6DqQVTZPi9HSmmg-z9IKw2NOTRKOygHYw6OSdfUIoOA7E8ZnZlnyKdmTgKR-M6Lyw6V4jMEx6_n0QRnFaX1ZQ",
+    "name": "داستان شهید علی هاشمی",
+    "snippet": "May 6, 2023 — داستان شهید علی هاشمی . شهید علی هاشمی ・ شهید علی هاشمی خبرگزاری دفاع مقدس 3.5 هزار بازدید 4 سال پیش ・ 184 بازدید 5 ماه پیش",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "May 6, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESiwEBxCJF1-h0W4a_O4RcNnv-7V_-pEcVAGQs7bE9xkToFg3iBtgpxsTVhIZfXtv2lbjQtCJcg3AeYCLVBiL8uv8Y9-cbtC37c-3B3Fx9HwVlI60UPcS_yIbzWzMAK0kYzcHLPLPN1a-iuD8jV0So7moeJXsvK0yHMyBH-k8E0I_6v-3_njUAOk_D9mfX",
+    "name": "دلنوشته – سایت رسمی شهید علی هاشمی",
+    "snippet": "باید که در میدان غیرت فاطمی باشیم ما هم برای تو علی هاشمی باشیم · غزلی زیبا در وصف شهید هاشمی · آمده ای از جای دور ای سردار هور · تقدیم به پرستوی مهاجر خونین بال ... Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAESdwHEIkXXsFRxW2UBCXWwDbmDIWSdXtS8H5S_pVwiHkDCPH92sxK6UXP7aP66UDJRtcgSI2e1M4JQWOgHUNcRW_i6XA0rxx-JLoIGmqDANgJ4_5ZYFo2DxJxs5DQv0ME4hqW6G6-gHm7GE4hniiP7izxB33JIQ7CP",
+    "name": "هوری:-زندگینامه-و-خاطرات-سردار-شهید-علی-هاشمی",
+    "snippet": "کتاب «هوری» که روایتی از فاتح هور است، زندگی‌نامه و خاطرات سردار شهید علی هاشمی از فرماندهان جنگ ایران و عراق را به تصویر کشیده است. سردار هاشمی به دلیل تسلط و ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.google.com/goto?url=CAES_wIBxCJF1_XUuAQfvN3RuSSr7yumCpupSe-V2Eysul3MiMWqDXb-0AGWuJVCeq0K_FEOxBYHHVtNpA_XXn5yxOnuiXkY4hM_x-1-f5UKbmUe3Iw7kzFNizCfzwvZeR2URCXC0-kjQaD91qDMtK9ythVdpIcQfEW0KAbMcEAe1S_WPlmxkvyypYBpVpxW_dFPmSNYLINKt0LOPSBNYbtZXQn2mrnQrM_4swEk-OsZzGFY9ifxVMzf2sFOYWoM6Anc10HtbtK0E6WriugcrTTKM_alydUTlrrK74reVCKqgjJ-wIfTr8HXTtXK00Q3OTf0gIo7GGvzjKTIFRzIxPHIxdq9odVdOvk8vcIIe9hdb1L8nfAQ3EnhV-FZrRJgMXjlJWojWlFRbbInFL_9qfmqocKDjQYsoZyqdSltf2XYST-8LaW4InpH72tSw0Ys6VRmsn_5PHyEp8tbCybfqZQN5STAf7XIL4ZbYCu6Y06Kbd-dQA4toq_61zqgSaQ9piZ9xA",
+    "name": "روایت آخرین دیدار با سرلشکر شهید علی هاشمی از زبان مادرش",
+    "snippet": "روایت برخی خاطرات پیرامون این سرلشکر شهید که فرمانده سپاه ششم امام صادق(ع) بود در «رازهای نهفته» به قلم «مهرنوش گرجی» نوشته شده است. در ادامه خاطره مادر شهید ... Read more",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]
+🎉 Function invocation completed!

@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "پرتره شهید یوسف کلاهدوز سپاه",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9cc3a2b61cec.jpg",
+      "caption": "A young man in a military-style shirt stands outdoors before a brick wall; blurry vintage photo with watermark \"NODY JB\", not suitable for background.",
+      "source": "خبرگزاری فارس",
+      "original_width": "895px",
+      "original_height": "1080px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/81177be9ff58.jpg",
+      "caption": "Two side-by-side vintage black-and-white portraits of young men in military uniforms with Persian text captions.",
+      "source": "ایندیپندنت فارسی",
+      "original_width": "1368px",
+      "original_height": "1231px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ead53b61a6f4.jpg",
+      "caption": "Book cover with a smiling bearded man, butterfly, Persian text \"تذکار همت\", subtitle \"زندگانی سردار شهید محمد ابراهیم همت\", green sky background.",
+      "source": "طاقچه",
+      "original_width": "800px",
+      "original_height": "1184px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/16e8986feb48.jpg",
+      "caption": "A painted portrait of a bearded man in a black suit against a green swirl background, with Persian text: \"سرلشکر شهید سید موسى نامجو\" and several lines describing him.",
+      "source": "نگاره",
+      "original_width": "720px",
+      "original_height": "1280px"
+    }
+  ]
+}

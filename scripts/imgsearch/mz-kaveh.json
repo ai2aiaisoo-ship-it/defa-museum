@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "query": "مزار شهید محمود کاوه گلزار شهدا مشهد",
+  "count": 4,
+  "ranked": true,
+  "captioned_count": 4,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0acd17ee7aab.jpg",
+      "caption": "A young boy walks past a large Persian-language poster of a martyr at an outdoor memorial; contains watermark \"QUDS ONLINE\" and \"Photo:HosseinKamshad\".",
+      "source": "قدس آنلاین",
+      "original_width": "1200px",
+      "original_height": "843px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/986b5a672210.jpg",
+      "caption": "Two young men wearing green headbands embrace emotionally, carrying backpacks outdoors. Contains watermark \"MEHR NEWS AGENCY, Fatemeh Saadatiyan Nik.\"",
+      "source": "خبرگزاری مهر",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9f179ea03a66.jpg",
+      "caption": "Men with hand on chest standing indoors on Persian carpet; one uses crutches; watermark \"ShahraraNews, Fahimeh Farokhi\" present.",
+      "source": "شهرآرانیوز",
+      "original_width": "1199px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b23cd6ecd34c.jpg",
+      "caption": "Memorial graphic of a bearded young man framed, with red silk drapery, dog tag necklace, Persian text, sparkles.",
+      "source": "قدس آنلاین",
+      "original_width": "1200px",
+      "original_height": "675px"
+    }
+  ]
+}
