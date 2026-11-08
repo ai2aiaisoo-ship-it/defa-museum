@@ -229,3 +229,41 @@ body { font-family: Vazirmatn, sans-serif; }
   .hall-swing { animation: none; }
 }
 .hall-persp, .hall-persp * { transform-style: preserve-3d; }
+
+/* ─── پرچم متحرک ایران (گوشه تصویر) ─── */
+.flag-slice {
+  animation: flag-wave 1.7s ease-in-out infinite;
+  transform-origin: bottom center;
+  will-change: transform;
+}
+@keyframes flag-wave {
+  0%, 100% { transform: translateY(-1.6px) scaleY(1.045); }
+  50%      { transform: translateY(1.6px)  scaleY(0.955); }
+}
+/* بازتاب نور که از راست به چپ روی پارچه می‌دود */
+.flag-sheen {
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.28) 48%, transparent 62%);
+  background-size: 260% 100%;
+  animation: flag-sheen 3.4s ease-in-out infinite;
+}
+@keyframes flag-sheen {
+  0%   { background-position: 130% 0; }
+  55%  { background-position: -40% 0; }
+  100% { background-position: -40% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flag-slice, .flag-sheen { animation: none; }
+}
+
+/* ─── بافت طبیعی خاکریز در تالار سه‌بعدی ─── */
+/* لرزش ملایم غبار معلق — بدون بار پردازشی سنگین */
+.hall-dust {
+  animation: hall-dust-drift 9s ease-in-out infinite alternate;
+}
+@keyframes hall-dust-drift {
+  from { transform: translateX(-14px); opacity: .55; }
+  to   { transform: translateX(14px);  opacity: .8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hall-dust { animation: none; }
+}

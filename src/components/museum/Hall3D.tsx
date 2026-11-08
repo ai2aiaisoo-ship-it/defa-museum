@@ -41,6 +41,171 @@ const BAND_STYLES = [
   { bg: '#f5f5f4', border: '#a8a29e', text: '#b91c1c' },  // سفید
 ]
 
+// ── ابزار طبیعی‌سازی خاکریز ──
+/** بافت دانه‌دار خاک (SVG feTurbulence به‌صورت data-URI — بدون فایل بیرونی) */
+const NOISE_URL = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.29 0 0 0 0 0.22 0 0 0 0 0.12 0 0 0 0.38 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E"
+
+const WALL_DIRT_BG = `${NOISE_URL}, linear-gradient(to bottom, #2a2216 0%, #41341f 30%, #4b3c26 55%, #32281a 100%)`
+/** کف با کانال سنگر در دو طرف و مسیر پرسایش وسط */
+const FLOOR_DIRT_BG = `${NOISE_URL}, linear-gradient(to right, rgba(10,7,4,0.85) 0%, rgba(30,23,13,0.62) 8%, rgba(0,0,0,0) 16%, rgba(0,0,0,0) 84%, rgba(30,23,13,0.62) 92%, rgba(10,7,4,0.85) 100%), radial-gradient(ellipse at 50% 100%, rgba(110,86,46,0.3), transparent 62%), linear-gradient(to right, #241b10, #554325 50%, #241b10)`
+
+/** تولید عدد شبه‌تصادفی قطعی (برای ثبات رندر سرور/کارگزار) */
+function mulberry32(seed: number) {
+  let a = seed >>> 0
+  return () => {
+    a |= 0
+    a = (a + 0x6d2b79f5) | 0
+    let t = Math.imul(a ^ (a >>> 15), 1 | a)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+const SAND_TONES = [
+  'linear-gradient(180deg, #a8956f 0%, #87744f 45%, #63522f 100%)',
+  'linear-gradient(180deg, #9e8c67 0%, #7e6d4b 45%, #5c4d2e 100%)',
+  'linear-gradient(180deg, #b19e78 0%, #8d7a58 45%, #685637 100%)',
+]
+
+/** خط ممتد خاکریز کنار دیوارها — توده‌های خاک ممتد در طول تالار تا خاکریز همیشه در دید باشد */
+function BermRun({ side, seedBase }: { side: 1 | -1; seedBase: number }) {
+  const segments = Array.from({ length: 36 }).map((_, i) => {
+    const rnd = mulberry32(seedBase + i * 131)
+    return {
+      z: 200 + i * 245,
+      w: 280 + rnd() * 100,
+      h: 30 + rnd() * 24,
+      xoff: (rnd() - 0.5) * 30,
+    }
+  })
+  return (
+    <>
+      {segments.map((s, i) => (
+        <div key={`berm-${side}-${i}`} aria-hidden className="absolute left-1/2 top-1/2" style={{
+          width: s.w, height: s.h, marginLeft: -s.w / 2, marginTop: -s.h,
+          transform: `translate3d(${side * (HALF_W - 28 + s.xoff)}px, ${FLOOR_Y}px, ${-s.z}px) rotateY(${side === 1 ? -90 : 90}deg)`,
+          borderRadius: '50% 50% 0 0 / 100% 100% 0 0',
+          backgroundImage: `${NOISE_URL}, radial-gradient(ellipse at 50% 0%, #6f5c39 0%, #57482b 50%, #40341e 100%)`,
+          boxShadow: 'inset 0 4px 8px rgba(255,255,255,0.09), inset 0 -8px 10px rgba(0,0,0,0.5)',
+        }} />
+      ))}
+    </>
+  )
+}
+
+/** پشته خاکریز واقع‌گرایانه: خاک‌ریز، سه ردیف کیسه‌شن نامنظم، تیرک چوبی، سیم‌خاردار و سنگ‌ریزه */
+function TrenchCluster({ side, z, seed }: { side: 1 | -1; z: number; seed: number }) {
+  const rnd = mulberry32(seed)
+  const face = side === 1 ? -90 : 90
+  const x = side * (HALF_W - 24)
+  // مشخصات قطعی کیسه‌ها — سه ردیف پله‌ای با لرزش ظاهری
+  const bags = Array.from({ length: 11 }).map((_, bi) => ({
+    w: 56 + rnd() * 18,
+    h: 19 + rnd() * 6,
+    rot: (rnd() - 0.5) * 6,
+    tone: SAND_TONES[Math.floor(rnd() * SAND_TONES.length)],
+    bi,
+  }))
+  const rowPlan = [ { from: 0, to: 5, y: 0 }, { from: 5, to: 9, y: 17 }, { from: 9, to: 11, y: 33 } ]
+  const stakes = Array.from({ length: 4 }).map((_, si) => ({
+    h: 62 + rnd() * 34,
+    left: 14 + rnd() * 320,
+    rot: (rnd() - 0.5) * 8,
+    si,
+  }))
+  const stones = Array.from({ length: 9 }).map(() => ({
+    cx: 8 + rnd() * 150,
+    cy: 6 + rnd() * 24,
+    r: 1.4 + rnd() * 2.6,
+    o: 0.35 + rnd() * 0.4,
+  }))
+  const wireRot = (rnd() - 0.5) * 30
+  const wireX = side * (HALF_W - 92)
+  const stoneX = side * (HALF_W - 150)
+  const stoneZ = z + 130
+
+  return (
+    <>
+      {/* استانه نور گرم روی زمین — جلوه چراغ خط مقدم روی خاکریز */}
+      <div aria-hidden className="absolute left-1/2 top-1/2 pointer-events-none" style={{
+        width: 620, height: 300, marginLeft: -310, marginTop: -150,
+        transform: `translate3d(${side * (HALF_W - 170)}px, ${FLOOR_Y - 2.5}px, ${-(z + 60)}px) rotateX(-90deg)`,
+        background: 'radial-gradient(ellipse, rgba(251,191,36,0.26), rgba(251,191,36,0.09) 45%, transparent 74%)',
+      }} />
+      {/* بلوک اصلی خاکریز — رو به راهرو */}
+      <div aria-hidden className="absolute left-1/2 top-1/2" style={{
+        width: 360, height: 132, marginLeft: -180, marginTop: -132,
+        transformStyle: 'preserve-3d',
+        transform: `translate3d(${x}px, ${FLOOR_Y}px, ${-z}px) rotateY(${face}deg)`,
+      }}>
+        {/* تیرک‌های چوبی پشت کیسه‌شن */}
+        {stakes.map(st => (
+          <div key={`sk-${st.si}`} style={{
+            position: 'absolute', bottom: 26, left: st.left, width: 5, height: st.h,
+            transform: `rotate(${st.rot}deg)`, transformOrigin: 'bottom center',
+            background: 'linear-gradient(180deg, #4d3a22 0%, #382a17 55%, #241a0e 100%)',
+            borderRadius: '2px 2px 1px 1px',
+            boxShadow: 'inset -1px 0 0 rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.4)',
+            backgroundImage: `${NOISE_URL}, linear-gradient(180deg, #4d3a22 0%, #382a17 55%, #241a0e 100%)`,
+          }} />
+        ))}
+        {/* خاک‌ریز پشت کیسه‌شن — توده خاک دست‌انداز */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: -10, width: 380, height: 46,
+          borderRadius: '48% 52% 0 0 / 100% 96% 0 0',
+          backgroundImage: `${NOISE_URL}, radial-gradient(ellipse at 50% 0%, #7d6842 0%, #61512e 45%, #463a21 100%)`,
+          boxShadow: 'inset 0 6px 10px rgba(255,255,255,0.12), inset 0 -10px 14px rgba(0,0,0,0.5), 0 -2px 6px rgba(0,0,0,0.3)',
+        }} />
+        {/* ردیف‌های کیسه‌شن */}
+        {rowPlan.map((row, ri) => {
+          let cursor = row.y === 0 ? 6 : row.y === 17 ? 28 : 108
+          return bags.slice(row.from, row.to).map((b, k) => {
+            const left = cursor
+            cursor += b.w * 0.72
+            return (
+              <div key={`bg-${ri}-${k}`} style={{
+                position: 'absolute', bottom: row.y + (ri === 0 ? 0 : 0), left,
+                width: b.w, height: b.h,
+                transform: `rotate(${b.rot}deg)`,
+                borderRadius: '46% 54% 50% 50% / 62% 62% 40% 40%',
+                backgroundImage: `${NOISE_URL}, ${b.tone}`,
+                boxShadow: 'inset 0 -4px 6px rgba(0,0,0,0.45), inset 0 3px 5px rgba(255,255,255,0.14), 0 3px 5px rgba(0,0,0,0.4)',
+              }} />
+            )
+          })
+        })}
+      </div>
+
+      {/* حلقه سیم‌خاردار روی زمین */}
+      <div aria-hidden className="absolute left-1/2 top-1/2" style={{
+        width: 170, height: 46, marginLeft: -85, marginTop: -23,
+        transform: `translate3d(${wireX}px, ${FLOOR_Y - 1}px, ${-(z + 110)}px) rotateX(-90deg) rotateZ(${wireRot}deg)`,
+      }}>
+        <svg viewBox="0 0 170 46" className="h-full w-full">
+          <g fill="none" stroke="#a8a29e" strokeOpacity="0.75" strokeWidth="1.6">
+            <ellipse cx="42" cy="23" rx="34" ry="13" />
+            <ellipse cx="82" cy="22" rx="36" ry="14" />
+            <ellipse cx="124" cy="23" rx="33" ry="12" />
+            <path d="M30 16 L54 30 M62 14 L86 31 M100 13 L126 31" strokeOpacity="0.5" strokeWidth="1" />
+          </g>
+        </svg>
+      </div>
+
+      {/* سنگ‌ریزه‌های پراکنده روی زمین */}
+      <div aria-hidden className="absolute left-1/2 top-1/2" style={{
+        width: 170, height: 34, marginLeft: -85, marginTop: -17,
+        transform: `translate3d(${stoneX}px, ${FLOOR_Y - 0.5}px, ${-stoneZ}px) rotateX(-90deg)`,
+      }}>
+        <svg viewBox="0 0 170 34" className="h-full w-full">
+          {stones.map((st, i) => (
+            <circle key={i} cx={st.cx} cy={st.cy} r={st.r} fill="#c7bfa8" fillOpacity={st.o} />
+          ))}
+        </svg>
+      </div>
+    </>
+  )
+}
+
 interface KF { d: number; yaw: number; cx: number }
 
 /** تابلوی یادبود هنری هر عملیات — سند بصری طراحی‌شده، نه عکس آرشیوی جعلی */
@@ -228,21 +393,21 @@ export function Hall3D({ go }: { go: (v: string, p?: string) => void }) {
             {/* دیوار راست — صفحه در x=+350 با نرمال رو به راهرو */}
             <div aria-hidden className="absolute left-1/2 top-1/2 backface-hidden" style={{
               width: L, height: 420, marginLeft: -L / 2, marginTop: -210, transformStyle: 'preserve-3d',
-              background: 'linear-gradient(to bottom, #2a2216 0%, #41341f 30%, #4b3c26 55%, #32281a 100%)',
+              backgroundImage: WALL_DIRT_BG,
               boxShadow: 'inset 0 0 120px rgba(0,0,0,0.8)',
               transform: `translate3d(${HALF_W}px, 0px, ${-L / 2}px) rotateY(-90deg)`,
             }} />
             {/* دیوار چپ */}
             <div aria-hidden className="absolute left-1/2 top-1/2 backface-hidden" style={{
               width: L, height: 420, marginLeft: -L / 2, marginTop: -210, transformStyle: 'preserve-3d',
-              background: 'linear-gradient(to bottom, #2a2216 0%, #41341f 30%, #4b3c26 55%, #32281a 100%)',
+              backgroundImage: WALL_DIRT_BG,
               boxShadow: 'inset 0 0 120px rgba(0,0,0,0.8)',
               transform: `translate3d(${-HALF_W}px, 0px, ${-L / 2}px) rotateY(90deg)`,
             }} />
-            {/* کف خاکی */}
+            {/* کف خاکی — با کانال سنگر در دو طرف و بافت دانه‌دار */}
             <div aria-hidden className="absolute left-1/2 top-1/2" style={{
               width: HALF_W * 2, height: L, marginLeft: -HALF_W, marginTop: -L / 2, transformStyle: 'preserve-3d',
-              background: 'linear-gradient(to right, #241b10, #4d3c22 50%, #241b10)',
+              backgroundImage: FLOOR_DIRT_BG,
               transform: `translate3d(0px, ${FLOOR_Y}px, ${-L / 2}px) rotateX(-90deg)`,
             }} />
             {/* سقف */}
@@ -251,6 +416,21 @@ export function Hall3D({ go }: { go: (v: string, p?: string) => void }) {
               background: 'linear-gradient(to right, #0b0906, #191309 50%, #0b0906)',
               transform: `translate3d(0px, ${CEIL_Y}px, ${-L / 2}px) rotateX(90deg)`,
             }} />
+
+            {/* خاکریزهای ممتد دو طرف راهرو + پشته‌های کیسه‌شن (تقاضای کارفرما) */}
+            <BermRun side={1} seedBase={5000} />
+            <BermRun side={-1} seedBase={9000} />
+            <TrenchCluster side={1} z={430} seed={11} />
+            <TrenchCluster side={-1} z={430} seed={23} />
+            {ops.map((op, i) => {
+              const zi = 900 + i * 640
+              return (
+                <span key={`tr-${op!.id}`}>
+                  <TrenchCluster side={1} z={zi + 150} seed={101 + i * 7} />
+                  <TrenchCluster side={-1} z={zi + 430} seed={211 + i * 13} />
+                </span>
+              )
+            })}
 
             {/* تابلوهای عملیات‌ها — یکی‌درمیان راست/چپ */}
             {ops.map((op, i) => {
@@ -336,8 +516,11 @@ export function Hall3D({ go }: { go: (v: string, p?: string) => void }) {
         </div>
 
         {/* وینیت و مه */}
-        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)' }} />
+        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 46%, rgba(0,0,0,0.42) 100%)' }} />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-24" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }} />
+        {/* غبار معلق جبهه — عمق‌دهی طبیعی صحنه */}
+        <div aria-hidden className="hall-dust pointer-events-none absolute bottom-16 right-[8%] h-40 w-72" style={{ background: 'radial-gradient(ellipse, rgba(148,120,78,0.13), transparent 70%)' }} />
+        <div aria-hidden className="hall-dust pointer-events-none absolute bottom-24 left-[10%] h-36 w-64" style={{ background: 'radial-gradient(ellipse, rgba(148,120,78,0.11), transparent 70%)', animationDelay: '-4s' }} />
 
         {/* راهنمای ورود */}
         <div ref={hintRef} className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 transition-opacity duration-500">

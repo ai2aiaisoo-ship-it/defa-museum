@@ -43,13 +43,14 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
       <section className="hero-vignette relative overflow-hidden rounded-3xl border">
         <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, currentColor 0 1px, transparent 1px 14px)' }} />
         <div className="relative p-6 md:p-12">
-          <Badge className="mb-4" variant="outline">موزه دیجیتال • روایت ایرانی • اطلس تعاملی • نسخه ۲.۰ (فاز ۲)</Badge>
+          <Badge className="mb-4" variant="outline">یادواره شهدای دفاع مقدس • موزه دیجیتال • روایت ایرانی • اطلس تعاملی • نسخه ۲.۰ (فاز ۲)</Badge>
           <h1 className="museum-title text-3xl md:text-5xl font-extrabold leading-tight">
-            جنگ هشت‌ساله عراق علیه ایران
+            یادواره شهدای دفاع مقدس
           </h1>
+          <p className="mt-3 text-base font-bold text-emerald-500/90 md:text-lg">جنگ هشت‌ساله عراق علیه ایران — ۳۱ شهریور ۱۳۵۹ تا ۲۹ مرداد ۱۳۶۷</p>
           <p className="mt-4 max-w-2xl text-sm md:text-base leading-8 text-muted-foreground">
             موزه دیجیتال دفاع مقدس با روایت تاریخی ایرانی: روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف بررسی می‌شود،
-            فصل کامل «ریشه‌های جنگ از پهلوی تا ۳۱ شهریور»، خط زمانی شهدای شاخص، آرشیو چندرسانه‌ای با شناسنامه کامل،
+            فصل کامل «ریشه‌های جنگ از پهلوی تا ۳۱ شهریور»، خط زمانی شهدای شاخص، تالار خاطرات و آرامگاه‌ها، آرشیو چندرسانه‌ای با شناسنامه کامل،
             پرونده روایت فتح شهید آوینی و آمار منبع‌دار با درجه اطمینان.
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-2 text-emerald-400/90">
@@ -65,6 +66,7 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
             <Button variant="outline" onClick={() => go('experiences')} className="font-bold">🧭 تجربه‌نگاری و روایت شنیداری (جدید)</Button>
             <Button onClick={() => go('roots')} className="font-bold">🌱 فصل ریشه‌های جنگ (جدید)</Button>
             <Button variant="outline" onClick={() => go('martyrs')} className="font-bold">🌙 خط زمانی شهدا (جدید)</Button>
+            <Button variant="outline" onClick={() => go('memories')} className="font-bold">🕯 خاطرات شهدا و آرامگاه‌ها</Button>
             <Button variant="outline" onClick={() => go('atlas')} className="font-bold">🗺 اطلس تعاملی</Button>
             <Button variant="outline" onClick={() => go('operations')} className="font-bold">اطلس عملیات‌ها</Button>
             <Button variant="outline" onClick={() => go('archive')} className="font-bold">آرشیو چندرسانه‌ای</Button>

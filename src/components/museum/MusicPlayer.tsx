@@ -3,14 +3,15 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 
-const AUDIO_SRC = '/audio/defa-ambient.wav'
+// ─── لینک اصلی موسیقی «خاک سرخ» — دقیقاً همان لینک انتخابی کارفرما؛ بدون جایگزینی ───
+const AUDIO_SRC =
+  'https://dl2.mifamusic.ir/Music/1389/03/16/Mohammadreza%20Aligholi%20-%20Khake%20Sorkh/01%20-%20Khak-e-Sorkh.mp3'
 const STORE_KEY = 'defa-music-pref'
-const CREDIT_URL = 'https://www.navahang.com/mp3/mohammadreza-aligholi-khake-sorkh'
 
 /**
- * پخش‌کننده موسیقی متن دفاع مقدس (قابل میوت)
- * فایل محلی: قطعه محیطی بی‌کلام الهام‌گرفته از موسیقی متن «خاک سرخ» (ساخته‌شده برای این موزه)
- * پیوند قطعه اصلی با صدای محمدرضا علیقلی برای شنیدن نسخه رسمی در دسترس است.
+ * پخش‌کننده موسیقی متن «خاک سرخ» — اثر محمدرضا علیقلی
+ * پخش مستقیم از لینک عمومی انتخاب‌شده توسط کارفرما (mifamusic)؛ هیچ فایل جایگزین یا ساخت موزه استفاده نمی‌شود.
+ * در صورت قطع لینک توسط سرور میزبان، پیام شفاف نمایش داده می‌شود و لینک اصلی ارائه می‌گردد.
  */
 export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -19,11 +20,13 @@ export function MusicPlayer() {
   const [muted, setMuted] = useState(false)
   const [volume, setVolume] = useState(0.45)
   const [open, setOpen] = useState(false)
+  const [error, setError] = useState(false)
   const [inited, setInited] = useState(false)
   const duckRef = useRef(0) // شمار روایت‌های در حال پخش — هنگام روایت، موسیقی ساکت می‌شود
   const resumeRef = useRef(false)
   const mutedRef = useRef(muted)
   const volumeRef = useRef(volume)
+  const playingRef = useRef(false)
 
   // بازیابی تنظیم کاربر — الگوی رسمی React: تنظیم state حین رندر (بدون effect)
   if (!inited) {
@@ -40,6 +43,12 @@ export function MusicPlayer() {
     }
   }
 
+  // اطلاع‌رسانی وضعیت پخش به سایر اجزا (پرچم ایران گوشه تصویر)
+  useEffect(() => {
+    playingRef.current = playing
+    window.dispatchEvent(new CustomEvent('museum-music-state', { detail: { playing } }))
+  }, [playing])
+
   useEffect(() => {
     try { localStorage.setItem(STORE_KEY, JSON.stringify({ muted, volume })) } catch { /* بی‌اهمیت */ }
     if (audioRef.current) audioRef.current.muted = muted
@@ -52,6 +61,17 @@ export function MusicPlayer() {
     a.volume = volume
     a.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
   }, [volume])
+
+  const toggle = useCallback(() => {
+    const a = audioRef.current
+    if (!a) return
+    if (playingRef.current) {
+      a.pause()
+      setPlaying(false)
+    } else {
+      play()
+    }
+  }, [play])
 
   // هماهنگی با روایت‌های شنیداری: هنگام روایت سکوت، پس از روایت بازیابی (الگوی اشتراک رویداد)
   useEffect(() => {
@@ -83,12 +103,16 @@ export function MusicPlayer() {
     window.addEventListener('narration-play', up)
     window.addEventListener('narration-stop', down)
     window.addEventListener('narration-ended', down)
+    // پرچم ایران (گوشه تصویر) هم می‌تواند موسیقی را کنترل کند
+    const onFlagToggle = () => toggle()
+    window.addEventListener('museum-toggle-music', onFlagToggle)
     return () => {
       window.removeEventListener('narration-play', up)
       window.removeEventListener('narration-stop', down)
       window.removeEventListener('narration-ended', down)
+      window.removeEventListener('museum-toggle-music', onFlagToggle)
     }
-  }, [])
+  }, [toggle])
 
   // پخش پس از نخستین تعامل کاربر (سیاست مرورگرها) — اگر کاربر قبلاً میوت نکرده باشد
   useEffect(() => {
@@ -107,14 +131,19 @@ export function MusicPlayer() {
   return (
     <div className="fixed bottom-3 left-3 z-50 flex flex-col items-start gap-1.5" dir="rtl">
       {open && (
-        <div className="w-64 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur">
-          <div className="text-xs font-extrabold text-primary">🎵 موسیقی متن دفاع مقدس</div>
+        <div className="w-72 rounded-2xl border bg-card/95 p-3 shadow-xl backdrop-blur">
+          <div className="text-xs font-extrabold text-primary">🎵 موسیقی متن «خاک سرخ» — محمدرضا علیقلی</div>
           <p className="mt-1 text-[11px] leading-5 text-muted-foreground">
-            قطعه محیطی بی‌کلام، الهام‌گرفته از موسیقی متن سریال «خاک سرخ» — ساخته‌شده برای این موزه.
+            پخش مستقیم از همان لینک اصلی انتخاب‌شده برای یادواره؛ هیچ فایل جایگزین یا بازسازی‌شده‌ای استفاده نمی‌شود.
           </p>
-          <a href={CREDIT_URL} target="_blank" rel="noreferrer" className="mt-1.5 block text-[10.5px] font-bold text-primary underline">
-            شنیدن قطعه اصلی با صدای محمدرضا علیقلی ↗
+          <a href={AUDIO_SRC} target="_blank" rel="noreferrer" className="mt-1.5 block break-all text-[10px] font-bold text-primary underline decoration-dotted">
+            لینک اصلی قطعه (dl2.mifamusic.ir) ↗
           </a>
+          {error && (
+            <p className="mt-2 rounded-lg bg-amber-500/10 p-2 text-[10.5px] leading-5 text-amber-600">
+              ⚠ پخش مستقیم از سرور میزبان موقتاً ممکن نشد (محدودیت سرورِ میزبان فایل یا قطعی لینک). با دکمه «لینک اصلی قطعه» می‌توانید همان قطعه را مستقیم بشنوید.
+            </p>
+          )}
           <div className="mt-2 flex items-center gap-2">
             <span className="text-[11px] font-bold">🔊 صدا</span>
             <input
@@ -126,8 +155,15 @@ export function MusicPlayer() {
         </div>
       )}
       <div className="flex items-center gap-1.5 rounded-full border bg-card/95 py-1 pl-3 pr-1.5 shadow-xl backdrop-blur">
-        <audio ref={audioRef} src={AUDIO_SRC} loop preload="none" />
-        <Button size="sm" onClick={() => (playing ? (audioRef.current?.pause(), setPlaying(false)) : play())}
+        <audio
+          ref={audioRef}
+          src={AUDIO_SRC}
+          loop
+          preload="none"
+          onError={() => { setError(true); setPlaying(false) }}
+          onStalled={() => { /* شبکه کند — کاری نمی‌کنیم */ }}
+        />
+        <Button size="sm" onClick={toggle}
           aria-label={playing ? 'توقف موسیقی' : 'پخش موسیقی'}
           className="h-8 w-8 rounded-full p-0 text-base leading-none">
           {playing ? '⏸' : '▶'}

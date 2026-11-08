@@ -27,6 +27,7 @@ import { BattleMapsView } from './BattleMapsView'
 import { ExperiencesView } from './ExperiencesView'
 import { MusicPlayer } from './MusicPlayer'
 import { HeadbandRibbon } from './DefaDecor'
+import { IranFlag } from './IranFlag'
 import { Hall3D } from './Hall3D'
 
 export type ViewKey =
@@ -178,7 +179,7 @@ export function MuseumApp() {
       case 'stats': return <StatsView />
       case 'roots': return <RootsView go={go} />
       case 'martyrs': return <MartyrsView go={go} />
-      case 'memories': return <MartyrsMemoriesView go={go} />
+      case 'memories': return <MartyrsMemoriesView go={go} focusId={param} />
       case 'avini': return <AviniView go={go} />
       case 'archive': return <ArchiveView go={go} />
       case 'saddam-dossier': return <SaddamView go={go} />
@@ -217,10 +218,10 @@ export function MuseumApp() {
       <header className="glass sticky top-0 z-40 border-b">
         <div className="mx-auto flex max-w-[1500px] items-center gap-3 px-4 py-3">
           <button onClick={() => go('home')} className="flex items-center gap-2.5">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-xl">🏛</span>
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-xl">🕯</span>
             <span className="text-right">
-              <span className="block text-sm font-extrabold leading-5">موزه دیجیتال جنگ ایران و عراق</span>
-              <span className="block text-[10px] text-muted-foreground">روایت ایرانی، اسناد واقعی، آرشیو چندملیتی — نسخه پژوهشی {toFa('2.0')}</span>
+              <span className="block text-sm font-extrabold leading-5">یادواره شهدای دفاع مقدس</span>
+              <span className="block text-[10px] text-muted-foreground">موزه دیجیتال و اطلس تعاملی جنگ تحمیلی — روایت ایرانی، اسناد واقعی، نسخه پژوهشی {toFa('2.0')}</span>
             </span>
           </button>
           <div className="mr-auto flex items-center gap-2">
@@ -265,11 +266,14 @@ export function MuseumApp() {
       {/* پخش‌کننده موسیقی متن خاک سرخ — قابل میوت */}
       <MusicPlayer />
 
+      {/* پرچم متحرک ایران — گوشه تصویر؛ کلیک: پخش/توقف موسیقی */}
+      <IranFlag />
+
       {/* پابرگ چسبان */}
       <footer className="mt-auto border-t bg-card/60">
         <div className="mx-auto flex max-w-[1500px] flex-col items-center justify-between gap-2 px-4 py-4 text-center text-[11px] leading-5 text-muted-foreground md:flex-row md:text-right">
-          <p>موزه دیجیتال و اطلس تعاملی جنگ ایران و عراق (۱۳۵۹–۱۳۶۷) — پروژه پژوهشی-آموزشی با روایت تاریخی ایرانی. روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف ثبت است و آمار با درجه اطمینان A/B/C ارائه می‌شود.</p>
-          <p>مسئولیت آغاز تجاوز بر اساس بند ۶ قطعنامه ۵۹۸ و گزارش هیئت حقیقت‌یاب دبیرکل (دسامبر ۱۹۹۱) به عراق مستند شده است. روایت‌های شنیداری تجربه‌نگاری با صدای مصنوعیِ فارسی و به سبک آوینی خوانده می‌شوند — بازسازی صدای واقعی شهید آوینی ممکن و صحیح نیست و موزه چنین ادعایی ندارد. موسیقی: قطعه محیطی الهام‌گرفته از «خاک سرخ» (لینک قطعه اصلی علیقلی در پخش‌کننده)؛ پرتره‌ها با برچسب وضعیت هویت‌سنجی از منابع عمومی.</p>
+          <p>یادواره شهدای دفاع مقدس — موزه دیجیتال و اطلس تعاملی جنگ تحمیلی (۱۳۵۹–۱۳۶۷)؛ پروژه پژوهشی-آموزشی با روایت تاریخی ایرانی. روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف ثبت است و آمار با درجه اطمینان A/B/C ارائه می‌شود.</p>
+          <p>مسئولیت آغاز تجاوز بر اساس بند ۶ قطعنامه ۵۹۸ و گزارش هیئت حقیقت‌یاب دبیرکل (دسامبر ۱۹۹۱) به عراق مستند شده است. روایت‌های شنیداری تجربه‌نگاری با صدای مصنوعیِ فارسی و به سبک آوینی خوانده می‌شوند — بازسازی صدای واقعی شهید آوینی ممکن و صحیح نیست و موزه چنین ادعایی ندارد. موسیقی: قطعه «خاک سرخ» اثر محمدرضا علیقلی — پخش مستقیم از لینک اصلی انتخاب‌شده (بدون فایل جایگزین). پرتره‌ها و تصاویر مزار با برچسب وضعیت هویت‌سنجی از منابع عمومی؛ مرور کارشناسی تصاویر، برچسب تأیید را ارتقا می‌دهد.</p>
         </div>
       </footer>
     </div>

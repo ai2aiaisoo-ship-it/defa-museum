@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { MARTYRS, MARTYR_RESEARCH, MARTYR_ORG_LABELS, MARTYR_ROLE_LABELS, type Martyr, type MartyrOrg, type MartyrRole } from '@/data/martyrs'
+import { burialOf } from '@/data/martyr-memories'
 import { OPERATIONS } from '@/data/operations'
 import { RAVAYAT_FATH } from '@/data/avini'
 import { MEDIA_ITEMS, MEDIA_VERIFICATION_LABELS } from '@/data/media-registry'
@@ -49,6 +50,7 @@ function MartyrPortrait({ m, className }: { m: Martyr; className?: string }) {
 
 function MartyrCard({ m, onOpen }: { m: Martyr; onOpen: (m: Martyr) => void }) {
   const ops = m.opIds.map(id => OPERATIONS.find(o => o.id === id)).filter(Boolean)
+  const b = burialOf(m.id)
   return (
     <Card className="museum-card cursor-pointer transition-colors hover:border-primary/50" onClick={() => onOpen(m)}>
       <CardContent className="flex gap-4 p-4">
@@ -64,6 +66,9 @@ function MartyrCard({ m, onOpen }: { m: Martyr; onOpen: (m: Martyr) => void }) {
             <span>📍 {m.place}</span>
             {m.age && <span>⏳ {toFa(m.age)}</span>}
           </div>
+          {b && (
+            <div className="mt-1 truncate text-[11px] font-bold text-primary/90">🕌 آرامگاه: {b.cemetery}، {b.city}{b.detail ? ` — ${b.detail}` : ''}</div>
+          )}
           <p className="mt-2 line-clamp-2 text-xs leading-6 text-muted-foreground">{m.cause}</p>
           {ops.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-1">
@@ -75,6 +80,39 @@ function MartyrCard({ m, onOpen }: { m: Martyr; onOpen: (m: Martyr) => void }) {
         </div>
       </CardContent>
     </Card>
+  )
+}
+
+/** بلوک مشخصات آرامگاه — آدرس و شماره قبر هر شهید (تقاضای کارفرما) */
+function GraveInfoBlock({ m, go, onClose }: { m: Martyr; go: (v: string, p?: string) => void; onClose: () => void }) {
+  const b = burialOf(m.id)
+  return (
+    <div className="rounded-xl border bg-primary/5 p-3">
+      <div className="mb-1.5 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-extrabold text-primary">🕌 آرامگاه — آدرس و شماره قبر</span>
+        {b && <ConfidenceBadge c={b.confidence} />}
+      </div>
+      {b ? (
+        <div className="space-y-1 text-xs leading-6">
+          <p><span className="font-extrabold">آدرس آرامگاه: </span>{b.cemetery}، {b.city}</p>
+          <p><span className="font-extrabold">شماره قبر / محل قرارگیری: </span>{b.detail ?? <span className="text-muted-foreground">در انتظار تأیید کارشناس</span>}</p>
+          {b.note && <p className="text-[11px] leading-5 text-muted-foreground">📝 {b.note}</p>}
+          <p className="text-[11px] text-muted-foreground">
+            منبع: {b.sourceUrl ? (
+              <a href={b.sourceUrl} target="_blank" rel="noreferrer" className="font-bold text-primary underline decoration-primary/40 hover:decoration-primary">{b.sourceName}</a>
+            ) : b.sourceName}
+          </p>
+          <Button size="sm" variant="outline" className="mt-1 text-[11px]" onClick={() => { onClose(); go('memories', m.id) }}>
+            🕯 عکس مزار و خاطرات این شهید در تالار خاطرات
+          </Button>
+        </div>
+      ) : (
+        <p className="text-xs leading-6 text-muted-foreground">
+          اطلاعات آرامگاه این شهید هنوز از پرونده رسمی (نوید شاهد / گلزار شهدا) استخراج و راستی‌آزمایی نشده است؛
+          مطابق میثاق موزه، به‌جای حدس، این شفاف‌سازی ثبت می‌شود. کارشناس می‌تواند در تالار خاطرات، تصویر مزار را مرور و برچسب تأیید را ثبت کند.
+        </p>
+      )}
+    </div>
   )
 }
 
@@ -104,6 +142,8 @@ function MartyrDialog({ m, onClose, go }: { m: Martyr | null; onClose: () => voi
             </div>
           </div>
         </div>
+        {/* ─── آرامگاه: آدرس و شماره قبر ─── */}
+        <GraveInfoBlock m={m} go={go} onClose={onClose} />
         {m.regionNote && <p className="rounded-lg bg-amber-500/10 p-2 text-[11px] leading-6 text-amber-500">🗓 نکته تاریخ‌نگاری: {m.regionNote}</p>}
         {m.quote && <blockquote className="rounded-xl border-r-4 border-primary/60 bg-primary/5 p-3 text-sm italic leading-7">«{m.quote}»</blockquote>}
         <div className="space-y-2">
