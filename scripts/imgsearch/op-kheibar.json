@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "عملیات خیبر هور الهویزه عکس رزمندگان قایق",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c9c56ed1be6c.jpg",
+      "caption": "Video thumbnail: armed fighters in boats at night amid explosions, with Persian text \"فوتچ با کیفیت جنگ ایران و عراق / قسمت نهم / عملیات خیبر\" (Iran-Iraq war, Part 9, Kheiber Operation). It contains war-themed text overlay and dramatic imagery; not suitable for background image.",
+      "source": "YouTube",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f54da6ae550a.jpg",
+      "caption": "Black-and-white historical war photograph: soldiers crowded in wooden boats along a reed-lined riverbank, carrying rifles and gear.",
+      "source": "همشهری آنلاین",
+      "original_width": "1032px",
+      "original_height": "772px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/14c0cc19b497.jpg",
+      "caption": "A vintage, grainy photo showing a man driving a small metal motorboat across water near tall reeds. Text \"فروردین ۶۵\" appears bottom right. Blurry, aged quality; not suitable as background.",
+      "source": "اندیشه ناب",
+      "original_width": "1478px",
+      "original_height": "1005px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c2754c562d7b.jpeg",
+      "caption": "A smiling man in a suit stands by a car while a cheerful woman in a striped sweater emerges from behind a floral fabric, with a small watermark.",
+      "source": "بانی فیلم",
+      "original_width": "1125px",
+      "original_height": "825px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fd903ccecbb7.jpg",
+      "caption": "Three Persian books on a wooden shelf with roses, lace cloth, and tea; Persian text about Tehran's 2024 election. Text: \"خامنه‌ای دات آی‌آر\" watermark.",
+      "source": "انتشارات شهیدکاظمی",
+      "original_width": "800px",
+      "original_height": "1120px"
+    }
+  ]
+}

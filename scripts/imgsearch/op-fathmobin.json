@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات فتح المبین عکس رزمندگان آرشیو دفاع مقدس",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f15fa834f16e.jpg",
+      "caption": "Black-and-white historical photo: soldiers gathered before a large waving Iranian flag in desert; IRNA watermark present; contains text.",
+      "source": "IRNA",
+      "original_width": "800px",
+      "original_height": "514px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7dad50a0f58b.jpg",
+      "caption": "Black-and-white photo of soldiers carrying an injured man on a stretcher near a vehicle; has watermark, not suitable for background.",
+      "source": "IRNA",
+      "original_width": "782px",
+      "original_height": "533px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fa35176ec3f9.jpg",
+      "caption": "Historic photo of celebrating soldiers with a large Arabic/Persian banner, Iranian flag, and cheering crowds on a rooftop.",
+      "source": "irna.ir",
+      "original_width": "1024px",
+      "original_height": "549px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8801bfe52ff0.jpg",
+      "caption": "Five soldiers in green uniforms sit outdoors polishing boots before a large Persian-text billboard; image contains some text.",
+      "source": "defapress.ir",
+      "original_width": "1500px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b20cdfb41036.jpg",
+      "caption": "Soldiers gathered in a muddy trench during wartime, DEFA PRESS.IR watermark present, historical war photo.",
+      "source": "defapress.ir",
+      "original_width": "600px",
+      "original_height": "400px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4c0143fef87b.jpg",
+      "caption": "Black-and-white photo of a multiple rocket launcher firing, with IRNA watermark logo; text: \"IRNA 1934\".",
+      "source": "IRNA",
+      "original_width": "800px",
+      "original_height": "533px"
+    }
+  ]
+}

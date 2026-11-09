@@ -1,0 +1,291 @@
+{
+ "op-fathmobin": {
+  "opId": "fath-ol-mobin",
+  "fa": "عملیات فتح‌المبین",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fa35176ec3f9.jpg",
+    "ok": true,
+    "size": 106145,
+    "caption": "Historic photo of celebrating soldiers with a large Arabic/Persian banner, Iranian flag, and cheering crowds on a rooftop.",
+    "source": "irna.ir",
+    "w": 1024,
+    "h": 549
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8801bfe52ff0.jpg",
+    "ok": true,
+    "size": 1064109,
+    "caption": "Five soldiers in green uniforms sit outdoors polishing boots before a large Persian-text billboard; image contains some text.",
+    "source": "defapress.ir",
+    "w": 1500,
+    "h": 1000
+   }
+  ]
+ },
+ "op-baytalmoghaddas": {
+  "opId": "bayt-almoghaddas",
+  "fa": "عملیات بیت‌المقدس و آزادسازی خرمشهر",
+  "files": []
+ },
+ "op-ramadan": {
+  "opId": "ramadan-61",
+  "fa": "عملیات رمضان",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e81f162fd840.jpg",
+    "ok": true,
+    "size": 584844,
+    "caption": "A black-and-white Persian newspaper page (Ettela'at) with large Persian headlines, Rafsanjani's portrait, and war photographs including casualties.",
+    "source": "خبرگزاری دفاع مقدس",
+    "w": 1195,
+    "h": 1331
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/859c21ee9eac.jpg",
+    "ok": true,
+    "size": 123519,
+    "caption": "A group of men in camouflage wetsuits and diving gear posing together on sandy terrain.",
+    "source": "ایمنا",
+    "w": 1280,
+    "h": 903
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b015591bd0e8.jpg",
+    "ok": true,
+    "size": 369376,
+    "caption": "A collage of three Persian book covers with Arabic text and a man's portrait photo; contains multiple images and substantial text.",
+    "source": "ایبنا",
+    "w": 1280,
+    "h": 1222
+   }
+  ]
+ },
+ "op-kheibar": {
+  "opId": "kheibar",
+  "fa": "عملیات خیبر",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c9c56ed1be6c.jpg",
+    "ok": true,
+    "size": 113979,
+    "caption": "Video thumbnail: armed fighters in boats at night amid explosions, with Persian text \"فوتچ با کیفیت جنگ ایران و عراق / قسمت نهم / عملیات خیبر\" (Iran-Iraq war, Part 9, Kheiber Opera",
+    "source": "YouTube",
+    "w": 1280,
+    "h": 720
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f54da6ae550a.jpg",
+    "ok": true,
+    "size": 141437,
+    "caption": "Black-and-white historical war photograph: soldiers crowded in wooden boats along a reed-lined riverbank, carrying rifles and gear.",
+    "source": "همشهری آنلاین",
+    "w": 1032,
+    "h": 772
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/14c0cc19b497.jpg",
+    "ok": true,
+    "size": 805004,
+    "caption": "A vintage, grainy photo showing a man driving a small metal motorboat across water near tall reeds. Text \"فروردین ۶۵\" appears bottom right. Blurry, aged quality; not suitable as ba",
+    "source": "اندیشه ناب",
+    "w": 1478,
+    "h": 1005
+   }
+  ]
+ },
+ "op-badr": {
+  "opId": "badr-63",
+  "fa": "عملیات بدر",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/edfc364e89b5.jpg",
+    "ok": true,
+    "size": 181447,
+    "caption": "Soldiers with backpacks and helmets march in single file along a narrow pontoon bridge over water.",
+    "source": "ایمنا",
+    "w": 1200,
+    "h": 800
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a0f591a89834.jpg",
+    "ok": true,
+    "size": 122801,
+    "caption": "A cinematic war scene: soldier raising a detonator triumphantly amid smoke, explosions, blurred soldiers running, dusty battlefield, dramatic backlighting, film still aesthetic.",
+    "source": "ایمنا",
+    "w": 1280,
+    "h": 808
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0a35ea5419bc.jpg",
+    "ok": true,
+    "size": 967682,
+    "caption": "This is a Persian newspaper page (Hamshahri, page 22) containing a large amount of Persian text, so I won't output it fully. Main headline: «آشقانه‌های آرام یک جانباز و همسرش» (\"Th",
+    "source": "روزنامه همشهری امروز",
+    "w": 2200,
+    "h": 3143
+   }
+  ]
+ },
+ "op-valfajr8": {
+  "opId": "valfajr-8",
+  "fa": "عملیات والفجر ۸ و آزادسازی فاو",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0106ecf18489.jpg",
+    "ok": true,
+    "size": 132606,
+    "caption": "Soldiers in camouflage raising rifles and fists in celebration on a muddy battlefield, destroyed buildings behind them.",
+    "source": "همشهری آنلاین",
+    "w": 1180,
+    "h": 756
+   }
+  ]
+ },
+ "op-karbala4": {
+  "opId": "karbala-4",
+  "fa": "عملیات کربلای ۴",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4ee7a0acfbce.jpg",
+    "ok": true,
+    "size": 210741,
+    "caption": "Iranian military officers in green uniforms visit elderly veterans in a living room, greeting respectfully; framed pictures and Persian calligraphy on walls.",
+    "source": "تبریزبیدار",
+    "w": 1280,
+    "h": 960
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a4987d54e48d.jpg",
+    "ok": true,
+    "size": 716679,
+    "caption": "Nine soldiers in khaki uniforms pose for a group photo outdoors near palm trees on sandy ground.",
+    "source": "گردان حضرت علی اکبر",
+    "w": 1291,
+    "h": 1016
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1381214b4c73.jpg",
+    "ok": true,
+    "size": 420434,
+    "caption": "Vintage photo of five bearded men in khaki uniforms posing outdoors near a truck with red Arabic script, rocky mountain backdrop; faded, aged, blurry.",
+    "source": "بوشهر پورت",
+    "w": 2888,
+    "h": 2082
+   }
+  ]
+ },
+ "op-karbala5": {
+  "opId": "karbala-5",
+  "fa": "عملیات کربلای ۵",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/afe58f03b461.jpg",
+    "ok": true,
+    "size": 421994,
+    "caption": "Soldiers with rifles gather on a muddy riverbank beside wooden boats and supply crates, likely Iran-Iraq War era photograph.",
+    "source": "خبرگزاری دفاع مقدس",
+    "w": 3640,
+    "h": 2600
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/55faa3275796.jpg",
+    "ok": true,
+    "size": 186472,
+    "caption": "A historical black-and-white photograph of uniformed soldiers with backpacks gathering and embracing outdoors, grainy vintage quality, no text.",
+    "source": "رادیو فردا",
+    "w": 1200,
+    "h": 675
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3087010030b3.jpg",
+    "ok": true,
+    "size": 323728,
+    "caption": "A painting depicting armed fighters wearing orange headbands with Arabic text, carrying AK-47 rifles.",
+    "source": "خبرگزاری دانشجو",
+    "w": 1316,
+    "h": 877
+   }
+  ]
+ },
+ "op-mersad": {
+  "opId": "mersad",
+  "fa": "عملیات مرصاد",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dc38ea990a88.png",
+    "ok": true,
+    "size": 1321108,
+    "caption": "Illustrated portrait of a smiling Pakistani soldier in helmet, with Urdu text, camouflage background, circular poster design.",
+    "source": "صاحب‌خبر",
+    "w": 1080,
+    "h": 1078
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/05dcae853cd0.jpg",
+    "ok": true,
+    "size": 480321,
+    "caption": "Soldiers in camouflage uniforms inside a helicopter, one smiling with helmet, another reviewing a colorful strategic map; grainy quality.",
+    "source": "آژانس خبری و تحلیلی هم نوا",
+    "w": 1280,
+    "h": 720
+   },
+   {
+    "n": 3,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0106ecf18489.jpg",
+    "ok": true,
+    "size": 132606,
+    "caption": "Soldiers in camouflage uniforms cheer triumphantly with raised rifles in a muddy, war-torn wetland village setting.",
+    "source": "همشهری آنلاین",
+    "w": 1180,
+    "h": 756
+   }
+  ]
+ },
+ "op-martyrs": {
+  "opId": "__martyrs__",
+  "fa": "چهره‌های شهدای دفاع مقدس",
+  "files": [
+   {
+    "n": 1,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/afced11fe91e.png",
+    "ok": true,
+    "size": 1304712,
+    "caption": "A vintage sepia-toned photo showing a soldier in helmet being interviewed by a bearded reporter holding a microphone, another bearded man beside them, in a barren outdoor area.",
+    "source": "خبرگزاری دفاع مقدس",
+    "w": 1049,
+    "h": 754
+   },
+   {
+    "n": 2,
+    "url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3d133ae686dd.jpg",
+    "ok": true,
+    "size": 81913,
+    "caption": "A social media post in Persian by \"@Mr_tahlilgar_\" about the Iran-Iraq war, containing substantial Persian text and a vintage photo of a bearded man.",
+    "source": "ایمنا",
+    "w": 1080,
+    "h": 1207
+   }
+  ]
+ }
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عکس امام خمینی پوستر رسمی",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/96600dd68af8.jpg",
+      "caption": "Digital portraits of Ruhollah Khomeini and Ali Khamenei with ornate Persian frame and Persian calligraphy; watermark \"anaammar.ir\" present.",
+      "source": "عمارها",
+      "original_width": "984px",
+      "original_height": "1378px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c2438a0ca9f2.jpg",
+      "caption": "A digitally rendered portrait of Ayatollah Khomeini on a blue smoky background with Persian calligraphy, quote text, and a watermark (asr-entezar.ir).",
+      "source": "عصر انتظار",
+      "original_width": "6000px",
+      "original_height": "3600px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4533eb1e1f7d.jpg",
+      "caption": "Black and white portrait of an elderly bearded cleric in turban and glasses, writing in a notebook.",
+      "source": "بانک عکس",
+      "original_width": "1748px",
+      "original_height": "2480px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cdca29af20c5.jpg",
+      "caption": "Digital portrait of an elderly bearded man in Islamic decorative frame, with Persian calligraphy text \"استاد مطهری\".",
+      "source": "راسخون",
+      "original_width": "4200px",
+      "original_height": "6000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f07fdee80fc7.jpg",
+      "caption": "Digital painted portraits of three Iranian clerics in turbans against a green, white, and red brushstroke background, high clarity.",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "673px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9b8e0207b3be.jpg",
+      "caption": "Painted portrait of Ayatollah Khomeini framed by ornate Islamic arch, with gold Arabic calligraphy reading \"الإمام الخامنئي يجد كلام\" style text, black background, no watermark.",
+      "source": "| ضیاءالصالحین",
+      "original_width": "5600px",
+      "original_height": "8000px"
+    }
+  ]
+}

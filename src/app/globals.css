@@ -261,3 +261,12 @@ body { font-family: Vazirmatn, sans-serif; }
 @media (prefers-reduced-motion: reduce) {
   .hall-dust { animation: none; }
 }
+
+/* ─── فاز ۱۴: خاکریز واقعی (سنگر آپلودی با پس‌زمینه حذف‌شده) ─── */
+.defa-sandbag {
+  background-image: url('/images/defa/sandbag-strip.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center top;
+  filter: saturate(0.82) brightness(0.9);
+}

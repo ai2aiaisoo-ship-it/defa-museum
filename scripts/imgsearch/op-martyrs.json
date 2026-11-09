@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "شهدای دفاع مقدس سربند یا زهرا عکس رزمندگان آرشیو",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/afced11fe91e.png",
+      "caption": "A vintage sepia-toned photo showing a soldier in helmet being interviewed by a bearded reporter holding a microphone, another bearded man beside them, in a barren outdoor area.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "1049px",
+      "original_height": "754px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d7607bdddce9.jpg",
+      "caption": "An Iranian military officer in green uniform speaking into a microphone at an official event. Contains watermark \"DEFA PRESS.IR\" and Persian text \"اسفندیار رحیمی\" on name tag.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f0c6fbcd3b52.jpg",
+      "caption": "This is an Iranian commemorative poster featuring six portrait photos of men and an elderly woman in chador, surrounded by white doves, a black flag with Arabic text \"لا اله الا الله\", and red ribbons. Large red Persian calligraphy text appears across the middle, and below, a ship sits in blue water with a circular wake, accompanied by yellow Persian text. The bottom shows government logos and Persian text, with watermarks \"navideshahed.com\" and a red logo. Contains substantial text; not suitable as background image.",
+      "source": "نوید شاهد",
+      "original_width": "849px",
+      "original_height": "1200px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3d133ae686dd.jpg",
+      "caption": "A social media post in Persian by \"@Mr_tahlilgar_\" about the Iran-Iraq war, containing substantial Persian text and a vintage photo of a bearded man.",
+      "source": "ایمنا",
+      "original_width": "1080px",
+      "original_height": "1207px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e5bc2761c72a.jpg",
+      "caption": "A man carries an Iranian flag during a street march in Iran, surrounded by mourners in black. Watermark \"DEFA Press, Amin Rahmani\" present; contains Persian text on banners. Not suitable for background image.",
+      "source": "khabarpu.com",
+      "original_width": "1500px",
+      "original_height": "1000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/664530d54946.jpg",
+      "caption": "Red Persian calligraphy on textured beige fabric, with small social media handle watermark \"@M_RaisaSolgi\" at bottom.",
+      "source": "باشگاه خبرنگاران جوان",
+      "original_width": "1280px",
+      "original_height": "720px"
+    }
+  ]
+}

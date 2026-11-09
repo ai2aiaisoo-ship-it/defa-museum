@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات والفجر ۸ فاو عکس رزمندگان دفاع مقدس",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4bb293d2e5c2.jpg",
+      "caption": "Black-and-white historical war photo: cheering soldiers with rifles and portraits amid battle smoke. Contains IRNA watermark and text.",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/af1165696e67.jpg",
+      "caption": "Black-and-white photo: soldiers standing on sandbags raising a flag, celebrating; IRNA watermark present, so not suitable for background.",
+      "source": "ایرنا",
+      "original_width": "832px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0106ecf18489.jpg",
+      "caption": "Soldiers in camouflage raising rifles and fists in celebration on a muddy battlefield, destroyed buildings behind them.",
+      "source": "همشهری آنلاین",
+      "original_width": "1180px",
+      "original_height": "756px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/65ea7054fa6b.jpg",
+      "caption": "Black-and-white historical photo of soldiers resting in trenches, with Persian text overlays and a \"24\" logo; contains watermark and text.",
+      "source": "رویداد۲۴",
+      "original_width": "1200px",
+      "original_height": "791px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0b3c0b1113a6.jpg",
+      "caption": "Women in orange life vests wait at an Iranian dock near a ferry with Iranian flags; watermark \"DEFA Press / Mohsen Baghestani\" bottom-left.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "3000px",
+      "original_height": "2000px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/de4b2e938e5a.jpg",
+      "caption": "Religious gathering with women in black chadors near blue arched shrine entrance, cooking smoke, red flags, Persian text, MEHR watermark.",
+      "source": "خبرگزاری مهر",
+      "original_width": "1280px",
+      "original_height": "853px"
+    }
+  ]
+}

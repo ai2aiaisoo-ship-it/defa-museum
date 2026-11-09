@@ -25,3 +25,20 @@ model AuditLog {
   detail    String?
   createdAt DateTime @default(now())
 }
+
+// ─── فاز ۱۴: مرورهای کارشناسی تصاویر مزار ───
+// مهاجرت کامل از db/mazar-reviews.json به جدول واقعی — مرورهای نام‌دار کارشناس
+// دیگر وابسته به مرورگر نیستند؛ API با fallback فایل، سازگاری نسخه نمایشی را حفظ می‌کند.
+model MazarReview {
+  id         String   @id @default(cuid())
+  photoKey   String   @unique // کلید یکتای تصویر: `${martyrId}|${photoUrl}`
+  martyrId   String
+  verdict    String // approved | rejected | needs-more | context
+  reviewer   String // نام کارشناس مرورکننده
+  note       String?
+  reviewedAt DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([martyrId])
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات بیت المقدس آزادسازی خرمشهر عکس رزمندگان",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b98f4a5a570e.jpg",
+      "caption": "Black-and-white photo of soldiers marching along a desert road carrying gear. Contains IRNA watermark and text \"IRNA\", \"SEYED ZIYA MOEZI\", \"images 1934\".",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "854px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/5de767407f9c.jpg",
+      "caption": "Black-and-white war photo: soldiers covering ears as artillery fires, large smoke plume. Contains \"IRDC.IR\" watermark/logo bottom-left.",
+      "source": "مرکز اسناد انقلاب اسلامی",
+      "original_width": "1816px",
+      "original_height": "2693px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/66881a37cd98.jpg",
+      "caption": "Black-and-white historical photo of smiling helmeted soldiers flashing victory signs; contains IRNA watermark and text \"IRNA, SEYED ZIYA MOEZI, Images.\"",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "854px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/49f65e822e5e.jpg",
+      "caption": "A vintage photo of five soldiers crouching before a Persian-calligraphy painted wall; watermark \"شهادت مرگ\" bottom-left.",
+      "source": "نوید شاهد",
+      "original_width": "1600px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6357f31493e7.jpg",
+      "caption": "Black-and-white archival photo of people walking through war-rubble with an Iranian flag sign and dome; IRNA watermark, date/time stamp \"1395/02/27 - 10:22\", Persian text \"حسین از: آرشیو ایرنا\" and sign text \"مسجد جامع شهرحمید\".",
+      "source": "خبرگزاری میزان",
+      "original_width": "1300px",
+      "original_height": "866px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2f4ddd15078f.jpg",
+      "caption": "A pink-tinted vintage group photo of about fifteen men in military-style uniforms posing among palm trees; \"24\" logo watermark in top-left corner.",
+      "source": "رویداد۲۴",
+      "original_width": "1200px",
+      "original_height": "837px"
+    }
+  ]
+}

@@ -208,7 +208,7 @@ export function OperationDetail({ op, onBack, go }: { op: Operation; onBack: () 
       {/* رسانه‌های جانمایی‌شده در محل متن (فاز ۲، بخش ۴.۲) */}
       {opMedia.length > 0 && (
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-          {opMedia.slice(0, 3).map(m => (
+          {opMedia.slice(0, 6).map(m => (
             <SafeImage key={m.id} img={{ id: m.id, url: m.url!, title: m.title, sourceName: m.sourceName, sourceUrl: m.sourceUrl, kind: m.authenticity === 'real' ? 'archival' : 'artistic' }} className="aspect-video w-full" />
           ))}
         </div>

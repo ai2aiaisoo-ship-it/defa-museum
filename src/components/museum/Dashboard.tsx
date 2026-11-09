@@ -39,14 +39,24 @@ export function Dashboard({ go }: { go: (v: string, p?: string) => void }) {
 
   return (
     <div className="space-y-10">
-      {/* قهرمان */}
+      {/* قهرمان — پرچم ایران در زمینه + خاکریز واقعی سنگر آپلودی */}
       <section className="hero-vignette relative overflow-hidden rounded-3xl border">
-        <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, currentColor 0 1px, transparent 1px 14px)' }} />
+        {/* لایه پرچم ایران در زمینه — بسیار کم‌رنگ و ادغام‌شده */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-screen" style={{ backgroundImage: 'url(/images/defa/flag-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center' }} aria-hidden="true" />
+        <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, currentColor 0 1px, transparent 1px 14px)' }} aria-hidden="true" />
+        {/* قوس خاکریز واقعی — ادغام‌شده با زمینه (تصویر آپلودی با پس‌زمینه حذف‌شده) */}
+        <img src="/images/defa/sandbag-arc.png" alt="" aria-hidden="true" loading="lazy"
+          className="pointer-events-none absolute bottom-0 left-1/2 h-28 w-auto -translate-x-1/2 select-none opacity-95 md:h-36" />
         <div className="relative p-6 md:p-12">
           <Badge className="mb-4" variant="outline">یادواره شهدای دفاع مقدس • موزه دیجیتال • روایت ایرانی • اطلس تعاملی • نسخه ۲.۰ (فاز ۲)</Badge>
-          <h1 className="museum-title text-3xl md:text-5xl font-extrabold leading-tight">
-            یادواره شهدای دفاع مقدس
-          </h1>
+          <div className="flex items-center gap-4">
+            {/* گیف پرچم موج‌دار ایران — تولیدشده از پرچم رسمی یک‌تا */}
+            <img src="/images/flag-wave.gif" alt="پرچم موج‌دار جمهوری اسلامی ایران" loading="lazy"
+              className="h-14 w-auto rounded-md border border-white/15 shadow-[0_6px_20px_rgba(0,0,0,0.45)] md:h-[68px]" />
+            <h1 className="museum-title text-3xl md:text-5xl font-extrabold leading-tight">
+              یادواره شهدای دفاع مقدس
+            </h1>
+          </div>
           <p className="mt-3 text-base font-bold text-emerald-500/90 md:text-lg">جنگ هشت‌ساله عراق علیه ایران — ۳۱ شهریور ۱۳۵۹ تا ۲۹ مرداد ۱۳۶۷</p>
           <p className="mt-4 max-w-2xl text-sm md:text-base leading-8 text-muted-foreground">
             موزه دیجیتال دفاع مقدس با روایت تاریخی ایرانی: روایت از سند تفکیک می‌شود، اختلاف روایت‌ها شفاف بررسی می‌شود،

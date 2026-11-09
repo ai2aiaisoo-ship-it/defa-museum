@@ -53,27 +53,23 @@ export function MusicPlayer() {
   const [volume, setVolume] = useState(0.45)
   const [open, setOpen] = useState(false)
   const [error, setError] = useState(false)
-  const [inited, setInited] = useState(false)
   const duckRef = useRef(0) // شمار روایت‌های در حال پخش — هنگام روایت، موسیقی ساکت می‌شود
   const resumeRef = useRef(false)
   const mutedRef = useRef(muted)
   const volumeRef = useRef(volume)
   const playingRef = useRef(false)
 
-  // بازیابی تنظیم کاربر — الگوی رسمی React: تنظیم state حین رندر (بدون effect)
-  if (!inited) {
-    setInited(true)
-    if (typeof window !== 'undefined') {
-      try {
-        const raw = localStorage.getItem(STORE_KEY)
-        if (raw) {
-          const p = JSON.parse(raw) as { muted?: boolean; volume?: number }
-          if (typeof p.muted === 'boolean') setMuted(p.muted)
-          if (typeof p.volume === 'number') setVolume(p.volume)
-        }
-      } catch { /* بی‌اهمیت */ }
-    }
-  }
+  // بازیابی تنظیم کاربر — پس از مونت (نه حین رندر) تا عدم تطابق هیدریشن رخ ندهد
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    try {
+      const raw = localStorage.getItem(STORE_KEY)
+      if (!raw) return
+      const p = JSON.parse(raw) as { muted?: boolean; volume?: number }
+      if (typeof p.muted === 'boolean') setMuted(p.muted)
+      if (typeof p.volume === 'number') setVolume(p.volume)
+    } catch { /* بی‌اهمیت */ }
+  }, [])
 
   // اطلاع‌رسانی وضعیت پخش به سایر اجزا (پرچم ایران گوشه تصویر)
   useEffect(() => {

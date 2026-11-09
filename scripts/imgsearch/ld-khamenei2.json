@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "پرتره رسمی رهبر انقلاب آیت الله خامنه ای",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6d71c69d6537.jpg",
+      "caption": "An elderly cleric with black turban, glasses, and long white beard smiling against a blue curtain background.",
+      "source": "روزنامه دنیای اقتصاد",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fa25ace798f5.jpg",
+      "caption": "An elderly bearded cleric wearing a black turban and glasses smiles against a gray background. Watermark text \"Leader.ir\" and Persian watermark present.",
+      "source": "Leader.ir",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0e75efeee32a.jpg",
+      "caption": "Digital painting of a bespectacled cleric with black turban and gray beard, against a glowing blue abstract background.",
+      "source": "روزنامه اطلاعات",
+      "original_width": "1200px",
+      "original_height": "801px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b5152af38b60.png",
+      "caption": "A bearded man wearing glasses, black turban, blue robe, and brown cloak, seated against a black background.",
+      "source": "پارس پی ان جی",
+      "original_width": "1667px",
+      "original_height": "2500px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/32ad99bc315b.jpg",
+      "caption": "Two bearded clerics in black turbans walk through a lush green garden, smiling, no text or watermark.",
+      "source": "www.tasnimnews.ir",
+      "original_width": "1276px",
+      "original_height": "915px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/852c7819d923.jpg",
+      "caption": "Digital painted portrait of an elderly cleric with black turban, glasses, and white beard, hand on chin, warm orange background. Contains watermarks: \"Aviny.com,\" \"Abbas Goodarzi,\" \"Telegram.me/sh_Aviny\".",
+      "source": "old.aviny.com",
+      "original_width": "3508px",
+      "original_height": "4961px"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات کربلای ۵ شلمچه عکس رزمندگان",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/afe58f03b461.jpg",
+      "caption": "Soldiers with rifles gather on a muddy riverbank beside wooden boats and supply crates, likely Iran-Iraq War era photograph.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "3640px",
+      "original_height": "2600px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/55faa3275796.jpg",
+      "caption": "A historical black-and-white photograph of uniformed soldiers with backpacks gathering and embracing outdoors, grainy vintage quality, no text.",
+      "source": "رادیو فردا",
+      "original_width": "1200px",
+      "original_height": "675px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3087010030b3.jpg",
+      "caption": "A painting depicting armed fighters wearing orange headbands with Arabic text, carrying AK-47 rifles.",
+      "source": "خبرگزاری دانشجو",
+      "original_width": "1316px",
+      "original_height": "877px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/602ae26e4b46.jpg",
+      "caption": "A rusted abandoned armored vehicle sits on cracked dry lakebed scattered with anti-tank hedgehogs; red flags and women in black walk on the embankment. Watermark \"IMNA IMAGES Morteza Salehi\" appears bottom right.",
+      "source": "ایمنا",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/27a1f9f684cc.jpg",
+      "caption": "A group of Iranian soldiers in green military uniforms and helmets pose outdoors holding rifles under the Iranian flag.",
+      "source": "گردان حضرت علی اکبر",
+      "original_width": "1422px",
+      "original_height": "972px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b737f2c0acd8.jpg",
+      "caption": "Black-and-white photo of armed soldiers walking through mud, with green Persian text \"عملیات مرتضی المقر\" overlaid.",
+      "source": "سازمان اسناد و مدارک دفاع مقدس",
+      "original_width": "1200px",
+      "original_height": "744px"
+    }
+  ]
+}

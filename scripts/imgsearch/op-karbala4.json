@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "عملیات کربلای ۴ ام الرصاص عکس دفاع مقدس",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e2a646f3137d.jpg",
+      "caption": "Captured soldiers marching with hands raised along desert dirt road; armored vehicle nearby; Arabic watermark/logo in bottom corner.",
+      "source": "عکس نودی",
+      "original_width": "1200px",
+      "original_height": "737px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4ee7a0acfbce.jpg",
+      "caption": "Iranian military officers in green uniforms visit elderly veterans in a living room, greeting respectfully; framed pictures and Persian calligraphy on walls.",
+      "source": "تبریزبیدار",
+      "original_width": "1280px",
+      "original_height": "960px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a4987d54e48d.jpg",
+      "caption": "Nine soldiers in khaki uniforms pose for a group photo outdoors near palm trees on sandy ground.",
+      "source": "گردان حضرت علی اکبر",
+      "original_width": "1291px",
+      "original_height": "1016px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1381214b4c73.jpg",
+      "caption": "Vintage photo of five bearded men in khaki uniforms posing outdoors near a truck with red Arabic script, rocky mountain backdrop; faded, aged, blurry.",
+      "source": "بوشهر پورت",
+      "original_width": "2888px",
+      "original_height": "2082px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fb81dbc646b5.jpg",
+      "caption": "A crowd of mourners carries a coffin draped in the Iranian flag, adorned with white flowers, during a funeral procession.",
+      "source": "روزنامه دنیای اقتصاد",
+      "original_width": "1200px",
+      "original_height": "800px"
+    }
+  ]
+}

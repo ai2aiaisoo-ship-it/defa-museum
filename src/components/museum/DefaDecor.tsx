@@ -7,7 +7,7 @@ import Link from 'next/link'
 /** نوار سربند «یا زهرا (س)» — سربرگ بالای برنامه */
 export function HeadbandRibbon() {
   return (
-    <div className="defa-headband overflow-hidden whitespace-nowrap px-4 py-1.5 text-center text-[11.5px] font-extrabold leading-[1.9] tracking-[0.35em] text-white" aria-hidden="true">
+    <div className="defa-headband overflow-hidden whitespace-nowrap px-4 py-2.5 text-center text-[11.5px] font-extrabold leading-[2.3] tracking-[0.35em] text-white" aria-hidden="true">
       <span className="defa-headband-scroll inline-block">
         یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦
       </span>
@@ -15,60 +15,14 @@ export function HeadbandRibbon() {
   )
 }
 
-/** ردیف خاکریز (گونی‌های شن) — تزئین پایین بخش‌ها؛ بافت طبیعی با ردیف‌های درج‌افتاده، سایه و درز */
+/** ردیف خاکریز (گونی‌های شن) — تصویر واقعی سنگر آپلودی کارفرما با پس‌زمینه حذف‌شده؛
+ *  با گرادیان بالا/پایین به زمینه ادغام می‌شود (جایگزین بافت SVG قبلی) */
 export function SandbagStrip({ flip = false }: { flip?: boolean }) {
   return (
-    <div className={`pointer-events-none relative h-12 w-full overflow-hidden ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
-      <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 600 48">
-        <defs>
-          <linearGradient id="sbagTop" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="oklch(0.66 0.07 84)" />
-            <stop offset="55%" stopColor="oklch(0.55 0.055 82)" />
-            <stop offset="100%" stopColor="oklch(0.44 0.045 78)" />
-          </linearGradient>
-          <linearGradient id="sbagMid" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="oklch(0.62 0.065 83)" />
-            <stop offset="60%" stopColor="oklch(0.51 0.05 80)" />
-            <stop offset="100%" stopColor="oklch(0.40 0.04 76)" />
-          </linearGradient>
-          <radialGradient id="sbagSheen" cx="35%" cy="30%" r="70%">
-            <stop offset="0%" stopColor="oklch(0.72 0.075 86 / 0.5)" />
-            <stop offset="60%" stopColor="oklch(0.72 0.075 86 / 0)" />
-          </radialGradient>
-          <pattern id="sbag" x="0" y="0" width="64" height="48" patternUnits="userSpaceOnUse">
-            {/* ردیف پایین — درج‌افتاده */}
-            <g>
-              <ellipse cx="14" cy="42" rx="18" ry="7.2" fill="url(#sbagMid)" stroke="oklch(0.34 0.04 75)" strokeWidth="0.9" />
-              <ellipse cx="14" cy="39.5" rx="13" ry="3.6" fill="url(#sbagSheen)" />
-              <ellipse cx="50" cy="42" rx="18" ry="7.2" fill="url(#sbagMid)" stroke="oklch(0.34 0.04 75)" strokeWidth="0.9" />
-              <ellipse cx="50" cy="39.5" rx="13" ry="3.6" fill="url(#sbagSheen)" />
-              <path d="M9 41.5 h10 M45 41.5 h10" stroke="oklch(0.40 0.045 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
-            </g>
-            {/* ردیف میانی — درز تیره زیرین */}
-            <path d="M0 32.5 Q32 36 64 32.5" stroke="oklch(0.28 0.03 75 / 0.75)" strokeWidth="2.4" fill="none" />
-            <g>
-              <ellipse cx="32" cy="24" rx="19" ry="7.6" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
-              <ellipse cx="32" cy="21" rx="13.5" ry="3.8" fill="url(#sbagSheen)" />
-              <path d="M26 23.5 h12" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
-            </g>
-            {/* ردیف بالا — درج‌افتاده معکوس */}
-            <g>
-              <ellipse cx="0" cy="10" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
-              <ellipse cx="0" cy="7.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
-              <ellipse cx="32" cy="9" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
-              <ellipse cx="32" cy="6.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
-              <ellipse cx="64" cy="10" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
-              <ellipse cx="64" cy="7.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
-              <path d="M27 8.5 h10" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
-            </g>
-            {/* خاک سرخ بریزیده در درزها */}
-            <ellipse cx="32" cy="33.5" rx="30" ry="2.2" fill="oklch(0.38 0.07 45 / 0.35)" />
-          </pattern>
-        </defs>
-        <rect width="600" height="48" fill="url(#sbag)" />
-      </svg>
-      <div className="absolute inset-x-0 top-0 h-2.5 bg-gradient-to-b from-background to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-t from-black/25 to-transparent" />
+    <div className={`pointer-events-none relative h-16 w-full overflow-hidden ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
+      <div className="defa-sandbag absolute inset-0" />
+      <div className="absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-background to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-background/70 to-transparent" />
     </div>
   )
 }
@@ -141,8 +95,8 @@ export function MartyrPlaque({ name, caption }: { name: string; caption: string 
 }
 
 const LEADERS: PortraitMeta[] = [
-  { src: '/images/defa/khomeini.jpeg', name: 'امام خمینی (ره)', caption: 'بنیان‌گذار جمهوری اسلامی — تصویر تاریخی', badge: 'تصویر تاریخی' },
-  { src: '/images/defa/khamenei.jpeg', name: 'حضرت آیت‌الله خامنه‌ای', caption: 'مقام معظم رهبری — پرتره رسمی', badge: 'پرتره رسمی' },
+  { src: '/images/defa/khomeini-portrait.jpg', name: 'امام خمینی (ره)', caption: 'بنیان‌گذار جمهوری اسلامی ایران — پرتره یادبود رسمی', badge: 'پرتره یادبود آرشیوی' },
+  { src: '/images/defa/khamenei-portrait.jpg', name: 'حضرت آیت‌الله خامنه‌ای (مدظله‌العالی)', caption: 'مقام معظم رهبری — پرتره رسمی', badge: 'پرتره رسمی' },
 ]
 
 const MARTYR_CARDS: { img?: string; name: string; caption: string; badge?: string; pos?: string }[] = [
@@ -154,12 +108,15 @@ const MARTYR_CARDS: { img?: string; name: string; caption: string; badge?: strin
   { img: '/images/defa/bakri-mehdi.jpg', name: 'شهید مهدی باکری', caption: 'فرمانده لشکر ۳۱ عاشورا — اسفند ۱۳۶۳ (بدر)', badge: 'پرتره آرشیوی' },
 ]
 
-/** نوار چهره‌های ماندگار دفاع مقدس (رهبران + شهدا) */
+/** نوار چهره‌های ماندگار دفاع مقدس (رهبران + شهدا)
+ *  جایگاه ثابت: امام خمینی (ره) بالای سمت راست و حضرت آیت‌الله خامنه‌ای بالای سمت چپ
+ *  (الگوی پوستر یادواره؛ در RTL نخستین عنصر flex سمت راست است) */
 export function DefaIconsStrip() {
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-start justify-center gap-6">
-        {LEADERS.map(p => <PortraitFrame key={p.name} p={p} />)}
+    <div className="space-y-6">
+      {/* دایپتیک رهبری */}
+      <div className="flex flex-wrap items-start justify-between gap-4 sm:px-10">
+        {LEADERS.map(p => <PortraitFrame key={p.name} p={p} size="lg" />)}
       </div>
       <div>
         <div className="mb-2 flex items-center justify-center gap-2 text-xs font-extrabold tracking-widest text-emerald-400">
@@ -173,6 +130,8 @@ export function DefaIconsStrip() {
               <figure key={m.name} className="defa-frame flex flex-col items-center">
                 <div className="relative h-28 w-28 overflow-hidden rounded-2xl border-2 border-emerald-400/40 shadow-[0_0_20px_oklch(0.6_0.12_160/0.22)]">
                   <img src={m.img} alt={`پرتره ${m.name}`} loading="lazy" onError={e => { (e.currentTarget.style.display = 'none') }} className={`h-full w-full object-cover ${m.pos ?? ''}`} />
+                  {/* روبان «شهید» — سبک پلاک یادواره */}
+                  <span className="absolute inset-x-0 top-0 bg-gradient-to-l from-rose-900/95 via-rose-700/95 to-rose-900/95 py-[3px] text-center text-[9.5px] font-black leading-none tracking-[0.3em] text-rose-50 shadow-[0_1px_4px_rgba(0,0,0,0.4)]">شهید</span>
                   {m.badge && <span className="absolute bottom-1 left-1 rounded-md bg-emerald-950/80 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-400/30">{m.badge}</span>}
                 </div>
                 <figcaption className="mt-1.5 text-center text-[11px] leading-4">

@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "query": "عملیات رمضان ۱۳۶۱ جبهه شلمچه عکس رزمندگان",
+  "count": 5,
+  "ranked": true,
+  "captioned_count": 5,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e81f162fd840.jpg",
+      "caption": "A black-and-white Persian newspaper page (Ettela'at) with large Persian headlines, Rafsanjani's portrait, and war photographs including casualties.",
+      "source": "خبرگزاری دفاع مقدس",
+      "original_width": "1195px",
+      "original_height": "1331px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1f9cbbf7e396.jpg",
+      "caption": "Black-and-white war photograph: soldier carries wounded comrade; IRNA watermark and \"AMIRALI JAVADIAN\" text present.",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "854px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/859c21ee9eac.jpg",
+      "caption": "A group of men in camouflage wetsuits and diving gear posing together on sandy terrain.",
+      "source": "ایمنا",
+      "original_width": "1280px",
+      "original_height": "903px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b015591bd0e8.jpg",
+      "caption": "A collage of three Persian book covers with Arabic text and a man's portrait photo; contains multiple images and substantial text.",
+      "source": "ایبنا",
+      "original_width": "1280px",
+      "original_height": "1222px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2f4ddd15078f.jpg",
+      "caption": "A vintage, pink-tinted group photo of approximately fifteen armed men in military-style uniforms posing among palm trees; a \"24\" logo watermark appears in the top-left corner.",
+      "source": "رویداد۲۴",
+      "original_width": "1200px",
+      "original_height": "837px"
+    }
+  ]
+}

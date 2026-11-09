@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات بدر عکس دفاع مقدس هور",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/edfc364e89b5.jpg",
+      "caption": "Soldiers with backpacks and helmets march in single file along a narrow pontoon bridge over water.",
+      "source": "ایمنا",
+      "original_width": "1200px",
+      "original_height": "800px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a0f591a89834.jpg",
+      "caption": "A cinematic war scene: soldier raising a detonator triumphantly amid smoke, explosions, blurred soldiers running, dusty battlefield, dramatic backlighting, film still aesthetic.",
+      "source": "ایمنا",
+      "original_width": "1280px",
+      "original_height": "808px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0a35ea5419bc.jpg",
+      "caption": "This is a Persian newspaper page (Hamshahri, page 22) containing a large amount of Persian text, so I won't output it fully. Main headline: «آشقانه‌های آرام یک جانباز و همسرش» (\"The quiet love of a veteran and his wife\"). It features a large photo of a smiling woman combing the hair of a man in a wheelchair, plus smaller photos of a veteran and interviews, including another article «روز اعتصاب غذا، به شوق رفتن به جبهه». The page contains extensive text information, so it is not suitable as a background image.",
+      "source": "روزنامه همشهری امروز",
+      "original_width": "2200px",
+      "original_height": "3143px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/855b510cf594.jpg",
+      "caption": "Dark commemorative poster with Persian text, calligraphy, black-and-white portrait on burlap, rifle, map, and military items.",
+      "source": "الگو ایرانی",
+      "original_width": "914px",
+      "original_height": "1280px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f692258a7c29.jpg",
+      "caption": "A dense Persian-language newspaper page (Etemad) with extensive Persian text, photos, and columns, not suitable as a background image.",
+      "source": "روزنامه همشهری امروز",
+      "original_width": "2200px",
+      "original_height": "3143px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aec7fb87a4ec.jpg",
+      "caption": "A collage of eight Persian gravestone inscriptions with Arabic prayers, names, dates, and Quranic verses; contains substantial text.",
+      "source": "ایرنا",
+      "original_width": "1280px",
+      "original_height": "885px"
+    }
+  ]
+}

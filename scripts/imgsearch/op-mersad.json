@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "عملیات مرصاد ۱۳۶۷ عکس دفاع مقدس",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/862df0503875.jpg",
+      "caption": "Black-and-white photo of armed soldiers posing in mountainous terrain; contains IRNA Images watermark, text \"PHOTO: MAJID AHIMIAN\".",
+      "source": "آژانس عکس ایرنا",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/97f47d1b3282.jpg",
+      "caption": "Black-and-white photo of soldiers advancing across rocky terrain toward a mountain. Contains watermark \"irna images, PHOTO: MAJID KARIMIAN\" — not suitable for background.",
+      "source": "آژانس عکس ایرنا",
+      "original_width": "1280px",
+      "original_height": "854px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dc38ea990a88.png",
+      "caption": "Illustrated portrait of a smiling Pakistani soldier in helmet, with Urdu text, camouflage background, circular poster design.",
+      "source": "صاحب‌خبر",
+      "original_width": "1080px",
+      "original_height": "1078px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/05dcae853cd0.jpg",
+      "caption": "Soldiers in camouflage uniforms inside a helicopter, one smiling with helmet, another reviewing a colorful strategic map; grainy quality.",
+      "source": "آژانس خبری و تحلیلی هم نوا",
+      "original_width": "1280px",
+      "original_height": "720px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0106ecf18489.jpg",
+      "caption": "Soldiers in camouflage uniforms cheer triumphantly with raised rifles in a muddy, war-torn wetland village setting.",
+      "source": "همشهری آنلاین",
+      "original_width": "1180px",
+      "original_height": "756px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d17a97cea698.jpg",
+      "caption": "Boys collect debris near a destroyed, charred bus on a street. Text: \"irdc.ir\", Persian \"مركز نشر إضاء سبّك\". Contains watermark and logo.",
+      "source": "مرکز اسناد انقلاب اسلامی",
+      "original_width": "1080px",
+      "original_height": "800px"
+    }
+  ]
+}
