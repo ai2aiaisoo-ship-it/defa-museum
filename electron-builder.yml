@@ -1,0 +1,24 @@
+appId: ir.defa.museum
+productName: defa-museum
+copyright: یادواره شهدای دفاع مقدس — پروژه پژوهشی-آموزشی
+
+directories:
+  output: dist-exe
+  buildResources: build
+
+files:
+  - electron/**/*
+
+extraResources:
+  - from: build/app-server
+    to: app-server
+
+win:
+  target:
+    - target: portable
+      arch: [x64]
+
+portable:
+  artifactName: defa-museum-${version}-portable.exe
+
+compression: maximum
