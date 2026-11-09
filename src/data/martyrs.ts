@@ -78,7 +78,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'defa-center', 'navidshahed'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cfae36733105.jpg',
+      url: '/images/arch/cfae36733105.jpg',
       sourceName: 'نوید شاهد (بنیاد حفظ آثار دفاع مقدس)',
       verified: 'archival-confirmed',
     },
@@ -100,7 +100,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'golzar-info', 'defapress'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/dee176b27991.jpg',
+      url: '/images/arch/dee176b27991.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -122,7 +122,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'golzar-info', 'defapress'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3665c8dc21d0.jpg',
+      url: '/images/arch/3665c8dc21d0.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -144,7 +144,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'jang-atlas', 'defapress'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/84d0c57b6f07.jpg',
+      url: '/images/arch/84d0c57b6f07.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -165,7 +165,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'razoux', 'golzar-info'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7859aa11e5e1.jpg',
+      url: '/images/arch/7859aa11e5e1.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -187,7 +187,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'defapress'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2b5708322aca.jpg',
+      url: '/images/arch/2b5708322aca.jpg',
       sourceName: 'نوید شاهد (بنیاد حفظ آثار دفاع مقدس)',
       verified: 'archival-confirmed',
     },
@@ -210,7 +210,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'jang-atlas', 'navidshahed'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3fb8a77bc6f0.jpg',
+      url: '/images/arch/3fb8a77bc6f0.jpg',
       sourceName: 'خبرگزاری میزان (پرونده شهید)',
       verified: 'pending-review',
     },
@@ -234,7 +234,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['defa-center', 'navidshahed', 'golzar-info'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d6f8ffe27c6e.jpg',
+      url: '/images/arch/d6f8ffe27c6e.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -257,7 +257,7 @@ export const MARTYRS: Martyr[] = [
     confidence: 'B',
     dateNote: 'تولد ۲۰ مهر ۱۳۲۹ شیراز (نوید شاهد)؛ درباره روز دقیق شهادت منابع اختلاف دارند: ۲۷ تیر (رایج) و ۳۰–۳۱ تیر ۱۳۶۱ (نوید شاهد). پیکر او پس از حدود ۲۰ سال به همراه ۵۷۰ شهید دیگر بازگشت.',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9fdf3a977b0f.jpg',
+      url: '/images/arch/9fdf3a977b0f.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -280,7 +280,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['jang-atlas', 'defa-center', 'golzar-info'],
     confidence: 'A',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d0eb6f34d831.jpg',
+      url: '/images/arch/d0eb6f34d831.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -303,7 +303,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'jang-atlas', 'wiki-karbala2', 'navidshahed'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/427c4e822db7.png',
+      url: '/images/arch/427c4e822db7.png',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -326,7 +326,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['wiki-valfajr2', 'jang-atlas', 'golzar-info'],
     confidence: 'C',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/4dcee35577d0.jpg',
+      url: '/images/arch/4dcee35577d0.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -348,7 +348,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'jang-atlas', 'golzar-info'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9cc3a2b61cec.jpg',
+      url: '/images/arch/9cc3a2b61cec.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -371,7 +371,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['jang-atlas', 'defa-center', 'navidshahed'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/551db3872e31.jpg',
+      url: '/images/arch/551db3872e31.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -394,7 +394,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['jang-atlas', 'fa-wiki-war', 'golzar-info'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/06fb0d5fddac.jpg',
+      url: '/images/arch/06fb0d5fddac.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -417,7 +417,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['defa-center', 'navidshahed'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/99671b7d18e8.jpg',
+      url: '/images/arch/99671b7d18e8.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -441,7 +441,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['jang-atlas', 'defa-center', 'navidshahed'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/6f6bf04d88ed.jpg',
+      url: '/images/arch/6f6bf04d88ed.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -464,7 +464,7 @@ export const MARTYRS: Martyr[] = [
     confidence: 'B',
     dateNote: 'اصلاح راستی‌آزمایی‌شده: تولد ۱۲ فروردین ۱۳۳۴ شهرضا (روزنامه جوان — رکورد پیشین «شاهرود ۱۳۳۷» بود)؛ درباره روز دقیق شهادت منابع ۱۷ تا ۲۴ اسفند ۱۳۶۲ را ثبت کرده‌اند (ایسنا: ۱۷ اسفند) — تاریخ رایج حفظ و مغایرت ثبت شده است.',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b4042b6be416.jpg',
+      url: '/images/arch/b4042b6be416.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -487,7 +487,7 @@ export const MARTYRS: Martyr[] = [
     confidence: 'B',
     dateNote: 'برخی منابع تا مدت‌ها پیکر او را مفقودالاثر ثبت کرده بودند؛ نوید شاهد محل دفن او را گلزار شهدا باغ‌رضوان ارومیه ثبت کرده است.',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/11dbc016dbed.jpg',
+      url: '/images/arch/11dbc016dbed.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -510,7 +510,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['jang-atlas', 'defa-center'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1d1e7b70cc80.jpg',
+      url: '/images/arch/1d1e7b70cc80.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },
@@ -533,7 +533,7 @@ export const MARTYRS: Martyr[] = [
     sources: ['fa-wiki-war', 'navidshahed'],
     confidence: 'B',
     image: {
-      url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b4c389ec81c4.jpg',
+      url: '/images/arch/b4c389ec81c4.jpg',
       sourceName: 'جست‌وجوی تصویر وب (آرشیو عمومی)',
       verified: 'pending-review',
     },

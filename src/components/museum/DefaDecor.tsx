@@ -7,7 +7,7 @@ import Link from 'next/link'
 /** نوار سربند «یا زهرا (س)» — سربرگ بالای برنامه */
 export function HeadbandRibbon() {
   return (
-    <div className="defa-headband overflow-hidden whitespace-nowrap py-1 text-center text-[11px] font-extrabold tracking-[0.35em] text-white" aria-hidden="true">
+    <div className="defa-headband overflow-hidden whitespace-nowrap px-4 py-1.5 text-center text-[11.5px] font-extrabold leading-[1.9] tracking-[0.35em] text-white" aria-hidden="true">
       <span className="defa-headband-scroll inline-block">
         یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦ یا زهرا (س) ✦ یا حسین (ع) ✦
       </span>
@@ -15,23 +15,60 @@ export function HeadbandRibbon() {
   )
 }
 
-/** ردیف خاکریز (گونی‌های شن) — تزئین پایین بخش‌ها */
+/** ردیف خاکریز (گونی‌های شن) — تزئین پایین بخش‌ها؛ بافت طبیعی با ردیف‌های درج‌افتاده، سایه و درز */
 export function SandbagStrip({ flip = false }: { flip?: boolean }) {
   return (
-    <div className={`pointer-events-none relative h-9 w-full overflow-hidden ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
-      <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 600 36">
+    <div className={`pointer-events-none relative h-12 w-full overflow-hidden ${flip ? 'rotate-180' : ''}`} aria-hidden="true">
+      <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 600 48">
         <defs>
-          <pattern id="sbag" x="0" y="0" width="60" height="36" patternUnits="userSpaceOnUse">
-            <ellipse cx="15" cy="30" rx="17" ry="7" fill="oklch(0.52 0.05 80)" stroke="oklch(0.36 0.04 75)" strokeWidth="1" />
-            <ellipse cx="45" cy="30" rx="17" ry="7" fill="oklch(0.55 0.055 82)" stroke="oklch(0.38 0.04 75)" strokeWidth="1" />
-            <ellipse cx="30" cy="17" rx="17" ry="7" fill="oklch(0.58 0.06 84)" stroke="oklch(0.4 0.045 75)" strokeWidth="1" />
-            <path d="M0 36 L60 36" stroke="oklch(0.3 0.03 75)" strokeWidth="2" />
-            <path d="M11 30 h8 M41 30 h8" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2 1.4" />
+          <linearGradient id="sbagTop" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="oklch(0.66 0.07 84)" />
+            <stop offset="55%" stopColor="oklch(0.55 0.055 82)" />
+            <stop offset="100%" stopColor="oklch(0.44 0.045 78)" />
+          </linearGradient>
+          <linearGradient id="sbagMid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="oklch(0.62 0.065 83)" />
+            <stop offset="60%" stopColor="oklch(0.51 0.05 80)" />
+            <stop offset="100%" stopColor="oklch(0.40 0.04 76)" />
+          </linearGradient>
+          <radialGradient id="sbagSheen" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stopColor="oklch(0.72 0.075 86 / 0.5)" />
+            <stop offset="60%" stopColor="oklch(0.72 0.075 86 / 0)" />
+          </radialGradient>
+          <pattern id="sbag" x="0" y="0" width="64" height="48" patternUnits="userSpaceOnUse">
+            {/* ردیف پایین — درج‌افتاده */}
+            <g>
+              <ellipse cx="14" cy="42" rx="18" ry="7.2" fill="url(#sbagMid)" stroke="oklch(0.34 0.04 75)" strokeWidth="0.9" />
+              <ellipse cx="14" cy="39.5" rx="13" ry="3.6" fill="url(#sbagSheen)" />
+              <ellipse cx="50" cy="42" rx="18" ry="7.2" fill="url(#sbagMid)" stroke="oklch(0.34 0.04 75)" strokeWidth="0.9" />
+              <ellipse cx="50" cy="39.5" rx="13" ry="3.6" fill="url(#sbagSheen)" />
+              <path d="M9 41.5 h10 M45 41.5 h10" stroke="oklch(0.40 0.045 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
+            </g>
+            {/* ردیف میانی — درز تیره زیرین */}
+            <path d="M0 32.5 Q32 36 64 32.5" stroke="oklch(0.28 0.03 75 / 0.75)" strokeWidth="2.4" fill="none" />
+            <g>
+              <ellipse cx="32" cy="24" rx="19" ry="7.6" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
+              <ellipse cx="32" cy="21" rx="13.5" ry="3.8" fill="url(#sbagSheen)" />
+              <path d="M26 23.5 h12" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
+            </g>
+            {/* ردیف بالا — درج‌افتاده معکوس */}
+            <g>
+              <ellipse cx="0" cy="10" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
+              <ellipse cx="0" cy="7.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
+              <ellipse cx="32" cy="9" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
+              <ellipse cx="32" cy="6.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
+              <ellipse cx="64" cy="10" rx="17" ry="7" fill="url(#sbagTop)" stroke="oklch(0.36 0.045 76)" strokeWidth="0.9" />
+              <ellipse cx="64" cy="7.6" rx="12" ry="3.3" fill="url(#sbagSheen)" />
+              <path d="M27 8.5 h10" stroke="oklch(0.42 0.05 78)" strokeWidth="0.8" strokeDasharray="2.2 1.5" />
+            </g>
+            {/* خاک سرخ بریزیده در درزها */}
+            <ellipse cx="32" cy="33.5" rx="30" ry="2.2" fill="oklch(0.38 0.07 45 / 0.35)" />
           </pattern>
         </defs>
-        <rect width="600" height="36" fill="url(#sbag)" />
+        <rect width="600" height="48" fill="url(#sbag)" />
       </svg>
-      <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-b from-background to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-2.5 bg-gradient-to-b from-background to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-t from-black/25 to-transparent" />
     </div>
   )
 }

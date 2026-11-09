@@ -1,0 +1,732 @@
+     1→'use client'
+     2→
+     3→import { useMemo, useState, useCallback } from 'react'
+     4→import { MARTYRS, type Martyr } from '@/data/martyrs'
+     5→import {
+     6→  MARTYR_BURIALS,
+     7→  MARTYR_MEMORIES,
+     8→  MEMORY_KIND_LABELS,
+     9→  memoriesOf,
+    10→  burialOf,
+    11→  type MartyrMemory,
+    12→  type MartyrBurial,
+    13→} from '@/data/martyr-memories'
+    14→import { formatJalali, toFa } from '@/lib/jalali'
+    15→import {
+    16→  useGravePhotoReviews,
+    17→  useVisitorMemories,
+    18→  gravePhotoBadge,
+    19→  faDateTime,
+    20→  VERDICT_LABELS,
+    21→  type GravePhotoReview,
+    22→  type ReviewVerdict,
+    23→  type VisitorMemory,
+    24→} from '@/lib/martyr-feedback'
+    25→import { Badge } from '@/components/ui/badge'
+    26→import { Button } from '@/components/ui/button'
+    27→import { Card, CardContent } from '@/components/ui/card'
+    28→import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+    29→import { ConfidenceBadge, SectionHeader } from './ui-bits'
+    30→import { useToast } from '@/hooks/use-toast'
+    31→
+    32→const KIND_TONE: Record<string, string> = {
+    33→  memoir: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+    34→  will: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+    35→  book: 'bg-violet-500/15 text-violet-300 border-violet-500/30',
+    36→  narration: 'bg-sky-500/15 text-sky-300 border-sky-500/30',
+    37→  'museum-note': 'bg-muted text-muted-foreground border-border',
+    38→}
+    39→
+    40→const VERDICT_TONE: Record<ReviewVerdict, string> = {
+    41→  approved: 'border-emerald-500/50 bg-emerald-500/10 text-emerald-300',
+    42→  rejected: 'border-rose-500/50 bg-rose-500/10 text-rose-300',
+    43→  'needs-more': 'border-amber-500/50 bg-amber-500/10 text-amber-400',
+    44→  context: 'border-slate-500/50 bg-slate-500/10 text-slate-300',
+    45→}
+    46→
+    47→function Portrait({ m, className }: { m: Martyr; className?: string }) {
+    48→  return m.image ? (
+    49→    <div className={`relative overflow-hidden rounded-xl border ${className ?? ''}`}>
+    50→      <img
+    51→        src={m.image.url}
+    52→        alt={`پرتره شهید ${m.name}`}
+    53→        loading="lazy"
+    54→        onError={e => { (e.currentTarget.style.display = 'none') }}
+    55→        className="h-full w-full object-cover object-top"
+    56→      />
+    57→      {m.image.verified === 'pending-review' && (
+    58→        <span className="absolute bottom-1 right-1 rounded bg-black/70 px-1.5 py-0.5 text-[9px] text-amber-300">هویت‌سنجی در انتظار تأیید</span>
+    59→      )}
+    60→    </div>
+    61→  ) : (
+    62→    <div className={`relative flex flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed bg-gradient-to-b from-muted/60 to-background ${className ?? ''}`}>
+    63→      <span className="text-2xl opacity-70">✦</span>
+    64→      <span className="mt-1 px-2 text-center text-[11px] font-extrabold leading-5">شهید {m.name}</span>
+    65→    </div>
+    66→  )
+    67→}
+    68→
+    69→/** تصویر مزار با برچسب پویا بر پایه مرور کارشناسی — تأیید کارشناس، برچسب را ارتقا می‌دهد */
+    70→function GraveFigure({ b, review, className }: { b: MartyrBurial; review?: GravePhotoReview; className?: string }) {
+    71→  if (b.photo && review?.verdict !== 'rejected') {
+    72→    const badge = gravePhotoBadge(b.photo.verified, review)
+    73→    return (
+    74→      <div className={`relative overflow-hidden rounded-xl border ${className ?? ''}`}>
+    75→        <img
+    76→          src={b.photo.url}
+    77→          alt={`محل دفن شهید — ${b.cemetery}`}
+    78→          loading="lazy"
+    79→          onError={e => { (e.currentTarget.style.display = 'none') }}
+    80→          className="h-full w-full object-cover"
+    81→        />
+    82→        <span className={`absolute bottom-1 right-1 rounded border px-1.5 py-0.5 text-[9px] font-bold ${badge.cls}`}>{badge.label}</span>
+    83→      </div>
+    84→    )
+    85→  }
+    86→  return (
+    87→    <div className={`relative flex flex-col items-center justify-center overflow-hidden rounded-xl border border-dashed bg-gradient-to-b from-muted/50 to-background ${className ?? ''}`}>
+    88→      <span className="text-2xl opacity-60">🕌</span>
+    89→      <span className="mt-1 px-3 pb-2 text-center text-[10px] leading-5 text-muted-foreground">
+    90→        {review?.verdict === 'rejected'
+    91→          ? 'این تصویر در مرور کارشناسی به‌عنوان مزار این شهید تأیید نشد و از نمایش خارج شده است'
+    92→          : 'عکس مزار در آرشیو باز در دسترس نیست'}
+    93→      </span>
+    94→    </div>
+    95→  )
+    96→}
+    97→
+    98→function MemoryItem({ mem }: { mem: MartyrMemory }) {
+    99→  return (
+   100→    <div className="rounded-xl border bg-card/60 p-3">
+   101→      <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+   102→        <Badge variant="outline" className={`text-[10px] font-extrabold ${KIND_TONE[mem.kind]}`}>{MEMORY_KIND_LABELS[mem.kind]}</Badge>
+   103→        {mem.narrator && <span className="text-[11px] font-bold text-primary">راوی: {mem.narrator}</span>}
+   104→        {mem.verbatim && <Badge variant="outline" className="text-[9px]">نقل مستقیم منبع</Badge>}
+   105→        <ConfidenceBadge c={mem.confidence} />
+   106→      </div>
+   107→      <p className="text-justify text-[13px] leading-7">{mem.text}</p>
+   108→      <div className="mt-2 text-[11px] text-muted-foreground">
+   109→        منبع: {mem.sourceUrl ? (
+   110→          <a href={mem.sourceUrl} target="_blank" rel="noreferrer" className="font-bold text-primary underline decoration-primary/40 hover:decoration-primary">{mem.sourceName}</a>
+   111→        ) : mem.sourceName}
+   112→      </div>
+   113→    </div>
+   114→  )
+   115→}
+   116→
+   117→/** خاطره ثبت‌شده توسط بازدیدکننده — تا تأیید کارشناس با برچسب «در انتظار تأیید» نمایش داده می‌شود */
+   118→function VisitorMemoryItem({ mem, onDelete }: { mem: VisitorMemory; onDelete: () => void }) {
+   119→  return (
+   120→    <div className="rounded-xl border border-dashed bg-amber-500/5 p-3">
+   121→      <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+   122→        <Badge variant="outline" className="border-sky-500/40 bg-sky-500/10 text-[10px] font-extrabold text-sky-300">خاطره بازدیدکننده</Badge>
+   123→        <Badge variant="outline" className="border-amber-500/40 bg-amber-500/10 text-[9px] text-amber-400">⏳ در انتظار تأیید کارشناس</Badge>
+   124→        <span className="text-[11px] font-bold text-primary">{mem.name}{mem.city ? ` — ${mem.city}` : ''}</span>
+   125→        <span className="text-[10px] text-muted-foreground">{faDateTime(mem.submittedAt)}</span>
+   126→      </div>
+   127→      <p className="whitespace-pre-line text-justify text-[13px] leading-7">{mem.text}</p>
+   128→      <button onClick={onDelete} className="mt-1.5 text-[10px] font-bold text-rose-400/80 underline hover:text-rose-400">
+   129→        حذف این خاطره (ثبت من در همین مرورگر)
+   130→      </button>
+   131→    </div>
+   132→  )
+   133→}
+   134→
+   135→function ReviewInfoLine({ review }: { review: GravePhotoReview }) {
+   136→  if (review.seed) {
+   137→    return (
+   138→      <div className="rounded-lg border border-sky-500/40 bg-sky-500/5 p-2 text-[11px] leading-5 text-sky-200">
+   139→        <b>پیش‌مرور تصویری آرشیو موزه:</b> {VERDICT_LABELS[review.verdict].split(' (')[0]} — {faDateTime(review.reviewedAt)}
+   140→        {review.note && <span className="block text-muted-foreground">مبنای مرور: {review.note}</span>}
+   141→        <span className="block text-[10px] text-muted-foreground">برای ثبت مرور نام‌دار خود، دکمه «مرور کارشناسی تصویر مزار» را بزنید؛ مرور شما بر پیش‌مرور اولویت دارد.</span>
+   142→      </div>
+   143→    )
+   144→  }
+   145→  return (
+   146→    <div className={`rounded-lg border p-2 text-[11px] leading-5 ${VERDICT_TONE[review.verdict]}`}>
+   147→      <b>آخرین مرور کارشناسی:</b> {VERDICT_LABELS[review.verdict].split(' (')[0]} — کارشناس: <b>{review.reviewer}</b> — {faDateTime(review.reviewedAt)}
+   148→      {review.note && <span className="block text-muted-foreground">یادداشت کارشناس: {review.note}</span>}
+   149→    </div>
+   150→  )
+   151→}
+   152→
+   153→/** فرم مرور کارشناسی تصویر مزار — ارتقای برچسب تأیید (تقاضای کارفرما) */
+   154→function ExpertReviewDialog({ m, b, open, onClose, onSubmit }: {
+   155→  m: Martyr
+   156→  b: MartyrBurial
+   157→  open: boolean
+   158→  onClose: () => void
+   159→  onSubmit: (v: { verdict: ReviewVerdict; reviewer: string; note?: string }) => void
+   160→}) {
+   161→  const [verdict, setVerdict] = useState<ReviewVerdict>('approved')
+   162→  const [reviewer, setReviewer] = useState('')
+   163→  const [note, setNote] = useState('')
+   164→  const ok = reviewer.trim().length >= 3
+   165→
+   166→  return (
+   167→    <Dialog open={open} onOpenChange={v => !v && onClose()}>
+   168→      <DialogContent className="max-w-lg">
+   169→        <DialogHeader>
+   170→          <DialogTitle className="text-right text-lg font-extrabold text-primary">🧑‍⚖ مرور کارشناسی تصویر مزار — شهید {m.name}</DialogTitle>
+   171→        </DialogHeader>
+   172→        {b.photo && (
+   173→          <div className="flex gap-3">
+   174→            <img src={b.photo.url} alt="تصویر موضوع مرور" className="h-28 w-28 shrink-0 rounded-lg border object-cover" />
+   175→            <div className="space-y-1 text-[11px] leading-5 text-muted-foreground">
+   176→              <p><b className="text-foreground">کپشن ثبت‌شده:</b> {b.photo.caption}</p>
+   177→              <p><b className="text-foreground">منبع تصویر:</b> {b.photo.sourceName}</p>
+   178→              <p><b className="text-foreground">آرامگاه:</b> {b.cemetery}، {b.city} {b.detail ? `— ${b.detail}` : ''}</p>
+   179→            </div>
+   180→          </div>
+   181→        )}
+   182→        <div className="space-y-2">
+   183→          <div className="text-xs font-extrabold">نتیجه مرور:</div>
+   184→          <div className="space-y-1.5">
+   185→            {(Object.keys(VERDICT_LABELS) as ReviewVerdict[]).map(v => (
+   186→              <label key={v} className={`flex cursor-pointer items-start gap-2 rounded-lg border p-2 text-[11.5px] leading-5 transition-colors ${verdict === v ? VERDICT_TONE[v] : 'border-border hover:bg-muted/50'}`}>
+   187→                <input type="radio" name="verdict" checked={verdict === v} onChange={() => setVerdict(v)} className="mt-0.5 accent-[var(--primary)]" />
+   188→                <span>{VERDICT_LABELS[v]}</span>
+   189→              </label>
+   190→            ))}
+   191→          </div>
+   192→          <label className="block pt-1 text-xs font-extrabold" htmlFor="reviewer-name">نام کارشناس (الزامی)</label>
+   193→          <input
+   194→            id="reviewer-name"
+   195→            value={reviewer}
+   196→            onChange={e => setReviewer(e.target.value)}
+   197→            placeholder="مثلاً: کارشناس آرشیو بنیاد شهید"
+   198→            className="w-full rounded-lg border bg-background px-3 py-2 text-xs font-bold"
+   199→          />
+   200→          <label className="block pt-1 text-xs font-extrabold" htmlFor="review-note">یادداشت مرور (اختیاری)</label>
+   201→          <textarea
+   202→            id="review-note"
+   203→            value={note}
+   204→            onChange={e => setNote(e.target.value)}
+   205→            rows={3}
+   206→            placeholder="توضیح کوتاه درباره مبنای تأیید یا عدم تأیید تصویر (مثلاً تطابق سنگ مزار با مشخصات ثبت‌شده)"
+   207→            className="w-full rounded-lg border bg-background px-3 py-2 text-xs leading-6"
+   208→          />
+   209→          <p className="text-[10px] leading-5 text-muted-foreground">
+   210→            گردش کار: تصویر با برچسب «در انتظار مرور کارشناس» ثبت می‌شود؛ تأیید کارشناس برچسب را به «تأیید کارشناسی» ارتقا می‌دهد و عدم تطابق، تصویر را از نمایش مزار خارج می‌کند. در این نسخه نمایشی نتیجه مرور در مرورگر شما ثبت می‌شود.
+   211→          </p>
+   212→        </div>
+   213→        <div className="flex justify-start gap-2">
+   214→          <Button
+   215→            size="sm"
+   216→            disabled={!ok}
+   217→            onClick={() => { onSubmit({ verdict, reviewer: reviewer.trim(), note: note.trim() || undefined }); setReviewer(''); setNote('') }}
+   218→            className="font-bold"
+   219→          >
+   220→            ثبت نتیجه مرور
+   221→          </Button>
+   222→          <Button size="sm" variant="outline" onClick={onClose}>انصراف</Button>
+   223→        </div>
+   224→      </DialogContent>
+   225→    </Dialog>
+   226→  )
+   227→}
+   228→
+   229→/** فرم اشتراک خاطره بازدیدکننده (تقاضای کارفرما) */
+   230→function ShareMemoryDialog({ m, open, onClose, onSubmit }: {
+   231→  m: Martyr
+   232→  open: boolean
+   233→  onClose: () => void
+   234→  onSubmit: (v: { name: string; city?: string; text: string }) => void
+   235→}) {
+   236→  const [name, setName] = useState('')
+   237→  const [city, setCity] = useState('')
+   238→  const [text, setText] = useState('')
+   239→  const [consent, setConsent] = useState(false)
+   240→  const ok = name.trim().length >= 2 && text.trim().length >= 15 && consent
+   241→
+   242→  return (
+   243→    <Dialog open={open} onOpenChange={v => !v && onClose()}>
+   244→      <DialogContent className="max-w-lg">
+   245→        <DialogHeader>
+   246→          <DialogTitle className="text-right text-lg font-extrabold text-primary">✍ اشتراک خاطره از شهید {m.name}</DialogTitle>
+   247→        </DialogHeader>
+   248→        <div className="space-y-2.5">
+   249→          <div className="grid grid-cols-2 gap-2">
+   250→            <div>
+   251→              <label className="mb-1 block text-xs font-extrabold" htmlFor="vm-name">نام شما *</label>
+   252→              <input id="vm-name" value={name} onChange={e => setName(e.target.value)} placeholder="نام و نام خانوادگی"
+   253→                className="w-full rounded-lg border bg-background px-3 py-2 text-xs font-bold" />
+   254→            </div>
+   255→            <div>
+   256→              <label className="mb-1 block text-xs font-extrabold" htmlFor="vm-city">شهر / رابطه (اختیاری)</label>
+   257→              <input id="vm-city" value={city} onChange={e => setCity(e.target.value)} placeholder="مثلاً: همرزم سابق"
+   258→                className="w-full rounded-lg border bg-background px-3 py-2 text-xs font-bold" />
+   259→            </div>
+   260→          </div>
+   261→          <div>
+   262→            <label className="mb-1 block text-xs font-extrabold" htmlFor="vm-text">متن خاطره *</label>
+   263→            <textarea id="vm-text" value={text} onChange={e => setText(e.target.value)} rows={5}
+   264→              placeholder="خاطره‌ای که از این شهید به یاد دارید؛ پرهیز از جزئیات عملیاتی حساس و رعایت احترام شهدا"
+   265→              className="w-full rounded-lg border bg-background px-3 py-2 text-xs leading-6" />
+   266→          </div>
+   267→          <label className="flex cursor-pointer items-start gap-2 text-[11px] leading-5">
+   268→            <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 accent-[var(--primary)]" />
+   269→            <span>می‌پذیرم این خاطره پس از مرور کارشناس و تأیید منتشر شود و محتوای آن خاطره شخصی از شهید است، نه داده عملیاتی حساس.</span>
+   270→          </label>
+   271→          <p className="text-[10px] leading-5 text-muted-foreground">
+   272→            حریم خصوصی: در این نسخه نمایشی، خاطره شما فقط در همین مرورگر (Local Storage) به‌صورت «در انتظار تأیید کارشناس» ذخیره می‌شود و به سروری ارسال نمی‌گردد.
+   273→          </p>
+   274→        </div>
+   275→        <div className="flex justify-start gap-2">
+   276→          <Button size="sm" disabled={!ok} onClick={() => { onSubmit({ name: name.trim(), city: city.trim() || undefined, text: text.trim() }); setName(''); setCity(''); setText(''); setConsent(false) }} className="font-bold">
+   277→            ثبت خاطره
+   278→          </Button>
+   279→          <Button size="sm" variant="outline" onClick={onClose}>انصراف</Button>
+   280→        </div>
+   281→      </DialogContent>
+   282→    </Dialog>
+   283→  )
+   284→}
+   285→
+   286→/** کارتابل مرور کارشناسی — ثبت یکجای نتیجه مرور برای چند تصویر منتخب (ارتقای گروهی برچسب‌ها) */
+   287→function ReviewDocketDialog({ rows, open, onClose, onSubmit }: {
+   288→  rows: { m: Martyr; b: MartyrBurial; current?: GravePhotoReview }[]
+   289→  open: boolean
+   290→  onClose: () => void
+   291→  onSubmit: (v: { verdict: ReviewVerdict; reviewer: string; note?: string; keys: string[] }) => void
+   292→}) {
+   293→  const [verdict, setVerdict] = useState<ReviewVerdict>('approved')
+   294→  const [reviewer, setReviewer] = useState('')
+   295→  const [note, setNote] = useState('')
+   296→  const [picked, setPicked] = useState<Record<string, boolean>>({})
+   297→  const checked = rows.filter(r => picked[`${r.m.id}|${r.b.photo!.url}`])
+   298→  const ok = reviewer.trim().length >= 3 && checked.length > 0
+   299→
+   300→  return (
+   301→    <Dialog open={open} onOpenChange={v => !v && onClose()}>
+   302→      <DialogContent className="max-w-xl">
+   303→        <DialogHeader>
+   304→          <DialogTitle className="text-right text-lg font-extrabold text-primary">🧑‍⚖ کارتابل مرور کارشناسی تصاویر مزار</DialogTitle>
+   305→        </DialogHeader>
+   306→        <div className="space-y-2">
+   307→          <div className="grid grid-cols-2 gap-2">
+   308→            <div>
+   309→              <label className="mb-1 block text-xs font-extrabold" htmlFor="docket-reviewer">نام کارشناس (الزامی)</label>
+   310→              <input id="docket-reviewer" value={reviewer} onChange={e => setReviewer(e.target.value)}
+   311→                placeholder="مثلاً: کارشناس آرشیو بنیاد شهید"
+   312→                className="w-full rounded-lg border bg-background px-3 py-2 text-xs font-bold" />
+   313→            </div>
+   314→            <div>
+   315→              <label className="mb-1 block text-xs font-extrabold" htmlFor="docket-verdict">نتیجه مرور برای موارد علامت‌خورده</label>
+   316→              <select id="docket-verdict" value={verdict} onChange={e => setVerdict(e.target.value as ReviewVerdict)}
+   317→                className="w-full rounded-lg border bg-background px-3 py-2 text-xs font-bold">
+   318→                {(Object.keys(VERDICT_LABELS) as ReviewVerdict[]).map(v => (
+   319→                  <option key={v} value={v}>{VERDICT_LABELS[v].split(' (')[0]}</option>
+   320→                ))}
+   321→              </select>
+   322→            </div>
+   323→          </div>
+   324→          <label className="block text-xs font-extrabold" htmlFor="docket-note">یادداشت مرور (اختیاری — برای همه موارد علامت‌خورده ثبت می‌شود)</label>
+   325→          <textarea id="docket-note" value={note} onChange={e => setNote(e.target.value)} rows={2}
+   326→            placeholder="مبنای هویت‌سنجی؛ مثلاً تطبیق سنگ مزار با مشخصات رسمی آرامگاه"
+   327→            className="w-full rounded-lg border bg-background px-3 py-2 text-xs leading-6" />
+   328→          <div className="max-h-64 space-y-1 overflow-y-auto rounded-xl border p-2 scrollbar-thin">
+   329→            {rows.map(r => {
+   330→              const key = `${r.m.id}|${r.b.photo!.url}`
+   331→              return (
+   332→                <label key={key} className="flex cursor-pointer items-center gap-2 rounded-lg p-1.5 text-[11px] leading-5 hover:bg-muted/50">
+   333→                  <input type="checkbox" checked={!!picked[key]} onChange={e => setPicked(p => ({ ...p, [key]: e.target.checked }))} className="accent-[var(--primary)]" />
+   334→                  <img src={r.b.photo!.url} alt="" loading="lazy" className="h-9 w-12 shrink-0 rounded border object-cover" />
+   335→                  <span className="min-w-0 flex-1 truncate font-bold">شهید {r.m.name}</span>
+   336→                  <span className={`shrink-0 rounded border px-1.5 py-0.5 text-[9px] font-bold ${r.current ? VERDICT_TONE[r.current.verdict] : 'border-border text-muted-foreground'}`}>
+   337→                    {r.current ? VERDICT_LABELS[r.current.verdict].split(' (')[0] : 'در انتظار مرور'}
+   338→                  </span>
+   339→                </label>
+   340→              )
+   341→            })}
+   342→          </div>
+   343→          <p className="text-[10px] leading-5 text-muted-foreground">
+   344→            نتیجه مرور شما برای موارد علامت‌خورده یکجا ثبت می‌شود و بر پیش‌مرور آرشیو موزه اولویت دارد؛ برچسب هر تصویر بلافاصله ارتقا می‌یابد. عدم تطابق، تصویر را از نمایش مزار خارج می‌کند.
+   345→          </p>
+   346→        </div>
+   347→        <div className="flex justify-start gap-2">
+   348→          <Button size="sm" disabled={!ok} onClick={() => { onSubmit({ verdict, reviewer: reviewer.trim(), note: note.trim() || undefined, keys: checked.map(r => `${r.m.id}|${r.b.photo!.url}`) }); setReviewer(''); setNote('') }} className="font-bold">
+   349→            ثبت مرور برای {toFa(checked.length)} تصویر
+   350→          </Button>
+   351→          <Button size="sm" variant="outline" onClick={onClose}>انصراف</Button>
+   352→        </div>
+   353→      </DialogContent>
+   354→    </Dialog>
+   355→  )
+   356→}
+   357→
+   358→function MemoryCard({ m, b, mems, visitorCount, review, onOpen, onShare, onReview }: {
+   359→  m: Martyr
+   360→  b?: MartyrBurial
+   361→  mems: MartyrMemory[]
+   362→  visitorCount: number
+   363→  review?: GravePhotoReview
+   364→  onOpen: () => void
+   365→  onShare: () => void
+   366→  onReview: () => void
+   367→}) {
+   368→  return (
+   369→    <Card className="museum-card cursor-pointer transition-colors hover:border-primary/50" onClick={onOpen}>
+   370→      <CardContent className="space-y-3 p-4">
+   371→        <div className="flex gap-3">
+   372→          <Portrait m={m} className="h-28 w-24 shrink-0" />
+   373→          <div className="min-w-0 flex-1">
+   374→            <div className="font-extrabold">شهید {m.name}</div>
+   375→            <div className="mt-1 text-[11px] leading-5 text-muted-foreground">🗓 شهادت: {m.dateLabel ?? formatJalali(m.martyrdomDate)}</div>
+   376→            <div className="mt-1 text-[11px] leading-5 text-muted-foreground">
+   377→              🕌 {b ? `${b.cemetery} — ${b.city}` : 'اطلاعات آرامگاه در انتظار استخراج'}
+   378→            </div>
+   379→            {b?.detail && <div className="mt-0.5 line-clamp-2 text-[10px] leading-5 text-muted-foreground">{b.detail}</div>}
+   380→            <div className="mt-2 flex flex-wrap gap-1">
+   381→              {mems.length > 0 && <Badge variant="outline" className="text-[10px]">📜 {toFa(mems.length)} مدخل خاطره و روایت</Badge>}
+   382→              {visitorCount > 0 && <Badge variant="outline" className="border-sky-500/40 bg-sky-500/10 text-[10px] text-sky-300">✍ {toFa(visitorCount)} خاطره بازدیدکنندگان</Badge>}
+   383→              <ConfidenceBadge c={b?.confidence ?? 'C'} />
+   384→            </div>
+   385→          </div>
+   386→        </div>
+   387→        {b?.photo && <GraveFigure b={b} review={review} className="h-40 w-full" />}
+   388→        <div className="flex flex-wrap gap-1.5" onClick={e => e.stopPropagation()}>
+   389→          <Button size="sm" variant="outline" className="h-7 px-2 text-[10.5px] font-extrabold" onClick={onShare}>✍ اشتراک خاطره</Button>
+   390→          {b?.photo && (
+   391→            <Button size="sm" variant="outline" className="h-7 px-2 text-[10.5px] font-extrabold" onClick={onReview}>
+   392→              🧑‍⚖ مرور کارشناسی مزار{review?.verdict === 'approved' ? ' ✓' : ''}
+   393→            </Button>
+   394→          )}
+   395→        </div>
+   396→      </CardContent>
+   397→    </Card>
+   398→  )
+   399→}
+   400→
+   401→function DetailDialog({ m, b, mems, vMems, review, onClose, onShare, onReview, onDeleteVisitor }: {
+   402→  m: Martyr | null
+   403→  b?: MartyrBurial
+   404→  mems: MartyrMemory[]
+   405→  vMems: VisitorMemory[]
+   406→  review?: GravePhotoReview
+   407→  onClose: () => void
+   408→  onShare: () => void
+   409→  onReview: () => void
+   410→  onDeleteVisitor: (id: string) => void
+   411→}) {
+   412→  if (!m) return null
+   413→  return (
+   414→    <Dialog open={!!m} onOpenChange={v => !v && onClose()}>
+   415→      <DialogContent className="max-h-[88vh] max-w-3xl overflow-y-auto scrollbar-thin">
+   416→        <DialogHeader>
+   417→          <DialogTitle className="text-right text-2xl font-extrabold text-primary">شهید {m.name} — خاطرات و آرامگاه</DialogTitle>
+   418→        </DialogHeader>
+   419→        <div className="grid gap-4 md:grid-cols-[190px_1fr]">
+   420→          <Portrait m={m} className="aspect-[3/4] w-full md:aspect-auto md:h-56" />
+   421→          <div className="space-y-2 text-sm">
+   422→            <p className="text-xs leading-6"><span className="font-extrabold">شهادت: </span>{m.dateLabel ?? formatJalali(m.martyrdomDate)} — {m.place}</p>
+   423→            <p className="text-xs leading-6"><span className="font-extrabold">مسئولیت: </span>{m.role}</p>
+   424→            {b ? (
+   425→              <>
+   426→                <div className="rounded-xl border bg-primary/5 p-3">
+   427→                  <div className="mb-1 text-xs font-extrabold text-primary">🕌 محل دفن — آدرس و شماره قبر</div>
+   428→                  <p className="text-xs leading-6"><b>{b.cemetery}</b> — {b.city}</p>
+   429→                  <p className="text-xs leading-6"><b>شماره قبر / محل قرارگیری: </b>{b.detail ?? <span className="text-muted-foreground">در انتظار تأیید کارشناس</span>}</p>
+   430→                  {b.note && <p className="mt-1 text-[11px] leading-6 text-muted-foreground">{b.note}</p>}
+   431→                  <div className="mt-2 text-[11px] text-muted-foreground">
+   432→                    منبع: {b.sourceUrl ? (
+   433→                      <a href={b.sourceUrl} target="_blank" rel="noreferrer" className="font-bold text-primary underline decoration-primary/40 hover:decoration-primary">{b.sourceName}</a>
+   434→                    ) : b.sourceName}
+   435→                  </div>
+   436→                </div>
+   437→                {b.photo && (
+   438→                  <div className="space-y-1">
+   439→                    <GraveFigure b={b} review={review} className="h-52 w-full" />
+   440→                    <p className="text-[10px] leading-5 text-muted-foreground">تصویر: {b.photo.caption} — منبع: {b.photo.sourceName}</p>
+   441→                    {review && <ReviewInfoLine review={review} />}
+   442→                  </div>
+   443→                )}
+   444→              </>
+   445→            ) : (
+   446→              <p className="rounded-xl border border-dashed p-3 text-xs leading-6 text-muted-foreground">اطلاعات آرامگاه این شهید هنوز استخراج نشده است؛ مطابق سیاست موزه، به‌جای حدس، فقط داده‌های مستند نمایش داده می‌شود.</p>
+   447→            )}
+   448→            {/* دکمه‌های مشارکت — تقاضای کارفرما */}
+   449→            <div className="flex flex-wrap gap-2 pt-1">
+   450→              <Button size="sm" className="font-bold" onClick={onShare}>✍ اشتراک خاطره</Button>
+   451→              {b?.photo && (
+   452→                <Button size="sm" variant="outline" className="font-bold" onClick={onReview}>
+   453→                  🧑‍⚖ مرور کارشناسی تصویر مزار
+   454→                </Button>
+   455→              )}
+   456→            </div>
+   457→          </div>
+   458→        </div>
+   459→        <div className="space-y-2">
+   460→          <div className="flex items-center gap-2">
+   461→            <h4 className="text-sm font-extrabold text-primary">خاطرات، وصیت‌ها و روایت‌ها</h4>
+   462→            <Badge variant="outline" className="text-[10px]">{toFa(mems.length)} مدخل</Badge>
+   463→          </div>
+   464→          {mems.length > 0 ? (
+   465→            <div className="space-y-2">{mems.map(mem => <MemoryItem key={mem.id} mem={mem} />)}</div>
+   466→          ) : (
+   467→            <p className="rounded-xl border border-dashed p-3 text-xs leading-6 text-muted-foreground">برای این شهید در این جمع‌بندی خاطره‌ای با ارجاع دقیق یافت نشد؛ به‌جای نقل نامعین، این شفاف‌سازی ثبت شده است.</p>
+   468→          )}
+   469→        </div>
+   470→        <div className="space-y-2">
+   471→          <div className="flex items-center gap-2">
+   472→            <h4 className="text-sm font-extrabold text-primary">خاطرات بازدیدکنندگان این تالار</h4>
+   473→            <Badge variant="outline" className="text-[10px]">{toFa(vMems.length)} ثبت</Badge>
+   474→          </div>
+   475→          {vMems.length > 0 ? (
+   476→            <div className="space-y-2">{vMems.map(vm => <VisitorMemoryItem key={vm.id} mem={vm} onDelete={() => onDeleteVisitor(vm.id)} />)}</div>
+   477→          ) : (
+   478→            <p className="rounded-xl border border-dashed p-3 text-xs leading-6 text-muted-foreground">
+   479→              هنوز خاطره‌ای از بازدیدکنندگان ثبت نشده است؛ با دکمه «✍ اشتراک خاطره» می‌توانید نخستین نفر باشید. خاطره شما پس از مرور کارشناس با برچسب تأیید منتشر می‌شود.
+   480→            </p>
+   481→          )}
+   482→        </div>
+   483→        {m.dateNote && <p className="rounded-lg bg-amber-500/10 p-2 text-[11px] leading-6 text-amber-500">🗓 {m.dateNote}</p>}
+   484→        <p className="text-[10px] leading-5 text-muted-foreground">
+   485→          یادآوری سیاست موزه: خاطرات فقط از منابع بازِ مشخص جمع‌آوری شده‌اند؛ نقل‌های مستقیم با برچسب مشخص شده‌اند، خاطرات بازدیدکنندگان تا تأیید کارشناس «در انتظار تأیید» نمایش داده می‌شوند و مغایرت منابع شفاف ثبت می‌شود.
+   486→        </p>
+   487→      </DialogContent>
+   488→    </Dialog>
+   489→  )
+   490→}
+   491→
+   492→export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: string) => void; focusId?: string }) {
+   493→  const [q, setQ] = useState('')
+   494→  const [onlyMemoirs, setOnlyMemoirs] = useState(false)
+   495→  const [onlyGravePhoto, setOnlyGravePhoto] = useState(false)
+   496→  const [openOverride, setOpenOverride] = useState<Martyr | null>(null)
+   497→  const [dismissedFocus, setDismissedFocus] = useState<string | null>(null)
+   498→  const [shareFor, setShareFor] = useState<Martyr | null>(null)
+   499→  const [reviewFor, setReviewFor] = useState<Martyr | null>(null)
+   500→  const [docketOpen, setDocketOpen] = useState(false)
+   501→  const { reviewOf, submitReview } = useGravePhotoReviews()
+   502→  // خاطرات بازدیدکنندگان جدا از خاطرات آرشیوی نگه داشته می‌شود تا نوع‌ها مخلوط نشوند
+   503→  const { memories: visitorMems, addMemory, removeMemory } = useVisitorMemories()
+   504→  const visitorMemoriesOf = useCallback((martyrId: string) => visitorMems.filter(vm => vm.martyrId === martyrId), [visitorMems])
+   505→  const { toast } = useToast()
+   506→
+   507→  // باز شدن خودکار پرونده شهید از پیوند دیگر تالارها — حالت مشتق‌شده از focusId (بدون setState در effect)
+   508→  const openFromParam = focusId && focusId !== dismissedFocus ? MARTYRS.find(x => x.id === focusId) ?? null : null
+   509→  const open = openOverride ?? openFromParam
+   510→
+   511→  const rows = useMemo(() => {
+   512→    return [...MARTYRS]
+   513→      .sort((a, b2) => a.martyrdomDate.localeCompare(b2.martyrdomDate))
+   514→      .map(m => ({ m, b: burialOf(m.id), mems: memoriesOf(m.id), vmems: visitorMemoriesOf(m.id) }))
+   515→      .filter(r => {
+   516→        if (q && !`${r.m.name} ${r.m.knownAs ?? ''}`.includes(q.trim())) return false
+   517→        if (onlyMemoirs && r.mems.filter(x => x.kind !== 'museum-note').length === 0 && r.vmems.length === 0) return false
+   518→        if (onlyGravePhoto && !r.b?.photo) return false
+   519→        return true
+   520→      })
+   521→  }, [q, onlyMemoirs, onlyGravePhoto, visitorMemoriesOf])
+   522→
+   523→  const totalMems = MARTYR_MEMORIES.filter(x => x.kind !== 'museum-note').length
+   524→  const totalPhotos = MARTYR_BURIALS.filter(b => b.photo).length
+   525→
+   526→  // کارتابل مرور کارشناسی — وضعیت هر ۱۸ تصویر مزار بر پایه پیش‌مرور موزه و مرورهای نام‌دار
+   527→  const docketRows = useMemo(
+   528→    () => MARTYR_BURIALS
+   529→      .filter(b => b.photo)
+   530→      .map(b => ({
+   531→        m: MARTYRS.find(x => x.id === b.martyrId),
+   532→        b,
+   533→        current: reviewOf(b.martyrId, b.photo!.url),
+   534→      }))
+   535→      .filter(r => r.m) as { m: Martyr; b: MartyrBurial; current?: GravePhotoReview }[],
+   536→    [reviewOf],
+   537→  )
+   538→  const docketCounts = useMemo(() => {
+   539→    const c = { approved: 0, context: 0, 'needs-more': 0, rejected: 0, pending: 0 }
+   540→    for (const r of docketRows) {
+   541→      const v = r.current?.verdict
+   542→      if (!v) c.pending++
+   543→      else c[v]++
+   544→    }
+   545→    return c
+   546→  }, [docketRows])
+   547→
+   548→  return (
+   549→    <div className="space-y-8">
+   550→      <section className="hero-vignette rounded-3xl border p-6 md:p-10">
+   551→        <Badge variant="outline" className="mb-3">تالار جدید — به‌روزرسانی تصاویر و خاطرات</Badge>
+   552→        <h1 className="museum-title text-2xl font-extrabold leading-tight md:text-4xl">خاطرات شهدا و آرامگاه‌ها</h1>
+   553→        <p className="mt-2 text-sm font-bold text-primary">جمع‌آوری خاطرات و روایت‌های شهدای جنگ تحمیلی از منابع اینترنتی + عکس و مشخصات محل دفن</p>
+   554→        <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
+   555→          در این تالار، خاطرات، وصیت‌ها و روایت‌های شهدای شاخص دفاع مقدس از منابع بازِ اینترنت (نوید شاهد، گلزار شهدا، مراکز اسناد، خبرگزاری‌ها) با آدرس دقیق منبع جمع‌آوری شده است. مشخصات آرامگاه هر شهید (گلزار، شهر، قطعه و ردیف) و تصویر مزار یا یادمان او همراه با برچسب وضعیت ثبت شده است؛ همه تصاویر از «مرور تصویری آرشیو موزه» گذشته‌اند و کارشناس نام‌دار می‌تواند با دکمه مرور کارشناسی، نتیجه هویت‌سنجی نهایی را ثبت کند و برچسب را ارتقا دهد. جایی که عکس مزار اختصاصی در دسترس نباشد، صریحاً گفته می‌شود و تصویر کلی گلزار به‌عنوان «تصویر زمینه» برچسب می‌خورد؛ موزه هیچ داده‌ای را از خود نمی‌سازد.
+   556→        </p>
+   557→        <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
+   558→          <Badge variant="outline">📜 {toFa(totalMems)} مدخل خاطره/روایت</Badge>
+   559→          <Badge variant="outline">🖼 {toFa(totalPhotos)} تصویر مزار/یادمان</Badge>
+   560→          <Badge variant="outline">🕌 {toFa(MARTYR_BURIALS.length)} پرونده آرامگاه</Badge>
+   561→          <Badge variant="outline">🔗 هر مدخل با منبع اصلی</Badge>
+   562→          <Badge variant="outline" className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300">🧑‍⚖ مرور کارشناسی تصاویر فعال است</Badge>
+   563→        </div>
+   564→      </section>
+   565→
+   566→      {/* کارتابل مرور کارشناسی تصاویر مزار — پیش‌مرور مستند + امکان ثبت مرور نام‌دار گروهی */}
+   567→      <section className="rounded-2xl border bg-card/60 p-4">
+   568→        <div className="mb-3 flex flex-wrap items-center gap-2">
+   569→          <h3 className="text-sm font-extrabold text-primary">🧑‍⚖ کارتابل مرور کارشناسی تصاویر مزار</h3>
+   570→          <Badge variant="outline" className="text-[10px]">🟢 {toFa(docketCounts.approved)} تأیید کارشناسی</Badge>
+   571→          <Badge variant="outline" className="text-[10px]">⌂ {toFa(docketCounts.context)} تصویر زمینه</Badge>
+   572→          <Badge variant="outline" className="text-[10px]">⏳ {toFa(docketCounts['needs-more'])} نیازمند بررسی تکمیلی</Badge>
+   573→          <Badge variant="outline" className="text-[10px]">✕ {toFa(docketCounts.rejected)} خارج از نمایش</Badge>
+   574→          <Button size="sm" variant="outline" className="mr-auto h-7 px-2 text-[10.5px] font-extrabold" onClick={() => setDocketOpen(true)}>
+   575→            🧑‍⚖ ثبت مرور نام‌دار کارشناس (گروهی)
+   576→          </Button>
+   577→        </div>
+   578→        <div className="max-h-96 space-y-1.5 overflow-y-auto pr-1 scrollbar-thin">
+   579→          {docketRows.map(r => (
+   580→            <div key={r.m.id} className="flex items-center gap-2.5 rounded-xl border bg-background/40 p-2">
+   581→              <img src={r.b.photo!.url} alt={`تصویر مزار شهید ${r.m.name}`} loading="lazy"
+   582→                className={`h-11 w-16 shrink-0 rounded-lg border object-cover ${r.current?.verdict === 'rejected' ? 'opacity-30 grayscale' : ''}`} />
+   583→              <div className="min-w-0 flex-1">
+   584→                <div className="truncate text-[12px] font-extrabold">شهید {r.m.name}
+   585→                  <span className="mr-1.5 text-[10px] font-normal text-muted-foreground">— {r.b.cemetery}</span>
+   586→                </div>
+   587→                {r.current?.note && <div className="truncate text-[10.5px] leading-5 text-muted-foreground">{r.current.note}</div>}
+   588→              </div>
+   589→              <span className={`shrink-0 rounded border px-1.5 py-0.5 text-[9px] font-extrabold ${r.current ? VERDICT_TONE[r.current.verdict] : 'bg-black/70 text-amber-300 border-amber-400/30'}`}>
+   590→                {r.current ? VERDICT_LABELS[r.current.verdict].split(' (')[0] : 'در انتظار مرور'}
+   591→              </span>
+   592→            </div>
+   593→          ))}
+   594→        </div>
+   595→        <p className="mt-2 text-[10px] leading-5 text-muted-foreground">
+   596→          مبنای پیش‌مرور: تطبیق تک‌تک تصاویر با کپشن واقعی منبع جست‌وجو، متن سنگ مزار (نام شهید)، نشانه‌گر قطعه/ردیف/مزار و پرتره. موارد «نیازمند بررسی تکمیلی» پرتره همخوان دارند ولی متن سنگ در کیفیت موجود خوانا نیست؛ کارشناس می‌تواند همه را یکجا در دکمه «ثبت مرور نام‌دار» نهایی کند. برچسب‌های «در انتظار مرور» صرفاً برای تصاویری است که هنوز مرور ثبت نشده است.
+   597→        </p>
+   598→      </section>
+   599→
+   600→      {/* گردش کار مشارکت و مرور — تقاضای کارفرما */}
+   601→      <section className="rounded-2xl border bg-card/60 p-4">
+   602→        <div className="grid gap-3 md:grid-cols-2">
+   603→          <div className="rounded-xl border bg-emerald-500/5 p-3">
+   604→            <div className="mb-1 text-xs font-extrabold text-emerald-400">🧑‍⚖ گردش کار مرور کارشناسی تصاویر مزار</div>
+   605→            <ol className="list-inside list-decimal space-y-1 text-[11.5px] leading-6 text-muted-foreground">
+   606→              <li>هر تصویر هنگام ثبت، با «پیش‌مرور مستند آرشیو موزه» برچسب‌گذاری می‌شود (تأیید / تصویر زمینه / عدم تطابق / نیازمند بررسی تکمیلی).</li>
+   607→              <li>کارشناس تصویر را با مشخصات رسمی آرامگاه (قطعه، ردیف، شماره قبر) می‌سنجد و مرور نام‌دار ثبت می‌کند؛ مرور او بر پیش‌مرور اولویت دارد.</li>
+   608→              <li>تأیید ⟵ برچسب به «تأیید کارشناسی» با نام کارشناس ارتقا می‌یابد؛ عدم تطابق ⟵ تصویر از نمایش خارج و شفاف ثبت می‌شود.</li>
+   609→              <li>نتیجه مرور، نام، تاریخ و یادداشت کارشناس در پرونده شهید ثبت و نمایش داده می‌شود.</li>
+   610→            </ol>
+   611→          </div>
+   612→          <div className="rounded-xl border bg-sky-500/5 p-3">
+   613→            <div className="mb-1 text-xs font-extrabold text-sky-400">✍ اشتراک خاطره از بازدیدکنندگان</div>
+   614→            <ol className="list-inside list-decimal space-y-1 text-[11.5px] leading-6 text-muted-foreground">
+   615→              <li>روی پرونده هر شهید، دکمه «اشتراک خاطره» را بزنید.</li>
+   616→              <li>خاطره با نام شما و برچسب «در انتظار تأیید کارشناس» ثبت می‌شود.</li>
+   617→              <li>پس از مرور کارشناس، خاطره تأییدشده کنار خاطرات آرشیوی منتشر می‌شود.</li>
+   618→              <li>در این نسخه نمایشی، خاطرات در مرورگر خودتان ذخیره می‌شود و به سرور ارسال نمی‌گردد.</li>
+   619→            </ol>
+   620→          </div>
+   621→        </div>
+   622→      </section>
+   623→
+   624→      <div className="flex flex-wrap items-center gap-2 rounded-2xl border bg-card/60 p-3">
+   625→        <input
+   626→          value={q}
+   627→          onChange={e => setQ(e.target.value)}
+   628→          placeholder="جست‌وجوی نام شهید…"
+   629→          className="w-56 rounded-lg border bg-background px-3 py-1.5 text-xs font-bold"
+   630→          aria-label="جست‌وجوی شهید"
+   631→        />
+   632→        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-bold">
+   633→          <input type="checkbox" checked={onlyMemoirs} onChange={e => setOnlyMemoirs(e.target.checked)} className="accent-[var(--primary)]" />
+   634→          فقط شهیدان دارای خاطره
+   635→        </label>
+   636→        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-bold">
+   637→          <input type="checkbox" checked={onlyGravePhoto} onChange={e => setOnlyGravePhoto(e.target.checked)} className="accent-[var(--primary)]" />
+   638→          فقط دارای عکس مزار
+   639→        </label>
+   640→        <span className="mr-auto text-xs font-bold text-muted-foreground">{toFa(rows.length)} پرونده</span>
+   641→      </div>
+   642→
+   643→      <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
+   644→        {rows.map(r => {
+   645→          const vCount = r.vmems.length
+   646→          const review = r.b?.photo ? reviewOf(r.m.id, r.b.photo.url) : undefined
+   647→          return (
+   648→            <MemoryCard
+   649→              key={r.m.id}
+   650→              m={r.m}
+   651→              b={r.b}
+   652→              mems={r.mems}
+   653→              visitorCount={vCount}
+   654→              review={review}
+   655→              onOpen={() => setOpenOverride(r.m)}
+   656→              onShare={() => setShareFor(r.m)}
+   657→              onReview={() => setReviewFor(r.m)}
+   658→            />
+   659→          )
+   660→        })}
+   661→        {rows.length === 0 && <div className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">پرونده‌ای با این جست‌وجو یافت نشد.</div>}
+   662→      </div>
+   663→
+   664→      <SectionHeader
+   665→        kicker="شفافیت آرشیوی"
+   666→        title="درباره تصاویر پرتره و مزار"
+   667→        desc="پرتره‌ها و تصاویر مزار با جست‌وجوی تصویر وب از منابع عمومی جمع‌آوری و همه از «مرور تصویری آرشیو موزه» گذشته‌اند: نام‌خوانا روی سنگ (دقایقی، خرازی)، نشانه‌گر قطعه/ردیف/مزار همخوان (وزوایی) و تطبیق پرتره، مجوز برچسب «تأیید کارشناسی» گرفته است؛ نمای کلی گلزارها و یادمان‌ها «تصویر زمینه» برچسب خورده و دو مورد مغایر (اینفوگرافیک و سنگ نام‌تطبیق) از نمایش مزار خارج شده است. دکمه «مرور کارشناسی مزار» نتیجه نام‌دار کارشناس را جایگزین پیش‌مرور می‌کند؛ جایگزین نهایی باید از آرشیو رسمی بنیاد شهید و مرکز اسناد دفاع مقدس تأیید شود."
+   668→      />
+   669→
+   670→      <DetailDialog
+   671→        m={open}
+   672→        b={open ? burialOf(open.id) : undefined}
+   673→        mems={open ? memoriesOf(open.id) : []}
+   674→        vMems={open ? visitorMemoriesOf(open.id) : []}
+   675→        review={open && burialOf(open.id)?.photo ? reviewOf(open.id, burialOf(open.id)!.photo!.url) : undefined}
+   676→        onClose={() => { setOpenOverride(null); if (focusId) setDismissedFocus(focusId) }}
+   677→        onShare={() => { setShareFor(open); setOpenOverride(null); setDismissedFocus(focusId ?? null) }}
+   678→        onReview={() => { setReviewFor(open); setOpenOverride(null); setDismissedFocus(focusId ?? null) }}
+   679→        onDeleteVisitor={removeMemory}
+   680→      />
+   681→
+   682→      {shareFor && (
+   683→        <ShareMemoryDialog
+   684→          m={shareFor}
+   685→          open={!!shareFor}
+   686→          onClose={() => setShareFor(null)}
+   687→          onSubmit={v => {
+   688→            addMemory({ martyrId: shareFor.id, ...v })
+   689→            setShareFor(null)
+   690→            toast({ title: 'خاطره شما ثبت شد', description: 'خاطره با برچسب «در انتظار تأیید کارشناس» در پرونده شهید ثبت شد و پس از مرور کارشناس منتشر می‌شود.' })
+   691→          }}
+   692→        />
+   693→      )}
+   694→
+   695→      {reviewFor && burialOf(reviewFor.id)?.photo && (
+   696→        <ExpertReviewDialog
+   697→          m={reviewFor}
+   698→          b={burialOf(reviewFor.id)!}
+   699→          open={!!reviewFor}
+   700→          onClose={() => setReviewFor(null)}
+   701→          onSubmit={v => {
+   702→            submitReview({ photoKey: `${reviewFor.id}|${burialOf(reviewFor.id)!.photo!.url}`, martyrId: reviewFor.id, ...v })
+   703→            setReviewFor(null)
+   704→            toast({
+   705→              title: v.verdict === 'approved' ? 'برچسب تصویر به «تأیید کارشناسی» ارتقا یافت' : 'نتیجه مرور کارشناسی ثبت شد',
+   706→              description: `کارشناس: ${v.reviewer} — نتیجه در پرونده شهید و روی تصویر مزار نمایش داده می‌شود.`,
+   707→            })
+   708→          }}
+   709→        />
+   710→      )}
+   711→
+   712→      {docketOpen && (
+   713→        <ReviewDocketDialog
+   714→          rows={docketRows}
+   715→          open={docketOpen}
+   716→          onClose={() => setDocketOpen(false)}
+   717→          onSubmit={v => {
+   718→            for (const key of v.keys) submitReview({ photoKey: key, martyrId: key.split('|')[0], verdict: v.verdict, reviewer: v.reviewer, note: v.note })
+   719→            setDocketOpen(false)
+   720→            toast({
+   721→              title: `مرور کارشناسی برای ${toFa(v.keys.length)} تصویر ثبت شد`,
+   722→              description: `کارشناس: ${v.reviewer} — برچسب‌های تصاویر علامت‌خورده به «${VERDICT_LABELS[v.verdict].split(' (')[0]}» تغییر یافت.`,
+   723→            })
+   724→          }}
+   725→        />
+   726→      )}
+   727→
+   728→      <button className="sr-only" onClick={() => go('martyrs')}>بازگشت به خط زمانی شهدا</button>
+   729→    </div>
+   730→  )
+   731→}
+   732→

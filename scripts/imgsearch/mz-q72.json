@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "قطعه ۷۲ بهشت زهرا مزار شهیدان رجایی و باهنر سنگ قبر",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0b1ca7107ae2.jpg",
+      "caption": "Microsoft Excel logo: green spreadsheet icon with white \"X\" on blue background, high clarity, no watermark. Suitable for background image.",
+      "source": "officetutorial.net",
+      "original_width": "1500px",
+      "original_height": "885px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1b0b36509670.png",
+      "caption": "Screenshot of a blank Microsoft Excel worksheet titled \"New Microsoft Excel Worksheet - Excel,\" showing the green Home ribbon interface.",
+      "source": "educba.com",
+      "original_width": "1366px",
+      "original_height": "430px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3803dd07893c.png",
+      "caption": "A Microsoft Excel spreadsheet interface showing an empty workbook with ribbon toolbar, mostly blank cells, no watermarks.",
+      "source": "quizlet.com",
+      "original_width": "1024px",
+      "original_height": "508px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/fd0771bfd64d.jpg",
+      "caption": "Microsoft Excel logo centered over tilted green spreadsheet interface screenshots; text includes menu labels like Formulas, Data, Review.",
+      "source": "th.windowsnoticias.com",
+      "original_width": "1200px",
+      "original_height": "674px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f96031a430fe.png",
+      "caption": "Excel interface screenshot labeled Name Box, Formula Bar, Cell, Sheet Tabs, and Scroll Bar with red boxes.",
+      "source": "geeksforgeeks.org",
+      "original_width": "1092px",
+      "original_height": "506px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e076956c7784.png",
+      "caption": "Spreadsheet with market data tables, a 2022-2023 bar chart, and floating chart icon toolbar. Contains charts and extensive data.",
+      "source": "zh-hant.wps.com",
+      "original_width": "1021px",
+      "original_height": "643px"
+    }
+  ]
+}

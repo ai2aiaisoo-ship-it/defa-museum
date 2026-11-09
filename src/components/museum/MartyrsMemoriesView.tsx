@@ -6,10 +6,12 @@ import {
   MARTYR_BURIALS,
   MARTYR_MEMORIES,
   MEMORY_KIND_LABELS,
+  PHOTO_KIND_LABELS,
   memoriesOf,
   burialOf,
   type MartyrMemory,
   type MartyrBurial,
+  type GravePhoto,
 } from '@/data/martyr-memories'
 import { formatJalali, toFa } from '@/lib/jalali'
 import {
@@ -42,6 +44,14 @@ const VERDICT_TONE: Record<ReviewVerdict, string> = {
   rejected: 'border-rose-500/50 bg-rose-500/10 text-rose-300',
   'needs-more': 'border-amber-500/50 bg-amber-500/10 text-amber-400',
   context: 'border-slate-500/50 bg-slate-500/10 text-slate-300',
+}
+
+/** آلت صادقانه بر پایه نوع تصویر — برچسب «مزار» فقط برای سنگ مزار واقعی مجاز است */
+function honestPhotoAlt(m: { name: string }, p: GravePhoto): string {
+  const kind = p.photoKind ?? 'grave'
+  if (kind === 'grave') return `سنگ مزار شهید ${m.name}`
+  if (kind === 'memorial') return `یادمان شهید ${m.name}`
+  return `تصویر زمینه گلزار/یادمان مرتبط با شهید ${m.name}`
 }
 
 function Portrait({ m, className }: { m: Martyr; className?: string }) {
@@ -207,7 +217,7 @@ function ExpertReviewDialog({ m, b, open, onClose, onSubmit }: {
             className="w-full rounded-lg border bg-background px-3 py-2 text-xs leading-6"
           />
           <p className="text-[10px] leading-5 text-muted-foreground">
-            گردش کار: تصویر با برچسب «در انتظار مرور کارشناس» ثبت می‌شود؛ تأیید کارشناس برچسب را به «تأیید کارشناسی» ارتقا می‌دهد و عدم تطابق، تصویر را از نمایش مزار خارج می‌کند. در این نسخه نمایشی نتیجه مرور در مرورگر شما ثبت می‌شود.
+            گردش کار: تصویر با برچسب «در انتظار مرور کارشناس» ثبت می‌شود؛ تأیید کارشناس برچسب را به «تأیید کارشناسی» ارتقا می‌دهد و عدم تطابق، تصویر را از نمایش مزار خارج می‌کند. نتیجه مرور در مرورگر شما ثبت و به‌صورت بی‌همگام روی سرور موزه هم پشتیبان‌گیری می‌شود.
           </p>
         </div>
         <div className="flex justify-start gap-2">
@@ -498,7 +508,7 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
   const [shareFor, setShareFor] = useState<Martyr | null>(null)
   const [reviewFor, setReviewFor] = useState<Martyr | null>(null)
   const [docketOpen, setDocketOpen] = useState(false)
-  const { reviewOf, submitReview } = useGravePhotoReviews()
+  const { reviewOf, submitReview, submitReviewsBatch } = useGravePhotoReviews()
   // خاطرات بازدیدکنندگان جدا از خاطرات آرشیوی نگه داشته می‌شود تا نوع‌ها مخلوط نشوند
   const { memories: visitorMems, addMemory, removeMemory } = useVisitorMemories()
   const visitorMemoriesOf = useCallback((martyrId: string) => visitorMems.filter(vm => vm.martyrId === martyrId), [visitorMems])
@@ -578,7 +588,7 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
         <div className="max-h-96 space-y-1.5 overflow-y-auto pr-1 scrollbar-thin">
           {docketRows.map(r => (
             <div key={r.m.id} className="flex items-center gap-2.5 rounded-xl border bg-background/40 p-2">
-              <img src={r.b.photo!.url} alt={`تصویر مزار شهید ${r.m.name}`} loading="lazy"
+              <img src={r.b.photo!.url} alt={honestPhotoAlt(r.m, r.b.photo!)} loading="lazy"
                 className={`h-11 w-16 shrink-0 rounded-lg border object-cover ${r.current?.verdict === 'rejected' ? 'opacity-30 grayscale' : ''}`} />
               <div className="min-w-0 flex-1">
                 <div className="truncate text-[12px] font-extrabold">شهید {r.m.name}
@@ -586,6 +596,9 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
                 </div>
                 {r.current?.note && <div className="truncate text-[10.5px] leading-5 text-muted-foreground">{r.current.note}</div>}
               </div>
+              <span className="shrink-0 rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[9px] font-extrabold text-muted-foreground">
+                {PHOTO_KIND_LABELS[r.b.photo!.photoKind ?? 'grave']}
+              </span>
               <span className={`shrink-0 rounded border px-1.5 py-0.5 text-[9px] font-extrabold ${r.current ? VERDICT_TONE[r.current.verdict] : 'bg-black/70 text-amber-300 border-amber-400/30'}`}>
                 {r.current ? VERDICT_LABELS[r.current.verdict].split(' (')[0] : 'در انتظار مرور'}
               </span>
@@ -593,7 +606,7 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
           ))}
         </div>
         <p className="mt-2 text-[10px] leading-5 text-muted-foreground">
-          مبنای پیش‌مرور: تطبیق تک‌تک تصاویر با کپشن واقعی منبع جست‌وجو، متن سنگ مزار (نام شهید)، نشانه‌گر قطعه/ردیف/مزار و پرتره. موارد «نیازمند بررسی تکمیلی» پرتره همخوان دارند ولی متن سنگ در کیفیت موجود خوانا نیست؛ کارشناس می‌تواند همه را یکجا در دکمه «ثبت مرور نام‌دار» نهایی کند. برچسب‌های «در انتظار مرور» صرفاً برای تصاویری است که هنوز مرور ثبت نشده است.
+          مبنای پیش‌مرور: تطبیق تک‌تک تصاویر با کپشن واقعی منبع جست‌وجو، متن سنگ مزار (نام شهید)، نشانه‌گر قطعه/ردیف/مزار و پرتره. برچسب نوع تصویر («سنگ مزار» / «یادمان» / «تصویر زمینه») از آنِ هر تصویر جداگانه ثبت می‌شود؛ تصاویر زمینه (نمای گلزار، آرک یادمان هفتم تیر، اینفوگرافیک سانحه سی‌۱۳۰) هرگز برچسب «مزار» نمی‌گیرند. موارد «نیازمند بررسی تکمیلی» پرتره همخوان دارند ولی متن سنگ در کیفیت موجود خوانا نیست؛ کارشناس می‌تواند همه را یکجا در دکمه «ثبت مرور نام‌دار» نهایی کند. همه تصاویر به حافظه محلی موزه بومی‌سازی شده‌اند و منبع اصلی هر تصویر در کپشن ثبت است.
         </p>
       </section>
 
@@ -715,7 +728,8 @@ export function MartyrsMemoriesView({ go, focusId }: { go: (v: string, p?: strin
           open={docketOpen}
           onClose={() => setDocketOpen(false)}
           onSubmit={v => {
-            for (const key of v.keys) submitReview({ photoKey: key, martyrId: key.split('|')[0], verdict: v.verdict, reviewer: v.reviewer, note: v.note })
+            // ثبت گروهی در یک بسته — بدون رقابت نوشتن روی سرور
+            submitReviewsBatch(v.keys.map(key => ({ photoKey: key, martyrId: key.split('|')[0], verdict: v.verdict, reviewer: v.reviewer, note: v.note })))
             setDocketOpen(false)
             toast({
               title: `مرور کارشناسی برای ${toFa(v.keys.length)} تصویر ثبت شد`,

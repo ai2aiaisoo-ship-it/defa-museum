@@ -187,6 +187,8 @@ export function DocsView({ go }: { go: (v: string, p?: string) => void }) {
             <li>هر عدد آماری از نوع <code dir="ltr">StatClaim</code> است: مقدار، واحد، طرف، دوره، منطقه، منبع، روش، درجه اطمینان و توضیح اختلاف.</li>
             <li>داده جغرافیایی مرزها: <code dir="ltr">public/geo/boundaries.json</code> (Natural Earth 1:50m) + شهرها و نمودهای جبهه در <code dir="ltr">src/data/geo.ts</code>.</li>
             <li>اصلاحیه‌های پنل مدیریت در SQLite (Prisma) ذخیره می‌شود.</li>
+            <li>تصاویر مزار، پرتره‌ها و گالری به‌صورت محلی نگهداری می‌شوند (<code dir="ltr">public/images/mazar</code> و <code dir="ltr">public/images/arch</code>)؛ منبع اصلی هر تصویر در کپشن ثبت است.</li>
+            <li>مرورهای نام‌دار کارشناس تصاویر مزار: ذخیره در مرورگر + پشتیبان بی‌همگام روی سرور (<code dir="ltr">api/reviews</code> ← <code dir="ltr">db/mazar-reviews.json</code>)؛ خاطرات بازدیدکنندگان فقط در مرورگر می‌ماند (حریم خصوصی).</li>
           </ul>
         </CardContent></Card>
         <Card><CardContent className="p-5">

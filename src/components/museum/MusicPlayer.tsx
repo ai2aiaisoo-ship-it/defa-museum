@@ -8,6 +8,38 @@ const AUDIO_SRC =
   'https://dl2.mifamusic.ir/Music/1389/03/16/Mohammadreza%20Aligholi%20-%20Khake%20Sorkh/01%20-%20Khak-e-Sorkh.mp3'
 const STORE_KEY = 'defa-music-pref'
 
+/** آیکون‌های SVG — مستقل از فونت ایموجی دستگاه (روی برخی سیستم‌ها ایموجی tofu/بلوک تیره می‌شود) */
+function PlayIcon({ pause = false }: { pause?: boolean }) {
+  return pause ? (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+      <rect x="6" y="5" width="4" height="14" rx="1" />
+      <rect x="14" y="5" width="4" height="14" rx="1" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 translate-x-[1px]" fill="currentColor" aria-hidden="true">
+      <path d="M8 5.5 L19 12 L8 18.5 Z" />
+    </svg>
+  )
+}
+
+function SoundIcon({ muted = false }: { muted?: boolean }) {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      <path d="M4 9.5 h3.5 L12 5.5 v13 L7.5 14.5 H4 Z" fill="currentColor" stroke="none" />
+      {muted ? (
+        <>
+          <path d="M16 9.5 l5 5 M21 9.5 l-5 5" />
+        </>
+      ) : (
+        <>
+          <path d="M15.5 9.2 a4.2 4.2 0 0 1 0 5.6" />
+          <path d="M18.2 7 a7.6 7.6 0 0 1 0 10" />
+        </>
+      )}
+    </svg>
+  )
+}
+
 /**
  * پخش‌کننده موسیقی متن «خاک سرخ» — اثر محمدرضا علیقلی
  * پخش مستقیم از لینک عمومی انتخاب‌شده توسط کارفرما (mifamusic)؛ هیچ فایل جایگزین یا ساخت موزه استفاده نمی‌شود.
@@ -165,16 +197,17 @@ export function MusicPlayer() {
         />
         <Button size="sm" onClick={toggle}
           aria-label={playing ? 'توقف موسیقی' : 'پخش موسیقی'}
-          className="h-8 w-8 rounded-full p-0 text-base leading-none">
-          {playing ? '⏸' : '▶'}
+          className="h-8 w-8 rounded-full p-0 leading-none">
+          <PlayIcon pause={playing} />
         </Button>
         <Button size="sm" variant={muted ? 'secondary' : 'outline'} onClick={() => setMuted(m => !m)}
           aria-label={muted ? 'صدا دادن موسیقی' : 'میوت کردن موسیقی'}
-          className="h-8 rounded-full px-2.5 text-xs font-extrabold">
-          {muted ? '🔇 میوت' : '🔊 صدا'}
+          className="h-8 gap-1 rounded-full px-2.5 text-xs font-extrabold">
+          <SoundIcon muted={muted} />
+          <span>{muted ? 'میوت' : 'صدا'}</span>
         </Button>
         <button onClick={() => setOpen(o => !o)} className="text-[11px] font-extrabold text-muted-foreground hover:text-primary" aria-expanded={open}>
-          {open ? 'بستن ✕' : 'خاک سرخ 🎶'}
+          {open ? 'بستن ✕' : 'خاک سرخ ♪'}
         </button>
       </div>
     </div>

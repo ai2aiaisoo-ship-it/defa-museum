@@ -2,6 +2,7 @@
 
 import { OPERATIONS } from '@/data/operations'
 import { EVENTS } from '@/data/events'
+import { MEK_TIMELINE } from '@/data/special'
 import { ResultBadge, SectionHeader, StatClaimsTable, SourceChips, ConfidenceBadge } from './ui-bits'
 import { formatJalali, toFa } from '@/lib/jalali'
 import { Badge } from '@/components/ui/badge'
@@ -169,15 +170,63 @@ export function IraqOpsView({ go }: { go: (v: string, p?: string) => void }) {
 
 export function MekOpsView({ go }: { go: (v: string, p?: string) => void }) {
   const mekOps = OPERATIONS.filter(o => o.side === 'mek')
+  const forough = OPERATIONS.find(o => o.id === 'forough-javidan')
+  const mersad = OPERATIONS.find(o => o.id === 'mersad')
+  const claims = [...(forough?.stats ?? []), ...(mersad?.stats ?? [])]
   return (
     <div className="space-y-8">
       <section className="hero-vignette rounded-3xl border p-6 md:p-10">
         <Badge variant="outline" className="mb-3">فصل مستقل</Badge>
         <h1 className="museum-title text-3xl md:text-4xl">سازمان منافقین در جنگ</h1>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-          از مبارزه مسلحانه داخلی (۱۳۶۰) تا استقرار در عراق (۱۳۶۵) و تهاجم فروغ جاویدان (مرداد ۱۳۶۷). برای روایت کامل تاریخی، فصل ویژه «تابستان ۱۳۶۷» را ببینید.
+          از تأسیس (۱۳۴۴) و مبارزه مسلحانه داخلی (۱۳۶۰) تا استقرار در عراق (۱۳۶۵) و تهاجم فروغ جاویدان (مرداد ۱۳۶۷).
+          این پرونده، خط زمانی مستندِ سازمان در بستر جنگ است و برای روایت کامل نبرد مرصاد، فصل ویژه «تابستان ۱۳۶۷» را ببینید.
         </p>
+        <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
+          <Badge variant="outline">🗂 {toFa(MEK_TIMELINE.length)} ایستگاه خط زمانی</Badge>
+          <Badge variant="outline">⚔ {toFa(mekOps.length)} پرونده عملیات ثبت‌شده</Badge>
+          <Badge variant="outline" className="border-amber-500/40 bg-amber-500/10 text-amber-400">تحلیل تاریخی؛ بدون بازسازی دستورالعملی</Badge>
+        </div>
       </section>
+
+      {/* سه فصل پرونده — همان روایت مستند فصل مرصاد */}
+      <section className="grid gap-3 lg:grid-cols-3">
+        <Card className="museum-card"><CardContent className="p-4">
+          <h4 className="font-extrabold text-primary">پیدایش و اندیشه سازمان</h4>
+          <p className="mt-1.5 text-[12.5px] leading-7 text-muted-foreground">
+            تأسیس ۱۳۴۴ به‌عنوان یک سازمان چریکی–ایدئولوژیک؛ مشارکت در انقلاب ۱۳۵۷ و سپس اختلاف فزاینده با جریان حاکم.
+            منظومه فکری و ساختار مخفیانه سازمان، پیش‌زمینه رویارویی ۱۳۶۰ شد.
+          </p>
+        </CardContent></Card>
+        <Card className="museum-card"><CardContent className="p-4">
+          <h4 className="font-extrabold text-primary">مبارزه مسلحانه داخلی (۱۳۶۰)</h4>
+          <p className="mt-1.5 text-[12.5px] leading-7 text-muted-foreground">
+            از درگیری خرداد ۱۳۶۰ تا انفجار دفتر حزب جمهوری اسلامی در ۷ تیر ۱۳۶۰ (شهادت رجایی و باهنر) و ادامه حملات در میانه جنگ خارجی (۱۳۶۱–۱۳۶۴)؛ بدون جلب پشتیبانی گسترده مردمی.
+          </p>
+        </CardContent></Card>
+        <Card className="museum-card"><CardContent className="p-4">
+          <h4 className="font-extrabold text-primary">استقرار در عراق و تهاجم ۱۳۶۷</h4>
+          <p className="mt-1.5 text-[12.5px] leading-7 text-muted-foreground">
+            انتقال تشکیلات به عراق (۱۳۶۵) و ساخت «ارتش آزادی‌بخش» با پشتیبانی صدام؛ تهاجم فروغ جاویدان چند روز پس از پذیرش ۵۹۸ و شکست کامل در عملیات مرصاد.
+          </p>
+        </CardContent></Card>
+      </section>
+
+      <section>
+        <SectionHeader kicker="خط زمانی مستند" title="سازمان در بستر جنگ؛ از ۱۳۴۴ تا مرصاد" desc="هر ایستگاه بر پایه پرونده تاریخی فصل «فروغ جاویدان و مرصاد» موزه ثبت شده است." />
+        <div className="relative space-y-3 border-r-2 border-primary/40 pr-5">
+          {MEK_TIMELINE.map((t, i) => (
+            <div key={i} className="relative">
+              <span className="absolute -right-[27px] top-2 h-3 w-3 rounded-full bg-primary ring-4 ring-background" />
+              <div className="rounded-xl border bg-card/70 p-3">
+                <Badge variant="outline" className="font-extrabold">{t.date}</Badge>
+                <p className="mt-1.5 text-[13px] leading-7">{t.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section>
         <SectionHeader kicker="پرونده‌ها" title="عملیات‌های ثبت‌شده سازمان" />
         <div className="grid gap-3 md:grid-cols-2">
@@ -193,6 +242,22 @@ export function MekOpsView({ go }: { go: (v: string, p?: string) => void }) {
           ))}
         </div>
       </section>
+
+      {claims.length > 0 && (
+        <section>
+          <SectionHeader kicker="آمار مستند" title="تلفات و اسرا با تفکیک اختلاف منابع" />
+          <StatClaimsTable claims={claims} />
+          <p className="mt-2 text-[11px] leading-5 text-muted-foreground">
+            ارقام تلفات سازمان منافقین میان روایت رسمی ایران و روایت خودِ سازمان تفاوت اساسی دارد؛ رقم مستقل و تأییدشده ثبت نشده است (درجه اطمینان C).
+          </p>
+        </section>
+      )}
+
+      <Card><CardContent className="p-4">
+        <h4 className="mb-2 text-sm font-extrabold text-primary">منابع فصل</h4>
+        <SourceChips ids={['jang-atlas', 'fa-wiki-ops', 'iranica-war', 'fa-wiki-war']} />
+      </CardContent></Card>
+
       <div className="text-center">
         <Button onClick={() => go('mersad')} className="font-bold">فصل ویژه: تابستان ۱۳۶۷ — فروغ جاویدان و مرصاد</Button>
       </div>

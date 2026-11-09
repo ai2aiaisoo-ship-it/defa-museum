@@ -1,12 +1,38 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { SectionHeader } from './ui-bits'
 
 interface Msg { role: 'user' | 'assistant'; content: string }
+
+/** رندر سبک Markdown فقط برای پاسخ دستیار: **پررنگ**، فهرست خط‌تیره و خط جدید —
+ *  بدون dangerouslySetInnerHTML؛ هر خط یک پاراگراف/فهرست است تا ستاره‌های خام دیده نشوند. */
+function AssistantMarkdown({ text }: { text: string }) {
+  const renderInline = (s: string, keyBase: string): ReactNode[] => {
+    const parts = s.split('**')
+    return parts.map((p, i) => (i % 2 === 1 ? <strong key={`${keyBase}-b${i}`} className="font-extrabold text-foreground">{p}</strong> : <span key={`${keyBase}-s${i}`}>{p}</span>))
+  }
+  const lines = text.split('\n').filter(l => l.trim().length > 0)
+  return (
+    <div className="space-y-1.5">
+      {lines.map((line, i) => {
+        const t = line.trim()
+        if (/^[-•]\s+/.test(t)) {
+          return (
+            <div key={i} className="flex items-start gap-1.5">
+              <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70" />
+              <span className="leading-7">{renderInline(t.replace(/^[-•]\s+/, ''), `l${i}`)}</span>
+            </div>
+          )
+        }
+        return <p key={i} className="leading-7">{renderInline(t, `p${i}`)}</p>
+      })}
+    </div>
+  )
+}
 
 const SUGGESTIONS = [
   'چرا عملیات رمضان به هدف نهایی خود نرسید؟',
@@ -54,7 +80,7 @@ export function AssistantView() {
             {msgs.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-start' : 'justify-end'}`}>
                 <div className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-7 ${m.role === 'user' ? 'bg-primary/15 border border-primary/30' : 'bg-muted border'}`}>
-                  {m.content}
+                  {m.role === 'assistant' ? <AssistantMarkdown text={m.content} /> : m.content}
                 </div>
               </div>
             ))}

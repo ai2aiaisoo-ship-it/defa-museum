@@ -1,0 +1,51 @@
+{
+  "success": true,
+  "query": "یادمان شهدای هفتم تیر و سانحه سی‌130 قطعه ۲۴ بهشت زهرا",
+  "count": 6,
+  "ranked": true,
+  "captioned_count": 6,
+  "results": [
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/55876e681869.jpg",
+      "caption": "A man holding a young girl stands beside a large Persian memorial poster with framed portraits and Arabic text.",
+      "source": "IRNA",
+      "original_width": "1280px",
+      "original_height": "853px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ff6a7b6aac27.jpeg",
+      "caption": "A woman in black chador places white flowers at a gravesite memorial with red lanterns. Watermark: \"DEFA PRESS.IR\".",
+      "source": "defapress.ir",
+      "original_width": "1000px",
+      "original_height": "602px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f2469bc42ad8.jpg",
+      "caption": "A masked elderly cleric in black robes walks inside an ornate mosque-style hall with arched ceilings, carpets, and glass-covered tombs.",
+      "source": "rasekhoon.net",
+      "original_width": "1200px",
+      "original_height": "700px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ace8db97edfc.jpg",
+      "caption": "Two clergymen stand beside a green-draped shrine tomb with a framed portrait of a bearded cleric, inside a lattice-windowed hall.",
+      "source": "leader.ir",
+      "original_width": "1600px",
+      "original_height": "977px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f40f2e3285e6.png",
+      "caption": "A group of men, some in military camouflage uniforms, gathered around a memorial grave with red flowers under Iranian flags, inside a brick-vaulted shrine.",
+      "source": "irna.ir",
+      "original_width": "1000px",
+      "original_height": "750px"
+    },
+    {
+      "original_url": "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/f98547886b2b.jpg",
+      "caption": "Women in black chadors mourn among gravestones, red lanterns, and tulips at a cemetery; IRNA watermark.",
+      "source": "irna.ir",
+      "original_width": "1280px",
+      "original_height": "853px"
+    }
+  ]
+}

@@ -39,6 +39,15 @@ export interface GravePhoto {
   /** توضیح صادقانه درباره چیستی تصویر */
   caption: string
   verified: 'archival-confirmed' | 'pending-review'
+  /**
+   * نوع صادقانه تصویر — جلوگیری از «آدرس‌دهی غلط هویتی»:
+   * grave: سنگ مزار/آرامگاهِ به‌نسبت این شهید (برچسب «مزار» فقط همین‌جا مجاز است)
+   * memorial: یادمان/یادبودِ مرتبط (نه سنگ مزار اختصاصی)
+   * context: تصویر زمینه (نمای گلزار، آرک یادمان، اینفوگرافیک سانحه)
+   */
+  photoKind?: 'grave' | 'memorial' | 'context'
+  /** فایل محلی تصویر پس از بومی‌سازی (برای شفافیت منبع) — URL اصلی جست‌وجو در کپشن ثبت است */
+  localFile?: boolean
 }
 
 export interface MartyrBurial {
@@ -53,7 +62,14 @@ export interface MartyrBurial {
   sourceUrl?: string
 }
 
-export const IMG = 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt'
+export const IMG = '/images/mazar'
+
+/** برچسب کوتاه صادقانه هر نوع تصویر — در کارتابل و نوار مزار استفاده می‌شود */
+export const PHOTO_KIND_LABELS: Record<NonNullable<GravePhoto['photoKind']>, string> = {
+  grave: 'سنگ مزار',
+  memorial: 'یادمان / یادبود',
+  context: 'تصویر زمینه',
+}
 
 export const MARTYR_BURIALS: MartyrBurial[] = [
   {
@@ -61,7 +77,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴، ردیف ۷۷، مزار ۲۴ مکرر',
-    photo: { url: `${IMG}/d0df7b1b6213.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'نمایی از گلزار شهدای دفاع مقدس؛ عکس اختصاصی مزار در آرشیو باز در دسترس نیست', verified: 'pending-review' },
+    photo: { url: `${IMG}/d0df7b1b6213.jpeg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'نمایی از گلزار شهدای دفاع مقدس؛ عکس اختصاصی مزار در آرشیو باز در دسترس نیست', verified: 'pending-review', photoKind: 'context', localFile: true },
     note: 'اطلاعات دقیق قطعه و ردیف از پرونده رسمی شهید در پایگاه نوید شاهد ثبت است.',
     confidence: 'A',
     sourceName: 'نوید شاهد — پرونده شهید چمران',
@@ -72,8 +88,8 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۷۲ (جنب یادمان شهدای هفتم تیر)',
-    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه)؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
-    note: 'بر پایه گزارش دفاع‌پرس، مزار شهیدان رجایی و باهنر در قطعه ۷۲ بهشت زهراست.',
+    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'خبرگزاری مهر — بومی‌سازی‌شده در آرشیو موزه', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه؛ جوار مزار شهیدان رجایی و باهنر در قطعه ۷۲) — مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review', photoKind: 'context', localFile: true },
+    note: 'بر پایه گزارش دفاع‌پرس، مزار شهیدان رجایی و باهنر در قطعه ۷۲ بهشت زهراست؛ تصویر نمایش‌داده‌شده یادمان نزدیک مزار است، نه سنگ مزار اختصاصی.',
     confidence: 'B',
     sourceName: 'خبرگزاری دفاع‌پرس — «مزار شهیدان رجایی و باهنر گلباران شد»',
     sourceUrl: 'https://defapress.ir/fa/news/359883',
@@ -83,7 +99,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۷۲ (هم‌آرامگاه شهید رجایی)',
-    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه)؛ مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review' },
+    photo: { url: `${IMG}/bceb0d266f84.jpg`, sourceName: 'خبرگزاری مهر — بومی‌سازی‌شده در آرشیو موزه', caption: 'آرک یادمان شهدای هفتم تیر (تصویر زمینه؛ هم‌آرامگاه شهیدان رجایی و باهنر در قطعه ۷۲) — مزار اختصاصی در آرشیو باز در دسترس نیست', verified: 'pending-review', photoKind: 'context', localFile: true },
     confidence: 'B',
     sourceName: 'خبرگزاری دفاع‌پرس — «مزار شهیدان رجایی و باهنر گلباران شد»',
     sourceUrl: 'https://defapress.ir/fa/news/359883',
@@ -93,7 +109,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴ — در جوار مزار آیت‌الله طالقانی',
-    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'اینفوگرافیک سانحه سقوط هواپیمای سی-۱۳۰ در ۷ مهر ۱۳۶۰ که شهادت فلاحی، فکوری، نامجو، کلاهدوز و جهان‌آرا در آن رخ داد', verified: 'pending-review' },
+    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'اینفوگرافیک مستند سانحه سی‌۱۳۰ (۷ مهر ۱۳۶۰) که شهادت فلاحی، فکوری، نامجو، کلاهدوز و جهان‌آرا در آن رخ داد — اسناد تصویری مزار اختصاصی هنوز از آرشیو رسمی استخراج نشده است', verified: 'pending-review', photoKind: 'context', localFile: true },
     note: 'ویکی‌پدیای فارسی آرامگاه فلاحی را قطعه ۲۴ بهشت زهرا ثبت کرده است.',
     confidence: 'B',
     sourceName: 'ویکی‌پدیای فارسی — ولی‌الله فلاحی / دفاع‌پرس',
@@ -104,7 +120,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴ — هم‌آرامگاه شهدای سانحه ۷ مهر ۱۳۶۰',
-    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'اینفوگرافیک سانحه سی-۱۳۰ کهریزک (۷ مهر ۱۳۶۰)', verified: 'pending-review' },
+    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'پایگاه گلزار شهدا — بومی‌سازی‌شده در آرشیو موزه', caption: 'اینفوگرافیک مستند سانحه سی‌۱۳۰ کهریزک (۷ مهر ۱۳۶۰) — تصویر سند سانحه است، نه عکس مزار اختصاصی', verified: 'pending-review', photoKind: 'context', localFile: true },
     confidence: 'B',
     sourceName: 'پایگاه گلزار شهدا (فرهنگ ایثار و شهادت) — پرونده جواد فکوری',
     sourceUrl: 'https://www.golzar.info/19440',
@@ -114,7 +130,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴ — هم‌آرامگاه شهدای سانحه ۷ مهر ۱۳۶۰',
-    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'اینفوگرافیک سانحه سی-۱۳۰ کهریزک (۷ مهر ۱۳۶۰)', verified: 'pending-review' },
+    photo: { url: `${IMG}/c78f2dadf4ee.jpg`, sourceName: 'دفاع‌پرس — بومی‌سازی‌شده در آرشیو موزه', caption: 'اینفوگرافیک مستند سانحه سی‌۱۳۰ کهریزک (۷ مهر ۱۳۶۰) — تصویر سند سانحه است، نه عکس مزار اختصاصی', verified: 'pending-review', photoKind: 'context', localFile: true },
     note: 'ویکی‌پدیای فارسی: مدفن «قطعه ۲۴، بهشت زهرا، تهران».',
     confidence: 'B',
     sourceName: 'ویکی‌پدیای فارسی — سید موسی نامجو / دفاع‌پرس',
@@ -125,7 +141,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴، ردیف ۹۸، مزار ۴۴',
-    photo: { url: `${IMG}/831aef135f72.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار نقش‌پرچم شهید جهان‌آرا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/831aef135f72.jpeg`, sourceName: 'دفاع‌پرس — بومی‌سازی‌شده در آرشیو موزه', caption: 'سنگ مزار نقش‌پرچم شهید جهان‌آرا (تأیید در پیش‌مرور آرشیو)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     note: 'درباره مزار نقش‌پرچم شهید جهان‌آرا گزارش تصویری دفاع‌پرس منتشر شده است.',
     confidence: 'B',
     sourceName: 'نوید شاهد — پرونده شهید جهان‌آرا / دفاع‌پرس',
@@ -136,7 +152,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای امیدیه',
     city: 'امیدیه، خوزستان',
     detail: 'گلزار شهدا؛ یادبودی نیز در قطعه ۲۴ بهشت زهرا (جنب شهدای ۷۲ تن) رونمایی شده است',
-    photo: { url: `${IMG}/135289c1f9f1.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار شهید با نقش پرتره (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/135289c1f9f1.jpg`, sourceName: 'ویکی‌پدیای فارسی — بومی‌سازی‌شده در آرشیو موزه', caption: 'سنگ مزار شهید دقایقی با نقش پرتره و نام درج‌شده (تأیید در پیش‌مرور آرشیو)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     note: 'ویکی‌پدیای فارسی: «وی در گلزار شهدای امیدیه در استان خوزستان دفن گردید»؛ مراسم رونمایی مزار یادبود در اردیبهشت ۱۴۰۴ برگزار شد.',
     confidence: 'B',
     sourceName: 'ویکی‌پدیای فارسی — اسماعیل دقایقی / نوید شاهد',
@@ -157,7 +173,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۶، ردیف ۴۴، مزار ۴۶',
-    photo: { url: `${IMG}/c8bba0c5aa8d.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'مزار شهید با پرتره در گلزار شهدا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/c8bba0c5aa8d.jpeg`, sourceName: 'پایگاه گلزار شهدا — بومی‌سازی‌شده در آرشیو موزه', caption: 'سنگ مزار شهید وزوایی با پرتره، همخوان با نشانه‌گر قطعه ۲۶/ردیف ۴۴/مزار ۴۶ (تأیید در پیش‌مرور آرشیو)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     confidence: 'A',
     sourceName: 'پایگاه گلزار شهدا — پرونده محسن وزوایی',
     sourceUrl: 'https://www.golzar.info/21007',
@@ -167,7 +183,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای مشهد (بهشت رضا)',
     city: 'مشهد',
     detail: 'قطعه شهدا؛ پیکر او به پیشنهاد خودش و با موافقت خانواده، در میان بسیجی‌ها و رزمنده‌ها دفن شد',
-    photo: { url: `${IMG}/0acd17ee7aab.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'پوستر یادبود شهید محمود کاوه در بهشت رضا مشهد — تصویر زمینه یادمان، نه سنگ مزار', verified: 'pending-review' },
+    photo: { url: `${IMG}/0acd17ee7aab.jpg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'پوستر یادبود شهید محمود کاوه در بهشت رضا مشهد — تصویر زمینه یادمان، نه سنگ مزار', verified: 'pending-review', photoKind: 'context', localFile: true },
     note: 'روایت پیشنهاد محل دفن و شفاف‌سازی درباره عدم تدفین در حرم رضوی از منابع خبری منتشرشده است.',
     confidence: 'B',
     sourceName: 'پایگاه گلزار شهدا / خبرگزاری‌ها — پرونده محمود کاوه',
@@ -178,7 +194,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلستان شهدا (تخت فولاد) — یادبود',
     city: 'اصفهان',
     detail: 'وضعیت پیکر: مفقودالاثر؛ یادبود او در گلستان شهدا اصفهان ثبت است',
-    photo: { url: `${IMG}/6faa1f7b5c3e.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'گلستان شهدای اصفهان — محل یادبود شهید ردانی‌پور', verified: 'pending-review' },
+    photo: { url: `${IMG}/6faa1f7b5c3e.jpg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'گلستان شهدای اصفهان — یادمان شهید ردانی‌پور (پیکر مفقودالاثر؛ سنگ اختصاصی در کار نیست)', verified: 'pending-review', photoKind: 'memorial', localFile: true },
     note: 'پایگاه گلزار شهدا وضعیت پیکر او را «جاویدالاثر» و محل یادبود را گلزارشهدای اصفهان ثبت کرده است؛ برخی منابع شهادت او را در چزابه و برخی در حاج‌عمران نوشته‌اند.',
     confidence: 'C',
     sourceName: 'پایگاه گلزار شهدا — پرونده مصطفی ردانی‌پور',
@@ -189,7 +205,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'بهشت زهرا (س)',
     city: 'تهران',
     detail: 'قطعه ۲۴، ردیف ۸۰، مزار ۲۴',
-    photo: { url: `${IMG}/8261128077b6.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار یافت‌شده در جست‌وجو که در مرور کارشناسی، مغایر پرونده شهید تشخیص داده شد و از نمایش خارج شد', verified: 'pending-review' },
+    photo: { url: `${IMG}/8261128077b6.jpg`, sourceName: 'پایگاه خبری دانشگاه تهران — بومی‌سازی‌شده در آرشیو موزه', caption: 'تصویر سنگ مزار یافت‌شده در جست‌وجو که در مرور کارشناسی مغایر پرونده شهید تشخیص داده شد و از نمایش مزار خارج شد (در کارتابل خاکستری‌نمایی شده است)', verified: 'pending-review', photoKind: 'context', localFile: true },
     confidence: 'B',
     sourceName: 'پایگاه خبری دانشگاه تهران — پرونده شهید غلامحسین افشردی (حسن باقری)',
     sourceUrl: 'https://news.ut.ac.ir/fa/page/8289',
@@ -199,7 +215,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای دفاع مقدس ارومیه',
     city: 'ارومیه',
     detail: 'آرامگاه سردار شهید باکری (قطعه دو)',
-    photo: { url: `${IMG}/f693c80fd09f.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار با نقش پرتره در گلزار شهدا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/f693c80fd09f.jpeg`, sourceName: 'خبرگزاری بریش — بومی‌سازی‌شده در آرشیو موزه', caption: 'سنگ مزار با نقش پرتره در گلزار شهدا ارومیه (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     note: 'برادر بزرگ‌ترش حمید باکری نیز در گلزار شهدا ارومیه (باغ‌رضوان) آرام دارد.',
     confidence: 'B',
     sourceName: 'پایگاه گلزار شهدا / گزارش‌های خبری — پرونده مهدی باکری',
@@ -210,7 +226,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدا باغ‌رضوان',
     city: 'ارومیه',
     detail: 'گلزار شهدا؛ برخی منابع تا مدت‌ها او را مفقودالاثر ثبت کرده بودند',
-    photo: { url: `${IMG}/5689e4de2f8d.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'مزار با نقش پرتره در گلزار شهدا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/5689e4de2f8d.jpg`, sourceName: 'نوید شاهد — بومی‌سازی‌شده در آرشیو موزه', caption: 'مزار با نقش پرتره در گلزار شهدا باغ‌رضوان ارومیه (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     confidence: 'B',
     sourceName: 'نوید شاهد — پرونده شهید حمید باکری',
     sourceUrl: 'https://navideshahed.com/fa/vip/19444',
@@ -230,7 +246,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'اهواز — یادمان شهدای قرارگاه نصرت (بهشت آباد)',
     city: 'اهواز',
     detail: 'پیکر او ۲۲ سال مفقود بود و در سال ۱۳۸۹ نزدیک محل استقرار قرارگاه ششم کشف و در اهواز به خاک سپرده شد',
-    photo: { url: `${IMG}/903bde676a95.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'آرامگاه شهید با پرتره و گل‌برگ (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/903bde676a95.jpeg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'آرامگاه شهید با پرتره و گل‌برگ (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     confidence: 'A',
     sourceName: 'ویکی‌پدیای فارسی — علی هاشمی (نظامی) / تابناک',
     sourceUrl: 'https://fa.wikipedia.org/wiki/علی_هاشمی_(نظامی)',
@@ -240,7 +256,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای شهرضا — جوار امامزاده شهرضا (ع)',
     city: 'شهرضا، اصفهان',
     detail: 'برخلاف تصور رایج، مزار اصلی او در بهشت زهرا نیست؛ در شهرضا در میان شهدای شهر دفن شده است. سنگ یادبودی نیز به نام او در قطعه ۲۴ بهشت زهرا کنار دو فرمانده دیگر لشکر ۲۷ نصب است',
-    photo: { url: `${IMG}/1b7158abf2b8.jpeg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'مزار سنگی با پرتره در گلزار شهدا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/1b7158abf2b8.jpeg`, sourceName: 'روزنامه جوان — بومی‌سازی‌شده در آرشیو موزه', caption: 'مزار سنگی با پرتره در گلزار شهدا شهرضا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     confidence: 'B',
     sourceName: 'روزنامه جوان — «مزار شهید همت کجاست؟ + عکس»',
     sourceUrl: 'https://www.javanonline.ir/fa/news/419468',
@@ -250,7 +266,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلستان شهدای اصفهان — قطعه شهدای کربلای ۵ (فرماندهان)',
     city: 'اصفهان',
     detail: 'منتهی‌الیه شمال‌غربی گلستان شهدا؛ در طرفین مزار او، قبور احمد کاظمی و محمدرضا زاهدی است',
-    photo: { url: `${IMG}/f1ccdbae747a.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'سنگ مزار با گل نرگس (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/f1ccdbae747a.jpg`, sourceName: 'ویکی‌پدیای فارسی — بومی‌سازی‌شده در آرشیو موزه', caption: 'سنگ مزار با گل نرگس — نام «حاج حسین خرازی» روی صندوق مرمرین (تأیید در پیش‌مرور آرشیو)', verified: 'pending-review', photoKind: 'grave', localFile: true },
     confidence: 'B',
     sourceName: 'ویکی‌پدیای فارسی — حسین خرازی / نشان (پرونده مزار)',
     sourceUrl: 'https://fa.wikipedia.org/wiki/حسین_خرازی',
@@ -260,7 +276,7 @@ export const MARTYR_BURIALS: MartyrBurial[] = [
     cemetery: 'گلزار شهدای قزوین',
     city: 'قزوین',
     detail: 'جوار امامزاده حسین (ع)، بلوار جمهوری اسلامی',
-    photo: { url: `${IMG}/1536506b9dc6.jpg`, sourceName: 'جست‌وجوی تصویر وب', caption: 'یادمان شهید با پرتره در گلزار شهدا (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review' },
+    photo: { url: `${IMG}/1536506b9dc6.jpg`, sourceName: 'جست‌وجوی تصویر وب — بومی‌سازی‌شده در آرشیو موزه', caption: 'یادمان شهید بابایی با پرتره در گلزار شهدا قزوین (نیازمند تأیید نهایی هویت‌سنجی تصویر)', verified: 'pending-review', photoKind: 'memorial', localFile: true },
     note: 'چند منبع مستقل (بلد، نشان، فدای ولایت) آرامگاه او را گلزار شهدا قزوین ثبت کرده‌اند؛ یک منبع (گلزار شهدا) «لواسان» نوشته است که مغایرت دارد و ثبت شده است.',
     confidence: 'B',
     sourceName: 'آدرس‌یاب آرامگاه شهید بابایی (بلد/نشان) + فدای ولایت',

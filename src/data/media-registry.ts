@@ -58,7 +58,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     sourceUrl: 'https://navideshahed.com', archiveOrg: 'بنیاد حفظ آثار و نشر ارزش‌های دفاع مقدس',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'confirmed', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/cfae36733105.jpg', availability: 'online',
+    url: '/images/arch/cfae36733105.jpg', availability: 'online',
   },
   {
     id: 'm-fr-jahanara',
@@ -71,7 +71,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'pending-review', verificationNote: 'برای تأیید نهایی هویت پرتره، مقایسه با آرشیو بنیاد شهید خوزستان توصیه می‌شود.',
     confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3fb8a77bc6f0.jpg', availability: 'online',
+    url: '/images/arch/3fb8a77bc6f0.jpg', availability: 'online',
   },
   {
     id: 'm-fr-khorram-ruins',
@@ -81,7 +81,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['khorramshahr', 'ruins'], opIds: ['bayt-almoghaddas', 'khorramshahr-battle'],
     sourceName: 'Ajam Media Collective', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/552ec9a2306d.jpg', availability: 'online',
+    url: '/images/arch/552ec9a2306d.jpg', availability: 'online',
   },
   {
     id: 'm-fr-khorram-bld',
@@ -91,7 +91,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['khorramshahr', 'ruins'], opIds: ['bayt-almoghaddas'],
     sourceName: 'Aggregate (آرشیو معماری)', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8ee115bf8967.jpg', availability: 'online',
+    url: '/images/arch/8ee115bf8967.jpg', availability: 'online',
   },
   {
     id: 'm-fr-front1',
@@ -100,7 +100,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: '۱۳۶۰s', location: 'جبهه جنوب', tags: ['front', 'hero'],
     sourceName: 'BBC (آرشیو جنگ)', archiveOrg: 'بی‌بی‌سی', license: 'archival-reference',
     quality: 'medium', authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0a2c3c57dcd9.jpg', availability: 'online',
+    url: '/images/arch/0a2c3c57dcd9.jpg', availability: 'online',
   },
   {
     id: 'm-fr-front2',
@@ -109,7 +109,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: '۱۳۶۰s', location: 'جبهه‌های جنوب/میانی', tags: ['front', 'hero'],
     sourceName: 'Warfare History Network', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/caacd135d922.jpg', availability: 'online',
+    url: '/images/arch/caacd135d922.jpg', availability: 'online',
   },
   {
     id: 'm-fr-march',
@@ -119,7 +119,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     sourceName: 'آرشیو عمومی وب', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'unverified-origin', verificationNote: 'فاقد تاریخ و منبع دقیق — بر اساس قاعده بخش ۸ با برچسب «تاریخ و منشأ نامشخص» ثبت شد.',
     confidence: 'C',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7b91aa2a8a9f.jpg', availability: 'online',
+    url: '/images/arch/7b91aa2a8a9f.jpg', availability: 'online',
   },
   {
     id: 'm-fr-trenches',
@@ -129,7 +129,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     sourceName: 'ایرنا (آرشیو خبرگزاری جمهوری اسلامی)', archiveOrg: 'ایرنا',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9aec4ec8d627.jpg', availability: 'online',
+    url: '/images/arch/9aec4ec8d627.jpg', availability: 'online',
   },
   {
     id: 'm-fr-rpg',
@@ -138,7 +138,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: 'تاریخ و منشأ نامشخص', tags: ['front', 'hero'], opIds: ['karbala-5'],
     sourceName: 'آرشیو عمومی وب', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'unverified-origin', confidence: 'C',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/9d4b01c2661f.jpg', availability: 'online',
+    url: '/images/arch/9d4b01c2661f.jpg', availability: 'online',
   },
   // — روایت دشمن: اسناد عراقی —
   {
@@ -148,7 +148,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: 'دهه ۱۹۸۰', location: 'عراق', tags: ['iraq-side', 'saddam-dossier'],
     sourceName: 'ایندیپندنت فارسی', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/b6d0c84fb6dd.jpg', availability: 'online',
+    url: '/images/arch/b6d0c84fb6dd.jpg', availability: 'online',
   },
   {
     id: 'm-iq-saddam-thumb',
@@ -157,7 +157,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: 'دهه ۱۹۸۰ (بازنشر امروز)', tags: ['iraq-side', 'saddam-dossier'],
     sourceName: 'بازنشر یوتیوب', license: 'archival-reference', quality: 'low',
     authenticity: 'real', verification: 'pending-review', confidence: 'C',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a3d2fd5f3f74.jpg', availability: 'online',
+    url: '/images/arch/a3d2fd5f3f74.jpg', availability: 'online',
     displayNote: 'پوستر بازنشر است؛ فیلم اصلی در پرونده «تصمیم صدام» معرفی شده است.',
   },
   // — پیشینه جنگ: الجزایر و مرزها —
@@ -171,7 +171,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'pending-review', verificationNote: 'تطبیق دقیق جلسه (امضای توافق یا مذاکرات تکمیلی بغداد) در انتظار بررسی کارشناسی است.',
     confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/148a4e095dc3.jpg', availability: 'online',
+    url: '/images/arch/148a4e095dc3.jpg', availability: 'online',
   },
   {
     id: 'm-rev-khomeini',
@@ -181,7 +181,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['leadership', 'front'], sourceName: 'آرشیو عمومی وب',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8235f256b37c.jpg', availability: 'online',
+    url: '/images/arch/8235f256b37c.jpg', availability: 'online',
   },
   {
     id: 'm-rev-rally',
@@ -190,7 +190,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: '۱۳۶۰s', location: 'ایران', tags: ['people', 'front'],
     sourceName: 'آرشیو عمومی وب', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/43e1da2d77a5.jpg', availability: 'online',
+    url: '/images/arch/43e1da2d77a5.jpg', availability: 'online',
   },
   {
     id: 'm-avini-portrait',
@@ -199,7 +199,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     captureLabel: 'دهه ۱۳۶۰', people: ['سید مرتضی آوینی'], tags: ['avini', 'martyrs'],
     sourceName: 'خبرگزاری دفاع مقدس', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e504e243c12f.jpg', availability: 'online',
+    url: '/images/arch/e504e243c12f.jpg', availability: 'online',
   },
   {
     id: 'm-avini-cam',
@@ -210,7 +210,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     authenticity: 'real', verification: 'pending-review',
     verificationNote: 'این تصویر به‌عنوان «نمادین» ثبت شده است؛ نسبت مستقیم آن با شخص آوینی نیازمند تأیید کارشناسی است.',
     confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/40e1cdfd9d58.jpg', availability: 'online',
+    url: '/images/arch/40e1cdfd9d58.jpg', availability: 'online',
   },
   // — نبردها و تجهیزات —
   {
@@ -220,7 +220,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['air', 'equipment'], opIds: ['kaman-99', 'h-3'],
     sourceName: 'منابع عمومی هوانوردی', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e2c7140b7d2e.jpg', availability: 'online',
+    url: '/images/arch/e2c7140b7d2e.jpg', availability: 'online',
   },
   {
     id: 'm-war-f14',
@@ -229,7 +229,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['air', 'equipment'], sourceName: 'Royal Aeronautical Society',
     license: 'archival-reference', quality: 'high', authenticity: 'real',
     verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ded81eaf82be.jpg', availability: 'online',
+    url: '/images/arch/ded81eaf82be.jpg', availability: 'online',
   },
   {
     id: 'm-war-tank72',
@@ -238,7 +238,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['equipment', 'iraq-side'], sourceName: 'Alamy',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/d68082f1483a.jpg', availability: 'online',
+    url: '/images/arch/d68082f1483a.jpg', availability: 'online',
   },
   // — جنگ شهرها، خلیج فارس و شیمیایی —
   {
@@ -249,7 +249,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     opIds: ['tanker-war'], sourceName: 'U.S. Naval Institute (Proceedings)',
     archiveOrg: 'U.S. Naval Institute', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/e965a1b194fb.jpg', availability: 'online',
+    url: '/images/arch/e965a1b194fb.jpg', availability: 'online',
   },
   {
     id: 'm-gulf-tanker',
@@ -258,7 +258,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['gulf', 'tanker-war'], opIds: ['tanker-war'],
     sourceName: 'The Guardian', license: 'archival-reference', quality: 'medium',
     authenticity: 'real', verification: 'pending-review', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/2c7a8201059d.jpg', availability: 'online',
+    url: '/images/arch/2c7a8201059d.jpg', availability: 'online',
   },
   {
     id: 'm-chem-halabja-mem',
@@ -268,7 +268,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     opIds: ['halabja-chem'], sourceName: 'Tripadvisor (آرشیو سفر)',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'confirmed', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/04e79aa72757.jpg', availability: 'online',
+    url: '/images/arch/04e79aa72757.jpg', availability: 'online',
   },
   {
     id: 'm-chem-halabja-2',
@@ -277,7 +277,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
     tags: ['chemical'], opIds: ['halabja-chem'], sourceName: 'آرشیو خبری',
     license: 'archival-reference', quality: 'medium', authenticity: 'real',
     verification: 'confirmed', confidence: 'B',
-    url: 'https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/bd7a320ab6ba.jpg', availability: 'online',
+    url: '/images/arch/bd7a320ab6ba.jpg', availability: 'online',
   },
 ]
 

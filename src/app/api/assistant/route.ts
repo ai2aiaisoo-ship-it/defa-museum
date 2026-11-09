@@ -6,6 +6,15 @@ import { WAR_STATS } from '@/data/statistics'
 import { SOURCES, getSource } from '@/data/sources'
 import { RESOLUTIONS } from '@/data/resolutions'
 import { GLOSSARY } from '@/data/glossary'
+import { formatJalali } from '@/lib/jalali'
+
+/** تاریخ ISO-جلالی «1362-01-21» را به فارسی خوانا «۲۱ فروردین ۱۳۶۲» تبدیل می‌کند —
+ *  جلوگیری از تفسیر نادرست ماه‌ها توسط مدل زبانی (باگ تاریخی «بهمن» به‌جای «فروردین»). */
+function faDate(j?: string): string {
+  if (!j) return 'نامشخص'
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(j)) return j
+  try { return formatJalali(j) } catch { return j }
+}
 
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -28,7 +37,7 @@ function retrieve(query: string): string {
   const terms = GLOSSARY.filter(g => score(g.term + g.definition) > 0).slice(0, 3)
 
   let ctx = ''
-  if (ops.length) ctx += '\n### پرونده‌های عملیات مرتبط:\n' + ops.map(({ o }) => `- ${o.faName} (${o.side === 'iran' ? 'ایران' : o.side === 'iraq' ? 'عراق' : o.side}) — تاریخ: ${o.faStart || 'نامشخص'} تا ${o.faEnd || '؟'} | منطقه: ${o.region} | نتیجه: ${RESULT_LABELS[o.result]} | نتیجه نهایی: ${o.outcome} | تحلیل: ${o.analysis}${o.narrativeDiff ? ' | اختلاف روایت: ' + o.narrativeDiff : ''}`).join('\n')
+  if (ops.length) ctx += '\n### پرونده‌های عملیات مرتبط:\n' + ops.map(({ o }) => `- ${o.faName} (${o.side === 'iran' ? 'ایران' : o.side === 'iraq' ? 'عراق' : o.side}) — تاریخ: ${faDate(o.faStart)} تا ${faDate(o.faEnd)} | منطقه: ${o.region} | نتیجه: ${RESULT_LABELS[o.result]} | نتیجه نهایی: ${o.outcome} | تحلیل: ${o.analysis}${o.narrativeDiff ? ' | اختلاف روایت: ' + o.narrativeDiff : ''}`).join('\n')
   if (evs.length) ctx += '\n### رویدادهای مرتبط:\n' + evs.map(({ e }) => `- ${e.date} — ${e.faTitle}: ${e.desc}`).join('\n')
   if (stats.length) ctx += '\n### آمار منبع‌دار مرتبط:\n' + stats.map(s => `- ${s.metric}: ${s.value} ${s.unit} (درجه اطمینان ${s.confidence}، منبع: ${s.sourceId}${s.note ? '، ' + s.note : ''})`).join('\n')
   if (res.length) ctx += '\n### قطعنامه‌ها:\n' + res.map(r => `- قطعنامه ${r.number} (${r.gDate}): ${r.summary.join(' ')} | پاسخ ایران: ${r.iranResponse} | پاسخ عراق: ${r.iraqResponse}`).join('\n')
@@ -44,7 +53,9 @@ const SYSTEM = `تو «راهنمای تاریخ جنگ» هستی؛ دستیا�
 3. بی‌طرف باش: موفقیت تاکتیکی را از موفقیت راهبردی تفکیک کن؛ روایت ایران و عراق را جدا معرفی کن؛ مسئولیت آغاز تجاوز را بر اساس قطعنامه ۵۹۸ به عراق نسبت بده.
 4. پاسخ فارسی، روان، ساختارمند و آموزشی باشد؛ برای نوجوان تا پژوهشگر قابل فهم. طول پاسخ: ۱ تا ۴ بند کوتاه + در صورت لزوم فهرست.
 5. کشته/مجروح/اسیر/مفقود را هرگز با هم جمع نکن.
-6. در پایان پاسخ، منابع مرتبط را با نام کوتاه ذکر کن.`
+6. در پایان پاسخ، منابع مرتبط را با نام کوتاه ذکر کن.
+7. قالب‌نویسی: فقط از **پررنگ**، فهرست خط‌تیره و خط جدید استفاده کن؛ جدول Markdown، سرفصل # و کد‌بلوک ممنوع است.
+8. تاریخ‌ها در زمینه به فارسی خوانا (مثل «۲۱ فروردین ۱۳۶۲») آمده‌اند؛ هرگز ماه، عدد یا سال تاریخ را تبدیل یا بازنویسی نکن — دقیقاً همان تاریخ را عیناً به کار ببر.`
 
 export async function POST(req: NextRequest) {
   try {

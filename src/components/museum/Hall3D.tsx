@@ -531,6 +531,14 @@ export function Hall3D({ go }: { go: (v: string, p?: string) => void }) {
               با اسکرول وارد تالار شوید؛ دوربین یکی‌درمیان به راست و چپ می‌چرخد و مقابل تابلوی هر عملیات می‌ایستد.
               روی هر تابلو کلیک کنید تا پرونده کامل باز شود.
             </p>
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+              <button
+                onClick={() => window.scrollTo({ top: (metricsRef.current?.wrapTop ?? 0) + SEG * 2, behavior: 'smooth' })}
+                className="pointer-events-auto rounded-full border border-amber-400/60 bg-amber-400/20 px-5 py-2 text-[12px] font-extrabold text-amber-100 transition-colors hover:bg-amber-400/30"
+              >
+                ▶ شروع بازدید — ورود به نخستین پرونده
+              </button>
+            </div>
           </div>
           <div className="animate-bounce rounded-full border border-amber-400/40 bg-black/50 px-4 py-1.5 text-[11px] font-extrabold text-amber-200">↓ برای ورود اسکرول کنید</div>
         </div>

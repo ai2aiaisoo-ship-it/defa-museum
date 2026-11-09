@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { QUIZZES } from '@/data/glossary'
 import { GLOSSARY } from '@/data/glossary'
 import { OPERATIONS } from '@/data/operations'
@@ -143,10 +143,39 @@ export function GlossaryView() {
   )
 }
 
-/** شناسایی شهر روی نقشه — آزمون نقشه ساده */
+/** شناسایی شهر روی نقشه — آزمون نقشه با زمینِ همان نقشه اطلس (GeoJSON مرزها + پروجکشن یکسان) */
+interface BoundaryFC { type: 'FeatureCollection'; features: { properties: { en: string; fa: string }; geometry: { type: string; coordinates: number[][][] | number[][][][] } }[] }
+
+// هم‌عرض با MapAtlas — پروجکشن اکویی‌رکتانگولار روی محدوده ایران و عراق
+const Q_LON_MIN = 42.5, Q_LON_MAX = 62.5, Q_LAT_MIN = 24.2, Q_LAT_MAX = 40.8
+const Q_W = 1000, Q_H = Math.round((Q_W * (Q_LAT_MAX - Q_LAT_MIN)) / (Q_LON_MAX - Q_LON_MIN))
+const qpx = (lng: number) => ((lng - Q_LON_MIN) / (Q_LON_MAX - Q_LON_MIN)) * Q_W
+const qpy = (lat: number) => ((Q_LAT_MAX - lat) / (Q_LAT_MAX - Q_LAT_MIN)) * Q_H
+
+let qBoundaryCache: Promise<BoundaryFC | null> | null = null
+function loadBoundaries(): Promise<BoundaryFC | null> {
+  if (!qBoundaryCache) {
+    qBoundaryCache = fetch('/geo/boundaries.json').then(r => (r.ok ? r.json() : null)).catch(() => null)
+  }
+  return qBoundaryCache
+}
+
+function qRingToPath(ring: number[][]): string {
+  return ring.map((c, i) => `${i === 0 ? 'M' : 'L'}${qpx(c[0]).toFixed(1)},${qpy(c[1]).toFixed(1)}`).join(' ') + ' Z'
+}
+function qGeomToPaths(geom: { type: string; coordinates: unknown }): string[] {
+  if (geom.type === 'Polygon') return (geom.coordinates as number[][][]).map(qRingToPath)
+  return (geom.coordinates as number[][][][]).map(poly => poly.map(qRingToPath).join(' '))
+}
+
 export function MapQuizView() {
   const [idx, setIdx] = useState(0)
   const [msg, setMsg] = useState<string | null>(null)
+  const [score, setScore] = useState(0)
+  const [asked, setAsked] = useState(0)
+  const [pickedId, setPickedId] = useState<string | null>(null)
+  const [bnd, setBnd] = useState<BoundaryFC | null>(null)
+  useEffect(() => { let alive = true; loadBoundaries().then(b => { if (alive) setBnd(b) }); return () => { alive = false } }, [])
   const pool = CITIES.filter(c => c.importance.length > 20)
   const target = pool[idx % pool.length]
   const options = useMemo(() => {
@@ -154,21 +183,67 @@ export function MapQuizView() {
     if (!shuffled.includes(target)) shuffled[0] = target
     return shuffled.sort(() => Math.random() - 0.5)
   }, [idx, pool, target])
+
+  const pick = (o: (typeof pool)[number]) => {
+    if (pickedId) return
+    setPickedId(o.id)
+    setAsked(a => a + 1)
+    if (o.id === target.id) {
+      setScore(s => s + 1)
+      setMsg(`✅ درست! ${o.importance}`)
+      setTimeout(() => { setIdx(i => i + 1); setMsg(null); setPickedId(null) }, 1800)
+    } else {
+      setMsg(`❌ این ${o.fa} بود. پاسخ درست: ${target.fa}`)
+    }
+  }
+
   return (
-    <Card className="mx-auto max-w-2xl"><CardContent className="p-6 text-center">
-      <h3 className="mb-3 font-extrabold">کدام دایره «{target.fa}» است؟ ({toFa(target.lat.toFixed(1))}، {toFa(target.lng.toFixed(1))})</h3>
-      <svg viewBox="0 0 1000 800" className="mx-auto w-full max-w-xl rounded-xl border bg-slate-800">
-        {options.map(o => (
-          <g key={o.id} className="cursor-pointer" onClick={() => {
-            setMsg(o.id === target.id ? `✅ درست! ${o.importance}` : `❌ این ${o.fa} بود. پاسخ: ${target.fa}`)
-            if (o.id === target.id) setTimeout(() => { setIdx(i => i + 1); setMsg(null) }, 1600)
-          }}>
-            <circle cx={((o.lng - 42.5) / 20) * 1000} cy={((40.8 - o.lat) / 16.6) * 800} r="10" fill="gold" stroke="black" />
-            <text x={((o.lng - 42.5) / 20) * 1000 + 14} y={((40.8 - o.lat) / 16.6) * 800 + 4} fill="white" fontSize="16">{o.fa}</text>
-          </g>
+    <Card className="mx-auto max-w-3xl"><CardContent className="p-6">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <h3 className="font-extrabold">کدام دایره «{target.fa}» است؟ ({toFa(target.lat.toFixed(1))}، {toFa(target.lng.toFixed(1))})</h3>
+        <Badge variant="outline" className="text-[10px]">نمره: {toFa(score)} از {toFa(asked)}</Badge>
+      </div>
+      <svg viewBox={`0 0 ${Q_W} ${Q_H}`} className="mx-auto block w-full max-w-xl rounded-xl border" role="img" aria-label="نقشه ایران برای آزمون شناسایی شهرها">
+        <defs>
+          <radialGradient id="qSea" cx="20%" cy="90%" r="80%">
+            <stop offset="0%" stopColor="oklch(0.35 0.06 230)" />
+            <stop offset="100%" stopColor="oklch(0.22 0.03 240)" />
+          </radialGradient>
+        </defs>
+        <rect width={Q_W} height={Q_H} fill="url(#qSea)" />
+        {bnd?.features.map(f => (
+          <path key={f.properties.en} d={qGeomToPaths(f.geometry).join(' ')} fill="oklch(0.30 0.02 90)" stroke="oklch(0.55 0.03 80 / 0.5)" strokeWidth="1" />
         ))}
+        {bnd?.features.filter(f => f.properties.en === 'Iran' || f.properties.en === 'Iraq').map(f => (
+          <path key={'qb-' + f.properties.en} d={qGeomToPaths(f.geometry).join(' ')} fill="none" stroke="oklch(0.8 0.1 85 / 0.55)" strokeWidth="1.6" strokeDasharray="6 4" />
+        ))}
+        <text x={qpx(53.5)} y={qpy(32.6)} fill="oklch(0.85 0.02 90 / 0.5)" fontSize="30" fontWeight="800" textAnchor="middle">ایران</text>
+        <text x={qpx(48.6)} y={qpy(25.3)} fill="oklch(0.7 0.06 230 / 0.8)" fontSize="18" fontWeight="700" textAnchor="middle">خلیج فارس</text>
+        {options.map(o => {
+          const cx = qpx(o.lng), cy = qpy(o.lat)
+          const state = !pickedId ? 'idle' : o.id === target.id ? 'target' : o.id === pickedId ? 'wrong' : 'dim'
+          return (
+            <g key={o.id} className="cursor-pointer" onClick={() => pick(o)} role="button" aria-label={`گزینه ${o.fa}`}>
+              {state === 'target' && <circle cx={cx} cy={cy} r="22" fill="none" stroke="oklch(0.75 0.15 155)" strokeWidth="3" className="bm-pulse" />}
+              <circle
+                cx={cx} cy={cy} r={state === 'target' ? 12 : 9}
+                fill={state === 'target' ? 'oklch(0.72 0.15 155)' : state === 'wrong' ? 'oklch(0.62 0.19 25)' : state === 'dim' ? 'oklch(0.75 0.04 90 / 0.45)' : 'gold'}
+                stroke={state === 'wrong' ? 'oklch(0.5 0.19 25)' : 'black'}
+              />
+              <text x={cx + 14} y={cy + 4} fill={state === 'dim' ? 'oklch(0.8 0.02 90 / 0.4)' : 'white'} fontSize="17" fontWeight={state === 'target' ? 800 : 500}>{o.fa}</text>
+            </g>
+          )
+        })}
       </svg>
-      {msg && <p className="mt-3 text-sm font-bold">{msg}</p>}
+      {msg && (
+        <p className={`mt-3 rounded-lg border p-2.5 text-sm font-bold leading-6 ${msg.startsWith('✅') ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300' : 'border-rose-500/40 bg-rose-500/10 text-rose-300'}`}>{msg}</p>
+      )}
+      {pickedId && pickedId !== target.id && (
+        <div className="mt-2 text-center">
+          <Button size="sm" onClick={() => { setIdx(i => i + 1); setMsg(null); setPickedId(null) }} className="font-bold">سؤال بعدی ←</Button>
+        </div>
+      )}
+      <p className="mt-3 text-[10.5px] leading-5 text-muted-foreground">زمینه نقشه، همان جغرافیای واقعی «اطلس نقشه تعاملی» موزه است؛ مختصات کنار پرسش، عرض/طول جغرافیایی شهر است — با نقشه واقعی، خواندن مختصات را تمرین کنید.</p>
     </CardContent></Card>
   )
 }

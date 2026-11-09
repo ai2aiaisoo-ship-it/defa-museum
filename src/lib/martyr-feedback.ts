@@ -7,9 +7,10 @@
 //    در مرورگرِ خودش ثبت و بر پیش‌مرور اولویت داده می‌شود.
 // ۲) اشتراک خاطره: بازدیدکننده خاطره‌اش را ثبت می‌کند؛ خاطره با وضعیت
 //    «در انتظار تأیید کارشناس» ثبت و تا تأیید، فقط به‌عنوان پیش‌نویس محلی نمایش داده می‌شود.
-// ذخیره‌سازی: localStorage مرورگر (نسخه نمایشی) — کلیدهای نسخه‌دار برای مهاجرت آینده به پایگاه داده.
+// ذخیره‌سازی: localStorage مرورگر + پشتیبان بی‌همگام روی سرور برای مرورهای نام‌دار کارشناس (api/reviews)؛
+// خاطرات بازدیدکنندگان فقط در مرورگر می‌ماند (وعده حریم خصوصی). کلیدهای نسخه‌دار برای مهاجرت به پایگاه داده.
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { GRAVE_REVIEW_SEEDS, SEED_REVIEW_META, seedPhotoKey } from '@/data/grave-reviews'
 
 const REVIEWS_KEY = 'museum-grave-photo-reviews-v1'
@@ -83,13 +84,38 @@ function writeJson(key: string, value: unknown) {
   try { localStorage.setItem(key, JSON.stringify(value)) } catch { /* حافظه پر یا محدود — بی‌اثر */ }
 }
 
-/** هوک مرور کارشناسی تصاویر مزار — پیش‌مرور موزه + مرورهای محلی کارشناس (اولویت‌دار) */
+/** هوک مرور کارشناسی تصاویر مزار — پیش‌مرور موزه + مرورهای نام‌دار کارشناس (اولویت‌دار)
+ *  پشتیبان‌گیری: مرورهای نام‌دار به‌صورت بی‌همگام روی سرور هم ذخیره می‌شوند (api/reviews)
+ *  تا پاک‌شدن حافظه مرورگر سبب از بین رفتن مرورهای کارشناسی نشود. */
 export function useGravePhotoReviews() {
   const [reviews, setReviews] = useState<Record<string, GravePhotoReview>>(() => {
     const seeds = seedReviewMap()
     const list = readJson<GravePhotoReview[]>(REVIEWS_KEY, [])
     return { ...seeds, ...Object.fromEntries(list.map(r => [r.photoKey, r])) }
   })
+
+  // واکشی پشتیبان سرور — مرورهای نام‌دارِ ثبت‌شده روی سرور بر پیش‌مرور اولویت دارند
+  // و فقط مرورهایی که روی سرور تازه‌تر از نسخه محلی‌اند جایگزین می‌شوند.
+  useEffect(() => {
+    let alive = true
+    fetch('/api/reviews', { cache: 'no-store' })
+      .then(r => (r.ok ? r.json() : null))
+      .then((data: { reviews?: GravePhotoReview[] } | null) => {
+        if (!alive || !data?.reviews?.length) return
+        const local = readJson<GravePhotoReview[]>(REVIEWS_KEY, [])
+        const localAt = new Map(local.map(r => [r.photoKey, r.reviewedAt]))
+        const newer = data.reviews.filter(r => !r.seed && r.reviewedAt > (localAt.get(r.photoKey) ?? ''))
+        if (!newer.length) return
+        setReviews(prev => {
+          const next = { ...prev }
+          for (const r of newer) next[r.photoKey] = r
+          writeJson(REVIEWS_KEY, Object.values(next))
+          return next
+        })
+      })
+      .catch(() => { /* سرور در دسترس نیست — فقط مرورگر */ })
+    return () => { alive = false }
+  }, [])
 
   const submitReview = useCallback((r: Omit<GravePhotoReview, 'id' | 'reviewedAt'>): GravePhotoReview => {
     const review: GravePhotoReview = {
@@ -102,7 +128,35 @@ export function useGravePhotoReviews() {
       writeJson(REVIEWS_KEY, Object.values(next))
       return next
     })
+    // پشتیبان‌گیری بی‌همگام روی سرور — بیرون از state-updater (الگوی رسمی ری‌اکت)؛
+    // در صورت قطع ارتباط، نسخه محلی معتبر می‌ماند و دفعه بعد همگام می‌شود.
+    fetch('/api/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ review }),
+    }).catch(() => { /* بی‌اهمیت */ })
     return review
+  }, [])
+
+  /** ثبت گروهی مرور کارتابل — یک POST واحد برای همه تصاویر علامت‌خورده (بدون رقابت نوشتن روی سرور) */
+  const submitReviewsBatch = useCallback((list: Omit<GravePhotoReview, 'id' | 'reviewedAt'>[]): GravePhotoReview[] => {
+    const stamped = list.map(r => ({
+      ...r,
+      id: `rev-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      reviewedAt: new Date().toISOString(),
+    }))
+    setReviews(prev => {
+      const next = { ...prev }
+      for (const review of stamped) next[review.photoKey] = review
+      writeJson(REVIEWS_KEY, Object.values(next))
+      return next
+    })
+    fetch('/api/reviews', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ review: stamped }),
+    }).catch(() => { /* بی‌اهمیت — نسخه محلی معتبر می‌ماند */ })
+    return stamped
   }, [])
 
   /** آخرین مرور ثبت‌شده برای یک تصویر مزار */
@@ -112,7 +166,7 @@ export function useGravePhotoReviews() {
     [reviews],
   )
 
-  return { reviews, reviewOf, submitReview }
+  return { reviews, reviewOf, submitReview, submitReviewsBatch }
 }
 
 /** هوک خاطرات بازدیدکنندگان */

@@ -242,18 +242,36 @@ export function MartyrsView({ go }: { go: (v: string, p?: string) => void }) {
         </p>
       </section>
 
-      {/* هیستوگرام خط زمانی */}
+      {/* هیستوگرام خط زمانی — میله‌های رنگ برند (طلایی؛ سال پرتلفات با نشان زمردی) */}
       <section>
         <SectionHeader kicker="خط زمانی" title="توزیع شهادت شهدای شاخص ثبت‌شده بر حسب سال" desc="این نمودار فقط پرونده‌های ثبت‌شده این تالار را نشان می‌دهد؛ نه آمار کل شهدای جنگ." />
-        <div className="flex items-end gap-3 rounded-2xl border bg-card/60 p-4" style={{ height: 150 }}>
-          {byYear.map(b => (
-            <button key={b.y} onClick={() => setYear(String(b.y))} className="flex h-full flex-1 flex-col items-center justify-end gap-1" title={`سال ${toFa(b.y)}`}>
-              <span className="text-[11px] font-extrabold text-primary">{toFa(b.n)}</span>
-              <div className="w-full rounded-t-lg bg-primary/70 transition-all hover:bg-primary" style={{ height: `${(b.n / maxN) * 100}%` }} />
-              <span className="text-[10px] font-bold text-muted-foreground">{toFa(b.y)}</span>
-            </button>
-          ))}
+        <div className="flex items-end gap-3 rounded-2xl border bg-card/60 p-4" style={{ height: 160 }}>
+          {byYear.map(b => {
+            const isPeak = b.n === maxN && b.n > 1
+            return (
+              <button
+                key={b.y}
+                onClick={() => setYear(String(b.y))}
+                className={`group flex h-full flex-1 flex-col items-center justify-end gap-1 rounded-lg transition-colors ${year === String(b.y) ? 'bg-primary/10' : 'hover:bg-muted/40'}`}
+                title={`سال ${toFa(b.y)} — ${toFa(b.n)} پرونده`}
+              >
+                <span className={`text-[12px] font-extrabold ${isPeak ? 'text-emerald-400' : 'text-primary'}`}>{toFa(b.n)}</span>
+                <div
+                  className={`w-full rounded-t-lg transition-all group-hover:brightness-110 ${
+                    isPeak
+                      ? 'bg-gradient-to-t from-emerald-700/80 via-emerald-600/70 to-emerald-400/90 ring-1 ring-inset ring-emerald-300/50'
+                      : 'bg-gradient-to-t from-amber-700/70 via-amber-600/60 to-amber-400/90'
+                  }`}
+                  style={{ height: `${(b.n / maxN) * 100}%` }}
+                />
+                <span className="text-[10.5px] font-bold text-muted-foreground">{toFa(b.y)}</span>
+              </button>
+            )
+          })}
         </div>
+        {maxN > 1 && (
+          <p className="mt-1.5 text-[10.5px] text-muted-foreground">🔥 سال پرتعداد این تالار: <b className="text-emerald-400">{toFa(maxN)} پرونده</b> — روی هر میله کلیک کنید تا همان سال فیلتر شود.</p>
+        )}
       </section>
 
       {/* فیلترها */}
