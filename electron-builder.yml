@@ -9,6 +9,11 @@ directories:
 files:
   - electron/**/*
 
+# ماژول‌های نیتیو برای پوسته لازم نیستند (سرور مستقل از قبل بسته‌بندی شده است)؛
+# rebuild نیتیو نیازمند Visual Studio است و در CI شکست می‌خورد.
+npmRebuild: false
+buildDependenciesFromSource: false
+
 extraResources:
   - from: build/app-server
     to: app-server
